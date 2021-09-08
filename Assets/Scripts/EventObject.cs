@@ -10,10 +10,8 @@ public class EventObject : MonoBehaviour
 {
     // 玩家點擊後，要觸發的事件點
     public List<EventPoint> eventPoint;
-    // 事件點的條件
-    public List<EventCondition> eventConditions;
 
-    private void Start()
+    protected void Start()
     {
         StartCoroutine(AutoEventCoroutine());
     }
@@ -28,7 +26,7 @@ public class EventObject : MonoBehaviour
         // 從最後面的事件開始向前，找到符合條件的事件點後執行
         for (int i = eventPoint.Count - 1; i >= 0; i--)
         {
-            if (CheckEventContition(i) && eventPoint[i].autoStart)
+            if (CheckEventContition(eventPoint[i].condition) && eventPoint[i].autoStart)
             {
                 StartCoroutine(RunEventCoroutine(eventPoint[i]));
                 break;
@@ -41,11 +39,18 @@ public class EventObject : MonoBehaviour
     /// </summary>
     private void OnMouseUpAsButton()
     {
+        RunEvent();
+    }
+
+    public void RunEvent()
+    {
         // 從最後面的事件開始向前，找到符合條件的事件點後執行
         for (int i = eventPoint.Count - 1; i >= 0; i--)
         {
-            if (CheckEventContition(i))
+            if (CheckEventContition(eventPoint[i].condition))
             {
+                // 執行前關閉道具視窗
+                FindObjectOfType<ItemList>().CloseItemList();
                 StartCoroutine(RunEventCoroutine(eventPoint[i]));
                 break;
             }
@@ -54,34 +59,38 @@ public class EventObject : MonoBehaviour
 
     private IEnumerator RunEventCoroutine(EventPoint eventPoint)
     {
-        int dialogueId = eventPoint.dialogueId;
-        while (dialogueId != -1)
+        foreach (EventCommand command in eventPoint.commands)
         {
-            string content = GameDatabase.Instance.Dialogues[dialogueId].content;
-            DialogueSystem.Instance.ShowDialouge(content);
-            yield return new WaitUntil(() => DialogueSystem.Instance.finish);
-            yield return null;
-            dialogueId = GameDatabase.Instance.Dialogues[dialogueId].nextId;
+            // 獲取或失去物品
+            PlayerData.Instance.GainItem(command.gainItemId);
+            PlayerData.Instance.LoseItem(command.loseItemId);
+            // 設置開關
+            GameDatabase.Instance.SetSwitch(command.openSwitchId, true);
+            GameDatabase.Instance.SetSwitch(command.closeSwitchId, false);
+            // 顯示對話
+            if (command.dialogue != "")
+            {
+                DialogueSystem.Instance.ShowDialouge(command.dialogue);
+                yield return new WaitUntil(() => DialogueSystem.Instance.finish);
+                yield return null;
+            }
         }
         DialogueSystem.Instance.CloseDialouge();
+
     }
 
-    private bool CheckEventContition(int index)
+    public bool CheckEventContition(EventCondition condition)
     {
-        if (index >= eventConditions.Count)
-            return true;
-        EventCondition condition = eventConditions[index];
         // 開關檢查
         foreach (int id in condition.switchConditions.Keys)
         {
-            EventSwitch eventSwitch = condition.switchConditions[id];
-            if (!(GameDatabase.Instance.EventSwitches.ContainsKey(eventSwitch.id) && GameDatabase.Instance.EventSwitches[id].opened))
+            if (!GameDatabase.Instance.GetSwitchState(id))
                 return false;
         }
         // 物品檢查
         foreach (int id in condition.itemConditions.Keys)
         {
-            if (PlayerData.Instance.ItemCount(id) < condition.itemConditions[id])
+            if (!PlayerData.Instance.HasItem(id))
                 return false;
         }
         return true;

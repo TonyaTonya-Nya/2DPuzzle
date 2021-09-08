@@ -934,7 +934,7 @@ namespace RotaryHeart.Lib.SerializableDictionary
             switch (prop.propertyType)
             {
                 case SerializedPropertyType.Integer:
-                    prop.intValue = int.MaxValue;
+                    prop.intValue = KeysValues.arraySize;
                     break;
                 case SerializedPropertyType.Boolean:
                     prop.boolValue = false;

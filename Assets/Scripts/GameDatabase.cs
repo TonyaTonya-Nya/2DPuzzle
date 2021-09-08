@@ -3,23 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
+using UnityEditor;
 
-public class GameDatabase
+[CreateAssetMenu(fileName = "ItemDatabase", menuName = "Database/ItemDatabase")]
+public class ItemDatabase : ScriptableObject
 {
-    /// <summary>
-    /// 事件點的開關
-    /// </summary>
-    public Dictionary<int, EventSwitch> EventSwitches { get; private set; } = new Dictionary<int, EventSwitch>();
+    public IntItemDhictionary items;
+}
 
-    /// <summary>
-    /// 事件點資料庫
-    /// </summary>
-    public Dictionary<int, EventPoint> EventPoints { get; private set; } = new Dictionary<int, EventPoint>();
+[CreateAssetMenu(fileName = "SwitchDatabase", menuName = "Database/SwitchDatabase")]
+public class SwitchDatabase : ScriptableObject
+{
+    public IntStringDhictionary switches;
+}
 
-    /// <summary>
+public class GameDatabase : MonoBehaviour
+{
+    // 事件點的開關資料庫
+    public Dictionary<int, bool> EventSwitchDB { get; private set; } = new Dictionary<int, bool>();
+
+    [SerializeField]
+    // 物品資料庫來源
+    private ItemDatabase itemDatabase;
+    // 物品資料庫
+    public Dictionary<int, Item> ItemDB { get; private set; } = new Dictionary<int, Item>();
+
     /// 對話資料庫
-    /// </summary>
-    public Dictionary<int, Dialogue> Dialogues { get; private set; } = new Dictionary<int, Dialogue>();
+    //public Dictionary<int, Dialogue> DialogueDB { get; private set; } = new Dictionary<int, Dialogue>();
+
+    public static object syncRoot = new object();
 
     private static GameDatabase instance;
     public static GameDatabase Instance
@@ -27,14 +39,63 @@ public class GameDatabase
         get
         {
             if (instance == null)
-                instance = new GameDatabase();
+            {
+                lock (syncRoot)
+                {
+                    if (instance == null)
+                        instance = FindObjectOfType<GameDatabase>();
+                }
+            }
             return instance;
         }
     }
 
-    public GameDatabase()
+    private void Awake()
     {
-        string value = File.ReadAllText(Path.Combine(Application.dataPath, "Resources/Database/Dialogue.json"), System.Text.Encoding.Default);
-        Dialogues = JsonConvert.DeserializeObject<Dictionary<int, Dialogue>>(value);
+        if (instance != null && instance != this)
+            Destroy(gameObject);
+        ParseDatabase();
+    }
+
+    /// <summary>
+    /// 解析資料庫，存入Dictionary
+    /// </summary>
+    private void ParseDatabase()
+    {
+        // 物品資料庫
+        foreach (KeyValuePair<int, Item> pair in itemDatabase.items)
+            ItemDB.Add(pair.Key, pair.Value);
+    }
+
+    /// <summary>
+    /// 設定開關
+    /// </summary>
+    /// <param name="name">開關名稱</param>
+    /// <param name="open">true: 開啟，false: 關閉</param>
+    public void SetSwitch(int id, bool open)
+    {
+        EventSwitchDB[id] = open;
+    }
+
+    public bool GetSwitchState(int id)
+    {
+        if (EventSwitchDB.ContainsKey(id))
+            return EventSwitchDB[id];
+        return false;
+    }
+
+    /// <summary>
+    /// 備份用
+    /// </summary>
+    [MenuItem("Tools/Export/ItemDatabase")]
+    public static void ExportItemDataToJson()
+    {
+        string path = Path.Combine(Application.dataPath, "Resources/Database/ItemDatabase.json");
+        GameDatabase gameDatabase = FindObjectOfType<GameDatabase>();
+        string s = JsonConvert.SerializeObject(gameDatabase.itemDatabase);
+        using (StreamWriter file = new StreamWriter(path))
+        {
+            file.WriteLine(s);
+        }
     }
 }

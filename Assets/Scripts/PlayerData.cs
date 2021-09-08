@@ -19,7 +19,7 @@ public class PlayerData
     /// <summary>
     /// 持有物品編號
     /// </summary>
-    private List<int> items = new List<int>();
+    public List<int> items { get; private set; } = new List<int>();
 
     public bool HasItem(int id)
     {
@@ -28,14 +28,20 @@ public class PlayerData
 
     public void GainItem(int id)
     {
-        if (!HasItem(id))
+        if (!HasItem(id) && GameDatabase.Instance.ItemDB.ContainsKey(id))
             items.Add(id);
+    }
+
+    public void LoseItem(int id)
+    {
+        if (HasItem(id))
+            items.Remove(id);
     }
 
     public int ItemCount(int id)
     {
         if (HasItem(id))
-            return items[id];
+            return items[items.IndexOf(id)];
         return 0;
     }
 

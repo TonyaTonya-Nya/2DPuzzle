@@ -12,7 +12,7 @@ using UnityEngine;
 public class Demo : MonoBehaviour {
 
 	//variable for how fast player runs//
-	private float speed = 5f;
+	public float speed = 1f;
 
 	private bool facingRight = true;
 	private Animator anim;

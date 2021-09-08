@@ -340,6 +340,50 @@ Transform:
   m_Father: {fileID: 166117015}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &322501897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 322501899}
+  - component: {fileID: 322501898}
+  m_Layer: 0
+  m_Name: Game Database
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &322501898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322501897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99748dd522a7cc4cb9e8f0debd00648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDatabase: {fileID: 11400000, guid: 4114edbe610bf0041972bb3a6ae8e2be, type: 2}
+--- !u!4 &322501899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322501897}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 287.52423, y: 133.68323, z: -26.33998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &442639785
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,12 +492,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1600, y: 900}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -467,8 +511,8 @@ Canvas:
   m_GameObject: {fileID: 506539416}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -477,7 +521,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &506539420
 RectTransform:
@@ -491,6 +535,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 784305428}
+  - {fileID: 1667912242}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -592,6 +637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 541408784}
   - component: {fileID: 541408786}
+  - component: {fileID: 541408787}
   - component: {fileID: 541408785}
   m_Layer: 0
   m_Name: Bed
@@ -627,12 +673,271 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventPoint:
-  - id: 0
-    name: 
-    conditionId: 0
+  - condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 1
+        _keyValues: 07000000
+        _keys: 07000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
     autoStart: 0
-    dialogueId: 10
-  eventConditions: []
+    commands:
+    - dialogue: "\u5E8A\u4E0A\u53EA\u6709\u4E00\u9846\u6795\u982D\uFF0C\u9023\u68C9\u88AB\u4E5F\u6C92\u6709\u3002"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u5F88\u8EDF\uFF0C\u623F\u9593\u88E1\u70BA\u6578\u4E0D\u591A\u7684\u597D\u6771\u897F\u4E4B\u4E00\uFF0C\u55EF\uFF1F\u9019\u500B\u5F62\u72C0\uFF1F"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u4E3B\u89D2\u5F9E\u6795\u982D\u4E2D\u9593\u5C07\u5B83\u62FF\u8D77\uFF0C\u90A3\u500B\u6795\u982D\u5448\u73FE\u4E86\u4E0D\u81EA\u7136\u7684\u65B9\u5F62"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u88E1\u9762\u85CF\u4E86\u4EC0\u9EBC\uFF1F "
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 3
+      closeSwitchId: 0
+  - condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 1
+        _keyValues: 03000000
+        _keys: 03000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    autoStart: 0
+    commands:
+    - dialogue: "\u4E3B\u89D2\u6495\u958B\u90A3\u9846\u6795\u982D"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u88E1\u9762\u85CF\u8457\u4E00\u672C\u65E5\u8A18\uFF0C\u9084\u662F\u5E36\u8457\u934A\u689D\u548C\u5BC6\u78BC\u9396\u7684\u6B3E\u5F0F"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u5982\u679C\u4E0D\u77E5\u9053\u5BC6\u78BC\u7684\u8A71\u770B\u4F86\u662F\u6253\u4E0D\u958B\u7684\u2026\u2026\uFF08\u5F97\u5230\u65E5\u8A18\uFF09"
+      gainItemId: 4
+      loseItemId: 0
+      openSwitchId: 4
+      closeSwitchId: 0
+  - condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 1
+        _keyValues: 04000000
+        _keys: 04000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    autoStart: 0
+    commands:
+    - dialogue: "\u55EF\u2026\u2026"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u5982\u679C\u5C4B\u5B50\u7684\u4E3B\u4EBA\u6703\u5C07\u9019\u672C\u65E5\u8A18\u672C\u85CF\u5728\u6795\u982D\u88E1\u2026\u2026 "
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u90A3\u5C31\u4EE3\u8868\u4ED6\u4E5F\u6703\u85CF\u5176\u4ED6\u6771\u897F\u5728\u5176\u4ED6\u5730\u65B9\u3002"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u4E3B\u89D2\u5C07\u5E8A\u7FFB\u904E\u4F86\uFF0C\u767C\u73FE\u5E95\u4E0B\u7528\u81A0\u5E03\u85CF\u8457\u4E00\u628A\u69CD\u3002 "
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u4E00\u628A\u69CD\uFF1F"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u9019\u88E1\u85CF\u8457\u4E00\u628A\u69CD\uFF1F "
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u5C4B\u5B50\u7684\u4E3B\u4EBA\u85CF\u8457\u4E00\u628A\u69CD\uFF1F"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u4ED6\u662F\u9ED1\u9053\u9084\u662F\u8B66\u5BDF\uFF1F"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u662F\u597D\u4EBA\u9084\u662F\u58DE\u4EBA\uFF1F"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u51B7\u975C\uFF0C\u51B7\u975C\u2026\u2026"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u6211\u770B\u9019\u628A\u69CD\u662F\u5DE6\u8F2A\u624B\u69CD"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u800C\u8B66\u5BDF\u65E9\u5C31\u5C07\u6240\u6709\u516C\u7528\u7684\u5DE6\u8F2A\u624B\u69CD\u9000\u5F79\u4E86\u2026\u2026"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u90A3\u662F\u4E0D\u662F\u4EE3\u8868\u9019\u500B\u5C4B\u5B50\u7684\u4E3B\u4EBA\u4E0D\u662F\u4EC0\u9EBC\u597D\u4EBA\uFF1F\uFF08\u5F97\u5230\u624B\u69CD\uFF09"
+      gainItemId: 6
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
 --- !u!61 &541408786
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -646,7 +951,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.14947271, y: 0.011800289}
+  m_Offset: {x: 0.14947271, y: -0.11616373}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -657,7 +962,33 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0218267, y: 0.43357372}
+  m_Size: {x: 3.0218267, y: 0.68950176}
+  m_EdgeRadius: 0
+--- !u!61 &541408787
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541408783}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.0255303, y: 0.3541398}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.55240536, y: 0.26220798}
   m_EdgeRadius: 0
 --- !u!1 &597413138
 GameObject:
@@ -943,7 +1274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &784305428
 RectTransform:
   m_ObjectHideFlags: 0
@@ -958,10 +1289,10 @@ RectTransform:
   m_Father: {fileID: 506539420}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -156}
-  m_SizeDelta: {x: 0, y: 60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 62.00003}
+  m_SizeDelta: {x: 0, y: 124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &784305429
 MonoBehaviour:
@@ -984,20 +1315,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 18
-    m_MaxSize: 24
+    m_MinSize: 48
+    m_MaxSize: 64
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '123456
-
-    123456'
+  m_Text: 123456
 --- !u!222 &784305430
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1227,11 +1556,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4921285705009362, guid: d58e58070863f4a4e9a88c181489ff86, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.6
+      value: -9.68
       objectReference: {fileID: 0}
     - target: {fileID: 4921285705009362, guid: d58e58070863f4a4e9a88c181489ff86, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.17
+      value: 8.35
       objectReference: {fileID: 0}
     - target: {fileID: 4921285705009362, guid: d58e58070863f4a4e9a88c181489ff86, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1274,6 +1603,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.x
       value: 0.380647
+      objectReference: {fileID: 0}
+    - target: {fileID: 114393563242933454, guid: d58e58070863f4a4e9a88c181489ff86,
+        type: 3}
+      propertyPath: speed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 212173678308109152, guid: d58e58070863f4a4e9a88c181489ff86,
         type: 3}
@@ -1345,7 +1679,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1786511231}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1321068000
 MonoBehaviour:
@@ -1360,65 +1694,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventPoint:
-  - id: 0
-    name: 
-    conditionId: 0
+  - condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 1
+        _keyValues: 02000000
+        _keys: 02000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
     autoStart: 0
-    dialogueId: 9
-  eventConditions:
-  - id: 0
-    switchConditions:
-      reorderableList:
-        canAdd: 1
-        canRemove: 1
-        draggable: 1
-        expandable: 1
-        multipleSelection: 1
-        isExpanded: 0
-        label:
-          m_Text: Keys
-          m_Image: {fileID: 0}
-          m_Tooltip: 
-        headerHeight: 18
-        footerHeight: 13
-        slideEasing: 0.15
-        verticalSpacing: 2
-        showDefaultBackground: 1
-        elementDisplayType: 0
-        elementNameProperty: 
-        elementNameOverride: 
-        elementIcon: {fileID: 0}
-      reqReferences: {fileID: 0}
-      isExpanded: 0
-      _keyValues: 
-      _keys: 
-      _values: []
-    itemConditions:
-      reorderableList:
-        canAdd: 1
-        canRemove: 1
-        draggable: 1
-        expandable: 1
-        multipleSelection: 1
-        isExpanded: 0
-        label:
-          m_Text: Keys
-          m_Image: {fileID: 0}
-          m_Tooltip: 
-        headerHeight: 18
-        footerHeight: 13
-        slideEasing: 0.15
-        verticalSpacing: 2
-        showDefaultBackground: 1
-        elementDisplayType: 0
-        elementNameProperty: 
-        elementNameOverride: 
-        elementIcon: {fileID: 0}
-      reqReferences: {fileID: 0}
-      isExpanded: 0
-      _keyValues: 
-      _keys: 
-      _values: 
+    commands:
+    - dialogue: "\u88E1\u9762\u4EC0\u9EBC\u4E5F\u6C92\u6709\uFF0C\u770B\u4F86\u4ED6\u771F\u7684\u5F88\u7AAE\u554A\uFF01"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
 --- !u!61 &1321068001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1537,6 +1872,7 @@ GameObject:
   - component: {fileID: 1467853074}
   - component: {fileID: 1467853076}
   - component: {fileID: 1467853075}
+  - component: {fileID: 1467853077}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -1556,7 +1892,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1786511231}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1467853075
 MonoBehaviour:
@@ -1571,123 +1907,197 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventPoint:
-  - id: 0
-    name: 
-    conditionId: 0
-    autoStart: 0
-    dialogueId: 7
-  - id: 0
-    name: 
-    conditionId: 0
-    autoStart: 0
-    dialogueId: 7
-  eventConditions:
-  - id: 0
-    switchConditions:
-      reorderableList:
-        canAdd: 1
-        canRemove: 1
-        draggable: 1
-        expandable: 1
-        multipleSelection: 1
-        isExpanded: 0
-        label:
-          m_Text: Keys
-          m_Image: {fileID: 0}
-          m_Tooltip: 
-        headerHeight: 18
-        footerHeight: 13
-        slideEasing: 0.15
-        verticalSpacing: 2
-        showDefaultBackground: 1
-        elementDisplayType: 0
-        elementNameProperty: 
-        elementNameOverride: 
-        elementIcon: {fileID: 0}
-      reqReferences: {fileID: 0}
-      isExpanded: 0
-      _keyValues: 
-      _keys: 
-      _values: []
-    itemConditions:
-      reorderableList:
-        canAdd: 1
-        canRemove: 1
-        draggable: 1
-        expandable: 1
-        multipleSelection: 1
-        isExpanded: 0
-        label:
-          m_Text: Keys
-          m_Image: {fileID: 0}
-          m_Tooltip: 
-        headerHeight: 18
-        footerHeight: 13
-        slideEasing: 0.15
-        verticalSpacing: 2
-        showDefaultBackground: 1
-        elementDisplayType: 0
-        elementNameProperty: 
-        elementNameOverride: 
-        elementIcon: {fileID: 0}
-      reqReferences: {fileID: 0}
-      isExpanded: 0
-      _keyValues: 
-      _keys: 
-      _values: 
-  - id: 0
-    switchConditions:
-      reorderableList:
-        canAdd: 1
-        canRemove: 1
-        draggable: 1
-        expandable: 1
-        multipleSelection: 1
-        isExpanded: 0
-        label:
-          m_Text: Keys
-          m_Image: {fileID: 0}
-          m_Tooltip: 
-        headerHeight: 18
-        footerHeight: 13
-        slideEasing: 0.15
-        verticalSpacing: 2
-        showDefaultBackground: 1
-        elementDisplayType: 0
-        elementNameProperty: 
-        elementNameOverride: 
-        elementIcon: {fileID: 0}
-      reqReferences: {fileID: 0}
-      isExpanded: 0
-      _keyValues: 
-      _keys: 
-      _values: []
-    itemConditions:
-      reorderableList:
-        canAdd: 1
-        canRemove: 1
-        draggable: 1
-        expandable: 1
-        multipleSelection: 1
+  - condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
         isExpanded: 1
-        label:
-          m_Text: Keys
-          m_Image: {fileID: 0}
-          m_Tooltip: 
-        headerHeight: 18
-        footerHeight: 13
-        slideEasing: 0.15
-        verticalSpacing: 2
-        showDefaultBackground: 1
-        elementDisplayType: 0
-        elementNameProperty: 
-        elementNameOverride: 
-        elementIcon: {fileID: 0}
-      reqReferences: {fileID: 0}
-      isExpanded: 1
-      _keyValues: 01000000
-      _keys: 01000000
-      _values: 01000000
+        _keyValues: 07000000
+        _keys: 07000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    autoStart: 0
+    commands:
+    - dialogue: "\u4E3B\u89D2\u8D70\u5411\u9580\u908A\uFF0C\u8F49\u4E86\u8F49\u9580\u628A"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u9396\u4E0A\u4E86\u554A\u3002"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u6211\u53EF\u4E0D\u60F3\u7528\u6211\u9019\u8EAB\u5FEB\u88AB\u62C6\u6389\u7684\u6B98\u8EC0\u53BB\u649E\u9019\u6247\u9023\u6750\u8CEA\u662F\u4EC0\u9EBC\u6211\u90FD\u4E0D\u6E05\u695A
+        \u7684\u9580\u3002"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+  - condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 1
+        _keyValues: 07000000
+        _keys: 07000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 1
+        _keyValues: 08000000
+        _keys: 08000000
+        _values: 01000000
+    autoStart: 0
+    commands:
+    - dialogue: "\u4E3B\u89D2\u62FF\u51FA\u9435\u7D72\uFF0C\u5C0D\u9580\u9396\u8F49\u4E86\u8F49"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u300C\u5494\u300D\u7684\u4E00\u8072\uFF0C\u6210\u529F\u958B\u9580\u3002\u4E3B\u89D2\u4E00\u624B\u6301\u69CD\u3001\u4E00\u624B\u63A8\u9580\uFF0C\u8D70\u51FA\u623F\u9593\u3002"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 8
+      closeSwitchId: 0
+  - condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 08000000
+        _keys: 08000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    autoStart: 0
+    commands: []
 --- !u!61 &1467853076
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1714,6 +2124,72 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0913019, y: 1.9954848}
   m_EdgeRadius: 0
+--- !u!114 &1467853077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467853073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde3fd85b2d86d648b9e575e31715c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {x: -8.8, y: -0.62}
+  condition:
+    switchConditions:
+      reorderableList:
+        canAdd: 1
+        canRemove: 1
+        draggable: 1
+        expandable: 1
+        multipleSelection: 1
+        isExpanded: 1
+        label:
+          m_Text: Keys
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+        headerHeight: 18
+        footerHeight: 13
+        slideEasing: 0.15
+        verticalSpacing: 2
+        showDefaultBackground: 1
+        elementDisplayType: 0
+        elementNameProperty: 
+        elementNameOverride: 
+        elementIcon: {fileID: 0}
+      reqReferences: {fileID: 0}
+      isExpanded: 1
+      _keyValues: 08000000
+      _keys: 08000000
+      _values: 01
+    itemConditions:
+      reorderableList:
+        canAdd: 1
+        canRemove: 1
+        draggable: 1
+        expandable: 1
+        multipleSelection: 1
+        isExpanded: 0
+        label:
+          m_Text: Keys
+          m_Image: {fileID: 0}
+          m_Tooltip: 
+        headerHeight: 18
+        footerHeight: 13
+        slideEasing: 0.15
+        verticalSpacing: 2
+        showDefaultBackground: 1
+        elementDisplayType: 0
+        elementNameProperty: 
+        elementNameOverride: 
+        elementIcon: {fileID: 0}
+      reqReferences: {fileID: 0}
+      isExpanded: 0
+      _keyValues: 
+      _keys: 
+      _values: 
 --- !u!1 &1484262810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,7 +2489,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1786511231}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1662936109
 MonoBehaviour:
@@ -2028,12 +2504,228 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventPoint:
-  - id: 1
-    name: "\u958B\u59CB\u5287\u60C5"
-    conditionId: 0
+  - condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
     autoStart: 1
-    dialogueId: 1
-  eventConditions: []
+    commands:
+    - dialogue: "\u4E3B\u89D2\u5F9E\u623F\u88E1\u9192\u4F86"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u6211\u7684\u982D\u597D\u75DB"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u8166\u888B\u88E1\u4E5F\u662F\u4E00\u5718\u4E82\uFF0C\u9019\u88E1\u662F\u54EA\u88E1\uFF1F\u70BA\u4EC0\u9EBC\u6211\u4EC0\u9EBC\u4E5F\u60F3\u4E0D\u8D77\u4F86\u4E86\uFF1F"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u6211\u662F\u525B\u88AB\u4EBA\u6253\u904E\u55CE\uFF1F\u662F\u8AB0\u505A\u7684\uFF1F\u53C8\u662F\u70BA\u4E86\u4EC0\u9EBC\u624D\u6703\u5C07\u6211\u6293\u4F86\u9019\u88E1\uFF1F"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u597D\u51B7\uFF0C\u73FE\u5728\u662F\u51AC\u5929\u55CE\uFF1F"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 1
+      closeSwitchId: 0
+  - condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 1
+        _keyValues: 01000000
+        _keys: 01000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    autoStart: 0
+    commands: []
+--- !u!1 &1667912241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1667912242}
+  - component: {fileID: 1667912244}
+  - component: {fileID: 1667912243}
+  - component: {fileID: 1667912245}
+  m_Layer: 5
+  m_Name: Item List
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1667912242
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667912241}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 506539420}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 57.899994}
+  m_SizeDelta: {x: 0, y: 120}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1667912243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667912241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.64705884}
+  m_RaycastTarget: 0
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1667912244
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667912241}
+  m_CullTransparentMesh: 0
+--- !u!225 &1667912245
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667912241}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1706958139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,7 +2786,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1786511231}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1716521633
 MonoBehaviour:
@@ -2109,12 +2801,76 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventPoint:
-  - id: 0
-    name: "\u7A97\u6236\u5C0D\u8A71"
-    conditionId: 0
+  - condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 1
+        _keyValues: 07000000
+        _keys: 07000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
     autoStart: 0
-    dialogueId: 8
-  eventConditions: []
+    commands:
+    - dialogue: "\u63A8\u4E0D\u958B\uFF0C\u5916\u9762\u597D\u50CF\u76F4\u63A5\u5C31\u8CBC\u8457\u4E00\u5835\u7246\u4E86"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u6211\u662F\u88AB\u56F0\u5728\u5730\u4E0B\u5BA4\u55CE\uFF1F "
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u6211\u770B\u9019\u5C4B\u5B50\u7684\u4E3B\u4EBA\u5012\u662F\u633A\u7AAE\u7684\uFF0C\u53EA\u4F4F\u5F97\u8D77\u5730\u4E0B\u5BA4\u3002"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 2
+      closeSwitchId: 0
 --- !u!61 &1716521634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2186,12 +2942,76 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventPoint:
-  - id: 0
-    name: "\u5916\u5957\u4E8B\u4EF6"
-    conditionId: 0
+  - condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 1
+        _keyValues: 01000000
+        _keys: 01000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
     autoStart: 0
-    dialogueId: 4
-  eventConditions: []
+    commands:
+    - dialogue: "\u9019\u88E1\u6709\u4EF6\u8863\u670D\u2026\u2026"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u8CEA\u5730\u4E0D\u932F\uFF0C\u883B\u8212\u670D\u7684\u3002\uFF08\u5F97\u5230\u5916\u5957\uFF09"
+      gainItemId: 1
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+    - dialogue: "\u53E3\u888B\u88E1\u4F3C\u4E4E\u653E\u8457\u4E9B\u4EC0\u9EBC\uFF1F"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 7
+      closeSwitchId: 0
 --- !u!61 &1735613735
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2248,16 +3068,39 @@ Transform:
   - {fileID: 1651817886}
   - {fileID: 541408784}
   - {fileID: 1735613733}
-  - {fileID: 2064249355}
   - {fileID: 1467853074}
   - {fileID: 1662936108}
   - {fileID: 1716521632}
   - {fileID: 1321067999}
-  - {fileID: 1834480918}
+  - {fileID: 1926700608}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1834480917
+--- !u!1 &1916579473 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1719432917000318, guid: d58e58070863f4a4e9a88c181489ff86,
+    type: 3}
+  m_PrefabInstance: {fileID: 1218152561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1916579481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916579473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ac7dcf7db93374799348fbd7c1fc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPosition: {x: 10, y: 10}
+  width: 100
+  space: 10
+  itemListCanvas: {fileID: 1667912245}
+  ItemButtonPrefab: {fileID: 4030150920337550468, guid: 211802aa44181c2439a211481862982b,
+    type: 3}
+--- !u!1 &1926700607
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2265,63 +3108,118 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1834480918}
-  - component: {fileID: 1834480920}
-  - component: {fileID: 1834480919}
+  - component: {fileID: 1926700608}
+  - component: {fileID: 1926700611}
+  - component: {fileID: 1926700610}
+  - component: {fileID: 1926700609}
   m_Layer: 0
-  m_Name: Bed Buttom
+  m_Name: Coat Hanger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1834480918
+--- !u!4 &1926700608
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834480917}
+  m_GameObject: {fileID: 1926700607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.308, y: -1.596, z: 0}
+  m_LocalPosition: {x: -4.336, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1786511231}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1834480919
+--- !u!114 &1926700609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834480917}
+  m_GameObject: {fileID: 1926700607}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce4367178d24a6247b5f465d6725d670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   eventPoint:
-  - id: 0
-    name: 
-    conditionId: 0
+  - condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 1
+        _keyValues: 07000000
+        _keys: 07000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
     autoStart: 0
-    dialogueId: 14
-  eventConditions: []
---- !u!61 &1834480920
+    commands:
+    - dialogue: "\u9577\u7684\u597D\u50CF\u9EDE\u6EF4\u67B6\uFF0C\u5C4B\u5B50\u7684\u4E3B\u4EBA\u662F\u8B77\u7406\u5E2B\u55CE\uFF1F"
+      gainItemId: 0
+      loseItemId: 0
+      openSwitchId: 0
+      closeSwitchId: 0
+--- !u!61 &1926700610
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1834480917}
+  m_GameObject: {fileID: 1926700607}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.11105347, y: 0.02019167}
+  m_Offset: {x: 0, y: 0.9590397}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2332,73 +3230,22 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.8455086, y: 0.17618465}
+  m_Size: {x: 0.49644852, y: 0.25382614}
   m_EdgeRadius: 0
---- !u!1 &2064249354
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2064249355}
-  - component: {fileID: 2064249357}
-  - component: {fileID: 2064249356}
-  m_Layer: 0
-  m_Name: Pillow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2064249355
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064249354}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.28, y: -0.836, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1786511231}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2064249356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064249354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce4367178d24a6247b5f465d6725d670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventPoint:
-  - id: 0
-    name: 
-    conditionId: 0
-    autoStart: 0
-    dialogueId: 11
-  eventConditions: []
---- !u!61 &2064249357
+--- !u!61 &1926700611
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064249354}
+  m_GameObject: {fileID: 1926700607}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.013253689, y: 0.013253212}
+  m_Offset: {x: 0.0045776367, y: 0.06866646}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2409,7 +3256,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.54938793, y: 0.24014473}
+  m_Size: {x: 0.08444977, y: 1.5127087}
   m_EdgeRadius: 0
 --- !u!1 &2066494648
 GameObject:

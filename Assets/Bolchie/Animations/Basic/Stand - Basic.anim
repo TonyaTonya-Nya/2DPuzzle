@@ -3,8 +3,9 @@
 --- !u!74 &7400000
 AnimationClip:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Stand - Basic
   serializedVersion: 6
   m_Legacy: 0
@@ -40,14 +41,6 @@ AnimationClip:
       value: {fileID: 21300000, guid: a4bd6e80e4898a249ac26e28bfc171fb, type: 3}
     - time: 0.8333333
       value: {fileID: 21300000, guid: 1c07fece69e57f84fa870b447853582c, type: 3}
-    - time: 0.9166667
-      value: {fileID: 21300000, guid: 09ec7ae11db03f146bfa2c57cde00059, type: 3}
-    - time: 1
-      value: {fileID: 21300000, guid: f6021e054ddee9449929a488e7ebcfaf, type: 3}
-    - time: 1.0833334
-      value: {fileID: 21300000, guid: c9589f30b7ef86244839e26bd0e1c342, type: 3}
-    - time: 1.1666666
-      value: {fileID: 21300000, guid: edcbff553a76c0d409d4e7bb7647e2f0, type: 3}
     - time: 1.25
       value: {fileID: 21300000, guid: 600f83d918c0304418f1a256e9376acf, type: 3}
     - time: 1.3333334
@@ -98,10 +91,6 @@ AnimationClip:
     - {fileID: 21300000, guid: cd27d65aec7e8aa4eaaaa65735d9e05d, type: 3}
     - {fileID: 21300000, guid: a4bd6e80e4898a249ac26e28bfc171fb, type: 3}
     - {fileID: 21300000, guid: 1c07fece69e57f84fa870b447853582c, type: 3}
-    - {fileID: 21300000, guid: 09ec7ae11db03f146bfa2c57cde00059, type: 3}
-    - {fileID: 21300000, guid: f6021e054ddee9449929a488e7ebcfaf, type: 3}
-    - {fileID: 21300000, guid: c9589f30b7ef86244839e26bd0e1c342, type: 3}
-    - {fileID: 21300000, guid: edcbff553a76c0d409d4e7bb7647e2f0, type: 3}
     - {fileID: 21300000, guid: 600f83d918c0304418f1a256e9376acf, type: 3}
     - {fileID: 21300000, guid: ddf2ee5ea79e54f4f92bc3ae2bccda57, type: 3}
     - {fileID: 21300000, guid: 2094fc1296e131a4a9e44b4ceb3fad7c, type: 3}
@@ -136,5 +125,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_GenerateMotionCurves: 0
   m_Events: []

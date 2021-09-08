@@ -1,0 +1,525 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: ItemDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDatabase
+  items:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues: 0100000002000000030000000400000005000000060000000700000008000000
+    _keys: 0100000002000000030000000400000005000000060000000700000008000000
+    _values:
+    - id: 1
+      name: "\u5916\u5957"
+      sprite: {fileID: 21300000, guid: 7031bd877687c1e48ae7ff70bcf4b208, type: 3}
+      description: 
+      clickEvent:
+      - condition:
+          switchConditions:
+            reorderableList:
+              canAdd: 0
+              canRemove: 0
+              draggable: 0
+              expandable: 0
+              multipleSelection: 0
+              isExpanded: 0
+              label:
+                m_Text: 
+                m_Image: {fileID: 0}
+                m_Tooltip: 
+              headerHeight: 0
+              footerHeight: 0
+              slideEasing: 0
+              verticalSpacing: 0
+              showDefaultBackground: 0
+              elementDisplayType: 0
+              elementNameProperty: 
+              elementNameOverride: 
+              elementIcon: {fileID: 0}
+            reqReferences: {fileID: 0}
+            isExpanded: 0
+            _keyValues: 
+            _keys: 
+            _values: 
+          itemConditions:
+            reorderableList:
+              canAdd: 0
+              canRemove: 0
+              draggable: 0
+              expandable: 0
+              multipleSelection: 0
+              isExpanded: 0
+              label:
+                m_Text: 
+                m_Image: {fileID: 0}
+                m_Tooltip: 
+              headerHeight: 0
+              footerHeight: 0
+              slideEasing: 0
+              verticalSpacing: 0
+              showDefaultBackground: 0
+              elementDisplayType: 0
+              elementNameProperty: 
+              elementNameOverride: 
+              elementIcon: {fileID: 0}
+            reqReferences: {fileID: 0}
+            isExpanded: 0
+            _keyValues: 
+            _keys: 
+            _values: 
+        autoStart: 0
+        commands:
+        - dialogue: "\u9019\u662F\u4EC0\u9EBC\uFF1F"
+          gainItemId: 0
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+        - dialogue: "\uFF08\u5F9E\u53E3\u888B\u5F97\u5230\u6253\u706B\u6A5F\u548C\u96EA\u8304\uFF09"
+          gainItemId: 2
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+        - dialogue: "\u4E00\u652F\u96EA\u8304\u3001\u4E00\u500B\u6253\u706B\u6A5F\u2026\u2026"
+          gainItemId: 3
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+        - dialogue: "\u6253\u706B\u6A5F\u597D\u50CF\u662F\u9285\u88FD\u7684\uFF0C\u96EA\u8304\u4E0A\u9762\u5BEB\u7684\u662F\u4EC0\u9EBC\uFF1F\u7F85\u5BC6\u6B50\u8207\u8331\u9E97\u8449\uFF1F"
+          gainItemId: 0
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+      canMix: 0
+      mixTarget: 0
+      mixEvent: []
+    - id: 2
+      name: "\u6253\u706B\u6A5F"
+      sprite: {fileID: 21300000, guid: e8524bdb1f2c8f140a89490d506b6a11, type: 3}
+      description: 
+      clickEvent: []
+      canMix: 1
+      mixTarget: 7
+      mixEvent:
+      - condition:
+          switchConditions:
+            reorderableList:
+              canAdd: 0
+              canRemove: 0
+              draggable: 0
+              expandable: 0
+              multipleSelection: 0
+              isExpanded: 0
+              label:
+                m_Text: 
+                m_Image: {fileID: 0}
+                m_Tooltip: 
+              headerHeight: 0
+              footerHeight: 0
+              slideEasing: 0
+              verticalSpacing: 0
+              showDefaultBackground: 0
+              elementDisplayType: 0
+              elementNameProperty: 
+              elementNameOverride: 
+              elementIcon: {fileID: 0}
+            reqReferences: {fileID: 0}
+            isExpanded: 0
+            _keyValues: 
+            _keys: 
+            _values: 
+          itemConditions:
+            reorderableList:
+              canAdd: 0
+              canRemove: 0
+              draggable: 0
+              expandable: 0
+              multipleSelection: 0
+              isExpanded: 0
+              label:
+                m_Text: 
+                m_Image: {fileID: 0}
+                m_Tooltip: 
+              headerHeight: 0
+              footerHeight: 0
+              slideEasing: 0
+              verticalSpacing: 0
+              showDefaultBackground: 0
+              elementDisplayType: 0
+              elementNameProperty: 
+              elementNameOverride: 
+              elementIcon: {fileID: 0}
+            reqReferences: {fileID: 0}
+            isExpanded: 0
+            _keyValues: 
+            _keys: 
+            _values: 
+        autoStart: 0
+        commands:
+        - dialogue: "\u6253\u706B\u6A5F\u3001\u5F48\u7C27\u2026\u2026\u597D\u4E86\uFF01 "
+          gainItemId: 0
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+        - dialogue: "\u4E3B\u89D2\u5C07\u9435\u7D72\u70E4\u8EDF\u91CD\u65B0\u62C9\u6210\u4ED6\u8981\u7684\u5F62\u72C0\u3002\uFF08\u5931\u53BB\u5F48\u7C27\uFF0C\u5F97\u5230\u9435\u7D72\uFF09"
+          gainItemId: 8
+          loseItemId: 7
+          openSwitchId: 0
+          closeSwitchId: 0
+    - id: 3
+      name: "\u96EA\u8304"
+      sprite: {fileID: 21300000, guid: 5feb3119ceb57364993fd97aac23f796, type: 3}
+      description: 
+      clickEvent: []
+      canMix: 0
+      mixTarget: 0
+      mixEvent: []
+    - id: 4
+      name: "\u65E5\u8A18"
+      sprite: {fileID: 21300000, guid: 4f2dd8a755205ca439d80e45e9d1bb42, type: 3}
+      description: 
+      clickEvent:
+      - condition:
+          switchConditions:
+            reorderableList:
+              canAdd: 0
+              canRemove: 0
+              draggable: 0
+              expandable: 0
+              multipleSelection: 0
+              isExpanded: 0
+              label:
+                m_Text: 
+                m_Image: {fileID: 0}
+                m_Tooltip: 
+              headerHeight: 0
+              footerHeight: 0
+              slideEasing: 0
+              verticalSpacing: 0
+              showDefaultBackground: 0
+              elementDisplayType: 0
+              elementNameProperty: 
+              elementNameOverride: 
+              elementIcon: {fileID: 0}
+            reqReferences: {fileID: 0}
+            isExpanded: 0
+            _keyValues: 
+            _keys: 
+            _values: 
+          itemConditions:
+            reorderableList:
+              canAdd: 0
+              canRemove: 0
+              draggable: 0
+              expandable: 0
+              multipleSelection: 0
+              isExpanded: 0
+              label:
+                m_Text: 
+                m_Image: {fileID: 0}
+                m_Tooltip: 
+              headerHeight: 0
+              footerHeight: 0
+              slideEasing: 0
+              verticalSpacing: 0
+              showDefaultBackground: 0
+              elementDisplayType: 0
+              elementNameProperty: 
+              elementNameOverride: 
+              elementIcon: {fileID: 0}
+            reqReferences: {fileID: 0}
+            isExpanded: 0
+            _keyValues: 
+            _keys: 
+            _values: 
+        autoStart: 0
+        commands:
+        - dialogue: "\u65E5\u8A18\u96D6\u7136\u6253\u4E0D\u958B\uFF0C\u4F46\u65C1\u908A\u7684\u539F\u5B50\u7B46\u5012\u662F\u53EF\u4EE5\u53D6\u4E0B\u4F86\uFF08\u5F97\u5230\u6309\u58D3\u5F0F\u539F\u5B50
+            \u7B46\uFF09 "
+          gainItemId: 5
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+      canMix: 0
+      mixTarget: 0
+      mixEvent: []
+    - id: 5
+      name: "\u539F\u5B50\u7B46"
+      sprite: {fileID: 21300000, guid: e32171510f72581459271371c6814b1e, type: 3}
+      description: 
+      clickEvent:
+      - condition:
+          switchConditions:
+            reorderableList:
+              canAdd: 0
+              canRemove: 0
+              draggable: 0
+              expandable: 0
+              multipleSelection: 0
+              isExpanded: 0
+              label:
+                m_Text: 
+                m_Image: {fileID: 0}
+                m_Tooltip: 
+              headerHeight: 0
+              footerHeight: 0
+              slideEasing: 0
+              verticalSpacing: 0
+              showDefaultBackground: 0
+              elementDisplayType: 0
+              elementNameProperty: 
+              elementNameOverride: 
+              elementIcon: {fileID: 0}
+            reqReferences: {fileID: 0}
+            isExpanded: 0
+            _keyValues: 
+            _keys: 
+            _values: 
+          itemConditions:
+            reorderableList:
+              canAdd: 0
+              canRemove: 0
+              draggable: 0
+              expandable: 0
+              multipleSelection: 0
+              isExpanded: 0
+              label:
+                m_Text: 
+                m_Image: {fileID: 0}
+                m_Tooltip: 
+              headerHeight: 0
+              footerHeight: 0
+              slideEasing: 0
+              verticalSpacing: 0
+              showDefaultBackground: 0
+              elementDisplayType: 0
+              elementNameProperty: 
+              elementNameOverride: 
+              elementIcon: {fileID: 0}
+            reqReferences: {fileID: 0}
+            isExpanded: 0
+            _keyValues: 
+            _keys: 
+            _values: 
+        autoStart: 0
+        commands:
+        - dialogue: "\u2026\u2026"
+          gainItemId: 0
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+        - dialogue: "\u662F\u6309\u58D3\u5F0F\u7684\u2026\u2026"
+          gainItemId: 0
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+        - dialogue: "\u5C0D\u4E86\uFF0C\u65E2\u7136\u662F\u6309\u58D3\u5F0F\u7684\u539F\u5B50\u7B46\uFF0C\u90A3\u5C31\u4EE3\u8868\u5B83\u6709\u5F48\u7C27"
+          gainItemId: 0
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+        - dialogue: "\u6709\u5F48\u7C27\u5C31\u4EE3\u8868\u80FD\u62C9\u51FA\u9435\u7D72\uFF0C\u6709\u9435\u7D72\u5C31\u80FD\u958B\u9580\u4E86\u3002"
+          gainItemId: 0
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+        - dialogue: "\uFF08\u5F97\u5230\u5F48\u7C27\uFF0C\u5931\u53BB\u539F\u5B50\u7B46\uFF09"
+          gainItemId: 7
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+      canMix: 0
+      mixTarget: 0
+      mixEvent: []
+    - id: 6
+      name: "\u624B\u69CD"
+      sprite: {fileID: 21300000, guid: 635b34f1948c2d340835000a308fe2d2, type: 3}
+      description: 
+      clickEvent:
+      - condition:
+          switchConditions:
+            reorderableList:
+              canAdd: 0
+              canRemove: 0
+              draggable: 0
+              expandable: 0
+              multipleSelection: 0
+              isExpanded: 0
+              label:
+                m_Text: 
+                m_Image: {fileID: 0}
+                m_Tooltip: 
+              headerHeight: 0
+              footerHeight: 0
+              slideEasing: 0
+              verticalSpacing: 0
+              showDefaultBackground: 0
+              elementDisplayType: 0
+              elementNameProperty: 
+              elementNameOverride: 
+              elementIcon: {fileID: 0}
+            reqReferences: {fileID: 0}
+            isExpanded: 0
+            _keyValues: 
+            _keys: 
+            _values: 
+          itemConditions:
+            reorderableList:
+              canAdd: 0
+              canRemove: 0
+              draggable: 0
+              expandable: 0
+              multipleSelection: 0
+              isExpanded: 0
+              label:
+                m_Text: 
+                m_Image: {fileID: 0}
+                m_Tooltip: 
+              headerHeight: 0
+              footerHeight: 0
+              slideEasing: 0
+              verticalSpacing: 0
+              showDefaultBackground: 0
+              elementDisplayType: 0
+              elementNameProperty: 
+              elementNameOverride: 
+              elementIcon: {fileID: 0}
+            reqReferences: {fileID: 0}
+            isExpanded: 0
+            _keyValues: 
+            _keys: 
+            _values: 
+        autoStart: 0
+        commands:
+        - dialogue: "\u597D\u5947\u602A\u2026\u2026"
+          gainItemId: 0
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+        - dialogue: "\u597D\u9806\u624B\u2026\u2026"
+          gainItemId: 0
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+        - dialogue: "\u4E0D\u904E\u88E1\u9762\u6C92\u6709\u4EFB\u4F55\u5B50\u5F48"
+          gainItemId: 0
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+        - dialogue: "\u6211\u9084\u662F\u5148\u5C07\u69CD\u6536\u597D\u5427\uFF01"
+          gainItemId: 0
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+      canMix: 0
+      mixTarget: 0
+      mixEvent: []
+    - id: 7
+      name: "\u5F48\u7C27"
+      sprite: {fileID: 21300000, guid: 4e893e44fa0c62343ba44f5b91dfa152, type: 3}
+      description: 
+      clickEvent: []
+      canMix: 1
+      mixTarget: 2
+      mixEvent:
+      - condition:
+          switchConditions:
+            reorderableList:
+              canAdd: 0
+              canRemove: 0
+              draggable: 0
+              expandable: 0
+              multipleSelection: 0
+              isExpanded: 0
+              label:
+                m_Text: 
+                m_Image: {fileID: 0}
+                m_Tooltip: 
+              headerHeight: 0
+              footerHeight: 0
+              slideEasing: 0
+              verticalSpacing: 0
+              showDefaultBackground: 0
+              elementDisplayType: 0
+              elementNameProperty: 
+              elementNameOverride: 
+              elementIcon: {fileID: 0}
+            reqReferences: {fileID: 0}
+            isExpanded: 0
+            _keyValues: 
+            _keys: 
+            _values: 
+          itemConditions:
+            reorderableList:
+              canAdd: 0
+              canRemove: 0
+              draggable: 0
+              expandable: 0
+              multipleSelection: 0
+              isExpanded: 0
+              label:
+                m_Text: 
+                m_Image: {fileID: 0}
+                m_Tooltip: 
+              headerHeight: 0
+              footerHeight: 0
+              slideEasing: 0
+              verticalSpacing: 0
+              showDefaultBackground: 0
+              elementDisplayType: 0
+              elementNameProperty: 
+              elementNameOverride: 
+              elementIcon: {fileID: 0}
+            reqReferences: {fileID: 0}
+            isExpanded: 0
+            _keyValues: 
+            _keys: 
+            _values: 
+        autoStart: 0
+        commands:
+        - dialogue: "\u6253\u706B\u6A5F\u3001\u5F48\u7C27\u2026\u2026\u597D\u4E86\uFF01"
+          gainItemId: 0
+          loseItemId: 0
+          openSwitchId: 0
+          closeSwitchId: 0
+        - dialogue: "\u4E3B\u89D2\u5C07\u9435\u7D72\u70E4\u8EDF\u91CD\u65B0\u62C9\u6210\u4ED6\u8981\u7684\u5F62\u72C0\u3002\uFF08\u5931\u53BB\u5F48\u7C27\uFF0C\u5F97\u5230\u9435\u7D72\uFF09"
+          gainItemId: 8
+          loseItemId: 7
+          openSwitchId: 0
+          closeSwitchId: 0
+    - id: 8
+      name: "\u9435\u7D72"
+      sprite: {fileID: 21300000, guid: 741464c4f4195e64c93c4e578c91f9a4, type: 3}
+      description: 
+      clickEvent: []
+      canMix: 0
+      mixTarget: 0
+      mixEvent: []
