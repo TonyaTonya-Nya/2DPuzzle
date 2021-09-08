@@ -11,6 +11,13 @@ public class EventObject : MonoBehaviour
     // 玩家點擊後，要觸發的事件點
     public List<EventPoint> eventPoint;
 
+    public bool IsRunningEvent { get; private set; }
+
+    private void Awake()
+    {
+        IsRunningEvent = false;
+    }
+
     protected void Start()
     {
         StartCoroutine(AutoEventCoroutine());
@@ -23,15 +30,20 @@ public class EventObject : MonoBehaviour
         yield return null;
         yield return null;
         // 檢查是否有auto start的事件
-        // 從最後面的事件開始向前，找到符合條件的事件點後執行
-        for (int i = eventPoint.Count - 1; i >= 0; i--)
-        {
-            if (CheckEventContition(eventPoint[i].condition) && eventPoint[i].autoStart)
+        // 永遠檢查
+        //while (true)
+        //{
+            // 從最後面的事件開始向前，找到符合條件的事件點後執行
+            for (int i = eventPoint.Count - 1; i >= 0; i--)
             {
-                StartCoroutine(RunEventCoroutine(eventPoint[i]));
-                break;
+                if (CheckEventContition(eventPoint[i].condition) && eventPoint[i].autoStart)
+                {
+                    StartCoroutine(RunEventCoroutine(eventPoint[i]));
+                    break;
+                }
             }
-        }
+            yield return null;
+        //}
     }
 
     /// <summary>
@@ -39,6 +51,10 @@ public class EventObject : MonoBehaviour
     /// </summary>
     private void OnMouseUpAsButton()
     {
+        // 執行對話中，不可操作
+        if (DialogueSystem.Instance.IsShowingDialogue())
+            return;
+
         RunEvent();
     }
 
@@ -59,6 +75,7 @@ public class EventObject : MonoBehaviour
 
     private IEnumerator RunEventCoroutine(EventPoint eventPoint)
     {
+        IsRunningEvent = true;
         foreach (EventCommand command in eventPoint.commands)
         {
             // 獲取或失去物品
@@ -71,12 +88,33 @@ public class EventObject : MonoBehaviour
             if (command.dialogue != "")
             {
                 DialogueSystem.Instance.ShowDialouge(command.dialogue);
-                yield return new WaitUntil(() => DialogueSystem.Instance.finish);
-                yield return null;
+                if (!command.showSelection)
+                {
+                    yield return new WaitUntil(() => DialogueSystem.Instance.finish);
+                    yield return null;
+                }
+            }
+            // 選項
+            if (command.showSelection)
+            {
+                SelectionBox.main.ShowSelectionBox(command.selectionText1, command.selectionText2);
+                yield return new WaitUntil(() => !SelectionBox.main.IsWaiting());
+                int index = SelectionBox.main.GetResult();
+                // 依據選項繼續執行
+                // 創建一個暫時的物件來執行選項後的動作
+                EventObject temp = Instantiate(this, new Vector3(999, 999, 999), Quaternion.identity);
+                if (index == 0)
+                    temp.eventPoint = new List<EventPoint>(command.firstSelectionEvent);
+                else
+                    temp.eventPoint = new List<EventPoint>(command.secondSelectionEvent);
+                temp.RunEvent();
+                while (temp.IsRunningEvent)
+                    yield return null;
+                Destroy(temp.gameObject);
             }
         }
         DialogueSystem.Instance.CloseDialouge();
-
+        IsRunningEvent = false;
     }
 
     public bool CheckEventContition(EventCondition condition)
@@ -93,6 +131,8 @@ public class EventObject : MonoBehaviour
             if (!PlayerData.Instance.HasItem(id))
                 return false;
         }
+        if (IsRunningEvent)
+            return false;
         return true;
     }
 

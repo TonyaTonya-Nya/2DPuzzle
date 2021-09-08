@@ -23,6 +23,8 @@ public class DialogueSystem : MonoBehaviour
     public Text dialogueText;
     public bool finish;
 
+    private IEnumerator coroutine;
+
     private void Awake()
     {
         if (instance == null)
@@ -39,20 +41,32 @@ public class DialogueSystem : MonoBehaviour
     public void ShowDialouge(string content)
     {
         finish = false;
+        if (coroutine != null && coroutine.Current != null)
+            StopCoroutine(coroutine);
         dialogueText.gameObject.SetActive(true);
-        StartCoroutine(ShowDialougeCoroutine(content));
+        coroutine = ShowDialougeCoroutine(content);
+        StartCoroutine(coroutine);
     }
 
     public IEnumerator ShowDialougeCoroutine(string content)
     {
         dialogueText.text = content;
-        while (!Input.GetMouseButtonDown(0))
+        yield return null;
+        while (!Input.GetMouseButtonUp(0))
             yield return null;
         finish = true;
+    }
+
+    public bool IsShowingDialogue()
+    {
+        return dialogueText.gameObject.activeSelf;
     }
 
     public void CloseDialouge()
     {
         dialogueText.gameObject.SetActive(false);
+        if (coroutine != null && coroutine.Current != null)
+            StopCoroutine(coroutine);
+        finish = true;
     }
 }

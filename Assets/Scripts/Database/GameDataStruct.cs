@@ -15,17 +15,6 @@ public class IntItemDhictionary : SerializableDictionaryBase<int, Item> { }
 [System.Serializable]
 public class IntStringDhictionary : SerializableDictionaryBase<int, string> { }
 
-//[System.Serializable]
-//public class EventSwitch
-//{
-//    // 開關的ID
-//    public int id;
-//    // 開關的名字
-//    public string name;
-//    // 是否啟動
-//    public bool opened;
-//}
-
 [System.Serializable]
 public class EventCondition
 {
@@ -35,15 +24,7 @@ public class EventCondition
     public IntDictionary itemConditions;
 }
 
-[System.Serializable]
-public class EventCommand
-{
-    public string dialogue;
-    public int gainItemId;
-    public int loseItemId;
-    public int openSwitchId;
-    public int closeSwitchId;
-}
+
 
 [System.Serializable]
 public class EventPoint

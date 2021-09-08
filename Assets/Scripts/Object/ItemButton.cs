@@ -36,6 +36,8 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
+        // 拖曳中的物件設為最後一個子物件，才能顯示在所有人上方
+        transform.SetAsLastSibling();
         startPosition = rectTransform.position;
         isDraging = true;
         // 拖曳，關閉偵測，避免拖曳結束後觸發點擊，同時讓拖曳到的目標物件能得到偵測

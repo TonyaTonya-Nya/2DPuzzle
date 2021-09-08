@@ -34,6 +34,10 @@ public class ItemList : MonoBehaviour
 
     public void OpenItemList()
     {
+        // 執行對話中，不可操作
+        if (DialogueSystem.Instance.IsShowingDialogue())
+            return;
+
         itemListCanvas.alpha = 1;
         itemListCanvas.interactable = true;
         itemListCanvas.blocksRaycasts = true;
