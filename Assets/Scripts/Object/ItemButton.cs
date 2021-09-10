@@ -29,9 +29,9 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public void Initialize(int id)
     {
         Item = GameDatabase.Instance.ItemDB[id];
-        gameObject.name = Item.name;
+        gameObject.name = Item.itemName;
         image.sprite = Item.sprite;
-        eventObject.eventPoint = new List<EventPoint>(Item.clickEvent);
+        //eventObject.eventPoint = new List<EventPoint>(Item.clickEvent);
     }
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
@@ -60,7 +60,7 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             {
                 if (Item.mixTarget == targetItem.id)
                 {
-                    eventObject.eventPoint = new List<EventPoint>(Item.mixEvent);
+                    //eventObject.eventPoint = new List<EventPoint>(Item.mixEvent);
                     eventObject.RunEvent();
                 }
                 else

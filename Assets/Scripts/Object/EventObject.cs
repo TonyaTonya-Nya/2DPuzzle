@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 /// <summary>
@@ -8,6 +9,9 @@ using UnityEngine;
 /// </summary>
 public class EventObject : MonoBehaviour
 {
+    // 物件的ID，由編輯器自動設定
+    public int Id { get; private set; }
+
     // 玩家點擊後，要觸發的事件點
     public List<EventPoint> eventPoint;
 
@@ -20,30 +24,31 @@ public class EventObject : MonoBehaviour
 
     protected void Start()
     {
-        StartCoroutine(AutoEventCoroutine());
+        //StartCoroutine(AutoEventCoroutine());
     }
 
     private IEnumerator AutoEventCoroutine()
     {
         // 要讓所有人初始化完畢後才執行
-        yield return null;
-        yield return null;
-        yield return null;
+        //yield return null;
+        //yield return null;
+        //yield return null;
         // 檢查是否有auto start的事件
         // 永遠檢查
         //while (true)
         //{
-            // 從最後面的事件開始向前，找到符合條件的事件點後執行
-            for (int i = eventPoint.Count - 1; i >= 0; i--)
-            {
-                if (CheckEventContition(eventPoint[i].condition) && eventPoint[i].autoStart)
-                {
-                    StartCoroutine(RunEventCoroutine(eventPoint[i]));
-                    break;
-                }
-            }
-            yield return null;
+        // 從最後面的事件開始向前，找到符合條件的事件點後執行
+        //for (int i = eventPoint.Count - 1; i >= 0; i--)
+        //{
+        //    if (CheckEventContition(eventPoint[i].condition) && eventPoint[i].autoStart)
+        //    {
+        //        StartCoroutine(RunEventCoroutine(eventPoint[i]));
+        //        break;
+        //    }
         //}
+        //yield return null;
+        //}
+        yield return null;
     }
 
     /// <summary>
@@ -76,43 +81,44 @@ public class EventObject : MonoBehaviour
     private IEnumerator RunEventCoroutine(EventPoint eventPoint)
     {
         IsRunningEvent = true;
-        foreach (EventCommand command in eventPoint.commands)
-        {
-            // 獲取或失去物品
-            PlayerData.Instance.GainItem(command.gainItemId);
-            PlayerData.Instance.LoseItem(command.loseItemId);
-            // 設置開關
-            GameDatabase.Instance.SetSwitch(command.openSwitchId, true);
-            GameDatabase.Instance.SetSwitch(command.closeSwitchId, false);
-            // 顯示對話
-            if (command.dialogue != "")
-            {
-                DialogueSystem.Instance.ShowDialouge(command.dialogue);
-                if (!command.showSelection)
-                {
-                    yield return new WaitUntil(() => DialogueSystem.Instance.finish);
-                    yield return null;
-                }
-            }
-            // 選項
-            if (command.showSelection)
-            {
-                SelectionBox.main.ShowSelectionBox(command.selectionText1, command.selectionText2);
-                yield return new WaitUntil(() => !SelectionBox.main.IsWaiting());
-                int index = SelectionBox.main.GetResult();
-                // 依據選項繼續執行
-                // 創建一個暫時的物件來執行選項後的動作
-                EventObject temp = Instantiate(this, new Vector3(999, 999, 999), Quaternion.identity);
-                if (index == 0)
-                    temp.eventPoint = new List<EventPoint>(command.firstSelectionEvent);
-                else
-                    temp.eventPoint = new List<EventPoint>(command.secondSelectionEvent);
-                temp.RunEvent();
-                while (temp.IsRunningEvent)
-                    yield return null;
-                Destroy(temp.gameObject);
-            }
-        }
+        //foreach (EventCommand command in eventPoint.commands)
+            //{
+            //    // 獲取或失去物品
+            //    PlayerData.Instance.GainItem(command.gainItemId);
+            //    PlayerData.Instance.LoseItem(command.loseItemId);
+            //    // 設置開關
+            //    GameDatabase.Instance.SetSwitch(command.openSwitchId, true);
+            //    GameDatabase.Instance.SetSwitch(command.closeSwitchId, false);
+            //    // 顯示對話
+            //    if (command.dialogue != "")
+            //    {
+            //        DialogueSystem.Instance.ShowDialouge(command.dialogue);
+            //        if (!command.showSelection)
+            //        {
+            //            yield return new WaitUntil(() => DialogueSystem.Instance.finish);
+            //            yield return null;
+            //        }
+            //    }
+            //    // 選項
+            //    if (command.showSelection)
+            //    {
+            //        SelectionBox.main.ShowSelectionBox(command.selectionText1, command.selectionText2);
+            //        yield return new WaitUntil(() => !SelectionBox.main.IsWaiting());
+            //        int index = SelectionBox.main.GetResult();
+            //        // 依據選項繼續執行
+            //        // 創建一個暫時的物件來執行選項後的動作
+            //        EventObject temp = Instantiate(this, new Vector3(999, 999, 999), Quaternion.identity);
+            //        if (index == 0)
+            //            temp.eventPoint = new List<EventPoint>(command.firstSelectionEvent);
+            //        else
+            //            temp.eventPoint = new List<EventPoint>(command.secondSelectionEvent);
+            //        temp.RunEvent();
+            //        while (temp.IsRunningEvent)
+            //            yield return null;
+            //        Destroy(temp.gameObject);
+            //    }
+            //}
+            yield return null;
         DialogueSystem.Instance.CloseDialouge();
         IsRunningEvent = false;
     }

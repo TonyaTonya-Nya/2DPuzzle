@@ -5,18 +5,6 @@ using Newtonsoft.Json;
 using System.IO;
 using UnityEditor;
 
-[CreateAssetMenu(fileName = "ItemDatabase", menuName = "Database/ItemDatabase")]
-public class ItemDatabase : ScriptableObject
-{
-    public IntItemDhictionary items;
-}
-
-[CreateAssetMenu(fileName = "SwitchDatabase", menuName = "Database/SwitchDatabase")]
-public class SwitchDatabase : ScriptableObject
-{
-    public IntStringDhictionary switches;
-}
-
 public class GameDatabase : MonoBehaviour
 {
     // 事件點的開關資料庫
@@ -26,10 +14,23 @@ public class GameDatabase : MonoBehaviour
     // 物品資料庫來源
     private ItemDatabase itemDatabase;
     // 物品資料庫
-    public Dictionary<int, Item> ItemDB { get; private set; } = new Dictionary<int, Item>();
-
-    /// 對話資料庫
-    //public Dictionary<int, Dialogue> DialogueDB { get; private set; } = new Dictionary<int, Dialogue>();
+    private Dictionary<int, Item> itemDB = new Dictionary<int, Item>();
+    public Dictionary<int, Item> ItemDB
+    {
+        get
+        {
+            if (itemDB.Count == 0)
+            {
+                foreach (KeyValuePair<int, Item> pair in itemDatabase.items)
+                    itemDB.Add(pair.Key, pair.Value);
+            }
+            return itemDB;
+        }
+        private set
+        {
+            itemDB = value;
+        }
+    }
 
     public static object syncRoot = new object();
 

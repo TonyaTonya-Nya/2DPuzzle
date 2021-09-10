@@ -34,7 +34,7 @@ public class EventPoint
     // 是否在滿足條件後立刻自動執行
     public bool autoStart;
     // 對話
-    public List<EventCommand> commands;
+    public EventCommandList commands;
 }
 
 public class Dialogue
@@ -46,11 +46,12 @@ public class Dialogue
     public string content;
 }
 
+
 [System.Serializable]
 public class Item
 {
     public int id;
-    public string name;
+    public string itemName;
     public Sprite sprite;
     public string description;
     public List<EventPoint> clickEvent;
