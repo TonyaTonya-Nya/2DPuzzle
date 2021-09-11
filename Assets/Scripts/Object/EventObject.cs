@@ -26,7 +26,6 @@ public class EventObject : MonoBehaviour
     protected void Start()
     {
         //StartCoroutine(AutoEventCoroutine());
-        Debug.Log(name + ": " + id);
     }
 
     private IEnumerator AutoEventCoroutine()

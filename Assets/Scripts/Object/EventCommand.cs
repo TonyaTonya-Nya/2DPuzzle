@@ -127,7 +127,10 @@ public class EventGainItem : EventCommand
 
     public override IEnumerator Run()
     {
-        PlayerData.Instance.GainItem(itemId);
+        if (number > 0)
+            PlayerData.Instance.GainItem(itemId);
+        else if (number < 0)
+            PlayerData.Instance.LoseItem(itemId);
         yield return null;
     }
 }

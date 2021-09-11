@@ -75,7 +75,7 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
     {
         // 所有屬性的高度
         float height = EditorGUI.GetPropertyHeight(property.FindPropertyRelative("commands"), true);
-        height += EditorGUIUtility.standardVerticalSpacing;
+
         return height;
     }
 
@@ -103,7 +103,8 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                 position.y += lastUsedHeight;
                 EventCommandPropertyDrawer drawer = new EventCommandPropertyDrawer();
                 drawer.OnGUI(position, singleCommand, new GUIContent(singleCommand.name));
-                lastUsedHeight = drawer.GetPropertyHeight(singleCommand, new GUIContent(singleCommand.name));
+                lastUsedHeight = EditorGUI.GetPropertyHeight(singleCommand, true);
+                position.y += EditorGUIUtility.standardVerticalSpacing;
 
                 GenericMenu menu = CreateMenu(false);
                 Rect buttonRect = position;
@@ -124,7 +125,7 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                 }
                 self.serializedObject.ApplyModifiedProperties();
             }
-            position.y += lastUsedHeight;
+            position.y += lastUsedHeight;// + EditorGUIUtility.standardVerticalSpacing * 8;
             DrawEditMenu(position);
             EditorGUI.indentLevel -= 1;
         }
@@ -198,7 +199,6 @@ public class EventCommandPropertyDrawerBase
     public virtual float GetPropertyHeight(SerializedProperty property)
     {
         float height = EditorGUI.GetPropertyHeight(property, true);
-        height += EditorGUIUtility.standardVerticalSpacing;
         return height;
     }
 
@@ -234,6 +234,7 @@ public class EventCommandPropertyDrawerBase
                 {
                     EditorGUI.PropertyField(position, propertyFiled);
                     lastUsedHeight = EditorGUI.GetPropertyHeight(propertyFiled, true);
+                    position.y += EditorGUIUtility.standardVerticalSpacing;
                 }
             }
             EditorGUI.indentLevel -= 1;
@@ -263,7 +264,7 @@ public class EventGainItemPropertyDrawer : EventCommandPropertyDrawerBase
                 itemNames.Add(pair.Key + ".  " + pair.Value.itemName);
             FieldInfo field = type.GetField("itemId");
             position.y += EditorHelper.NextLine;
-            field.SetValue(target, EditorGUI.Popup(position, "Item", (int)field.GetValue(target), itemNames.ToArray()));
+            field.SetValue(target, EditorGUI.Popup(position, "Item", (int)field.GetValue(target) - 1, itemNames.ToArray()) + 1);
             position.y += EditorHelper.NextLine;
             EditorGUI.PropertyField(position, property.FindPropertyRelative("number"));
             EditorGUI.indentLevel -= 1;
@@ -295,7 +296,7 @@ public class EventSetSwitchPropertyDrawer : EventCommandPropertyDrawerBase
                 switchNames.Add(pair.Key + ".  " + pair.Value.name);
             FieldInfo field = type.GetField("switchId");
             position.y += EditorHelper.NextLine;
-            field.SetValue(target, EditorGUI.Popup(position, "Switch", (int)field.GetValue(target), switchNames.ToArray()));
+            field.SetValue(target, EditorGUI.Popup(position, "Switch", (int)field.GetValue(target) - 1, switchNames.ToArray()) + 1);
             position.y += EditorHelper.NextLine;
             EditorGUI.PropertyField(position, property.FindPropertyRelative("open"));
             EditorGUI.indentLevel -= 1;
@@ -306,6 +307,15 @@ public class EventSetSwitchPropertyDrawer : EventCommandPropertyDrawerBase
 
 public class EventTransitionPropertyDrawer : EventCommandPropertyDrawerBase
 {
+    public override float GetPropertyHeight(SerializedProperty property)
+    {
+        float height = EditorGUI.GetPropertyHeight(property, true);
+        height += EditorGUIUtility.standardVerticalSpacing;
+        if (property.isExpanded)
+            height += EditorHelper.NextLine ;
+        return  height;
+    }
+
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         EventTransition target = EditorHelper.GetObj(property) as EventTransition;
@@ -337,6 +347,9 @@ public class EventTransitionPropertyDrawer : EventCommandPropertyDrawerBase
                 nowSelection = 0;
             int selection = EditorGUI.Popup(position, "Target", nowSelection, objectNames.ToArray()) + 1;
             field.SetValue(target, selection);
+            position.y += EditorHelper.NextLine;
+            Vector2 targetPosition = objects[nowSelection].transform.position;
+            EditorGUI.LabelField(position, "Now", "X: " + targetPosition.x + "\tY: " + targetPosition.y);
             position.y += EditorHelper.NextLine;
             EditorGUI.PropertyField(position, property.FindPropertyRelative("destination"));
             position.y += EditorHelper.NextLine;
