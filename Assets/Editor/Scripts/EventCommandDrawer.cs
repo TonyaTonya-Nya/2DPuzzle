@@ -250,7 +250,7 @@ public class EventGainItemPropertyDrawer : EventCommandPropertyDrawerBase
         SerializedObject serializedObject = property.serializedObject;
         Type type = target.GetType();
         serializedObject.Update();
-        position.height = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
+        position.height = EditorGUIUtility.singleLineHeight;
         // Foldout的矩形寬度縮小
         Rect rect = position;
         rect.width = GUI.skin.label.fontSize * EventCommand.GetName(type.Name).Length;
@@ -282,7 +282,7 @@ public class EventSetSwitchPropertyDrawer : EventCommandPropertyDrawerBase
         SerializedObject serializedObject = property.serializedObject;
         Type type = target.GetType();
         serializedObject.Update();
-        position.height = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
+        position.height = EditorGUIUtility.singleLineHeight;
         // Foldout的矩形寬度縮小
         Rect rect = position;
         rect.width = GUI.skin.label.fontSize * EventCommand.GetName(type.Name).Length;
@@ -304,45 +304,48 @@ public class EventSetSwitchPropertyDrawer : EventCommandPropertyDrawerBase
     }
 }
 
-//public class EventTransitionPropertyDrawer : EventCommandPropertyDrawerBase
-//{
-//    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-//    {
-//        EventTransition target = EditorHelper.GetObj(property) as EventTransition;
-//        SerializedObject serializedObject = property.serializedObject;
-//        Type type = serializedObject.targetObject.GetType();
-//        serializedObject.Update();
-//        position.height = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
-//        property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, EventCommand.GetName(type.Name), true);
-//        if (property.isExpanded)
-//        {
-//            EditorGUI.indentLevel += 1;
-//            List<string> objectNames = new List<string>();
-//            List<EventObject> objects = new List<EventObject>(GameObject.FindObjectsOfType<EventObject>());
-//            objects.Sort(delegate (EventObject x, EventObject y)
-//            {
-//                if (x.Id > y.Id) return 1;
-//                if (x.Id < y.Id) return -1;
-//                return 0;
-//            });
-//            foreach (EventObject eventObject in objects)
-//                objectNames.Add((eventObject.Id).ToString() + " " + eventObject.name);
-//            FieldInfo field = type.GetField("targetName");
-//            position.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing * 2;
-//            int nowSelection = objectNames.IndexOf((string)field.GetValue(target));
-//            if (nowSelection < 0)
-//                nowSelection = 0;
-//            int selection = EditorGUI.Popup(position, nowSelection, objectNames.ToArray());
-//            field.SetValue(target, objectNames[selection]);
-//            position.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing * 2;
-//            EditorGUI.PropertyField(position, property.FindPropertyRelative("destination"));
-//            position.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing * 2;
-//            EditorGUI.PropertyField(position, property.FindPropertyRelative("speed"), new GUIContent("Speed", "If set -1, object will transition immediately."));
-//            EditorGUI.indentLevel -= 1;
-//        }
-//        serializedObject.ApplyModifiedProperties();
-//    }
-//}
+public class EventTransitionPropertyDrawer : EventCommandPropertyDrawerBase
+{
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    {
+        EventTransition target = EditorHelper.GetObj(property) as EventTransition;
+        SerializedObject serializedObject = property.serializedObject;
+        Type type = target.GetType();
+        serializedObject.Update();
+        position.height = EditorGUIUtility.singleLineHeight;
+        // Foldout的矩形寬度縮小
+        Rect rect = position;
+        rect.width = GUI.skin.label.fontSize * EventCommand.GetName(type.Name).Length;
+        property.isExpanded = EditorGUI.Foldout(rect, property.isExpanded, EventCommand.GetName(type.Name), true);
+        if (property.isExpanded)
+        {
+            EditorGUI.indentLevel += 1;
+            List<string> objectNames = new List<string>();
+            List<EventObject> objects = new List<EventObject>(GameObject.FindObjectsOfType<EventObject>());
+            objects.Sort(delegate (EventObject x, EventObject y)
+            {
+                if (x.id > y.id) return 1;
+                if (x.id < y.id) return -1;
+                return 0;
+            });
+            foreach (EventObject eventObject in objects)
+                objectNames.Add((eventObject.id).ToString() + " " + eventObject.name);
+            FieldInfo field = type.GetField("targetId");
+            position.y += EditorHelper.NextLine;
+            int nowSelection = objects.FindIndex(x => x.id == (int)field.GetValue(target));
+            if (nowSelection < 0)
+                nowSelection = 0;
+            int selection = EditorGUI.Popup(position, "Target", nowSelection, objectNames.ToArray()) + 1;
+            field.SetValue(target, selection);
+            position.y += EditorHelper.NextLine;
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("destination"));
+            position.y += EditorHelper.NextLine;
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("speed"), new GUIContent("Speed", "If 0, object will transition immediately."));
+            EditorGUI.indentLevel -= 1;
+        }
+        serializedObject.ApplyModifiedProperties();
+    }
+}
 
 //public class EventSelectionPropertyDrawer : EventCommandPropertyDrawerBase
 //{

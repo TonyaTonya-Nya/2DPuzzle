@@ -113,7 +113,9 @@ public class EventDialogue : EventCommand
 
     public override IEnumerator Run()
     {
-        Debug.Log(content);
+        DialogueSystem.Instance.ShowDialouge(content);
+        yield return new WaitUntil(() => DialogueSystem.Instance.finish);
+        DialogueSystem.Instance.CloseDialouge();
         yield return null;
     }
 }
@@ -125,6 +127,7 @@ public class EventGainItem : EventCommand
 
     public override IEnumerator Run()
     {
+        PlayerData.Instance.GainItem(itemId);
         yield return null;
     }
 }
@@ -136,19 +139,36 @@ public class EventSetSwitch : EventCommand
 
     public override IEnumerator Run()
     {
+        GameDatabase.Instance.SetSwitch(switchId, open);
         yield return null;
     }
 }
 
 public class EventTransition : EventCommand
 {
-    public string targetName;
+    public int targetId;
     public Vector2 destination;
     public float speed;
 
     public override IEnumerator Run()
     {
-        
+        List<EventObject> eventObjects = new List<EventObject>(GameObject.FindObjectsOfType<EventObject>());
+        EventObject target = eventObjects.Find(x => x.id == targetId);
+        if (target != null)
+        {
+            Vector2 origin = target.transform.position;
+            Vector2 vector = (destination - origin).normalized;
+            if (speed > 0)
+            {
+                while (Vector2.Distance(origin, destination) >= speed * Time.deltaTime)
+                {
+                    target.transform.Translate(vector * speed * Time.deltaTime);
+                    yield return null;
+                    origin = target.transform.position;
+                }
+            }
+            target.transform.position = destination;
+        }
         yield return null;
     }
 }

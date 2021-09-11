@@ -10,7 +10,8 @@ using UnityEngine;
 public class EventObject : MonoBehaviour
 {
     // 物件的ID，由編輯器自動設定
-    public int Id { get; private set; }
+    [SerializeField]
+    public int id;
 
     // 玩家點擊後，要觸發的事件點
     public List<EventPoint> eventPoint;
@@ -25,6 +26,7 @@ public class EventObject : MonoBehaviour
     protected void Start()
     {
         //StartCoroutine(AutoEventCoroutine());
+        Debug.Log(name + ": " + id);
     }
 
     private IEnumerator AutoEventCoroutine()

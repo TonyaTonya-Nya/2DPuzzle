@@ -40,10 +40,11 @@ MonoBehaviour:
     _values:
     - id: 0
       itemName: "\u5916\u5957"
-      sprite: {fileID: 0}
+      sprite: {fileID: 21300000, guid: 7031bd877687c1e48ae7ff70bcf4b208, type: 3}
       description: 
       clickEvent:
-      - condition:
+      - autoStart: 0
+        condition:
           switchConditions:
             reorderableList:
               canAdd: 0
@@ -96,14 +97,13 @@ MonoBehaviour:
             _keyValues: 
             _keys: 
             _values: 
-        autoStart: 0
         commands:
           commands: []
-          test: 0
       canMix: 0
       mixTarget: 0
       mixEvent:
-      - condition:
+      - autoStart: 0
+        condition:
           switchConditions:
             reorderableList:
               canAdd: 1
@@ -156,11 +156,10 @@ MonoBehaviour:
             _keyValues: 
             _keys: 
             _values: 
-        autoStart: 0
         commands:
           commands: []
-          test: 0
-      - condition:
+      - autoStart: 0
+        condition:
           switchConditions:
             reorderableList:
               canAdd: 0
@@ -213,11 +212,10 @@ MonoBehaviour:
             _keyValues: 
             _keys: 
             _values: 
-        autoStart: 0
         commands:
           commands: []
-          test: 0
-      - condition:
+      - autoStart: 0
+        condition:
           switchConditions:
             reorderableList:
               canAdd: 0
@@ -270,11 +268,10 @@ MonoBehaviour:
             _keyValues: 
             _keys: 
             _values: 
-        autoStart: 0
         commands:
           commands: []
-          test: 0
-      - condition:
+      - autoStart: 0
+        condition:
           switchConditions:
             reorderableList:
               canAdd: 0
@@ -327,11 +324,10 @@ MonoBehaviour:
             _keyValues: 
             _keys: 
             _values: 
-        autoStart: 0
         commands:
           commands: []
-          test: 0
-      - condition:
+      - autoStart: 0
+        condition:
           switchConditions:
             reorderableList:
               canAdd: 0
@@ -384,10 +380,8 @@ MonoBehaviour:
             _keyValues: 
             _keys: 
             _values: 
-        autoStart: 0
         commands:
           commands: []
-          test: 0
     - id: 0
       itemName: 
       sprite: {fileID: 0}
@@ -452,7 +446,8 @@ MonoBehaviour:
       canMix: 0
       mixTarget: 0
       mixEvent:
-      - condition:
+      - autoStart: 0
+        condition:
           switchConditions:
             reorderableList:
               canAdd: 0
@@ -505,7 +500,7 @@ MonoBehaviour:
             _keyValues: 
             _keys: 
             _values: 
-        autoStart: 0
         commands:
           commands: []
-          test: 0
+  references:
+    version: 1

@@ -60,8 +60,9 @@ public class EventObjectEditor : Editor
 
     private void SetId()
     {
+        serializedObject.Update();
         EventObject self = (EventObject)target;
-        PropertyInfo propertyinfo = self.GetType().GetProperty("Id");
+        FieldInfo propertyinfo = self.GetType().GetField("id");
         // 大於0表示已經設定過了
         if ((int)propertyinfo.GetValue(self) > 0)
             return;
@@ -69,9 +70,9 @@ public class EventObjectEditor : Editor
         propertyinfo.SetValue(self, eventObjects.Count + 1);
         eventObjects.Sort(delegate (EventObject x, EventObject y)
         {
-            if (x.Id > y.Id)
+            if (x.id > y.id)
                 return 1;
-            else if (x.Id < y.Id)
+            else if (x.id < y.id)
                 return -1;
             else
                 return 0;
@@ -80,13 +81,14 @@ public class EventObjectEditor : Editor
         int id = 0;
         foreach (EventObject eventObject in eventObjects)
         {
-            if (eventObject.Id - id != 1)
+            if (eventObject.id - id != 1)
             {
                 propertyinfo.SetValue(self, id + 1);
                 break;
             }
-            id = eventObject.Id;
+            id = eventObject.id;
         }
+        serializedObject.ApplyModifiedProperties();
     }
 
     public override void OnInspectorGUI()
@@ -95,7 +97,7 @@ public class EventObjectEditor : Editor
 
         serializedObject.Update();
 
-        EditorGUILayout.LabelField("ID: " + ((EventObject)target).Id);
+        EditorGUILayout.LabelField("ID: " + ((EventObject)target).id);
 
         propertyEventPoint = serializedObject.FindProperty("eventPoint");
         EditorGUILayout.PropertyField(propertyEventPoint, false);

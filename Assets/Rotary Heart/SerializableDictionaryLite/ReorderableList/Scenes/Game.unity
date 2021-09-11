@@ -1000,6 +1000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4367178d24a6247b5f465d6725d670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 1
   eventPoint:
   - autoStart: 0
     condition:
@@ -1058,12 +1059,25 @@ MonoBehaviour:
     commands:
       commands:
       - id: 0
+      - id: 1
+      - id: 2
   references:
     version: 1
     00000000:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: asda
+        content: "\u79FB\u52D5"
+    00000001:
+      type: {class: EventTransition, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: 2
+        destination: {x: -12, y: 8.14}
+        speed: 5
+    00000002:
+      type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
+      data:
+        itemId: 0
+        number: 0
 --- !u!61 &690910584
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2127,3 +2141,19 @@ MonoBehaviour:
   itemListCanvas: {fileID: 1667912245}
   ItemButtonPrefab: {fileID: 4030150920337550468, guid: 211802aa44181c2439a211481862982b,
     type: 3}
+--- !u!114 &1916579482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916579473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4367178d24a6247b5f465d6725d670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2
+  eventPoint: []
+  references:
+    version: 1
