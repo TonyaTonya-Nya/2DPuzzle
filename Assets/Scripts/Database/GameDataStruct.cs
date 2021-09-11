@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using RotaryHeart.Lib.SerializableDictionary;
+using System;
 
 [System.Serializable]
 public class IntDictionary : SerializableDictionaryBase<int, int> { }
@@ -29,11 +30,11 @@ public class EventCondition
 [System.Serializable]
 public class EventPoint
 {
-    // 啟動條件
-    public EventCondition condition;
     // 是否在滿足條件後立刻自動執行
     public bool autoStart;
-    // 對話
+    // 啟動條件
+    public EventCondition condition;
+    // 指令
     public EventCommandList commands;
 }
 

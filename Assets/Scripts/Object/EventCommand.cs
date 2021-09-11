@@ -7,21 +7,67 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 [System.Serializable]
-public class EventCommandList
+public class EventCommandList : IList<EventCommand>
 {
+    [SerializeReference]
     public List<EventCommand> commands = new List<EventCommand>();
-    public int test;
+
+    public EventCommand this[int index] { get => commands[index]; set => commands[index] = value; }
+
+    public int Count => commands.Count;
+
+    public bool IsReadOnly => false;
 
     public void Add(Type type)
     {
-        EventCommand newCommand = (EventCommand)ScriptableObject.CreateInstance(type);
+        EventCommand newCommand = (EventCommand)Activator.CreateInstance(type);
         commands.Add(newCommand);
     }
 
-    public void InsertAt(int index, Type type)
+    public void Add(EventCommand item)
     {
-        EventCommand newCommand = (EventCommand)ScriptableObject.CreateInstance(type);
+        commands.Add(item);
+    }
+
+    public void Clear()
+    {
+        commands.Clear();
+    }
+
+    public bool Contains(EventCommand item)
+    {
+        return commands.Contains(item);
+    }
+
+    public void CopyTo(EventCommand[] array, int arrayIndex)
+    {
+        commands.CopyTo(array, arrayIndex);
+    }
+
+    public IEnumerator<EventCommand> GetEnumerator()
+    {
+        return commands.GetEnumerator();
+    }
+
+    public int IndexOf(EventCommand item)
+    {
+        return commands.IndexOf(item);
+    }
+
+    public void Insert(int index, EventCommand item)
+    {
+        commands.Insert(index, item);
+    }
+
+    public void Insert(int index, Type type)
+    {
+        EventCommand newCommand = (EventCommand)Activator.CreateInstance(type);
         commands.Insert(index, newCommand);
+    }
+
+    public bool Remove(EventCommand item)
+    {
+        return commands.Remove(item);
     }
 
     public void RemoveAt(int index)
@@ -29,9 +75,15 @@ public class EventCommandList
         if (index < commands.Count)
             commands.RemoveAt(index);
     }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return ((IEnumerable)commands).GetEnumerator();
+    }
 }
 
-public abstract class EventCommand : ScriptableObject
+[System.Serializable]
+public abstract class EventCommand
 {
     public readonly static Dictionary<string, Type> types;
 
@@ -61,6 +113,7 @@ public class EventDialogue : EventCommand
 
     public override IEnumerator Run()
     {
+        Debug.Log(content);
         yield return null;
     }
 }

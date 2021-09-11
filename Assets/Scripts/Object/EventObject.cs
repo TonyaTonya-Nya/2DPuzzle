@@ -81,45 +81,8 @@ public class EventObject : MonoBehaviour
     private IEnumerator RunEventCoroutine(EventPoint eventPoint)
     {
         IsRunningEvent = true;
-        //foreach (EventCommand command in eventPoint.commands)
-            //{
-            //    // 獲取或失去物品
-            //    PlayerData.Instance.GainItem(command.gainItemId);
-            //    PlayerData.Instance.LoseItem(command.loseItemId);
-            //    // 設置開關
-            //    GameDatabase.Instance.SetSwitch(command.openSwitchId, true);
-            //    GameDatabase.Instance.SetSwitch(command.closeSwitchId, false);
-            //    // 顯示對話
-            //    if (command.dialogue != "")
-            //    {
-            //        DialogueSystem.Instance.ShowDialouge(command.dialogue);
-            //        if (!command.showSelection)
-            //        {
-            //            yield return new WaitUntil(() => DialogueSystem.Instance.finish);
-            //            yield return null;
-            //        }
-            //    }
-            //    // 選項
-            //    if (command.showSelection)
-            //    {
-            //        SelectionBox.main.ShowSelectionBox(command.selectionText1, command.selectionText2);
-            //        yield return new WaitUntil(() => !SelectionBox.main.IsWaiting());
-            //        int index = SelectionBox.main.GetResult();
-            //        // 依據選項繼續執行
-            //        // 創建一個暫時的物件來執行選項後的動作
-            //        EventObject temp = Instantiate(this, new Vector3(999, 999, 999), Quaternion.identity);
-            //        if (index == 0)
-            //            temp.eventPoint = new List<EventPoint>(command.firstSelectionEvent);
-            //        else
-            //            temp.eventPoint = new List<EventPoint>(command.secondSelectionEvent);
-            //        temp.RunEvent();
-            //        while (temp.IsRunningEvent)
-            //            yield return null;
-            //        Destroy(temp.gameObject);
-            //    }
-            //}
-            yield return null;
-        DialogueSystem.Instance.CloseDialouge();
+        foreach (EventCommand eventCommand in eventPoint.commands)
+            yield return eventCommand.Run();
         IsRunningEvent = false;
     }
 

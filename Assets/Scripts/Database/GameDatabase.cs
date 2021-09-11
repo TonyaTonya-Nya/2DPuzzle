@@ -22,7 +22,7 @@ public class GameDatabase : MonoBehaviour
             if (itemDB.Count == 0)
             {
                 foreach (KeyValuePair<int, Item> pair in itemDatabase.items)
-                    itemDB.Add(pair.Key, pair.Value);
+                    itemDB[pair.Key] = pair.Value;
             }
             return itemDB;
         }
@@ -65,7 +65,7 @@ public class GameDatabase : MonoBehaviour
     {
         // 物品資料庫
         foreach (KeyValuePair<int, Item> pair in itemDatabase.items)
-            ItemDB.Add(pair.Key, pair.Value);
+            ItemDB[pair.Key] = pair.Value;
     }
 
     /// <summary>

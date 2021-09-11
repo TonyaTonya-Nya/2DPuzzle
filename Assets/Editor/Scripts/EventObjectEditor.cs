@@ -9,20 +9,54 @@ using System.Linq;
 using UnityEditor.SceneManagement;
 using System.Reflection;
 
-[CustomEditor(typeof(EventObject))]
-public class EventObjectEditor : Editor
+public class EventObjectCreator
 {
-    private SerializedProperty propertyEventPoint;
-
-    public Dictionary<int, List<EventCommand>> eventCommands;
-
-    [MenuItem("GameObject/Event Object", false, 10)]
-    public static void CreateTextArea()
+    [MenuItem("GameObject/Event Object/Empty", false, 10)]
+    public static void CreateEmptyInstance()
     {
         GameObject go = new GameObject("Event Object");
         go.AddComponent<EventObject>();
         Selection.activeObject = go;
     }
+
+    [MenuItem("GameObject/Event Object/Box Collider", false, 10)]
+    public static void CreateBoxInstance()
+    {
+        CreateEventObject<BoxCollider2D>();
+    }
+
+    [MenuItem("GameObject/Event Object/Circle Collider", false, 10)]
+    public static void CreateCircleInstance()
+    {
+        CreateEventObject<CircleCollider2D>();
+    }
+
+    [MenuItem("GameObject/Event Object/Capsule Collider", false, 10)]
+    public static void CreateCapsuleInstance()
+    {
+        CreateEventObject<CapsuleCollider2D>();
+    }
+
+    [MenuItem("GameObject/Event Object/Polygon Collider", false, 10)]
+    public static void CreatePolygonInstance()
+    {
+        CreateEventObject<PolygonCollider2D>();
+    }
+
+    public static void CreateEventObject<T>() where T : Collider2D
+    {
+        GameObject go = new GameObject("Event Object");
+        go.AddComponent<T>();
+        go.GetComponent<T>().isTrigger = true;
+        go.AddComponent<EventObject>();
+        Selection.activeObject = go;
+    }
+}
+
+[CustomEditor(typeof(EventObject))]
+public class EventObjectEditor : Editor
+{
+    private SerializedProperty propertyEventPoint;
 
     private void SetId()
     {
@@ -57,9 +91,6 @@ public class EventObjectEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        if (eventCommands == null)
-            eventCommands = new Dictionary<int, List<EventCommand>>();
-
         SetId();
 
         serializedObject.Update();
@@ -72,11 +103,11 @@ public class EventObjectEditor : Editor
         EditorGUI.indentLevel += 1;
         if (propertyEventPoint.isExpanded)
         {
-            for (int i = 0; i < propertyEventPoint.arraySize; i++)
-            {
-                DrawEventPoint(i);
-                EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
-            }
+            serializedObject.Update();
+            DrawEventPoint();
+            serializedObject.ApplyModifiedProperties();
+
+            serializedObject.Update();
             EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("Add New Event Point"))
                 propertyEventPoint.InsertArrayElementAtIndex(propertyEventPoint.arraySize);
@@ -86,53 +117,54 @@ public class EventObjectEditor : Editor
                     propertyEventPoint.DeleteArrayElementAtIndex(propertyEventPoint.arraySize - 1);
             }
             EditorGUILayout.EndHorizontal();
+            serializedObject.ApplyModifiedProperties();
         }
         EditorGUI.indentLevel -= 1;
 
         serializedObject.ApplyModifiedProperties();
     }
 
-    public void DrawEventPoint(int index)
+    public void DrawEventPoint()
     {
-        SerializedProperty property = propertyEventPoint.GetArrayElementAtIndex(index);
-
-        EditorGUILayout.BeginHorizontal();
-
-        EditorGUILayout.PropertyField(property, new GUIContent((index + 1).ToString()), false);
-
-        if (GUILayout.Button("Insert previous"))
-            propertyEventPoint.InsertArrayElementAtIndex(index);
-        if (GUILayout.Button("Insert next"))
-            propertyEventPoint.InsertArrayElementAtIndex(index + 1);
-        if (GUILayout.Button("Delete"))
+        for (int i = 0; i < propertyEventPoint.arraySize; i++)
         {
-            if (propertyEventPoint.arraySize > 0)
-                propertyEventPoint.DeleteArrayElementAtIndex(index);
-            return;
+            // EventPoint
+            SerializedProperty property = propertyEventPoint.GetArrayElementAtIndex(i);
+
+            EditorGUILayout.BeginHorizontal();
+
+            property.isExpanded = EditorGUILayout.Foldout(property.isExpanded, new GUIContent((i + 1).ToString()), true);
+
+            if (GUILayout.Button("Insert previous"))
+            {
+                propertyEventPoint.InsertArrayElementAtIndex(i);
+                return;
+            }
+            if (GUILayout.Button("Insert next"))
+            {
+                propertyEventPoint.InsertArrayElementAtIndex(i + 1);
+                return;
+            }
+            if (GUILayout.Button("Delete"))
+            {
+                if (propertyEventPoint.arraySize > 0)
+                    propertyEventPoint.DeleteArrayElementAtIndex(i);
+                return;
+            }
+
+
+            EditorGUILayout.EndHorizontal();
+
+            if (property.isExpanded)
+            {
+                EditorGUI.indentLevel += 1;
+                EditorGUILayout.PropertyField(property.FindPropertyRelative("autoStart"));
+                EditorGUILayout.PropertyField(property.FindPropertyRelative("condition"), true);
+                EditorGUILayout.PropertyField(property.FindPropertyRelative("commands"), true);
+                EditorGUI.indentLevel -= 1;
+            }
+
+            EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
         }
-
-        EditorGUILayout.EndHorizontal();
-
-        if (!eventCommands.ContainsKey(index))
-            eventCommands[index] = new List<EventCommand>();
-
-        if (property.isExpanded)
-        {
-            EditorGUI.indentLevel += 1;
-            EditorGUILayout.PropertyField(property.FindPropertyRelative("autoStart"), new GUIContent("Auto Start", "滿足條件後是否自動執行"));
-            DrawEventCondition(property.FindPropertyRelative("condition"));
-            DrawEventCommands(property.FindPropertyRelative("commands"));
-            EditorGUI.indentLevel -= 1;
-        }
-    }
-
-    public void DrawEventCondition(SerializedProperty condition)
-    {
-        EditorGUILayout.PropertyField(condition, new GUIContent("Condition", "事件點的條件，滿足後才可觸發"));
-    }
-
-    public void DrawEventCommands(SerializedProperty commands)
-    {
-        EditorGUILayout.PropertyField(commands, new GUIContent("Commands", "事件指令"));
     }
 }
