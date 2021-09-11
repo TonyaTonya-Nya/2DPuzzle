@@ -970,136 +970,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.6, y: 0.3286152}
   m_EdgeRadius: 0
---- !u!1 &690910582
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 690910585}
-  - component: {fileID: 690910584}
-  - component: {fileID: 690910583}
-  m_Layer: 0
-  m_Name: Event Object
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &690910583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690910582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce4367178d24a6247b5f465d6725d670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 1
-  eventPoint:
-  - autoStart: 0
-    condition:
-      switchConditions:
-        reorderableList:
-          canAdd: 1
-          canRemove: 1
-          draggable: 1
-          expandable: 1
-          multipleSelection: 1
-          isExpanded: 0
-          label:
-            m_Text: Keys
-            m_Image: {fileID: 0}
-            m_Tooltip: 
-          headerHeight: 18
-          footerHeight: 13
-          slideEasing: 0.15
-          verticalSpacing: 2
-          showDefaultBackground: 1
-          elementDisplayType: 0
-          elementNameProperty: 
-          elementNameOverride: 
-          elementIcon: {fileID: 0}
-        reqReferences: {fileID: 0}
-        isExpanded: 0
-        _keyValues: 
-        _keys: 
-        _values: 
-      itemConditions:
-        reorderableList:
-          canAdd: 1
-          canRemove: 1
-          draggable: 1
-          expandable: 1
-          multipleSelection: 1
-          isExpanded: 0
-          label:
-            m_Text: Keys
-            m_Image: {fileID: 0}
-            m_Tooltip: 
-          headerHeight: 18
-          footerHeight: 13
-          slideEasing: 0.15
-          verticalSpacing: 2
-          showDefaultBackground: 1
-          elementDisplayType: 0
-          elementNameProperty: 
-          elementNameOverride: 
-          elementIcon: {fileID: 0}
-        reqReferences: {fileID: 0}
-        isExpanded: 0
-        _keyValues: 
-        _keys: 
-        _values: 
-    commands:
-      commands: []
-  references:
-    version: 1
---- !u!61 &690910584
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690910582}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.16154099}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.9105053}
-  m_EdgeRadius: 0
---- !u!4 &690910585
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 690910582}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.52, y: 8.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &693703495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,6 +1226,157 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &967589071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 967589072}
+  - component: {fileID: 967589074}
+  - component: {fileID: 967589073}
+  m_Layer: 0
+  m_Name: Coat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &967589072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967589071}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.349, y: 0.934, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1786511231}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &967589073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967589071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4367178d24a6247b5f465d6725d670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
+  eventPoint:
+  - autoStart: 0
+    condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 0
+          canRemove: 0
+          draggable: 0
+          expandable: 0
+          multipleSelection: 0
+          isExpanded: 0
+          label:
+            m_Text: 
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 0
+          footerHeight: 0
+          slideEasing: 0
+          verticalSpacing: 0
+          showDefaultBackground: 0
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+      itemConditions:
+        reorderableList:
+          canAdd: 0
+          canRemove: 0
+          draggable: 0
+          expandable: 0
+          multipleSelection: 0
+          isExpanded: 0
+          label:
+            m_Text: 
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 0
+          footerHeight: 0
+          slideEasing: 0
+          verticalSpacing: 0
+          showDefaultBackground: 0
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    commands:
+      commands:
+      - id: 0
+      - id: 1
+      - id: 2
+      - id: 3
+  references:
+    version: 1
+    00000000:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u9019\u88E1\u6709\u4EF6\u8863\u670D\u2026\u2026"
+    00000001:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u8CEA\u5730\u4E0D\u932F\uFF0C\u883B\u8212\u670D\u7684\u3002\uFF08\u5F97\u5230\u5916\u5957\uFF09"
+    00000002:
+      type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
+      data:
+        itemId: 1
+        number: 1
+    00000003:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u53E3\u888B\u88E1\u4F3C\u4E4E\u653E\u8457\u4E9B\u4EC0\u9EBC\uFF1F"
+--- !u!61 &967589074
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967589071}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.022734642, y: -0.16767025}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.51119804, y: 0.6646595}
+  m_EdgeRadius: 0
 --- !u!1 &995552330
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,6 +2039,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1651817886}
+  - {fileID: 1911676162}
+  - {fileID: 967589072}
+  - {fileID: 1982633350}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2099,6 +2123,196 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795843973}
   m_CullTransparentMesh: 0
+--- !u!1 &1911676161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1911676162}
+  - component: {fileID: 1911676163}
+  m_Layer: 0
+  m_Name: Start Event
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1911676162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911676161}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12, y: -9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1786511231}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1911676163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911676161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4367178d24a6247b5f465d6725d670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 3
+  eventPoint:
+  - autoStart: 1
+    condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 0
+          canRemove: 0
+          draggable: 0
+          expandable: 0
+          multipleSelection: 0
+          isExpanded: 0
+          label:
+            m_Text: 
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 0
+          footerHeight: 0
+          slideEasing: 0
+          verticalSpacing: 0
+          showDefaultBackground: 0
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+      itemConditions:
+        reorderableList:
+          canAdd: 0
+          canRemove: 0
+          draggable: 0
+          expandable: 0
+          multipleSelection: 0
+          isExpanded: 0
+          label:
+            m_Text: 
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 0
+          footerHeight: 0
+          slideEasing: 0
+          verticalSpacing: 0
+          showDefaultBackground: 0
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    commands:
+      commands:
+      - id: 0
+      - id: 1
+      - id: 2
+      - id: 3
+      - id: 4
+      - id: 5
+  - autoStart: 0
+    condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 1
+        _keyValues: 01000000
+        _keys: 01000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    commands:
+      commands: []
+  references:
+    version: 1
+    00000000:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\u5F9E\u623F\u88E1\u9192\u4F86"
+    00000001:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u6211\u7684\u982D\u597D\u75DB"
+    00000002:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u8166\u888B\u88E1\u4E5F\u662F\u4E00\u5718\u4E82\uFF0C\u9019\u88E1\u662F\u54EA\u88E1\uFF1F\u70BA\u4EC0\u9EBC\u6211\u4EC0\u9EBC\u4E5F\u60F3\u4E0D\u8D77\u4F86\u4E86\uFF1F"
+    00000003:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u6211\u662F\u525B\u88AB\u4EBA\u6253\u904E\u55CE\uFF1F\u662F\u8AB0\u505A\u7684\uFF1F\u53C8\u662F\u70BA\u4E86\u4EC0\u9EBC\u624D\u6703\u5C07\u6211\u6293\u4F86\u9019\u88E1\uFF1F"
+    00000004:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u597D\u51B7\uFF0C\u73FE\u5728\u662F\u51AC\u5929\u55CE\uFF1F"
+    00000005:
+      type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
+      data:
+        switchId: 1
+        open: 1
 --- !u!1 &1916579473 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1719432917000318, guid: d58e58070863f4a4e9a88c181489ff86,
@@ -2139,3 +2353,149 @@ MonoBehaviour:
   eventPoint: []
   references:
     version: 1
+--- !u!1 &1982633349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1982633350}
+  - component: {fileID: 1982633352}
+  - component: {fileID: 1982633351}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1982633350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982633349}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.497, y: -0.665, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1786511231}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1982633351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982633349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4367178d24a6247b5f465d6725d670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4
+  eventPoint:
+  - autoStart: 0
+    condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    commands:
+      commands:
+      - id: 0
+      - id: 1
+      - id: 2
+  references:
+    version: 1
+    00000000:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\u8D70\u5411\u9580\u908A\uFF0C\u8F49\u4E86\u8F49\u9580\u628A"
+    00000001:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u9396\u4E0A\u4E86\u554A\u3002"
+    00000002:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u6211\u53EF\u4E0D\u60F3\u7528\u6211\u9019\u8EAB\u5FEB\u88AB\u62C6\u6389\u7684\u6B98\u8EC0\u53BB\u649E\u9019\u6247\u9023\u6750\u8CEA\u662F\u4EC0\u9EBC\u6211\u90FD\u4E0D\u6E05\u695A
+          \u7684\u9580\u3002"
+--- !u!61 &1982633352
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982633349}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.006944895, y: 0.0208354}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0879722, y: 1.9954767}
+  m_EdgeRadius: 0

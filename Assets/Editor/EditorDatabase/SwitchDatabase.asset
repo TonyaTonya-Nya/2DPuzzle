@@ -38,19 +38,19 @@ MonoBehaviour:
     _keyValues: 0100000002000000030000000400000005000000060000000700000008000000
     _keys: 0100000002000000030000000400000005000000060000000700000008000000
     _values:
-    - id: 0
+    - id: 1
+      name: "\u958B\u5834"
+    - id: 2
       name: 
-    - id: 0
+    - id: 3
       name: 
-    - id: 0
+    - id: 4
       name: 
-    - id: 0
+    - id: 5
       name: 
-    - id: 0
+    - id: 6
       name: 
-    - id: 0
+    - id: 7
       name: 
-    - id: 0
-      name: 
-    - id: 0
+    - id: 8
       name: 

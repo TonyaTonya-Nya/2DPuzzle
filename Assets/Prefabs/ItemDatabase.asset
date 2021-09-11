@@ -38,7 +38,7 @@ MonoBehaviour:
     _keyValues: 010000000200000003000000040000000500000006000000070000000800000009000000
     _keys: 010000000200000003000000040000000500000006000000070000000800000009000000
     _values:
-    - id: 0
+    - id: 1
       itemName: "\u5916\u5957"
       sprite: {fileID: 21300000, guid: 7031bd877687c1e48ae7ff70bcf4b208, type: 3}
       description: 
@@ -98,301 +98,27 @@ MonoBehaviour:
             _keys: 
             _values: 
         commands:
-          commands: []
+          commands:
+          - id: 0
+          - id: 1
+          - id: 2
+          - id: 3
+          - id: 4
+          - id: 5
       canMix: 0
       mixTarget: 0
-      mixEvent:
-      - autoStart: 0
-        condition:
-          switchConditions:
-            reorderableList:
-              canAdd: 1
-              canRemove: 1
-              draggable: 1
-              expandable: 1
-              multipleSelection: 1
-              isExpanded: 0
-              label:
-                m_Text: Keys
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              headerHeight: 18
-              footerHeight: 13
-              slideEasing: 0.15
-              verticalSpacing: 2
-              showDefaultBackground: 1
-              elementDisplayType: 0
-              elementNameProperty: 
-              elementNameOverride: 
-              elementIcon: {fileID: 0}
-            reqReferences: {fileID: 0}
-            isExpanded: 0
-            _keyValues: 
-            _keys: 
-            _values: 
-          itemConditions:
-            reorderableList:
-              canAdd: 1
-              canRemove: 1
-              draggable: 1
-              expandable: 1
-              multipleSelection: 1
-              isExpanded: 0
-              label:
-                m_Text: Keys
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              headerHeight: 18
-              footerHeight: 13
-              slideEasing: 0.15
-              verticalSpacing: 2
-              showDefaultBackground: 1
-              elementDisplayType: 0
-              elementNameProperty: 
-              elementNameOverride: 
-              elementIcon: {fileID: 0}
-            reqReferences: {fileID: 0}
-            isExpanded: 0
-            _keyValues: 
-            _keys: 
-            _values: 
-        commands:
-          commands: []
-      - autoStart: 0
-        condition:
-          switchConditions:
-            reorderableList:
-              canAdd: 0
-              canRemove: 0
-              draggable: 0
-              expandable: 0
-              multipleSelection: 0
-              isExpanded: 0
-              label:
-                m_Text: 
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              headerHeight: 0
-              footerHeight: 0
-              slideEasing: 0
-              verticalSpacing: 0
-              showDefaultBackground: 0
-              elementDisplayType: 0
-              elementNameProperty: 
-              elementNameOverride: 
-              elementIcon: {fileID: 0}
-            reqReferences: {fileID: 0}
-            isExpanded: 0
-            _keyValues: 
-            _keys: 
-            _values: 
-          itemConditions:
-            reorderableList:
-              canAdd: 0
-              canRemove: 0
-              draggable: 0
-              expandable: 0
-              multipleSelection: 0
-              isExpanded: 0
-              label:
-                m_Text: 
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              headerHeight: 0
-              footerHeight: 0
-              slideEasing: 0
-              verticalSpacing: 0
-              showDefaultBackground: 0
-              elementDisplayType: 0
-              elementNameProperty: 
-              elementNameOverride: 
-              elementIcon: {fileID: 0}
-            reqReferences: {fileID: 0}
-            isExpanded: 0
-            _keyValues: 
-            _keys: 
-            _values: 
-        commands:
-          commands: []
-      - autoStart: 0
-        condition:
-          switchConditions:
-            reorderableList:
-              canAdd: 0
-              canRemove: 0
-              draggable: 0
-              expandable: 0
-              multipleSelection: 0
-              isExpanded: 0
-              label:
-                m_Text: 
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              headerHeight: 0
-              footerHeight: 0
-              slideEasing: 0
-              verticalSpacing: 0
-              showDefaultBackground: 0
-              elementDisplayType: 0
-              elementNameProperty: 
-              elementNameOverride: 
-              elementIcon: {fileID: 0}
-            reqReferences: {fileID: 0}
-            isExpanded: 0
-            _keyValues: 
-            _keys: 
-            _values: 
-          itemConditions:
-            reorderableList:
-              canAdd: 0
-              canRemove: 0
-              draggable: 0
-              expandable: 0
-              multipleSelection: 0
-              isExpanded: 0
-              label:
-                m_Text: 
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              headerHeight: 0
-              footerHeight: 0
-              slideEasing: 0
-              verticalSpacing: 0
-              showDefaultBackground: 0
-              elementDisplayType: 0
-              elementNameProperty: 
-              elementNameOverride: 
-              elementIcon: {fileID: 0}
-            reqReferences: {fileID: 0}
-            isExpanded: 0
-            _keyValues: 
-            _keys: 
-            _values: 
-        commands:
-          commands: []
-      - autoStart: 0
-        condition:
-          switchConditions:
-            reorderableList:
-              canAdd: 0
-              canRemove: 0
-              draggable: 0
-              expandable: 0
-              multipleSelection: 0
-              isExpanded: 0
-              label:
-                m_Text: 
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              headerHeight: 0
-              footerHeight: 0
-              slideEasing: 0
-              verticalSpacing: 0
-              showDefaultBackground: 0
-              elementDisplayType: 0
-              elementNameProperty: 
-              elementNameOverride: 
-              elementIcon: {fileID: 0}
-            reqReferences: {fileID: 0}
-            isExpanded: 0
-            _keyValues: 
-            _keys: 
-            _values: 
-          itemConditions:
-            reorderableList:
-              canAdd: 0
-              canRemove: 0
-              draggable: 0
-              expandable: 0
-              multipleSelection: 0
-              isExpanded: 0
-              label:
-                m_Text: 
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              headerHeight: 0
-              footerHeight: 0
-              slideEasing: 0
-              verticalSpacing: 0
-              showDefaultBackground: 0
-              elementDisplayType: 0
-              elementNameProperty: 
-              elementNameOverride: 
-              elementIcon: {fileID: 0}
-            reqReferences: {fileID: 0}
-            isExpanded: 0
-            _keyValues: 
-            _keys: 
-            _values: 
-        commands:
-          commands: []
-      - autoStart: 0
-        condition:
-          switchConditions:
-            reorderableList:
-              canAdd: 0
-              canRemove: 0
-              draggable: 0
-              expandable: 0
-              multipleSelection: 0
-              isExpanded: 0
-              label:
-                m_Text: 
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              headerHeight: 0
-              footerHeight: 0
-              slideEasing: 0
-              verticalSpacing: 0
-              showDefaultBackground: 0
-              elementDisplayType: 0
-              elementNameProperty: 
-              elementNameOverride: 
-              elementIcon: {fileID: 0}
-            reqReferences: {fileID: 0}
-            isExpanded: 0
-            _keyValues: 
-            _keys: 
-            _values: 
-          itemConditions:
-            reorderableList:
-              canAdd: 0
-              canRemove: 0
-              draggable: 0
-              expandable: 0
-              multipleSelection: 0
-              isExpanded: 0
-              label:
-                m_Text: 
-                m_Image: {fileID: 0}
-                m_Tooltip: 
-              headerHeight: 0
-              footerHeight: 0
-              slideEasing: 0
-              verticalSpacing: 0
-              showDefaultBackground: 0
-              elementDisplayType: 0
-              elementNameProperty: 
-              elementNameOverride: 
-              elementIcon: {fileID: 0}
-            reqReferences: {fileID: 0}
-            isExpanded: 0
-            _keyValues: 
-            _keys: 
-            _values: 
-        commands:
-          commands: []
-    - id: 0
-      itemName: 
-      sprite: {fileID: 0}
+      mixEvent: []
+    - id: 2
+      itemName: "\u6253\u706B\u6A5F"
+      sprite: {fileID: 21300000, guid: e8524bdb1f2c8f140a89490d506b6a11, type: 3}
       description: 
       clickEvent: []
       canMix: 0
       mixTarget: 0
       mixEvent: []
-    - id: 0
-      itemName: 
-      sprite: {fileID: 0}
+    - id: 3
+      itemName: "\u96EA\u8304"
+      sprite: {fileID: 21300000, guid: 5feb3119ceb57364993fd97aac23f796, type: 3}
       description: 
       clickEvent: []
       canMix: 0
@@ -504,3 +230,29 @@ MonoBehaviour:
           commands: []
   references:
     version: 1
+    00000000:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u9019\u662F\u4EC0\u9EBC\uFF1F"
+    00000001:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\uFF08\u5F9E\u53E3\u888B\u5F97\u5230\u6253\u706B\u6A5F\u548C\u96EA\u8304\uFF09"
+    00000002:
+      type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
+      data:
+        itemId: 2
+        number: 1
+    00000003:
+      type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
+      data:
+        itemId: 3
+        number: 1
+    00000004:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E00\u652F\u96EA\u8304\u3001\u4E00\u500B\u6253\u706B\u6A5F\u2026\u2026"
+    00000005:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u6253\u706B\u6A5F\u597D\u50CF\u662F\u9285\u88FD\u7684\uFF0C\u96EA\u8304\u4E0A\u9762\u5BEB\u7684\u662F\u4EC0\u9EBC\uFF1F\u7F85\u5BC6\u6B50\u8207\u8331\u9E97\u8449\uFF1F"

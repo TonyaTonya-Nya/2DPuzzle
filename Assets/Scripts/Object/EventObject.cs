@@ -16,40 +16,21 @@ public class EventObject : MonoBehaviour
     // 玩家點擊後，要觸發的事件點
     public List<EventPoint> eventPoint;
 
-    public bool IsRunningEvent { get; private set; }
+    public bool IsRunning { get; private set; }
+
+    private static bool eventRunning = false;
+
+    public bool clicked;
 
     private void Awake()
     {
-        IsRunningEvent = false;
+        IsRunning = false;
+        clicked = false;
     }
 
     protected void Start()
     {
-        //StartCoroutine(AutoEventCoroutine());
-    }
-
-    private IEnumerator AutoEventCoroutine()
-    {
-        // 要讓所有人初始化完畢後才執行
-        //yield return null;
-        //yield return null;
-        //yield return null;
-        // 檢查是否有auto start的事件
-        // 永遠檢查
-        //while (true)
-        //{
-        // 從最後面的事件開始向前，找到符合條件的事件點後執行
-        //for (int i = eventPoint.Count - 1; i >= 0; i--)
-        //{
-        //    if (CheckEventContition(eventPoint[i].condition) && eventPoint[i].autoStart)
-        //    {
-        //        StartCoroutine(RunEventCoroutine(eventPoint[i]));
-        //        break;
-        //    }
-        //}
-        //yield return null;
-        //}
-        yield return null;
+        StartCoroutine(RunEvent());
     }
 
     /// <summary>
@@ -57,34 +38,54 @@ public class EventObject : MonoBehaviour
     /// </summary>
     private void OnMouseUpAsButton()
     {
+        // 有事件執行中，不可執行
+        if (eventRunning)
+            return;
         // 執行對話中，不可操作
         if (DialogueSystem.Instance.IsShowingDialogue())
             return;
-
-        RunEvent();
+        clicked = true;
     }
 
-    public void RunEvent()
+    public IEnumerator RunEvent()
     {
-        // 從最後面的事件開始向前，找到符合條件的事件點後執行
-        for (int i = eventPoint.Count - 1; i >= 0; i--)
+        yield return null;
+        yield return null;
+        yield return null;
+        while (true)
         {
-            if (CheckEventContition(eventPoint[i].condition))
+            // 從最後面的事件開始向前，找到符合條件的事件點後執行
+            for (int i = eventPoint.Count - 1; i >= 0; i--)
             {
-                // 執行前關閉道具視窗
-                FindObjectOfType<ItemList>().CloseItemList();
-                StartCoroutine(RunEventCoroutine(eventPoint[i]));
-                break;
+                // 事件頁條件檢查
+                if (CheckEventContition(eventPoint[i].condition) && !IsRunning)
+                {
+                    // 啟動檢查
+                    if ((eventPoint[i].autoStart || clicked))
+                    {
+                        // 執行前關閉道具視窗
+                        FindObjectOfType<ItemList>().CloseItemList();
+                        yield return StartCoroutine(RunEventCoroutine(eventPoint[i]));
+                        break;
+                    }
+                    // 事件頁條件被滿足時，不會再往下看
+                    break;
+                }
             }
+            clicked = false;
+            yield return null;
+            
         }
     }
 
     private IEnumerator RunEventCoroutine(EventPoint eventPoint)
     {
-        IsRunningEvent = true;
+        eventRunning = true;
+        IsRunning = true;
         foreach (EventCommand eventCommand in eventPoint.commands)
-            yield return eventCommand.Run();
-        IsRunningEvent = false;
+            yield return StartCoroutine(eventCommand.Run());
+        IsRunning = false;
+        eventRunning = false;
     }
 
     public bool CheckEventContition(EventCondition condition)
@@ -101,8 +102,6 @@ public class EventObject : MonoBehaviour
             if (!PlayerData.Instance.HasItem(id))
                 return false;
         }
-        if (IsRunningEvent)
-            return false;
         return true;
     }
 

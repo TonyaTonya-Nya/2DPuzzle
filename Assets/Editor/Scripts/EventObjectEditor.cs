@@ -16,6 +16,8 @@ public class EventObjectCreator
     {
         GameObject go = new GameObject("Event Object");
         go.AddComponent<EventObject>();
+        if (Selection.activeGameObject != null)
+            go.transform.parent = Selection.activeGameObject.transform;
         Selection.activeObject = go;
     }
 
@@ -49,6 +51,8 @@ public class EventObjectCreator
         go.AddComponent<T>();
         go.GetComponent<T>().isTrigger = true;
         go.AddComponent<EventObject>();
+        if (Selection.activeGameObject != null)
+            go.transform.parent = Selection.activeGameObject.transform;
         Selection.activeObject = go;
     }
 }
