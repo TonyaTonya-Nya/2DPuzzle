@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using Newtonsoft.Json;
 
 public class EditorDatabase
 {
@@ -14,6 +15,7 @@ public class EditorDatabase
         {
             if (eventSwitchesDB == null)
                 LoadSwitchDatabase();
+            CheckSwitchDatabase();
             return eventSwitchesDB;
         }
         private set
@@ -50,4 +52,41 @@ public class EditorDatabase
         }
     }
 
+    public void CheckSwitchDatabase()
+    {
+        string path = "Assets/Editor/EditorDatabase/SwitchDatabase.asset";
+        switchDatabase = (SwitchDatabase)AssetDatabase.LoadAssetAtPath(path, typeof(SwitchDatabase));
+        if (switchDatabase.switches.Count != eventSwitchesDB.Count)
+            LoadSwitchDatabase();
+    }
+
+    /// <summary>
+    /// 備份用
+    /// </summary>
+    [MenuItem("Tools/Export/ItemDatabase")]
+    public static void ExportItemDataToJson()
+    {
+        GameDatabase gameDatabase = GameObject.FindObjectOfType<GameDatabase>();
+        string dataPath = "Assets/Prefabs/ItemDatabase.asset";
+        ItemDatabase itemDatabase = (ItemDatabase)AssetDatabase.LoadAssetAtPath(dataPath, typeof(ItemDatabase));
+        string jsonPath = Path.Combine(Application.dataPath, "Resources/Database/ItemDatabase.json");
+        string s = JsonConvert.SerializeObject(itemDatabase);
+        using (StreamWriter file = new StreamWriter(jsonPath))
+        {
+            file.WriteLine(s);
+        }
+    }
+
+    [MenuItem("Tools/Helper/Refresh Event Object Id")]
+    public static void RefreshEventObjectId()
+    {
+        List<EventObject> eventObjects = new List<EventObject>(GameObject.FindObjectsOfType<EventObject>());
+        eventObjects.Reverse();
+        int id = 1;
+        foreach (EventObject eventObject in eventObjects)
+        {
+            eventObject.id = id;
+            id++;
+        }
+    }
 }

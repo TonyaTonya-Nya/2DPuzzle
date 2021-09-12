@@ -25,17 +25,25 @@ public class EventCondition
     public IntDictionary itemConditions;
 }
 
-
+public enum EventTriggerType
+{
+    // 點擊碰撞盒後觸發
+    Click,
+    // 碰到碰撞盒後觸發
+    Touch,
+    // 自動觸發
+    Auto
+}
 
 [System.Serializable]
 public class EventPoint
 {
-    // 是否在滿足條件後立刻自動執行
-    public bool autoStart;
+    // 執行方法
+    public EventTriggerType triggerType;
     // 啟動條件
-    public EventCondition condition;
+    public EventCondition condition = new EventCondition();
     // 指令
-    public EventCommandList commands;
+    public EventCommandList commands = new EventCommandList();
 }
 
 public class Dialogue

@@ -64,14 +64,18 @@ public class EventObjectEditor : Editor
 
     private void SetId()
     {
-        serializedObject.Update();
         EventObject self = (EventObject)target;
-        FieldInfo propertyinfo = self.GetType().GetField("id");
-        // 大於0表示已經設定過了
-        if ((int)propertyinfo.GetValue(self) > 0)
+        // 物品不處理
+        if (self.GetComponent<ItemButton>() != null)
             return;
+        serializedObject.Update();
         List<EventObject> eventObjects = new List<EventObject>(FindObjectsOfType<EventObject>());
-        propertyinfo.SetValue(self, eventObjects.Count + 1);
+        int id = self.id;
+        // 複製物件時會連ID一起複製，所以要找是不是有ID重複，大於0且沒重複就表示ID正確，不用繼續
+        if (id > 0 && eventObjects.Find(x => x.id == id) == null)
+            return;
+        // 先設最大
+        id = eventObjects.Count + 1;
         eventObjects.Sort(delegate (EventObject x, EventObject y)
         {
             if (x.id > y.id)
@@ -82,12 +86,12 @@ public class EventObjectEditor : Editor
                 return 0;
         });
 
-        int id = 0;
+        id = 0;
         foreach (EventObject eventObject in eventObjects)
         {
             if (eventObject.id - id != 1)
             {
-                propertyinfo.SetValue(self, id + 1);
+                self.id = id + 1;
                 break;
             }
             id = eventObject.id;
@@ -116,7 +120,13 @@ public class EventObjectEditor : Editor
             serializedObject.Update();
             EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("Add New Event Point"))
-                propertyEventPoint.InsertArrayElementAtIndex(propertyEventPoint.arraySize);
+            {
+                //propertyEventPoint.InsertArrayElementAtIndex(propertyEventPoint.arraySize);
+                EventObject self = (EventObject)target;
+                if (self.eventPoint == null)
+                    self.eventPoint = new List<EventPoint>();
+                self.eventPoint.Add(new EventPoint());
+            }
             if (GUILayout.Button("Delete Last Event Point"))
             {
                 if (propertyEventPoint.arraySize > 0)
@@ -143,12 +153,14 @@ public class EventObjectEditor : Editor
 
             if (GUILayout.Button("Insert previous"))
             {
-                propertyEventPoint.InsertArrayElementAtIndex(i);
+                EventObject self = (EventObject)target;
+                self.eventPoint.Insert(i, new EventPoint());
                 return;
             }
             if (GUILayout.Button("Insert next"))
             {
-                propertyEventPoint.InsertArrayElementAtIndex(i + 1);
+                EventObject self = (EventObject)target;
+                self.eventPoint.Insert(i + 1, new EventPoint());
                 return;
             }
             if (GUILayout.Button("Delete"))
@@ -161,14 +173,19 @@ public class EventObjectEditor : Editor
 
             EditorGUILayout.EndHorizontal();
 
+            EditorGUI.BeginChangeCheck();
+
             if (property.isExpanded)
             {
                 EditorGUI.indentLevel += 1;
-                EditorGUILayout.PropertyField(property.FindPropertyRelative("autoStart"));
+                EditorGUILayout.PropertyField(property.FindPropertyRelative("triggerType"));
                 EditorGUILayout.PropertyField(property.FindPropertyRelative("condition"), true);
                 EditorGUILayout.PropertyField(property.FindPropertyRelative("commands"), true);
                 EditorGUI.indentLevel -= 1;
             }
+
+            if (EditorGUI.EndChangeCheck())
+                serializedObject.ApplyModifiedProperties();
 
             EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
         }

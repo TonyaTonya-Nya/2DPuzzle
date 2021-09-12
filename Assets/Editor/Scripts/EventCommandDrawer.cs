@@ -110,7 +110,7 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                 Rect buttonRect = position;
                 buttonRect.x = buttonRect.x + buttonRect.width - buttonRect.width / 7;
                 buttonRect.width = buttonRect.width / 7;
-                self.serializedObject.Update();
+
                 if (GUI.Button(buttonRect, "Delete"))
                 {
                     EventCommandList eventCommandList = EditorHelper.GetObj(self) as EventCommandList;
@@ -118,12 +118,18 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                     break;
                 }
                 buttonRect.x = buttonRect.x - buttonRect.width - EditorGUIUtility.standardVerticalSpacing;
+                if (GUI.Button(buttonRect, "Duplicate"))
+                {
+                    nowSelectIndex = i;
+                    EventCommandList eventCommandList = EditorHelper.GetObj(self) as EventCommandList;
+                    eventCommandList.Insert(nowSelectIndex + 1, eventCommandList[eventCommandList.Count - 1].GetType());
+                }
+                buttonRect.x = buttonRect.x - buttonRect.width - EditorGUIUtility.standardVerticalSpacing;
                 if (GUI.Button(buttonRect, "Insert"))
                 {
                     nowSelectIndex = i;
                     menu.ShowAsContext();
                 }
-                self.serializedObject.ApplyModifiedProperties();
             }
             position.y += lastUsedHeight;// + EditorGUIUtility.standardVerticalSpacing * 8;
             DrawEditMenu(position);
@@ -216,7 +222,7 @@ public class EventCommandPropertyDrawerBase
         SerializedObject serializedObject = property.serializedObject;
         Type type = target.GetType();
         List<FieldInfo> fields = GetFields(type);
-        serializedObject.Update();
+
         position.height = EditorGUIUtility.singleLineHeight;
         // Foldout的矩形寬度縮小
         Rect rect = position;
@@ -239,7 +245,6 @@ public class EventCommandPropertyDrawerBase
             }
             EditorGUI.indentLevel -= 1;
         }
-        serializedObject.ApplyModifiedProperties();
     }
 }
 
@@ -250,7 +255,7 @@ public class EventGainItemPropertyDrawer : EventCommandPropertyDrawerBase
         EventGainItem target = EditorHelper.GetObj(property) as EventGainItem;
         SerializedObject serializedObject = property.serializedObject;
         Type type = target.GetType();
-        serializedObject.Update();
+
         position.height = EditorGUIUtility.singleLineHeight;
         // Foldout的矩形寬度縮小
         Rect rect = position;
@@ -264,12 +269,12 @@ public class EventGainItemPropertyDrawer : EventCommandPropertyDrawerBase
                 itemNames.Add(pair.Key + ".  " + pair.Value.itemName);
             FieldInfo field = type.GetField("itemId");
             position.y += EditorHelper.NextLine;
-            field.SetValue(target, EditorGUI.Popup(position, "Item", (int)field.GetValue(target) - 1, itemNames.ToArray()) + 1);
+            int selection = EditorGUI.Popup(position, "Item", (int)field.GetValue(target) - 1, itemNames.ToArray());
+            field.SetValue(target, selection + 1);
             position.y += EditorHelper.NextLine;
             EditorGUI.PropertyField(position, property.FindPropertyRelative("number"));
             EditorGUI.indentLevel -= 1;
         }
-        serializedObject.ApplyModifiedProperties();
     }
 
 
@@ -282,7 +287,7 @@ public class EventSetSwitchPropertyDrawer : EventCommandPropertyDrawerBase
         EventSetSwitch target = EditorHelper.GetObj(property) as EventSetSwitch;
         SerializedObject serializedObject = property.serializedObject;
         Type type = target.GetType();
-        serializedObject.Update();
+
         position.height = EditorGUIUtility.singleLineHeight;
         // Foldout的矩形寬度縮小
         Rect rect = position;
@@ -301,7 +306,6 @@ public class EventSetSwitchPropertyDrawer : EventCommandPropertyDrawerBase
             EditorGUI.PropertyField(position, property.FindPropertyRelative("open"));
             EditorGUI.indentLevel -= 1;
         }
-        serializedObject.ApplyModifiedProperties();
     }
 }
 
@@ -312,8 +316,8 @@ public class EventTransitionPropertyDrawer : EventCommandPropertyDrawerBase
         float height = EditorGUI.GetPropertyHeight(property, true);
         height += EditorGUIUtility.standardVerticalSpacing;
         if (property.isExpanded)
-            height += EditorHelper.NextLine ;
-        return  height;
+            height += EditorHelper.NextLine;
+        return height;
     }
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -321,7 +325,7 @@ public class EventTransitionPropertyDrawer : EventCommandPropertyDrawerBase
         EventTransition target = EditorHelper.GetObj(property) as EventTransition;
         SerializedObject serializedObject = property.serializedObject;
         Type type = target.GetType();
-        serializedObject.Update();
+
         position.height = EditorGUIUtility.singleLineHeight;
         // Foldout的矩形寬度縮小
         Rect rect = position;
@@ -332,6 +336,7 @@ public class EventTransitionPropertyDrawer : EventCommandPropertyDrawerBase
             EditorGUI.indentLevel += 1;
             List<string> objectNames = new List<string>();
             List<EventObject> objects = new List<EventObject>(GameObject.FindObjectsOfType<EventObject>());
+            objects.RemoveAll(x => x.id == 0);
             objects.Sort(delegate (EventObject x, EventObject y)
             {
                 if (x.id > y.id) return 1;
@@ -354,64 +359,9 @@ public class EventTransitionPropertyDrawer : EventCommandPropertyDrawerBase
             EditorGUI.PropertyField(position, property.FindPropertyRelative("destination"));
             position.y += EditorHelper.NextLine;
             EditorGUI.PropertyField(position, property.FindPropertyRelative("speed"), new GUIContent("Speed", "If 0, object will transition immediately."));
+            position.y += EditorHelper.NextLine;
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("cameraPosition"));
             EditorGUI.indentLevel -= 1;
         }
-        serializedObject.ApplyModifiedProperties();
     }
 }
-
-//public class EventSelectionPropertyDrawer : EventCommandPropertyDrawerBase
-//{
-//    public override float GetPropertyHeight(SerializedProperty property)
-//    {
-//        float height = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
-//        if (property.isExpanded)
-//        {
-//            height += EditorGUI.GetPropertyHeight(property, true) * 4 + EditorGUIUtility.standardVerticalSpacing * 8;
-
-//            SerializedObject serializedObject = new SerializedObject((UnityEngine.Object)EditorHelper.GetObj(property));
-//            SerializedProperty p = serializedObject.FindProperty("selection1Commands");
-//            SerializedProperty c = p.FindPropertyRelative("commands");
-//            // 如果展開，計算展開的高度，但扣除掉前面已經算過的標題
-//            if (c.isExpanded)
-//                height += EditorGUI.GetPropertyHeight(p) - EditorGUIUtility.singleLineHeight;
-//            p = serializedObject.FindProperty("selection2Commands");
-//            c = p.FindPropertyRelative("commands");
-//            // 如果展開，計算展開的高度，但扣除掉前面已經算過的標題
-//            if (c.isExpanded)
-//                height += EditorGUI.GetPropertyHeight(p) - EditorGUIUtility.singleLineHeight;
-//        }
-//        return height;
-//    }
-
-//    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-//    {
-//        SerializedObject serializedObject = new SerializedObject((UnityEngine.Object)EditorHelper.GetObj(property));
-//        Type type = serializedObject.targetObject.GetType();
-//        serializedObject.Update();
-//        position.height = EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
-//        property.isExpanded = EditorGUI.Foldout(position, property.isExpanded, EventCommand.GetName(type.Name), true);
-//        EventSelection target = null; // serializedObject.targetObject as EventSelection;
-//        if (property.isExpanded)
-//        {
-//            EditorGUI.indentLevel += 1;
-//            position.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing * 2;
-//            // 選項標題
-//            EditorGUI.PropertyField(position, serializedObject.FindProperty("selection1"));
-//            // PropertyComandList 為 EventCommadList
-//            SerializedProperty propertyComandList = serializedObject.FindProperty("selection1Commands");
-//            // PropertyCommands 為 EventCommadList.commands
-//            SerializedProperty propertyCommands = propertyComandList.FindPropertyRelative("commands");
-//            position.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing * 2;
-//            // 繪製整個 EvenyCommandList
-//            EditorGUI.PropertyField(position, propertyComandList);
-//            position.y += EditorGUI.GetPropertyHeight(propertyCommands) + EditorGUIUtility.standardVerticalSpacing * 2;
-//            // 選項標題
-//            EditorGUI.PropertyField(position, serializedObject.FindProperty("selection2"));
-//            position.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing * 2;
-//            EditorGUI.PropertyField(position, serializedObject.FindProperty("selection2Commands"));
-//            EditorGUI.indentLevel -= 1;
-//        }
-//        serializedObject.ApplyModifiedProperties();
-//    }
-//}

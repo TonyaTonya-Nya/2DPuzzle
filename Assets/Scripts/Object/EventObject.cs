@@ -22,6 +22,10 @@ public class EventObject : MonoBehaviour
 
     public bool clicked;
 
+    public bool triggered;
+
+    public EventCommand NextCommand { get; private set; }
+
     private void Awake()
     {
         IsRunning = false;
@@ -47,6 +51,17 @@ public class EventObject : MonoBehaviour
         clicked = true;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // 有事件執行中，不可執行
+        if (eventRunning)
+            return;
+        // 執行對話中，不可操作
+        if (DialogueSystem.Instance.IsShowingDialogue())
+            return;
+        triggered = true;
+    }
+
     public IEnumerator RunEvent()
     {
         yield return null;
@@ -60,8 +75,12 @@ public class EventObject : MonoBehaviour
                 // 事件頁條件檢查
                 if (CheckEventContition(eventPoint[i].condition) && !IsRunning)
                 {
+                    bool run = eventPoint[i].triggerType == EventTriggerType.Auto;
+                    run = run || (eventPoint[i].triggerType == EventTriggerType.Click && clicked);
+                    run = run || (eventPoint[i].triggerType == EventTriggerType.Touch && triggered);
+
                     // 啟動檢查
-                    if ((eventPoint[i].autoStart || clicked))
+                    if (run)
                     {
                         // 執行前關閉道具視窗
                         FindObjectOfType<ItemList>().CloseItemList();
@@ -73,8 +92,9 @@ public class EventObject : MonoBehaviour
                 }
             }
             clicked = false;
+            triggered = false;
             yield return null;
-            
+
         }
     }
 
@@ -82,8 +102,12 @@ public class EventObject : MonoBehaviour
     {
         eventRunning = true;
         IsRunning = true;
-        foreach (EventCommand eventCommand in eventPoint.commands)
-            yield return StartCoroutine(eventCommand.Run());
+        for (int i = 0; i < eventPoint.commands.Count; i++)
+        {
+            eventPoint.commands[i].Register(this);
+            NextCommand = (i + 1) >= eventPoint.commands.Count ? null : eventPoint.commands[i + 1];
+            yield return StartCoroutine(eventPoint.commands[i].Run());
+        }
         IsRunning = false;
         eventRunning = false;
     }
@@ -103,6 +127,11 @@ public class EventObject : MonoBehaviour
                 return false;
         }
         return true;
+    }
+
+    private void OnDestroy()
+    {
+        eventRunning = false;
     }
 
 }

@@ -19,7 +19,7 @@ public class GameDatabase : MonoBehaviour
     {
         get
         {
-            if (itemDB.Count == 0)
+            if (itemDB.Count != itemDatabase.items.Count)
             {
                 foreach (KeyValuePair<int, Item> pair in itemDatabase.items)
                     itemDB[pair.Key] = pair.Value;
@@ -83,20 +83,5 @@ public class GameDatabase : MonoBehaviour
         if (EventSwitchDB.ContainsKey(id))
             return EventSwitchDB[id];
         return false;
-    }
-
-    /// <summary>
-    /// 備份用
-    /// </summary>
-    [MenuItem("Tools/Export/ItemDatabase")]
-    public static void ExportItemDataToJson()
-    {
-        string path = Path.Combine(Application.dataPath, "Resources/Database/ItemDatabase.json");
-        GameDatabase gameDatabase = FindObjectOfType<GameDatabase>();
-        string s = JsonConvert.SerializeObject(gameDatabase.itemDatabase);
-        using (StreamWriter file = new StreamWriter(path))
-        {
-            file.WriteLine(s);
-        }
     }
 }

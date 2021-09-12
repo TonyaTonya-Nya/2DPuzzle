@@ -85,7 +85,14 @@ public class EventCommandList : IList<EventCommand>
 [System.Serializable]
 public abstract class EventCommand
 {
+    protected EventObject caller;
+
     public readonly static Dictionary<string, Type> types;
+
+    public void Register(EventObject caller)
+    {
+        this.caller = caller;
+    }
 
     static EventCommand()
     {
@@ -113,9 +120,19 @@ public class EventDialogue : EventCommand
 
     public override IEnumerator Run()
     {
+        int index = content.IndexOf(@"\n");
+        if (index > 0)
+            content = content.Substring(0, index) + "\n" + content.Substring(index + 2);
         DialogueSystem.Instance.ShowDialouge(content);
-        yield return new WaitUntil(() => DialogueSystem.Instance.finish);
-        DialogueSystem.Instance.CloseDialouge();
+        // 下一句如果是選擇，不用點對話框直接顯示選項
+        if (!(caller.NextCommand is EventSelection))
+            yield return new WaitUntil(() => DialogueSystem.Instance.finish);
+        else
+            yield return null;
+        // 如果下一句是對話或選向，不用關視窗
+        if (!(caller.NextCommand is EventDialogue) && !(caller.NextCommand is EventSelection))
+            DialogueSystem.Instance.CloseDialouge();
+
         yield return null;
     }
 }
@@ -152,6 +169,8 @@ public class EventTransition : EventCommand
     public int targetId;
     public Vector2 destination;
     public float speed;
+    // 暫定
+    public Vector2 cameraPosition;
 
     public override IEnumerator Run()
     {
@@ -171,6 +190,7 @@ public class EventTransition : EventCommand
                 }
             }
             target.transform.position = destination;
+            Camera.main.transform.position = new Vector3(cameraPosition.x, cameraPosition.y, -10);
         }
         yield return null;
     }
@@ -185,6 +205,25 @@ public class EventSelection : EventCommand
 
     public override IEnumerator Run()
     {
+        SelectionBox.main.ShowSelectionBox(selection1, selection2);
+        yield return new WaitUntil(() => !SelectionBox.main.IsWaiting());
+        int index = SelectionBox.main.GetResult();
+        if (index == 0)
+        {
+            foreach (EventCommand command in selection1Commands)
+            {
+                command.Register(caller);
+                yield return caller.StartCoroutine(command.Run());
+            }
+        }
+        else if (index == 1)
+        {
+            foreach (EventCommand command in selection2Commands)
+            {
+                command.Register(caller);
+                yield return caller.StartCoroutine(command.Run());
+            }
+        }
         yield return null;
     }
 
@@ -198,4 +237,13 @@ public class EventShowBalloon : EventCommand
 public class EventShowAnimation : EventCommand
 {
 
+}
+
+public class EventDestroyEvent : EventCommand
+{
+    public override IEnumerator Run()
+    {
+        UnityEngine.Object.Destroy(caller.gameObject);
+        yield return null;
+    }
 }
