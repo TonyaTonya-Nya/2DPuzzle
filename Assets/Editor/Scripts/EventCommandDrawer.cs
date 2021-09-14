@@ -69,13 +69,16 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
 {
     private SerializedProperty self;
 
+    private EventCommandList target;
+
     private int nowSelectIndex;
+
+    private EventCommandPropertyDrawer nowDrawer;
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
         // 所有屬性的高度
         float height = EditorGUI.GetPropertyHeight(property.FindPropertyRelative("commands"), true);
-
         return height;
     }
 
@@ -97,12 +100,13 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
         {
             EditorGUI.indentLevel += 1;
             float lastUsedHeight = EditorHelper.NextLine;
+            if (nowDrawer == null)
+                nowDrawer = new EventCommandPropertyDrawer();
             for (int i = 0; i < commands.arraySize; i++)
             {
                 SerializedProperty singleCommand = commands.GetArrayElementAtIndex(i);
                 position.y += lastUsedHeight;
-                EventCommandPropertyDrawer drawer = new EventCommandPropertyDrawer();
-                drawer.OnGUI(position, singleCommand, new GUIContent(singleCommand.name));
+                nowDrawer.OnGUI(position, singleCommand, null);
                 lastUsedHeight = EditorGUI.GetPropertyHeight(singleCommand, true);
                 position.y += EditorGUIUtility.standardVerticalSpacing;
 
@@ -122,7 +126,7 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                 {
                     nowSelectIndex = i;
                     EventCommandList eventCommandList = EditorHelper.GetObj(self) as EventCommandList;
-                    eventCommandList.Insert(nowSelectIndex + 1, eventCommandList[eventCommandList.Count - 1].GetType());
+                    eventCommandList.Insert(nowSelectIndex + 1, eventCommandList[nowSelectIndex].GetType());
                 }
                 buttonRect.x = buttonRect.x - buttonRect.width - EditorGUIUtility.standardVerticalSpacing;
                 if (GUI.Button(buttonRect, "Insert"))
@@ -131,7 +135,7 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                     menu.ShowAsContext();
                 }
             }
-            position.y += lastUsedHeight;// + EditorGUIUtility.standardVerticalSpacing * 8;
+            position.y += lastUsedHeight;
             DrawEditMenu(position);
             EditorGUI.indentLevel -= 1;
         }
@@ -141,14 +145,15 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
     {
         GenericMenu menu = new GenericMenu();
 
-        EventCommandList eventCommandList = EditorHelper.GetObj(self) as EventCommandList;
+        if (target == null)
+            target = EditorHelper.GetObj(self) as EventCommandList;
 
         foreach (KeyValuePair<string, Type> pair in EventCommand.types)
         {
-            menu.AddItem(new GUIContent("Add/" + EventCommand.GetName(pair.Key)), false, () => eventCommandList.Insert(nowSelectIndex, pair.Value));
+            menu.AddItem(new GUIContent("Add/" + EventCommand.GetName(pair.Key)), false, () => target.Insert(nowSelectIndex, pair.Value));
         }
         if (hasRemoveButton)
-            menu.AddItem(new GUIContent("Remove"), false, () => eventCommandList.RemoveAt(nowSelectIndex - 1));
+            menu.AddItem(new GUIContent("Remove"), false, () => target.RemoveAt(nowSelectIndex - 1));
         return menu;
     }
 
@@ -173,6 +178,8 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
 [CustomPropertyDrawer(typeof(EventCommand))]
 public class EventCommandPropertyDrawer : PropertyDrawer
 {
+    private Dictionary<SerializedProperty, EventCommandPropertyDrawerBase> drawers = new Dictionary<SerializedProperty, EventCommandPropertyDrawerBase>();
+
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
         return GetDrawer(property).GetPropertyHeight(property);
@@ -194,14 +201,19 @@ public class EventCommandPropertyDrawer : PropertyDrawer
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        EventCommandPropertyDrawerBase drawer = GetDrawer(property);
+        EventCommandPropertyDrawerBase drawer;
+        if (!drawers.TryGetValue(property, out drawer))
+            drawers[property] = GetDrawer(property);
 
-        drawer.OnGUI(position, property, label);
+        drawers[property].OnGUI(position, property, label);
     }
 }
 
 public class EventCommandPropertyDrawerBase
 {
+    private List<FieldInfo> fields;
+    private Type type;
+
     public virtual float GetPropertyHeight(SerializedProperty property)
     {
         float height = EditorGUI.GetPropertyHeight(property, true);
@@ -218,10 +230,13 @@ public class EventCommandPropertyDrawerBase
 
     public virtual void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        object target = EditorHelper.GetObj(property);
-        SerializedObject serializedObject = property.serializedObject;
-        Type type = target.GetType();
-        List<FieldInfo> fields = GetFields(type);
+        if (fields == null)
+        {
+            object target = EditorHelper.GetObj(property);
+            SerializedObject serializedObject = property.serializedObject;
+            type = target.GetType();
+            fields = GetFields(type);
+        }
 
         position.height = EditorGUIUtility.singleLineHeight;
         // Foldout的矩形寬度縮小
@@ -311,6 +326,9 @@ public class EventSetSwitchPropertyDrawer : EventCommandPropertyDrawerBase
 
 public class EventTransitionPropertyDrawer : EventCommandPropertyDrawerBase
 {
+    private List<EventObject> objects;
+    private List<string> objectNames;
+
     public override float GetPropertyHeight(SerializedProperty property)
     {
         float height = EditorGUI.GetPropertyHeight(property, true);
@@ -334,24 +352,25 @@ public class EventTransitionPropertyDrawer : EventCommandPropertyDrawerBase
         if (property.isExpanded)
         {
             EditorGUI.indentLevel += 1;
-            List<string> objectNames = new List<string>();
-            List<EventObject> objects = new List<EventObject>(GameObject.FindObjectsOfType<EventObject>());
-            objects.RemoveAll(x => x.id == 0);
-            objects.Sort(delegate (EventObject x, EventObject y)
+            if (objects == null)
             {
-                if (x.id > y.id) return 1;
-                if (x.id < y.id) return -1;
-                return 0;
-            });
-            foreach (EventObject eventObject in objects)
-                objectNames.Add((eventObject.id).ToString() + " " + eventObject.name);
+                objectNames = new List<string>();
+                objects = new List<EventObject>(GameObject.FindObjectsOfType<EventObject>());
+                objects.RemoveAll(x => x.guid == null || x.guid == "");
+                EventObject player = objects.Find(x => x.CompareTag("Player"));
+                objects.Remove(player);
+                objects.Insert(0, player);
+                int indexPrefix = 1;
+                foreach (EventObject eventObject in objects)
+                    objectNames.Add((indexPrefix++).ToString() + " " + eventObject.name);
+            }
             FieldInfo field = type.GetField("targetId");
             position.y += EditorHelper.NextLine;
-            int nowSelection = objects.FindIndex(x => x.id == (int)field.GetValue(target));
+            int nowSelection = objects.FindIndex(x => x.guid == (string)field.GetValue(target));
             if (nowSelection < 0)
                 nowSelection = 0;
-            int selection = EditorGUI.Popup(position, "Target", nowSelection, objectNames.ToArray()) + 1;
-            field.SetValue(target, selection);
+            int selection = EditorGUI.Popup(position, "Target", nowSelection, objectNames.ToArray());
+            field.SetValue(target, objects[selection].guid);
             position.y += EditorHelper.NextLine;
             Vector2 targetPosition = objects[nowSelection].transform.position;
             EditorGUI.LabelField(position, "Now", "X: " + targetPosition.x + "\tY: " + targetPosition.y);

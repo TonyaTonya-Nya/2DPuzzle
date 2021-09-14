@@ -62,52 +62,29 @@ public class EventObjectEditor : Editor
 {
     private SerializedProperty propertyEventPoint;
 
+    EventObject self;
+
     private void SetId()
     {
-        EventObject self = (EventObject)target;
-        // 物品不處理
-        if (self.GetComponent<ItemButton>() != null)
-            return;
         serializedObject.Update();
-        List<EventObject> eventObjects = new List<EventObject>(FindObjectsOfType<EventObject>());
-        int id = self.id;
-        // 複製物件時會連ID一起複製，所以要找是不是有ID重複，大於0且沒重複就表示ID正確，不用繼續
-        if (id > 0 && eventObjects.Find(x => x.id == id) == null)
-            return;
-        // 先設最大
-        id = eventObjects.Count + 1;
-        eventObjects.Sort(delegate (EventObject x, EventObject y)
-        {
-            if (x.id > y.id)
-                return 1;
-            else if (x.id < y.id)
-                return -1;
-            else
-                return 0;
-        });
-
-        id = 0;
-        foreach (EventObject eventObject in eventObjects)
-        {
-            if (eventObject.id - id != 1)
-            {
-                self.id = id + 1;
-                break;
-            }
-            id = eventObject.id;
-        }
+        if (self.guid == null || self.guid == "")
+            self.guid = System.Guid.NewGuid().ToString();
         serializedObject.ApplyModifiedProperties();
+    }
+
+    private void OnEnable()
+    {
+        propertyEventPoint = serializedObject.FindProperty("eventPoint");
+        self = (EventObject)target;
+        if (self.eventPoint == null)
+            self.eventPoint = new List<EventPoint>();
+        SetId();
     }
 
     public override void OnInspectorGUI()
     {
-        SetId();
-
         serializedObject.Update();
 
-        EditorGUILayout.LabelField("ID: " + ((EventObject)target).id);
-
-        propertyEventPoint = serializedObject.FindProperty("eventPoint");
         EditorGUILayout.PropertyField(propertyEventPoint, false);
 
         EditorGUI.indentLevel += 1;
@@ -121,10 +98,6 @@ public class EventObjectEditor : Editor
             EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("Add New Event Point"))
             {
-                //propertyEventPoint.InsertArrayElementAtIndex(propertyEventPoint.arraySize);
-                EventObject self = (EventObject)target;
-                if (self.eventPoint == null)
-                    self.eventPoint = new List<EventPoint>();
                 self.eventPoint.Add(new EventPoint());
             }
             if (GUILayout.Button("Delete Last Event Point"))

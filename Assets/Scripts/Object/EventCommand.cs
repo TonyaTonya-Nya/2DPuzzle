@@ -114,6 +114,7 @@ public abstract class EventCommand
     public virtual IEnumerator Run() { yield return null; }
 }
 
+[System.Serializable]
 public class EventDialogue : EventCommand
 {
     public string content;
@@ -166,7 +167,7 @@ public class EventSetSwitch : EventCommand
 
 public class EventTransition : EventCommand
 {
-    public int targetId;
+    public string targetId;
     public Vector2 destination;
     public float speed;
     // 暫定
@@ -175,7 +176,7 @@ public class EventTransition : EventCommand
     public override IEnumerator Run()
     {
         List<EventObject> eventObjects = new List<EventObject>(GameObject.FindObjectsOfType<EventObject>());
-        EventObject target = eventObjects.Find(x => x.id == targetId);
+        EventObject target = eventObjects.Find(x => x.guid == targetId);
         if (target != null)
         {
             Vector2 origin = target.transform.position;

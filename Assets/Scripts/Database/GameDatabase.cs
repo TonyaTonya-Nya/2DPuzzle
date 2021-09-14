@@ -64,8 +64,8 @@ public class GameDatabase : MonoBehaviour
     private void ParseDatabase()
     {
         // 物品資料庫
-        foreach (KeyValuePair<int, Item> pair in itemDatabase.items)
-            ItemDB[pair.Key] = pair.Value;
+        //foreach (KeyValuePair<int, Item> pair in itemDatabase.items)
+        //    ItemDB[pair.Key] = pair.Value;
     }
 
     /// <summary>

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 using Newtonsoft.Json;
+using UnityEngine.UI;
 
 public class EditorDatabase
 {
@@ -74,19 +75,6 @@ public class EditorDatabase
         using (StreamWriter file = new StreamWriter(jsonPath))
         {
             file.WriteLine(s);
-        }
-    }
-
-    [MenuItem("Tools/Helper/Refresh Event Object Id")]
-    public static void RefreshEventObjectId()
-    {
-        List<EventObject> eventObjects = new List<EventObject>(GameObject.FindObjectsOfType<EventObject>());
-        eventObjects.Reverse();
-        int id = 1;
-        foreach (EventObject eventObject in eventObjects)
-        {
-            eventObject.id = id;
-            id++;
         }
     }
 }

@@ -11,9 +11,6 @@ public class IntDictionary : SerializableDictionaryBase<int, int> { }
 public class IntBoolDictionary : SerializableDictionaryBase<int, bool> { }
 
 [System.Serializable]
-public class IntItemDhictionary : SerializableDictionaryBase<int, Item> { }
-
-[System.Serializable]
 public class IntStringDhictionary : SerializableDictionaryBase<int, string> { }
 
 [System.Serializable]
