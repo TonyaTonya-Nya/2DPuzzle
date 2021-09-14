@@ -9,7 +9,6 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     public Item Item { get; private set; }
 
     private Image image;
-    private EventObject eventObject;
 
     private RectTransform rectTransform;
     private Vector2 startPosition;
@@ -18,7 +17,6 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private void Awake()
     {
         image = GetComponent<Image>();
-        eventObject = GetComponent<EventObject>();
         rectTransform = GetComponent<RectTransform>();
     }
 
@@ -52,30 +50,31 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
         isDraging = false;
+        bool mix = false;
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            Item targetItem = eventData.pointerCurrentRaycast.gameObject.GetComponent<ItemButton>().Item;
-            //if (Item.canMix && targetItem != null)
-            //{
-            //    if (Item.mixTarget == targetItem.id)
-            //    {
-            //        eventObject.eventPoint = new List<EventPoint>(Item.mixEvent);
-            //        eventObject.clicked = true;
-            //    }
-            //    else
-            //    {
-            //        rectTransform.position = startPosition;
-            //    }
-            //}
-            //else
-            //{
-            //    rectTransform.position = startPosition;
-            //}
+            ItemButton itemButton = eventData.pointerCurrentRaycast.gameObject.GetComponent<ItemButton>();
+            if (itemButton != null)
+            {
+                Item targetItem = itemButton.Item;
+                if (targetItem != null)
+                {
+                    foreach (ItemMixSet itemMixSet in GameDatabase.Instance.ItemMixDatabase)
+                    {
+                        if (itemMixSet.item1Id == Item.id && itemMixSet.item2Id == targetItem.id ||
+                            itemMixSet.item2Id == Item.id && itemMixSet.item1Id == targetItem.id)
+                        {
+                            mix = true;
+                            PlayerData.Instance.LoseItem(itemMixSet.item1Id);
+                            PlayerData.Instance.LoseItem(itemMixSet.item2Id);
+                            PlayerData.Instance.GainItem(itemMixSet.resultId);
+                        }
+                    }
+                }
+            }
         }
-        else
-        {
+        if (!mix)
             rectTransform.position = startPosition;
-        }
         image.raycastTarget = true;
     }
 
@@ -84,7 +83,6 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         // 拖曳結束也會觸發，因此不能啟動點擊
         if (isDraging)
             return;
-        eventObject.eventPoint = new List<EventPoint>(Item.clickEvent);
-        eventObject.clicked = true;
+        //EventExcutor.Instance.Register(null, i)
     }
 }

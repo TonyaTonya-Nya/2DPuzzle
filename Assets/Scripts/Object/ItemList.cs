@@ -5,20 +5,11 @@ using UnityEngine.UI;
 
 public class ItemList : MonoBehaviour
 {
-    public Vector2 startPosition;
-    public float width;
-    public float space;
-
     public CanvasGroup itemListCanvas;
+    public Transform itemListContent;
     public ItemButton ItemButtonPrefab;
 
     private List<Item> items;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -47,14 +38,11 @@ public class ItemList : MonoBehaviour
         {
             ItemButton itemButton;
             // 需要的索引值超出目前現有的物件數量，新增物件
-            if (index >= itemListCanvas.transform.childCount)
-                itemButton = Instantiate(ItemButtonPrefab, itemListCanvas.transform);
+            if (index >= itemListContent.childCount)
+                itemButton = Instantiate(ItemButtonPrefab, itemListContent);
             // 物件足夠時，取得該物件
             else
-                itemButton = itemListCanvas.transform.GetChild(index).GetComponent<ItemButton>();
-
-            itemButton.GetComponent<RectTransform>().offsetMax = new Vector2(startPosition.x + width + index * (width + space), startPosition.y + width);
-            itemButton.GetComponent<RectTransform>().offsetMin = new Vector2(startPosition.x + index * (width + space), startPosition.y);
+                itemButton = itemListContent.GetChild(index).GetComponent<ItemButton>();
             itemButton.Initialize(id);
             index++;
         }
