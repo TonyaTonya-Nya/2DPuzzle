@@ -145,8 +145,7 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
     {
         GenericMenu menu = new GenericMenu();
 
-        if (target == null)
-            target = EditorHelper.GetObj(self) as EventCommandList;
+        target = EditorHelper.GetObj(self) as EventCommandList;
 
         foreach (KeyValuePair<string, Type> pair in EventCommand.types)
         {
