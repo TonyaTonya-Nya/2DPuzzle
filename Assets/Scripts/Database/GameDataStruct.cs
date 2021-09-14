@@ -43,15 +43,15 @@ public class EventPoint
     public EventCommandList commands = new EventCommandList();
 }
 
-public class Dialogue
+[System.Serializable]
+public class ItemMixSet
 {
-    public int id;
-    // 下一句對話的ID
-    public int nextId;
-    // 內容
-    public string content;
+    public int item1Id;
+    public int item2Id;
+    public int resultId;
+    // 合成後要有的事件
+    public EventCommandList commands;
 }
-
 
 [System.Serializable]
 public class Item
@@ -61,7 +61,4 @@ public class Item
     public Sprite sprite;
     public string description;
     public List<EventPoint> clickEvent;
-    public bool canMix;
-    public int mixTarget;
-    public List<EventPoint> mixEvent;
 }

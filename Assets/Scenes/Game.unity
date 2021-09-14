@@ -1441,6 +1441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDatabase: {fileID: 11400000, guid: 4114edbe610bf0041972bb3a6ae8e2be, type: 2}
+  ItemMixDatabase: {fileID: 0}
 --- !u!4 &322501899
 Transform:
   m_ObjectHideFlags: 0
@@ -4274,7 +4275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967589071}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.348999, y: 0.934, z: 0}
+  m_LocalPosition: {x: -4.348999, y: 0.934, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1786511231}
@@ -4356,6 +4357,7 @@ MonoBehaviour:
       - id: 3
       - id: 4
       - id: 5
+      - id: 6
   clicked: 0
   triggered: 0
   references:
@@ -4383,6 +4385,13 @@ MonoBehaviour:
         switchId: 2
         open: 1
     00000005:
+      type: {class: EventTransition, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: 4cee473a-9dd2-4101-95bd-806a37fad449
+        destination: {x: -16.34, y: 9.118}
+        speed: 0
+        cameraPosition: {x: 0, y: 0}
+    00000006:
       type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
 --- !u!61 &967589074
 BoxCollider2D:
@@ -5692,12 +5701,18 @@ MonoBehaviour:
       data:
         selection1: "\uFF39\uFF25\uFF33 "
         selection1Commands:
-          commands: []
+          commands:
+          - id: 3
         selection2: "\uFF2E\uFF2F"
         selection2Commands:
           commands:
-          - id: 3
+          - id: 4
     00000003:
+      type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
+      data:
+        switchId: 16
+        open: 1
+    00000004:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u5148\u7B49\u7B49\u5427\uFF0C\u8AAA\u4E0D\u5B9A\u6709\u5176\u4ED6\u907A\u6F0F\u7684\u4FE1\u606F"
@@ -5753,7 +5768,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572985970}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.34, y: 0.118, z: 0}
+  m_LocalPosition: {x: -6, y: 0.118, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1786511231}
@@ -7410,7 +7425,7 @@ MonoBehaviour:
     0000000F:
       type: {class: EventTransition, ns: , asm: Assembly-CSharp}
       data:
-        targetId: 
+        targetId: 9a8cc5a6-de31-45f5-a630-f24efa2f8d93
         destination: {x: -8.76, y: -0.812}
         speed: 0
         cameraPosition: {x: -5, y: 0}

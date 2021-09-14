@@ -20,10 +20,7 @@ public class GameDatabase : MonoBehaviour
         get
         {
             if (itemDB.Count != itemDatabase.items.Count)
-            {
-                foreach (KeyValuePair<int, Item> pair in itemDatabase.items)
-                    itemDB[pair.Key] = pair.Value;
-            }
+                ParseItemDatabase();
             return itemDB;
         }
         private set
@@ -31,6 +28,9 @@ public class GameDatabase : MonoBehaviour
             itemDB = value;
         }
     }
+
+    // 合成資料庫
+    public ItemMixDatabase ItemMixDatabase;
 
     public static object syncRoot = new object();
 
@@ -53,19 +53,21 @@ public class GameDatabase : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
             Destroy(gameObject);
-        ParseDatabase();
+        ParseItemDatabase();
     }
 
     /// <summary>
-    /// 解析資料庫，存入Dictionary
+    /// 解析物品資料庫，存入Dictionary
     /// </summary>
-    private void ParseDatabase()
+    private void ParseItemDatabase()
     {
         // 物品資料庫
-        //foreach (KeyValuePair<int, Item> pair in itemDatabase.items)
-        //    ItemDB[pair.Key] = pair.Value;
+        foreach (KeyValuePair<int, Item> pair in itemDatabase.items)
+            itemDB[pair.Key] = pair.Value;
     }
 
     /// <summary>

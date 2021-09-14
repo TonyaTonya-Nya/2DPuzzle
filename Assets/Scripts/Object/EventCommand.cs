@@ -12,17 +12,24 @@ public class EventCommandList : IList<EventCommand>
     [SerializeReference]
     public List<EventCommand> commands = new List<EventCommand>();
 
-    public EventCommand this[int index] { get => commands[index]; set => commands[index] = value; }
-
-    public int Count => commands.Count;
-
-    public bool IsReadOnly => false;
+    public void Insert(int index, Type type)
+    {
+        EventCommand newCommand = (EventCommand)Activator.CreateInstance(type);
+        commands.Insert(index, newCommand);
+    }
 
     public void Add(Type type)
     {
         EventCommand newCommand = (EventCommand)Activator.CreateInstance(type);
         commands.Add(newCommand);
     }
+
+    #region IList
+    public EventCommand this[int index] { get => commands[index]; set => commands[index] = value; }
+
+    public int Count => commands.Count;
+
+    public bool IsReadOnly => false;
 
     public void Add(EventCommand item)
     {
@@ -59,12 +66,6 @@ public class EventCommandList : IList<EventCommand>
         commands.Insert(index, item);
     }
 
-    public void Insert(int index, Type type)
-    {
-        EventCommand newCommand = (EventCommand)Activator.CreateInstance(type);
-        commands.Insert(index, newCommand);
-    }
-
     public bool Remove(EventCommand item)
     {
         return commands.Remove(item);
@@ -80,18 +81,19 @@ public class EventCommandList : IList<EventCommand>
     {
         return ((IEnumerable)commands).GetEnumerator();
     }
+    #endregion
 }
 
 [System.Serializable]
 public abstract class EventCommand
 {
-    protected EventObject caller;
+    protected EventObject target;
 
     public readonly static Dictionary<string, Type> types;
 
     public void Register(EventObject caller)
     {
-        this.caller = caller;
+        this.target = caller;
     }
 
     static EventCommand()
@@ -125,15 +127,21 @@ public class EventDialogue : EventCommand
         if (index > 0)
             content = content.Substring(0, index) + "\n" + content.Substring(index + 2);
         DialogueSystem.Instance.ShowDialouge(content);
-        // 下一句如果是選擇，不用點對話框直接顯示選項
-        if (!(caller.NextCommand is EventSelection))
+        // 下一句如果是選項，直接離開，並執行選項
+        if (EventExcutor.Instance.NextCommand is EventSelection)
+            yield break;
+        // 下一句如果是對話，完成後不關閉對話窗，並繼續對話
+        else if (EventExcutor.Instance.NextCommand is EventDialogue)
+        {
             yield return new WaitUntil(() => DialogueSystem.Instance.finish);
+            yield break;
+        }
+        // 需要等待對話框完成
         else
-            yield return null;
-        // 如果下一句是對話或選向，不用關視窗
-        if (!(caller.NextCommand is EventDialogue) && !(caller.NextCommand is EventSelection))
+        {
+            yield return new WaitUntil(() => DialogueSystem.Instance.finish);
             DialogueSystem.Instance.CloseDialouge();
-
+        }
         yield return null;
     }
 }
@@ -191,7 +199,9 @@ public class EventTransition : EventCommand
                 }
             }
             target.transform.position = destination;
-            Camera.main.transform.position = new Vector3(cameraPosition.x, cameraPosition.y, -10);
+            // 玩家才需要動相機
+            if (target.CompareTag("Player"))
+                Camera.main.transform.position = new Vector3(cameraPosition.x, cameraPosition.y, -10);
         }
         yield return null;
     }
@@ -213,16 +223,16 @@ public class EventSelection : EventCommand
         {
             foreach (EventCommand command in selection1Commands)
             {
-                command.Register(caller);
-                yield return caller.StartCoroutine(command.Run());
+                command.Register(target);
+                yield return target.StartCoroutine(command.Run());
             }
         }
         else if (index == 1)
         {
             foreach (EventCommand command in selection2Commands)
             {
-                command.Register(caller);
-                yield return caller.StartCoroutine(command.Run());
+                command.Register(target);
+                yield return target.StartCoroutine(command.Run());
             }
         }
         yield return null;
@@ -244,7 +254,7 @@ public class EventDestroyEvent : EventCommand
 {
     public override IEnumerator Run()
     {
-        UnityEngine.Object.Destroy(caller.gameObject);
+        UnityEngine.Object.Destroy(target.gameObject);
         yield return null;
     }
 }

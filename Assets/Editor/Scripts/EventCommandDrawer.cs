@@ -67,10 +67,6 @@ public class EditorHelper
 [CustomPropertyDrawer(typeof(EventCommandList))]
 public class EventCommandListPropertyDrawer : PropertyDrawer
 {
-    private SerializedProperty self;
-
-    private EventCommandList target;
-
     private int nowSelectIndex;
 
     private EventCommandPropertyDrawer nowDrawer;
@@ -88,11 +84,9 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
         EditorGUI.DrawRect(EditorGUI.IndentedRect(position), new Color(0.5f, 0.5f, 0.5f, 0.5f));
         EditorGUI.indentLevel += 1;
 
-        self = property;
-
         position.height = EditorGUIUtility.singleLineHeight;
 
-        SerializedProperty commands = self.FindPropertyRelative("commands");
+        SerializedProperty commands = property.FindPropertyRelative("commands");
 
         commands.isExpanded = EditorGUI.Foldout(position, commands.isExpanded, label, true);
 
@@ -110,14 +104,14 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                 lastUsedHeight = EditorGUI.GetPropertyHeight(singleCommand, true);
                 position.y += EditorGUIUtility.standardVerticalSpacing;
 
-                GenericMenu menu = CreateMenu(false);
+                GenericMenu menu = CreateMenu(property, false);
                 Rect buttonRect = position;
                 buttonRect.x = buttonRect.x + buttonRect.width - buttonRect.width / 7;
                 buttonRect.width = buttonRect.width / 7;
 
                 if (GUI.Button(buttonRect, "Delete"))
                 {
-                    EventCommandList eventCommandList = EditorHelper.GetObj(self) as EventCommandList;
+                    EventCommandList eventCommandList = EditorHelper.GetObj(property) as EventCommandList;
                     eventCommandList.RemoveAt(i);
                     break;
                 }
@@ -125,7 +119,7 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                 if (GUI.Button(buttonRect, "Duplicate"))
                 {
                     nowSelectIndex = i;
-                    EventCommandList eventCommandList = EditorHelper.GetObj(self) as EventCommandList;
+                    EventCommandList eventCommandList = EditorHelper.GetObj(property) as EventCommandList;
                     eventCommandList.Insert(nowSelectIndex + 1, eventCommandList[nowSelectIndex].GetType());
                 }
                 buttonRect.x = buttonRect.x - buttonRect.width - EditorGUIUtility.standardVerticalSpacing;
@@ -136,16 +130,16 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                 }
             }
             position.y += lastUsedHeight;
-            DrawEditMenu(position);
+            DrawEditMenu(property, position);
             EditorGUI.indentLevel -= 1;
         }
     }
 
-    private GenericMenu CreateMenu(bool hasRemoveButton)
+    private GenericMenu CreateMenu(SerializedProperty property, bool hasRemoveButton)
     {
         GenericMenu menu = new GenericMenu();
 
-        target = EditorHelper.GetObj(self) as EventCommandList;
+        EventCommandList target = EditorHelper.GetObj(property) as EventCommandList;
 
         foreach (KeyValuePair<string, Type> pair in EventCommand.types)
         {
@@ -156,9 +150,9 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
         return menu;
     }
 
-    private void DrawEditMenu(Rect position)
+    private void DrawEditMenu(SerializedProperty property, Rect position)
     {
-        GenericMenu menu = CreateMenu(true);
+        GenericMenu menu = CreateMenu(property, true);
         EditorGUI.indentLevel -= 2;
         EditorGUI.DrawRect(EditorGUI.IndentedRect(position), new Color(0f, 0f, 0f, 0.5f));
         EditorGUI.indentLevel += 2;
@@ -166,7 +160,7 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
         EditorGUI.LabelField(position, "Right click to add new command or remove command.");
         if (EditorHelper.CheckRightClick(position))
         {
-            nowSelectIndex = self.FindPropertyRelative("commands").arraySize;
+            nowSelectIndex = property.FindPropertyRelative("commands").arraySize;
             if (nowSelectIndex < 0)
                 nowSelectIndex = 0;
             menu.ShowAsContext();

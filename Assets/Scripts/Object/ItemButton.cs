@@ -55,22 +55,22 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (EventSystem.current.IsPointerOverGameObject())
         {
             Item targetItem = eventData.pointerCurrentRaycast.gameObject.GetComponent<ItemButton>().Item;
-            if (Item.canMix && targetItem != null)
-            {
-                if (Item.mixTarget == targetItem.id)
-                {
-                    eventObject.eventPoint = new List<EventPoint>(Item.mixEvent);
-                    eventObject.clicked = true;
-                }
-                else
-                {
-                    rectTransform.position = startPosition;
-                }
-            }
-            else
-            {
-                rectTransform.position = startPosition;
-            }
+            //if (Item.canMix && targetItem != null)
+            //{
+            //    if (Item.mixTarget == targetItem.id)
+            //    {
+            //        eventObject.eventPoint = new List<EventPoint>(Item.mixEvent);
+            //        eventObject.clicked = true;
+            //    }
+            //    else
+            //    {
+            //        rectTransform.position = startPosition;
+            //    }
+            //}
+            //else
+            //{
+            //    rectTransform.position = startPosition;
+            //}
         }
         else
         {

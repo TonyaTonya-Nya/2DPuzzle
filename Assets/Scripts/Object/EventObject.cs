@@ -16,9 +16,7 @@ public class EventObject : MonoBehaviour
     // 玩家點擊後，要觸發的事件點
     public List<EventPoint> eventPoint;
 
-    public bool IsRunning { get; private set; }
-
-    private static bool eventRunning = false;
+    public bool IsRunning { get; set; }
 
     public bool clicked;
 
@@ -42,9 +40,6 @@ public class EventObject : MonoBehaviour
     /// </summary>
     private void OnMouseUpAsButton()
     {
-        // 有事件執行中，不可執行
-        if (eventRunning)
-            return;
         // 執行對話中，不可操作
         if (DialogueSystem.Instance.IsShowingDialogue())
             return;
@@ -53,9 +48,6 @@ public class EventObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // 有事件執行中，不可執行
-        if (eventRunning)
-            return;
         // 執行對話中，不可操作
         if (DialogueSystem.Instance.IsShowingDialogue())
             return;
@@ -64,9 +56,6 @@ public class EventObject : MonoBehaviour
 
     public IEnumerator RunEvent()
     {
-        yield return null;
-        yield return null;
-        yield return null;
         while (true)
         {
             // 從最後面的事件開始向前，找到符合條件的事件點後執行
@@ -75,21 +64,24 @@ public class EventObject : MonoBehaviour
                 // 事件頁條件檢查
                 if (CheckEventContition(eventPoint[i].condition) && !IsRunning)
                 {
+                    // 自動執行
                     bool run = eventPoint[i].triggerType == EventTriggerType.Auto;
+                    // 點擊執行
                     run = run || (eventPoint[i].triggerType == EventTriggerType.Click && clicked);
+                    // 碰觸執行
                     run = run || (eventPoint[i].triggerType == EventTriggerType.Touch && triggered);
-
+                    // 已經有其他事件在執行，不可執行
+                    run = run && !EventExcutor.Instance.IsRunning;
                     // 啟動檢查
                     if (run)
                     {
-                        // 執行前關閉道具視窗
-                        FindObjectOfType<ItemList>().CloseItemList();
-                        yield return StartCoroutine(RunEventCoroutine(eventPoint[i]));
+                        EventExcutor.Instance.Register(this, eventPoint[i].commands);
                         break;
                     }
                     // 事件頁條件被滿足時，不會再往下看
                     break;
                 }
+                yield return null;
             }
             clicked = false;
             triggered = false;
@@ -98,19 +90,19 @@ public class EventObject : MonoBehaviour
         }
     }
 
-    private IEnumerator RunEventCoroutine(EventPoint eventPoint)
-    {
-        eventRunning = true;
-        IsRunning = true;
-        for (int i = 0; i < eventPoint.commands.Count; i++)
-        {
-            eventPoint.commands[i].Register(this);
-            NextCommand = (i + 1) >= eventPoint.commands.Count ? null : eventPoint.commands[i + 1];
-            yield return StartCoroutine(eventPoint.commands[i].Run());
-        }
-        IsRunning = false;
-        eventRunning = false;
-    }
+    //private IEnumerator RunEventCoroutine(EventPoint eventPoint)
+    //{
+    //    eventRunning = true;
+    //    IsRunning = true;
+    //    for (int i = 0; i < eventPoint.commands.Count; i++)
+    //    {
+    //        eventPoint.commands[i].Register(this);
+    //        NextCommand = (i + 1) >= eventPoint.commands.Count ? null : eventPoint.commands[i + 1];
+    //        yield return StartCoroutine(eventPoint.commands[i].Run());
+    //    }
+    //    IsRunning = false;
+    //    eventRunning = false;
+    //}
 
     public bool CheckEventContition(EventCondition condition)
     {
@@ -128,10 +120,4 @@ public class EventObject : MonoBehaviour
         }
         return true;
     }
-
-    private void OnDestroy()
-    {
-        eventRunning = false;
-    }
-
 }
