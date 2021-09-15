@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ItemList : MonoBehaviour
 {
     public CanvasGroup itemListCanvas;
+    public ScrollRect scrollRect;
     public Transform itemListContent;
     public ItemButton ItemButtonPrefab;
 
     private List<Item> items;
+
+    private void Awake()
+    {
+        scrollRect = itemListCanvas.GetComponent<ScrollRect>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -46,11 +53,6 @@ public class ItemList : MonoBehaviour
             itemButton.Initialize(id);
             index++;
         }
-    }
-
-    private void Refresh()
-    {
-
     }
 
     public void CloseItemList()

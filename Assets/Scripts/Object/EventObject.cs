@@ -74,10 +74,7 @@ public class EventObject : MonoBehaviour
                     run = run && !EventExcutor.Instance.IsRunning;
                     // 啟動檢查
                     if (run)
-                    {
                         EventExcutor.Instance.Register(this, eventPoint[i].commands);
-                        break;
-                    }
                     // 事件頁條件被滿足時，不會再往下看
                     break;
                 }
