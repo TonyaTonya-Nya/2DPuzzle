@@ -62,6 +62,26 @@ public class EditorHelper
         return false;
     }
 
+    public static IEnumerable<SerializedProperty> GetChildrenProperty(SerializedProperty serializedProperty)
+    {
+        SerializedProperty currentProperty = serializedProperty.Copy();
+        SerializedProperty nextSiblingProperty = serializedProperty.Copy();
+        {
+            nextSiblingProperty.Next(false);
+        }
+
+        if (currentProperty.Next(true))
+        {
+            do
+            {
+                if (SerializedProperty.EqualContents(currentProperty, nextSiblingProperty))
+                    break;
+
+                yield return currentProperty;
+            }
+            while (currentProperty.Next(false));
+        }
+    }
 }
 
 [CustomPropertyDrawer(typeof(EventCommandList))]
@@ -187,9 +207,13 @@ public class EventCommandPropertyDrawer : PropertyDrawer
         EventCommand eventCommand = EditorHelper.GetObj(property) as EventCommand;
         Type type = eventCommand.GetType();
         Type edtitorType = types.Values.FirstOrDefault((x) => x.Name.Contains(type.Name));
+        EventCommandPropertyDrawerBase drawer;
         if (edtitorType != null)
-            return (EventCommandPropertyDrawerBase)Activator.CreateInstance(edtitorType);
-        return new EventCommandPropertyDrawerBase();
+            drawer = (EventCommandPropertyDrawerBase)Activator.CreateInstance(edtitorType);
+        else
+            drawer = new EventCommandPropertyDrawerBase();
+        drawer.name = EventCommand.GetName(type.Name);
+        return drawer;
     }
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -204,8 +228,7 @@ public class EventCommandPropertyDrawer : PropertyDrawer
 
 public class EventCommandPropertyDrawerBase
 {
-    private List<FieldInfo> fields;
-    private Type type;
+    public string name;
 
     public virtual float GetPropertyHeight(SerializedProperty property)
     {
@@ -213,43 +236,24 @@ public class EventCommandPropertyDrawerBase
         return height;
     }
 
-    public List<FieldInfo> GetFields(Type type)
-    {
-        List<FieldInfo> fields;
-        fields = new List<FieldInfo>(type.GetFields());
-        fields.RemoveAll(x => x.GetCustomAttribute(typeof(HideInInspector)) != null);
-        return fields;
-    }
-
     public virtual void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        if (fields == null)
-        {
-            object target = EditorHelper.GetObj(property);
-            SerializedObject serializedObject = property.serializedObject;
-            type = target.GetType();
-            fields = GetFields(type);
-        }
-
         position.height = EditorGUIUtility.singleLineHeight;
         // Foldout的矩形寬度縮小
         Rect rect = position;
-        rect.width = GUI.skin.label.fontSize * EventCommand.GetName(type.Name).Length;
-        property.isExpanded = EditorGUI.Foldout(rect, property.isExpanded, EventCommand.GetName(type.Name), true);
+        rect.width = GUI.skin.label.fontSize * name.Length;
+        property.isExpanded = EditorGUI.Foldout(rect, property.isExpanded, name, true);
         if (property.isExpanded)
         {
             EditorGUI.indentLevel += 1;
             float lastUsedHeight = EditorHelper.NextLine;
-            foreach (FieldInfo field in fields)
+            IEnumerable<SerializedProperty> s = EditorHelper.GetChildrenProperty(property);
+            foreach (SerializedProperty p in s)
             {
                 position.y += lastUsedHeight;
-                SerializedProperty propertyFiled = property.FindPropertyRelative(field.Name);
-                if (propertyFiled != null)
-                {
-                    EditorGUI.PropertyField(position, propertyFiled);
-                    lastUsedHeight = EditorGUI.GetPropertyHeight(propertyFiled, true);
-                    position.y += EditorGUIUtility.standardVerticalSpacing;
-                }
+                EditorGUI.PropertyField(position, p);
+                lastUsedHeight = EditorGUI.GetPropertyHeight(p, true);
+                position.y += EditorGUIUtility.standardVerticalSpacing;
             }
             EditorGUI.indentLevel -= 1;
         }

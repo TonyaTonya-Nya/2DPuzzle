@@ -85,7 +85,17 @@ public class EventObjectEditor : Editor
     {
         serializedObject.Update();
 
+        SerializedProperty first = serializedObject.GetIterator();
+        while (first.NextVisible(true))
+        {
+            SerializedProperty property = serializedObject.FindProperty(first.name);
+            if (property != null && property.name != "eventPoint" && property.name != "m_Script")
+                EditorGUILayout.PropertyField(property);
+        }
+
         EditorGUILayout.PropertyField(propertyEventPoint, false);
+
+        serializedObject.ApplyModifiedProperties();
 
         EditorGUI.indentLevel += 1;
         if (propertyEventPoint.isExpanded)
@@ -109,8 +119,6 @@ public class EventObjectEditor : Editor
             serializedObject.ApplyModifiedProperties();
         }
         EditorGUI.indentLevel -= 1;
-
-        serializedObject.ApplyModifiedProperties();
     }
 
     public void DrawEventPoint()
@@ -151,9 +159,12 @@ public class EventObjectEditor : Editor
             if (property.isExpanded)
             {
                 EditorGUI.indentLevel += 1;
-                EditorGUILayout.PropertyField(property.FindPropertyRelative("triggerType"));
-                EditorGUILayout.PropertyField(property.FindPropertyRelative("condition"), true);
-                EditorGUILayout.PropertyField(property.FindPropertyRelative("commands"), true);
+                IEnumerable<SerializedProperty> s = EditorHelper.GetChildrenProperty(property);
+                foreach (SerializedProperty p in s)
+                    EditorGUILayout.PropertyField(p, true);
+                //EditorGUILayout.PropertyField(property.FindPropertyRelative("triggerType"));
+                //EditorGUILayout.PropertyField(property.FindPropertyRelative("condition"), true);
+                //EditorGUILayout.PropertyField(property.FindPropertyRelative("commands"), true);
                 EditorGUI.indentLevel -= 1;
             }
 

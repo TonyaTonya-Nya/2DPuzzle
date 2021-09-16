@@ -10,24 +10,27 @@ using UnityEngine;
 public class EventObject : MonoBehaviour
 {
     // 物件的ID，由編輯器自動設定
-    [SerializeField]
+    [SerializeField, HideInInspector]
     public string guid;
 
     // 玩家點擊後，要觸發的事件點
     public List<EventPoint> eventPoint;
 
+    // 物件要與玩家在這個距離內才可被點擊
+    public float xDistance;
+
     public bool IsRunning { get; set; }
 
-    public bool clicked;
+    public bool Clicked { get; set; }
 
-    public bool triggered;
+    public bool Triggered { get; set; }
 
     public EventCommand NextCommand { get; private set; }
 
     private void Awake()
     {
         IsRunning = false;
-        clicked = false;
+        Clicked = false;
     }
 
     protected void Start()
@@ -43,7 +46,10 @@ public class EventObject : MonoBehaviour
         // 執行對話中，不可操作
         if (DialogueSystem.Instance.IsShowingDialogue())
             return;
-        clicked = true;
+        // 指定距離內才有效
+        float distance = Mathf.Abs(transform.position.x - GameObject.FindGameObjectWithTag("Player").transform.position.x);
+        if (distance <= xDistance)
+            Clicked = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,7 +57,7 @@ public class EventObject : MonoBehaviour
         // 執行對話中，不可操作
         if (DialogueSystem.Instance.IsShowingDialogue())
             return;
-        triggered = true;
+        Triggered = true;
     }
 
     public IEnumerator RunEvent()
@@ -67,9 +73,9 @@ public class EventObject : MonoBehaviour
                     // 自動執行
                     bool run = eventPoint[i].triggerType == EventTriggerType.Auto;
                     // 點擊執行
-                    run = run || (eventPoint[i].triggerType == EventTriggerType.Click && clicked);
+                    run = run || (eventPoint[i].triggerType == EventTriggerType.Click && Clicked);
                     // 碰觸執行
-                    run = run || (eventPoint[i].triggerType == EventTriggerType.Touch && triggered);
+                    run = run || (eventPoint[i].triggerType == EventTriggerType.Touch && Triggered);
                     // 已經有其他事件在執行，不可執行
                     run = run && !EventExcutor.Instance.IsRunning;
                     // 啟動檢查
@@ -80,26 +86,12 @@ public class EventObject : MonoBehaviour
                 }
                 yield return null;
             }
-            clicked = false;
-            triggered = false;
+            Clicked = false;
+            Triggered = false;
             yield return null;
 
         }
     }
-
-    //private IEnumerator RunEventCoroutine(EventPoint eventPoint)
-    //{
-    //    eventRunning = true;
-    //    IsRunning = true;
-    //    for (int i = 0; i < eventPoint.commands.Count; i++)
-    //    {
-    //        eventPoint.commands[i].Register(this);
-    //        NextCommand = (i + 1) >= eventPoint.commands.Count ? null : eventPoint.commands[i + 1];
-    //        yield return StartCoroutine(eventPoint.commands[i].Run());
-    //    }
-    //    IsRunning = false;
-    //    eventRunning = false;
-    //}
 
     public bool CheckEventContition(EventCondition condition)
     {
@@ -117,4 +109,22 @@ public class EventObject : MonoBehaviour
         }
         return true;
     }
+
+#if UNITY_EDITOR
+    public void OnDrawGizmosSelected()
+    {
+        Vector3 vector3 = transform.position;
+        Vector3 player = GameObject.FindGameObjectWithTag("Player").transform.position;
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(new Vector3(vector3.x, vector3.y + 0.5f, vector3.z), new Vector3(vector3.x, vector3.y - 0.5f, vector3.z));
+        Gizmos.DrawLine(vector3, new Vector3(player.x, vector3.y, vector3.z));
+        Gizmos.DrawLine(new Vector3(player.x, vector3.y + 0.5f, vector3.z), new Vector3(player.x, vector3.y - 0.5f, vector3.z));
+        Gizmos.color = Color.white;
+        Color origin = Handles.color;
+        Handles.color = Color.green;
+        Handles.Label(new Vector3((player.x - vector3.x) / 2 + vector3.x, vector3.y + 0.25f, vector3.z), (player.x - vector3.x).ToString());
+        Handles.color = origin;
+    }
+#endif
+
 }
