@@ -24,6 +24,16 @@ public class EventCommandList : IList<EventCommand>
         commands.Add(newCommand);
     }
 
+    public EventCommandList()
+    {
+        commands = new List<EventCommand>();
+    }
+
+    public EventCommandList(EventCommandList collection)
+    {
+        commands = new List<EventCommand>(collection);
+    }
+
     #region IList
     public EventCommand this[int index] { get => commands[index]; set => commands[index] = value; }
 
@@ -127,8 +137,9 @@ public class EventDialogue : EventCommand
         if (index > 0)
             content = content.Substring(0, index) + "\n" + content.Substring(index + 2);
         DialogueSystem.Instance.ShowDialouge(content);
-        // 下一句如果是選項，直接離開，並執行選項
-        if (EventExcutor.Instance.NextCommand is EventSelection)
+        // 下一句如果是選項或輸入，直接離開，並執行選項
+        if (EventExcutor.Instance.NextCommand is EventSelection ||
+            EventExcutor.Instance.NextCommand is EventInput)
             yield break;
         // 下一句如果是對話，完成後不關閉對話窗，並繼續對話
         else if (EventExcutor.Instance.NextCommand is EventDialogue)
@@ -221,15 +232,38 @@ public class EventSelection : EventCommand
         int index = SelectionBox.main.GetResult();
         if (index == 0)
         {
-            foreach (EventCommand command in selection1Commands)
+            EventExcutor.Instance.Insert(selection1Commands);
+        }
+        else if (index == 1)
+        {
+            EventExcutor.Instance.Insert(selection2Commands);
+        }
+        yield return null;
+    }
+}
+
+public class EventInput : EventCommand
+{
+    public string answer;
+    public EventCommandList correctCommands;
+    public EventCommandList wrongCommands;
+
+    public override IEnumerator Run()
+    {
+        InputBox.main.ShowInputBox();
+        yield return new WaitUntil(() => !InputBox.main.IsWaiting());
+        string result = InputBox.main.GetResult();
+        if (result == answer)
+        {
+            foreach (EventCommand command in correctCommands)
             {
                 command.Register(target);
                 yield return target.StartCoroutine(command.Run());
             }
         }
-        else if (index == 1)
+        else
         {
-            foreach (EventCommand command in selection2Commands)
+            foreach (EventCommand command in wrongCommands)
             {
                 command.Register(target);
                 yield return target.StartCoroutine(command.Run());
@@ -237,7 +271,6 @@ public class EventSelection : EventCommand
         }
         yield return null;
     }
-
 }
 
 public class EventShowBalloon : EventCommand

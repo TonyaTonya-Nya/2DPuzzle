@@ -21,11 +21,6 @@ public class SelectionBox : MonoBehaviour
         main = this;
     }
 
-    private void Start()
-    {
-        
-    }
-
     public void ShowSelectionBox(string text1, string text2)
     {
         waiting = true;

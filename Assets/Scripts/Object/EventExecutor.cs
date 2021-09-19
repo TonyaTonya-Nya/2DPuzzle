@@ -28,14 +28,14 @@ public class EventExcutor : MonoBehaviour
 
     public bool IsRunning { get; private set; }
 
-    private int index;
+    private int eventRunningIndex;
 
     public EventCommand NextCommand
     {
         get
         {
-            if (commands != null && index < commands.Count)
-                return commands[index];
+            if (commands != null && eventRunningIndex < commands.Count)
+                return commands[eventRunningIndex];
             return null;
         }
     }
@@ -47,7 +47,7 @@ public class EventExcutor : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
         commands = null;
-        index = 0;
+        eventRunningIndex = 0;
     }
 
     // Start is called before the first frame update
@@ -61,8 +61,22 @@ public class EventExcutor : MonoBehaviour
         if (IsRunning)
             return;
         target = caller;
-        commands = newCommands;
-        index = 0;
+        commands = new EventCommandList(newCommands);
+        eventRunningIndex = 0;
+    }
+
+    public void Insert(EventCommandList newCommands)
+    {
+        if (eventRunningIndex >= commands.Count)
+        {
+            for (int i = 0; i < newCommands.Count; i++)
+                commands.Add(newCommands[i]);
+        }
+        else
+        {
+            for (int i = 0; i < newCommands.Count; i++)
+                commands.Insert(eventRunningIndex + 1 + i, newCommands[i]);
+        }
     }
 
     private IEnumerator RunEvent()
@@ -75,7 +89,7 @@ public class EventExcutor : MonoBehaviour
                 IsRunning = true;
                 // 執行前關閉道具視窗
                 FindObjectOfType<ItemList>().CloseItemList();
-                foreach (EventCommand eventCommand in commands)
+                for (int i = 0;i < commands.Count;i++)
                 {
                     // 對象已經消失，不繼續處理
                     if (target == null)
@@ -83,7 +97,8 @@ public class EventExcutor : MonoBehaviour
                         Clear();
                         break;
                     }
-                    index++;
+                    EventCommand eventCommand = commands[i];
+                    eventRunningIndex++;
                     eventCommand.Register(target);
                     yield return StartCoroutine(eventCommand.Run());
                 }
@@ -96,7 +111,7 @@ public class EventExcutor : MonoBehaviour
 
     private void Clear()
     {
-        index = 0;
+        eventRunningIndex = 0;
         commands = null;
         target = null;
     }

@@ -251,8 +251,9 @@ public class EventCommandPropertyDrawerBase
             foreach (SerializedProperty p in s)
             {
                 position.y += lastUsedHeight;
-                EditorGUI.PropertyField(position, p);
                 lastUsedHeight = EditorGUI.GetPropertyHeight(p, true);
+                position.height = lastUsedHeight;
+                EditorGUI.PropertyField(position, p);
                 position.y += EditorGUIUtility.standardVerticalSpacing;
             }
             EditorGUI.indentLevel -= 1;
