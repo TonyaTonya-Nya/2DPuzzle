@@ -55,6 +55,9 @@ public class Demo : MonoBehaviour {
 			anim.SetFloat ("Speed", Mathf.Abs (horizontal));
 			rb.velocity = new Vector2 (horizontal * speed, rb.velocity.y);
 		}
+
+		facingRight = transform.localScale.x > 0 ? true : false;
+
 		if (horizontal > 0 && !facingRight && !dead && !attack) {
 			Flip (horizontal);
 		}
