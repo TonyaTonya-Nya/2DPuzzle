@@ -5,6 +5,7 @@ using System.Reflection;
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class EventCommandList : IList<EventCommand>
@@ -280,6 +281,21 @@ public class EventDestroyEvent : EventCommand
     public override IEnumerator Run()
     {
         UnityEngine.Object.Destroy(target.gameObject);
+        yield return null;
+    }
+}
+
+public class EventSetScreenColor : EventCommand
+{
+    public Color color;
+
+    public override IEnumerator Run()
+    {
+        GameObject mask = GameObject.Find("Black Mask");
+        if (mask != null)
+        {
+            mask.GetComponent<Image>().color = color;
+        }
         yield return null;
     }
 }

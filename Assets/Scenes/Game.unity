@@ -3002,6 +3002,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 751865715}
   - {fileID: 784305428}
   - {fileID: 1667912242}
   - {fileID: 995552331}
@@ -4318,6 +4319,80 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5891838, y: 1.4023876}
   m_EdgeRadius: 0
+--- !u!1 &751865714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751865715}
+  - component: {fileID: 751865717}
+  - component: {fileID: 751865716}
+  m_Layer: 5
+  m_Name: Black Mask
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &751865715
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751865714}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 506539420}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &751865716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751865714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 0
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &751865717
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751865714}
+  m_CullTransparentMesh: 0
 --- !u!1 &784305427
 GameObject:
   m_ObjectHideFlags: 0
@@ -4348,7 +4423,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 506539420}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -5504,7 +5579,7 @@ RectTransform:
   - {fileID: 57348583}
   - {fileID: 552023542}
   m_Father: {fileID: 506539420}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6143,7 +6218,7 @@ RectTransform:
   m_Children:
   - {fileID: 2044835422}
   m_Father: {fileID: 506539420}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11717,6 +11792,7 @@ Transform:
   - {fileID: 958005955}
   - {fileID: 2057274157}
   - {fileID: 208289376}
+  - {fileID: 1493806730}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13012,6 +13088,215 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.8096104, y: 3.4163208}
+  m_EdgeRadius: 0
+--- !u!1 &1493806729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1493806730}
+  - component: {fileID: 1493806732}
+  - component: {fileID: 1493806731}
+  m_Layer: 0
+  m_Name: Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1493806730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493806729}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.81, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1297172044}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1493806731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493806729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4367178d24a6247b5f465d6725d670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guid: 665a155b-b1e8-491b-a2e4-ac6f7ec30bcc
+  eventPoint:
+  - triggerType: 0
+    condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    commands:
+      commands:
+      - id: 0
+      - id: 1
+  - triggerType: 0
+    condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 1
+        _keyValues: 22000000
+        _keys: 22000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    commands:
+      commands:
+      - id: 2
+      - id: 3
+  xDistance: 10
+  references:
+    version: 1
+    00000000:
+      type: {class: EventSetScreenColor, ns: , asm: Assembly-CSharp}
+      data:
+        color: {r: 0, g: 0, b: 0, a: 0}
+    00000001:
+      type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
+      data:
+        switchId: 34
+        open: 1
+    00000002:
+      type: {class: EventSetScreenColor, ns: , asm: Assembly-CSharp}
+      data:
+        color: {r: 0, g: 0, b: 0, a: 0.49019608}
+    00000003:
+      type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
+      data:
+        switchId: 34
+        open: 0
+--- !u!61 &1493806732
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493806729}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1496911913
 GameObject:
@@ -14398,7 +14683,7 @@ RectTransform:
   - {fileID: 467909376}
   - {fileID: 1832190651}
   m_Father: {fileID: 506539420}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -21036,35 +21321,40 @@ MonoBehaviour:
       - id: 4
       - id: 5
       - id: 6
+      - id: 7
   xDistance: 0
   references:
     version: 1
     00000000:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      type: {class: EventSetScreenColor, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\u5F9E\u623F\u88E1\u9192\u4F86"
+        color: {r: 0, g: 0, b: 0, a: 0.78431374}
     00000001:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u6211\u7684\u982D\u597D\u75DB"
+        content: "\u4E3B\u89D2\u5F9E\u623F\u88E1\u9192\u4F86"
     00000002:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u8166\u888B\u88E1\u4E5F\u662F\u4E00\u5718\u4E82\uFF0C\u9019\u88E1\u662F\u54EA\u88E1\uFF1F\u70BA\u4EC0\u9EBC\u6211\u4EC0\u9EBC\u4E5F\u60F3\u4E0D\u8D77\u4F86\u4E86\uFF1F"
+        content: "\u6211\u7684\u982D\u597D\u75DB"
     00000003:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u6211\u662F\u525B\u88AB\u4EBA\u6253\u904E\u55CE\uFF1F\u662F\u8AB0\u505A\u7684\uFF1F\u53C8\u662F\u70BA\u4E86\u4EC0\u9EBC\u624D\u6703\u5C07\u6211\u6293\u4F86\u9019\u88E1\uFF1F"
+        content: "\u8166\u888B\u88E1\u4E5F\u662F\u4E00\u5718\u4E82\uFF0C\u9019\u88E1\u662F\u54EA\u88E1\uFF1F\u70BA\u4EC0\u9EBC\u6211\u4EC0\u9EBC\u4E5F\u60F3\u4E0D\u8D77\u4F86\u4E86\uFF1F"
     00000004:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u597D\u51B7\uFF0C\u73FE\u5728\u662F\u51AC\u5929\u55CE\uFF1F"
+        content: "\u6211\u662F\u525B\u88AB\u4EBA\u6253\u904E\u55CE\uFF1F\u662F\u8AB0\u505A\u7684\uFF1F\u53C8\u662F\u70BA\u4E86\u4EC0\u9EBC\u624D\u6703\u5C07\u6211\u6293\u4F86\u9019\u88E1\uFF1F"
     00000005:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u597D\u51B7\uFF0C\u73FE\u5728\u662F\u51AC\u5929\u55CE\uFF1F"
+    00000006:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 1
         open: 1
-    00000006:
+    00000007:
       type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
 --- !u!1 &1916579473 stripped
 GameObject:
