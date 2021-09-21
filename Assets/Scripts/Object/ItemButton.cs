@@ -38,10 +38,12 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     /// <param name="id"></param>
     public void Initialize(int id)
     {
+        eventObject.StopAllCoroutines();
         Item = GameDatabase.Instance.ItemDB[id];
         gameObject.name = Item.itemName;
         image.sprite = Item.sprite;
         eventObject.eventPoint = new List<EventPoint>(Item.clickEvent);
+        eventObject.StartCoroutine(eventObject.RunEvent());
     }
 
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)

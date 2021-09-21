@@ -32,6 +32,12 @@ public enum EventTriggerType
     Auto
 }
 
+public enum Direction
+{
+    Right,
+    Left
+}
+
 [System.Serializable]
 public class EventPoint
 {

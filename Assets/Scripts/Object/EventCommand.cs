@@ -299,3 +299,56 @@ public class EventSetScreenColor : EventCommand
         yield return null;
     }
 }
+
+public class EventConditionBranch : EventCommand
+{
+    public int switchId;
+    public bool needOn;
+    public EventCommandList conditionOkCommands;
+    public EventCommandList conditionNotOkCommands;
+
+    public override IEnumerator Run()
+    {
+        if (GameDatabase.Instance.GetSwitchState(switchId) == needOn)
+            EventExcutor.Instance.Insert(conditionOkCommands);
+        else
+            EventExcutor.Instance.Insert(conditionNotOkCommands);
+        yield return null;
+    }
+}
+
+public class EventSetDirection : EventCommand
+{
+    public string targetId;
+
+    public Direction direction;
+
+    public override IEnumerator Run()
+    {
+        List<EventObject> eventObjects = new List<EventObject>(GameObject.FindObjectsOfType<EventObject>());
+        EventObject target = eventObjects.Find(x => x.guid == targetId);
+        if (target != null)
+        {
+            Vector3 scale = target.transform.localScale;
+            switch (direction)
+            {
+                case Direction.Right:
+                    if (target.whichIsPositive == Direction.Left)
+                        scale.x = -1 * Mathf.Abs(scale.x);
+                    else
+                        scale.x = Mathf.Abs(scale.x);
+                    break;
+                case Direction.Left:
+                    if (target.whichIsPositive == Direction.Right)
+                        scale.x = -1 * Mathf.Abs(scale.x);
+                    else
+                        scale.x = Mathf.Abs(scale.x);
+                    break;
+                default:
+                    break;
+            }
+            target.transform.localScale = scale;
+        }
+        yield return null;
+    }
+}

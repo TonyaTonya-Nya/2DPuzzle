@@ -142,6 +142,7 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                     nowSelectIndex = i;
                     EventCommandList eventCommandList = EditorHelper.GetObj(property) as EventCommandList;
                     eventCommandList.Insert(nowSelectIndex + 1, eventCommandList[nowSelectIndex].GetType());
+                    return;
                 }
                 buttonRect.x = buttonRect.x - buttonRect.width - EditorGUIUtility.standardVerticalSpacing;
                 if (GUI.Button(buttonRect, "Insert"))
@@ -398,6 +399,86 @@ public class EventTransitionPropertyDrawer : EventCommandPropertyDrawerBase
             EditorGUI.PropertyField(position, property.FindPropertyRelative("speed"), new GUIContent("Speed", "If 0, object will transition immediately."));
             position.y += EditorHelper.NextLine;
             EditorGUI.PropertyField(position, property.FindPropertyRelative("cameraPosition"));
+            EditorGUI.indentLevel -= 1;
+        }
+    }
+}
+
+public class EventConditionBranchPropertyDrawer : EventCommandPropertyDrawerBase
+{
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    {
+        EventConditionBranch target = EditorHelper.GetObj(property) as EventConditionBranch;
+        SerializedObject serializedObject = property.serializedObject;
+        Type type = target.GetType();
+
+        position.height = EditorGUIUtility.singleLineHeight;
+        // Foldout的矩形寬度縮小
+        Rect rect = position;
+        rect.width = GUI.skin.label.fontSize * EventCommand.GetName(type.Name).Length;
+        property.isExpanded = EditorGUI.Foldout(rect, property.isExpanded, EventCommand.GetName(type.Name), true);
+        if (property.isExpanded)
+        {
+            EditorGUI.indentLevel += 1;
+            List<string> switchNames = new List<string>();
+            foreach (KeyValuePair<int, EventSwitches> pair in EditorDatabase.Instance.EventSwitchesDB)
+                switchNames.Add(pair.Key + ".  " + pair.Value.name);
+            FieldInfo field = type.GetField("switchId");
+            position.y += EditorHelper.NextLine;
+            field.SetValue(target, EditorGUI.Popup(position, "Switch", (int)field.GetValue(target) - 1, switchNames.ToArray()) + 1);
+            position.y += EditorHelper.NextLine;
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("needOn"));
+            position.y += EditorHelper.NextLine;
+            position.height = EditorGUI.GetPropertyHeight(property.FindPropertyRelative("conditionOkCommands"), true);
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("conditionOkCommands"));
+            position.y += position.height + EditorGUIUtility.standardVerticalSpacing;
+            position.height = EditorGUI.GetPropertyHeight(property.FindPropertyRelative("conditionNotOkCommands"), true);
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("conditionNotOkCommands"));
+            EditorGUI.indentLevel -= 1;
+        }
+    }
+}
+
+public class EventSetDirectionPropertyDrawer : EventCommandPropertyDrawerBase
+{
+    private List<EventObject> objects;
+    private List<string> objectNames;
+
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    {
+        EventSetDirection target = EditorHelper.GetObj(property) as EventSetDirection;
+        SerializedObject serializedObject = property.serializedObject;
+        Type type = target.GetType();
+
+        position.height = EditorGUIUtility.singleLineHeight;
+        // Foldout的矩形寬度縮小
+        Rect rect = position;
+        rect.width = GUI.skin.label.fontSize * EventCommand.GetName(type.Name).Length;
+        property.isExpanded = EditorGUI.Foldout(rect, property.isExpanded, EventCommand.GetName(type.Name), true);
+        if (property.isExpanded)
+        {
+            EditorGUI.indentLevel += 1;
+            if (objects == null)
+            {
+                objectNames = new List<string>();
+                objects = new List<EventObject>(GameObject.FindObjectsOfType<EventObject>());
+                objects.RemoveAll(x => x.guid == null || x.guid == "");
+                EventObject player = objects.Find(x => x.CompareTag("Player"));
+                objects.Remove(player);
+                objects.Insert(0, player);
+                int indexPrefix = 1;
+                foreach (EventObject eventObject in objects)
+                    objectNames.Add((indexPrefix++).ToString() + " " + eventObject.name);
+            }
+            FieldInfo field = type.GetField("targetId");
+            position.y += EditorHelper.NextLine;
+            int nowSelection = objects.FindIndex(x => x.guid == (string)field.GetValue(target));
+            if (nowSelection < 0)
+                nowSelection = 0;
+            int selection = EditorGUI.Popup(position, "Target", nowSelection, objectNames.ToArray());
+            field.SetValue(target, objects[selection].guid);
+            position.y += EditorHelper.NextLine;
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("direction"));
             EditorGUI.indentLevel -= 1;
         }
     }

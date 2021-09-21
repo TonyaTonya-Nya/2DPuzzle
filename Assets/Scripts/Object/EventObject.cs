@@ -18,6 +18,8 @@ public class EventObject : MonoBehaviour
 
     // 物件要與玩家在這個距離內才可被點擊
     public float xDistance;
+    // 物件正向是哪個方向
+    public Direction whichIsPositive;
 
     public bool IsRunning { get; set; }
 
@@ -67,6 +69,9 @@ public class EventObject : MonoBehaviour
             // 從最後面的事件開始向前，找到符合條件的事件點後執行
             for (int i = eventPoint.Count - 1; i >= 0; i--)
             {
+                // 不應該有這段但是不知道為什麼會發生所以加上這段保險
+                if (i < 0 || i >= eventPoint.Count)
+                    break;
                 // 事件頁條件檢查
                 if (CheckEventContition(eventPoint[i].condition) && !IsRunning)
                 {
