@@ -75,7 +75,7 @@ public class EventExcutor : MonoBehaviour
         else
         {
             for (int i = 0; i < newCommands.Count; i++)
-                commands.Insert(eventRunningIndex + 1 + i, newCommands[i]);
+                commands.Insert(eventRunningIndex + i, newCommands[i]);
         }
     }
 
@@ -93,10 +93,7 @@ public class EventExcutor : MonoBehaviour
                 {
                     // 對象已經消失，不繼續處理
                     if (target == null)
-                    {
-                        Clear();
                         break;
-                    }
                     EventCommand eventCommand = commands[i];
                     eventRunningIndex++;
                     eventCommand.Register(target);

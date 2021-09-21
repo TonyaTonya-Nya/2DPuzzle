@@ -78,6 +78,7 @@ public class EventObject : MonoBehaviour
                     run = run || (eventPoint[i].triggerType == EventTriggerType.Touch && Triggered);
                     // 已經有其他事件在執行，不可執行
                     run = run && !EventExcutor.Instance.IsRunning;
+
                     // 啟動檢查
                     if (run)
                         EventExcutor.Instance.Register(this, eventPoint[i].commands);
@@ -122,7 +123,10 @@ public class EventObject : MonoBehaviour
         Gizmos.color = Color.white;
         Color origin = Handles.color;
         Handles.color = Color.green;
-        Handles.Label(new Vector3((player.x - vector3.x) / 2 + vector3.x, vector3.y + 0.25f, vector3.z), (player.x - vector3.x).ToString());
+        GUIStyle style = new GUIStyle();
+        style.normal.textColor = Color.green;
+        style.fontSize = 24;
+        Handles.Label(new Vector3((player.x - vector3.x) / 2 + vector3.x, vector3.y + 0.25f, vector3.z), (player.x - vector3.x).ToString(), style);
         Handles.color = origin;
     }
 #endif

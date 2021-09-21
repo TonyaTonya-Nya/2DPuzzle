@@ -255,19 +255,11 @@ public class EventInput : EventCommand
         string result = InputBox.main.GetResult();
         if (result == answer)
         {
-            foreach (EventCommand command in correctCommands)
-            {
-                command.Register(target);
-                yield return target.StartCoroutine(command.Run());
-            }
+            EventExcutor.Instance.Insert(correctCommands);
         }
         else
         {
-            foreach (EventCommand command in wrongCommands)
-            {
-                command.Register(target);
-                yield return target.StartCoroutine(command.Run());
-            }
+            EventExcutor.Instance.Insert(wrongCommands);
         }
         yield return null;
     }

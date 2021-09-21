@@ -116,6 +116,9 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
             float lastUsedHeight = EditorHelper.NextLine;
             if (nowDrawer == null)
                 nowDrawer = new EventCommandPropertyDrawer();
+
+            GenericMenu menu = CreateMenu(property, false);
+
             for (int i = 0; i < commands.arraySize; i++)
             {
                 SerializedProperty singleCommand = commands.GetArrayElementAtIndex(i);
@@ -124,16 +127,14 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                 lastUsedHeight = EditorGUI.GetPropertyHeight(singleCommand, true);
                 position.y += EditorGUIUtility.standardVerticalSpacing;
 
-                GenericMenu menu = CreateMenu(property, false);
                 Rect buttonRect = position;
                 buttonRect.x = buttonRect.x + buttonRect.width - buttonRect.width / 7;
                 buttonRect.width = buttonRect.width / 7;
-
                 if (GUI.Button(buttonRect, "Delete"))
                 {
                     EventCommandList eventCommandList = EditorHelper.GetObj(property) as EventCommandList;
                     eventCommandList.RemoveAt(i);
-                    break;
+                    return;
                 }
                 buttonRect.x = buttonRect.x - buttonRect.width - EditorGUIUtility.standardVerticalSpacing;
                 if (GUI.Button(buttonRect, "Duplicate"))
@@ -256,6 +257,25 @@ public class EventCommandPropertyDrawerBase
                 EditorGUI.PropertyField(position, p);
                 position.y += EditorGUIUtility.standardVerticalSpacing;
             }
+            EditorGUI.indentLevel -= 1;
+        }
+    }
+}
+
+public class EventDialougePropertyDrawer : EventCommandPropertyDrawerBase
+{
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    {
+        position.height = EditorGUIUtility.singleLineHeight;
+        // Foldout的矩形寬度縮小
+        Rect rect = position;
+        rect.width = GUI.skin.label.fontSize * "Dialogue".Length;
+        property.isExpanded = EditorGUI.Foldout(rect, property.isExpanded, "Dialogue", true);
+        if (property.isExpanded)
+        {
+            EditorGUI.indentLevel += 1;
+            position.y += EditorHelper.NextLine;
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("content"));
             EditorGUI.indentLevel -= 1;
         }
     }
