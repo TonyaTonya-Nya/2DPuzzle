@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
+public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public Item Item { get; private set; }
 
@@ -19,12 +19,17 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private Vector2 startPosition;
     private bool isDraging;
 
+    private CanvasGroup itemNameBG;
+    private Text itemNameText;
+
     private void Awake()
     {
         image = GetComponent<Image>();
         rectTransform = GetComponent<RectTransform>();
         eventObject = GetComponent<EventObject>();
         parent = transform.parent.GetComponent<GridLayoutGroup>();
+        itemNameBG = transform.parent.parent.parent.GetChild(3).GetComponent<CanvasGroup>();
+        itemNameText = itemNameBG.transform.GetChild(0).GetComponent<Text>();
     }
 
     /// <summary>
@@ -99,5 +104,16 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (isDraging)
             return;
         eventObject.Clicked = true;
+    }
+
+    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
+    {
+        itemNameBG.alpha = 1;
+        itemNameText.text = Item.itemName;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        itemNameBG.alpha = 0;
     }
 }

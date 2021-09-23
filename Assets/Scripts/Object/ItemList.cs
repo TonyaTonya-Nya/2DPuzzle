@@ -11,6 +11,8 @@ public class ItemList : MonoBehaviour
     public Transform itemListContent;
     public ItemButton ItemButtonPrefab;
 
+    public CanvasGroup itemNameBG;
+
     public Image leftArrow;
     public Image rightArrow;
 
@@ -32,6 +34,8 @@ public class ItemList : MonoBehaviour
             else
                 OpenItemList();
         }
+        if (itemNameBG.alpha > 0)
+            ShowItemName();
     }
 
     public void OpenItemList()
@@ -97,4 +101,11 @@ public class ItemList : MonoBehaviour
         leftArrow.color = color;
         rightArrow.color = color;
     }
+
+    public void ShowItemName()
+    {
+        Vector2 mosue = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        itemNameBG.transform.position = mosue + new Vector2(0.5f, 0);
+    }
+
 }
