@@ -11,7 +11,13 @@ public class IntDictionary : SerializableDictionaryBase<int, int> { }
 public class IntBoolDictionary : SerializableDictionaryBase<int, bool> { }
 
 [System.Serializable]
-public class IntStringDhictionary : SerializableDictionaryBase<int, string> { }
+public class StringBoolDictionary : SerializableDictionaryBase<string, bool> { }
+
+[System.Serializable]
+public class StringIntDictionary : SerializableDictionaryBase<string, int> { }
+
+[System.Serializable]
+public class StringFloatDictionary : SerializableDictionaryBase<string, float> { }
 
 [System.Serializable]
 public class EventCondition

@@ -271,9 +271,39 @@ public class EventShowBalloon : EventCommand
 
 }
 
-public class EventShowAnimation : EventCommand
+public class EventSetAnimationParameter : EventCommand
 {
+    // 要播誰的動畫
+    public Animator animator;
+    // 動畫要設定的參數
+    public List<string> triggers;
+    public StringIntDictionary ints;
+    public StringBoolDictionary bools;
+    public StringFloatDictionary floats;
 
+    public override IEnumerator Run()
+    {
+        foreach (string name in triggers)
+            animator.SetTrigger(name);
+        foreach (KeyValuePair<string, int> pair in ints)
+            animator.SetInteger(pair.Key, pair.Value);
+        foreach (KeyValuePair<string, bool> pair in bools)
+            animator.SetBool(pair.Key, pair.Value);
+        foreach (KeyValuePair<string, float> pair in floats)
+            animator.SetFloat(pair.Key, pair.Value);
+        yield return null;
+    }
+}
+
+public class EventWait : EventCommand
+{
+    public float frame;
+
+    public override IEnumerator Run()
+    {
+        for (int i = 0; i < frame; i++)
+            yield return null;
+    }
 }
 
 public class EventDestroyEvent : EventCommand

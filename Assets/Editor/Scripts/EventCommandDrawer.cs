@@ -255,7 +255,7 @@ public class EventCommandPropertyDrawerBase
                 position.y += lastUsedHeight;
                 lastUsedHeight = EditorGUI.GetPropertyHeight(p, true);
                 position.height = lastUsedHeight;
-                EditorGUI.PropertyField(position, p);
+                EditorGUI.PropertyField(position, p, true);
                 position.y += EditorGUIUtility.standardVerticalSpacing;
             }
             EditorGUI.indentLevel -= 1;

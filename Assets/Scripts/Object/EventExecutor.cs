@@ -15,6 +15,7 @@ public class EventExcutor : MonoBehaviour
             if (instance == null)
             {
                 GameObject gameObject = new GameObject();
+                gameObject.name = "Event Excutor";
                 gameObject.AddComponent<EventExcutor>();
                 instance = gameObject.GetComponent<EventExcutor>();
             }
