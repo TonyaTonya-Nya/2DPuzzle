@@ -14855,7 +14855,7 @@ MonoBehaviour:
     00000002:
       type: {class: EventTransition, ns: , asm: Assembly-CSharp}
       data:
-        targetId: 9a8cc5a6-de31-45f5-a630-f24efa2f8d93
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
         destination: {x: -1.25, y: -2.25}
         speed: 0
         cameraPosition: {x: 5, y: 0}
@@ -15287,7 +15287,7 @@ MonoBehaviour:
     00000002:
       type: {class: EventTransition, ns: , asm: Assembly-CSharp}
       data:
-        targetId: 9a8cc5a6-de31-45f5-a630-f24efa2f8d93
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
         destination: {x: 4.04, y: -2.25}
         speed: 0
         cameraPosition: {x: 5, y: 0}
@@ -15349,7 +15349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4010859196364772, guid: fc9fa88e094285f4e9420f756be3b68d, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4010859196364772, guid: fc9fa88e094285f4e9420f756be3b68d, type: 3}
       propertyPath: m_LocalScale.x
@@ -21319,7 +21319,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &323187685
 GameObject:
@@ -21454,7 +21454,7 @@ MonoBehaviour:
     00000003:
       type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
       data:
-        itemId: 28
+        itemId: 30
         number: 1
     00000004:
       type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
@@ -21968,7 +21968,7 @@ MonoBehaviour:
     00000006:
       type: {class: EventTransition, ns: , asm: Assembly-CSharp}
       data:
-        targetId: 9a8cc5a6-de31-45f5-a630-f24efa2f8d93
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
         destination: {x: 45.92, y: 17.5}
         speed: 0
         cameraPosition: {x: 40, y: 20}
@@ -22677,7 +22677,7 @@ RectTransform:
   - {fileID: 995552331}
   - {fileID: 1073117702}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -22838,7 +22838,7 @@ MonoBehaviour:
     00000000:
       type: {class: EventTransition, ns: , asm: Assembly-CSharp}
       data:
-        targetId: 9a8cc5a6-de31-45f5-a630-f24efa2f8d93
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
         destination: {x: -2.54, y: -2.25}
         speed: 0
         cameraPosition: {x: 5, y: 0}
@@ -22950,7 +22950,7 @@ Transform:
   m_Children:
   - {fileID: 323187686}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &532498333
 GameObject:
@@ -23154,7 +23154,7 @@ MonoBehaviour:
     00000006:
       type: {class: EventTransition, ns: , asm: Assembly-CSharp}
       data:
-        targetId: 9a8cc5a6-de31-45f5-a630-f24efa2f8d93
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
         destination: {x: 11.95, y: 17.55}
         speed: 0
         cameraPosition: {x: 5, y: 20}
@@ -23710,7 +23710,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &712134995
 GameObject:
@@ -45635,6 +45635,19 @@ MonoBehaviour:
       - id: 14
       - id: 15
       - id: 16
+      - id: 17
+      - id: 18
+      - id: 19
+      - id: 20
+      - id: 21
+      - id: 22
+      - id: 23
+      - id: 24
+      - id: 25
+      - id: 26
+      - id: 27
+      - id: 28
+      - id: 29
   - triggerType: 2
     condition:
       switchConditions:
@@ -45691,13 +45704,15 @@ MonoBehaviour:
         _values: 
     commands:
       commands:
-      - id: 17
-      - id: 18
-      - id: 19
-      - id: 20
-      - id: 21
-      - id: 22
-      - id: 23
+      - id: 30
+      - id: 31
+      - id: 32
+      - id: 33
+      - id: 34
+      - id: 35
+      - id: 36
+      - id: 37
+      - id: 38
   - triggerType: 2
     condition:
       switchConditions:
@@ -45754,14 +45769,16 @@ MonoBehaviour:
         _values: 
     commands:
       commands:
-      - id: 24
-      - id: 25
-      - id: 26
-      - id: 27
-      - id: 28
-      - id: 29
-      - id: 30
-  - triggerType: 0
+      - id: 39
+      - id: 40
+      - id: 41
+      - id: 42
+      - id: 43
+      - id: 44
+      - id: 45
+      - id: 46
+      - id: 47
+  - triggerType: 2
     condition:
       switchConditions:
         reorderableList:
@@ -45817,196 +45834,1069 @@ MonoBehaviour:
         _values: 
     commands:
       commands:
-      - id: 31
-      - id: 32
-      - id: 33
-      - id: 34
-      - id: 35
-      - id: 36
-      - id: 37
-      - id: 38
-      - id: 39
-      - id: 40
-      - id: 41
-      - id: 42
-      - id: 43
-      - id: 44
+      - id: 48
+      - id: 49
+      - id: 50
+      - id: 51
+      - id: 52
+      - id: 53
+      - id: 54
+      - id: 55
+      - id: 56
+      - id: 57
+      - id: 58
+      - id: 59
+      - id: 60
+      - id: 61
+      - id: 62
+      - id: 63
+      - id: 64
+      - id: 65
+      - id: 66
+      - id: 67
+      - id: 68
+      - id: 69
+      - id: 70
+      - id: 71
+      - id: 72
+      - id: 73
   xDistance: 0
   whichIsPositive: 0
   references:
     version: 1
     00000000:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u559D\u5427\uFF01\u65E2\u7136\u8981\u5408\u4F5C\uFF0C\u90A3\u4F60\u548C\u6211\u4E00\u8D77\u559D\u4E9B\u9152\u61C9\u8A72\u6C92\u4EC0\u9EBC\u5927\u554F\u984C\u5427\uFF1F"
+        animator: {fileID: 1362508596}
+        triggers:
+        - Give Wine
+        ints:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        bools:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        floats:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: []
     00000001:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u2026\u2026\u9019\u5C31\u662F\u4F60\u7684\u7B54\u6848\u55CE\uFF1F"
+        animator: {fileID: 2057274161}
+        triggers:
+        - Get Wine
+        ints:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        bools:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        floats:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: []
     00000002:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      type: {class: EventWait, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u4F60\u559D\u4E00\u74F6\uFF0C\u6211\u559D\u4E00\u74F6\uFF0C\u5F88\u516C\u5E73\u5427\uFF1F"
+        frame: 60
     00000003:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4E0D\u7136\u6211\u5011\u4EA4\u63DB\u559D\u554A\uFF1F\u4F60\u8981\u6BBA\u6211\uFF0C\u53C8\u600E\u9EBC\u9700\u8981\u88DD\u6A21\u4F5C\u6A23\uFF1F"
+        content: "\u4E3B\u89D2\\n\u559D\u5427\uFF01\u65E2\u7136\u8981\u5408\u4F5C\uFF0C\u90A3\u4F60\u548C\u6211\u4E00\u8D77\u559D\u4E9B\u9152\u61C9\u8A72\u6C92\u4EC0\u9EBC\u5927\u554F\u984C\u5427\uFF1F"
     00000004:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u5B50\u5F48\u6216\u662F\u9152\uFF1F\u6B7B\u65BC\u975E\u547D\u9084\u662F\u58EF\u70C8\u6210\u4EC1\uFF1F"
+        content: "\u5927\u53D4\\n\u4F60\u2026\u2026\u9019\u5C31\u662F\u4F60\u7684\u7B54\u6848\u55CE\uFF1F"
     00000005:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u662F\u61F7\u7591\u6211\uFF1F"
+        content: "\u4E3B\u89D2\\n\u4F60\u559D\u4E00\u74F6\uFF0C\u6211\u559D\u4E00\u74F6\uFF0C\u5F88\u516C\u5E73\u5427\uFF1F"
     00000006:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u4EC0\u9EBC\u610F\u601D\uFF1F"
+        content: "\u5927\u53D4\\n\u4E0D\u7136\u6211\u5011\u4EA4\u63DB\u559D\u554A\uFF1F\u4F60\u8981\u6BBA\u6211\uFF0C\u53C8\u600E\u9EBC\u9700\u8981\u88DD\u6A21\u4F5C\u6A23\uFF1F"
     00000007:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u61F7\u7591\u6211\u662F Boss\uFF0C\u4E0D\u662F\u55CE\uFF1F\u6240\u4EE5\u624D\u60F3\u6BBA\u6211\u3002"
+        content: "\u4E3B\u89D2\\n\u5B50\u5F48\u6216\u662F\u9152\uFF1F\u6B7B\u65BC\u975E\u547D\u9084\u662F\u58EF\u70C8\u6210\u4EC1\uFF1F"
     00000008:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u6211\u4E0D\u9019\u9EBC\u8A8D\u70BA\uFF0C\u4F60\u9AD8\u4F30\u4F60\u81EA\u5DF1\u4E86"
+        content: "\u5927\u53D4\\n\u4F60\u662F\u61F7\u7591\u6211\uFF1F"
     00000009:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u4E0D\u9019\u9EBC\u8A8D\u70BA\uFF1F\u4F60\u4E0D\u77E5\u9053\u5E79\u90E8\u4E4B\u9593\u56B4\u7981\u5167\u9B25\u55CE\uFF1F"
+        content: "\u4E3B\u89D2\\n\u4EC0\u9EBC\u610F\u601D\uFF1F"
     0000000A:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u4E0D\u77E5\u9053\u88AB\u6293\u5230\u5F8C\u7684\u4E0B\u5834\u662F\u600E\u6A23\u55CE\uFF1F"
+        content: "\u5927\u53D4\\n\u4F60\u61F7\u7591\u6211\u662F Boss\uFF0C\u4E0D\u662F\u55CE\uFF1F\u6240\u4EE5\u624D\u60F3\u6BBA\u6211\u3002"
     0000000B:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u6211\u7684\u76EE\u6A19\u662F\u6574\u500B\u7D44\u7E54\uFF0C\u53C8\u600E\u9EBC\u6703\u6015\u5462\uFF1F"
+        content: "\u4E3B\u89D2\\n\u6211\u4E0D\u9019\u9EBC\u8A8D\u70BA\uFF0C\u4F60\u9AD8\u4F30\u4F60\u81EA\u5DF1\u4E86"
     0000000C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n30 \u5206\u9418\u5F8C\uFF0C\u5E79\u90E8\u5341\u65B9\u5BAE\u958B\u6703\u3002Boss"
+        content: "\u5927\u53D4\\n\u4F60\u4E0D\u9019\u9EBC\u8A8D\u70BA\uFF1F\u4F60\u4E0D\u77E5\u9053\u5E79\u90E8\u4E4B\u9593\u56B4\u7981\u5167\u9B25\u55CE\uFF1F"
     0000000D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u5341\u65B9\u5BAE\uFF0C\u5475\u5475\uFF0C\u6709\u8DA3\u7684\u540D\u5B57\uFF0C\u6BCF\u6B21\u807D\u5230\u90FD\u89BA\u5F97\u6709\u8DA3\u3002"
+        content: "\u5927\u53D4\\n\u4F60\u4E0D\u77E5\u9053\u88AB\u6293\u5230\u5F8C\u7684\u4E0B\u5834\u662F\u600E\u6A23\u55CE\uFF1F"
     0000000E:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u65E2\u7136 Boss \u8981\u6C42\u5E79\u90E8\u51FA\u73FE\uFF0C\u90A3\u6211\u4E5F\u8A72\u53BB\u53C3\u52A0\u3002"
+        content: "\u4E3B\u89D2\\n\u6211\u7684\u76EE\u6A19\u662F\u6574\u500B\u7D44\u7E54\uFF0C\u53C8\u600E\u9EBC\u6703\u6015\u5462\uFF1F"
     0000000F:
+      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
+      data:
+        animator: {fileID: 2057274161}
+        triggers:
+        - Drink
+        ints:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        bools:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        floats:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: []
+    00000010:
+      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
+      data:
+        animator: {fileID: 1362508596}
+        triggers:
+        - Idle
+        ints:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        bools:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        floats:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: []
+    00000011:
+      type: {class: EventWait, ns: , asm: Assembly-CSharp}
+      data:
+        frame: 10
+    00000012:
+      type: {class: EventTransition, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
+        destination: {x: -36.29, y: -2.22}
+        speed: 0
+        cameraPosition: {x: -30, y: 0}
+    00000013:
+      type: {class: EventSetDirection, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
+        direction: 0
+    00000014:
+      type: {class: EventWait, ns: , asm: Assembly-CSharp}
+      data:
+        frame: 60
+    00000015:
+      type: {class: EventSetDirection, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
+        direction: 1
+    00000016:
+      type: {class: EventWait, ns: , asm: Assembly-CSharp}
+      data:
+        frame: 60
+    00000017:
+      type: {class: EventTransition, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
+        destination: {x: -23.03, y: 17.75}
+        speed: 0
+        cameraPosition: {x: -30, y: 20}
+    00000018:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u65C1\u767D\\n\u7A81\u7136\u6709\u9663\u9234\u8072\u97FF\u8D77\uFF0C\u662F\u78A7\u771F\u7684\u624B\u6A5F\uFF0C\u6709\u4EBA
+          \u50B3\u8A0A\u606F\u7D66\u78A7\u771F\u3002"
+    00000019:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n30 \u5206\u9418\u5F8C\uFF0C\u5E79\u90E8\u5341\u65B9\u5BAE\u958B\u6703\u3002Boss"
+    0000001A:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u5341\u65B9\u5BAE\uFF0C\u5475\u5475\uFF0C\u6709\u8DA3\u7684\u540D\u5B57\uFF0C\u6BCF\u6B21\u807D\u5230\u90FD\u89BA\u5F97\u6709\u8DA3\u3002"
+    0000001B:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u65E2\u7136 Boss \u8981\u6C42\u5E79\u90E8\u51FA\u73FE\uFF0C\u90A3\u6211\u4E5F\u8A72\u53BB\u53C3\u52A0\u3002"
+    0000001C:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 28
         open: 1
-    00000010:
+    0000001D:
       type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
-    00000011:
+    0000001E:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u4E3B\u89D2\\n\u559D\u5427\uFF01\u65E2\u7136\u8981\u5408\u4F5C\uFF0C\u90A3\u4F60\u548C\u6211\u4E00\u8D77\u559D\u4E9B\u9152\u61C9\u8A72\u6C92\u4EC0\u9EBC\u5927\u554F\u984C\u5427\uFF1F"
-    00000012:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u5927\u53D4\\n\u4F60\u2026\u2026\u9019\u5C31\u662F\u4F60\u7684\u7B54\u6848\u55CE\uFF1F"
-    00000013:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\u5B50\u5F48\u6216\u662F\u9152\uFF1F\u6B7B\u65BC\u975E\u547D\u9084\u662F\u58EF\u70C8\u6210\u4EC1\uFF1F"
-    00000014:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\uFF08\u9019\u662F\u2026\u2026\u8840\u55CE\uFF1F\uFF09"
-    00000015:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\uFF08\u53EF\u2026\u53EF\u60E1\uFF0C\u6211\u5927\u610F\u4E86\u554A\uFF01\uFF09"
-    00000016:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\uFF08\u5982\u679C\u2026\u6211\u6C92\u7D66\u4ED6\u9019\u7A2E\u676F\u5B50\u2026\u2026\uFF09"
-    00000017:
-      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
-    00000018:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\u559D\u5427\uFF01\u65E2\u7136\u8981\u5408\u4F5C\uFF0C\u90A3\u4F60\u66FF\u6211\u559D\u4E9B\u9152\u61C9\u8A72\u6C92\u4EC0\u9EBC\u5927\u554F\u984C\u5427\uFF1F"
-    00000019:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u5927\u53D4\\n\u4F60\u2026\u2026\u9019\u5C31\u662F\u4F60\u7684\u7B54\u6848\u55CE\uFF1F"
-    0000001A:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\u5B50\u5F48\u6216\u662F\u9152\uFF1F\u6B7B\u65BC\u975E\u547D\u9084\u662F\u58EF\u70C8\u6210\u4EC1\uFF1F"
-    0000001B:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\uFF08\u9019\u662F\u2026\u2026\u8840\u55CE\uFF1F\uFF09"
-    0000001C:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\uFF08\u53EF\u2026\u53EF\u60E1\uFF0C\u6211\u5927\u610F\u4E86\u554A\uFF01\uFF09"
-    0000001D:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\uFF08\u5982\u679C\u2026\u6211\u6C92\u7D66\u4ED6\u9019\u7A2E\u676F\u5B50\u2026\u2026\uFF09"
-    0000001E:
-      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
     0000001F:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u559D\u5427\uFF01\u65E2\u7136\u8981\u5408\u4F5C\uFF0C\u90A3\u4F60\u548C\u6211\u4E00\u8D77\u559D\u4E9B\u9152\u61C9\u8A72\u6C92\u4EC0\u9EBC\u5927\u554F\u984C\u5427\uFF1F"
+        content: "\u5927\u53D4\\n\u4F60\u2026\u2026\u9019\u5C31\u662F\u4F60\u7684\u7B54\u6848\u55CE\uFF1F"
     00000020:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u2026\u2026\u9019\u5C31\u662F\u4F60\u7684\u7B54\u6848\u55CE\uFF1F"
-    00000021:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
         content: "\u4E3B\u89D2\\n\u5B50\u5F48\u6216\u662F\u9152\uFF1F\u6B7B\u65BC\u975E\u547D\u9084\u662F\u58EF\u70C8\u6210\u4EC1\uFF1F"
-    00000022:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+    00000021:
+      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u662F\u61F7\u7591\u6211\uFF1F"
+        animator: {fileID: 1362508596}
+        triggers:
+        - Attack
+        ints:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        bools:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        floats:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: []
+    00000022:
+      type: {class: EventWait, ns: , asm: Assembly-CSharp}
+      data:
+        frame: 60
     00000023:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u4EC0\u9EBC\u610F\u601D\uFF1F"
+        content: "\u4E3B\u89D2\\n\uFF08\u9019\u662F\u2026\u2026\u8840\u55CE\uFF1F\uFF09"
     00000024:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u61F7\u7591\u6211\u662F Boss\uFF0C\u4E0D\u662F\u55CE\uFF1F\u6240\u4EE5\u624D\u60F3\u6BBA\u6211\u3002"
+        content: "\u4E3B\u89D2\\n\uFF08\u53EF\u2026\u53EF\u60E1\uFF0C\u6211\u5927\u610F\u4E86\u554A\uFF01\uFF09"
     00000025:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u6211\u4E0D\u9019\u9EBC\u8A8D\u70BA\uFF0C\u4F60\u9AD8\u4F30\u4F60\u81EA\u5DF1\u4E86"
+        content: "\u4E3B\u89D2\\n\uFF08\u5982\u679C\u2026\u6211\u6C92\u7D66\u4ED6\u9019\u7A2E\u676F\u5B50\u2026\u2026\uFF09"
     00000026:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u5927\u53D4\\n\u4F60\u4E0D\u9019\u9EBC\u8A8D\u70BA\uFF1F\u4F60\u4E0D\u77E5\u9053\u5E79\u90E8\u4E4B\u9593\u56B4\u7981\u5167\u9B25\u55CE\uFF1F"
+      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
     00000027:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u4E0D\u77E5\u9053\u88AB\u6293\u5230\u5F8C\u7684\u4E0B\u5834\u662F\u600E\u6A23\u55CE\uFF1F"
+        content: "\u4E3B\u89D2\\n\u559D\u5427\uFF01\u65E2\u7136\u8981\u5408\u4F5C\uFF0C\u90A3\u4F60\u66FF\u6211\u559D\u4E9B\u9152\u61C9\u8A72\u6C92\u4EC0\u9EBC\u5927\u554F\u984C\u5427\uFF1F"
     00000028:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u6211\u7684\u76EE\u6A19\u662F\u6574\u500B\u7D44\u7E54\uFF0C\u53C8\u600E\u9EBC\u6703\u6015\u5462\uFF1F"
+        content: "\u5927\u53D4\\n\u4F60\u2026\u2026\u9019\u5C31\u662F\u4F60\u7684\u7B54\u6848\u55CE\uFF1F"
     00000029:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u5947\u602A\uFF0C\u600E\u9EBC\u6703\u6C92\u4EBA\uFF1F"
+        content: "\u4E3B\u89D2\\n\u5B50\u5F48\u6216\u662F\u9152\uFF1F\u6B7B\u65BC\u975E\u547D\u9084\u662F\u58EF\u70C8\u6210\u4EC1\uFF1F"
     0000002A:
+      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
+      data:
+        animator: {fileID: 2057274161}
+        triggers:
+        - Attack
+        ints:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        bools:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        floats:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: []
+    0000002B:
+      type: {class: EventWait, ns: , asm: Assembly-CSharp}
+      data:
+        frame: 60
+    0000002C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u7A81\u7136\u5F8C\u8166\u4E00\u75DB\uFF0C\u773C\u524D\u4E00\u9ED1\uFF09\uFF0C\u9019\u662F\u2026\u2026\u8840\u55CE\uFF1F"
-    0000002B:
+        content: "\u4E3B\u89D2\\n\uFF08\u9019\u662F\u2026\u2026\u8840\u55CE\uFF1F\uFF09"
+    0000002D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u4E3B\u89D2\\n\uFF08\u53EF\u2026\u53EF\u60E1\uFF0C\u6211\u5927\u610F\u4E86\u554A\uFF01\uFF09"
-    0000002C:
+    0000002E:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\uFF08\u5982\u679C\u2026\u6211\u6C92\u7D66\u4ED6\u9019\u7A2E\u676F\u5B50\u2026\u2026\uFF09"
+    0000002F:
+      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
+    00000030:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u559D\u5427\uFF01\u65E2\u7136\u8981\u5408\u4F5C\uFF0C\u90A3\u4F60\u548C\u6211\u4E00\u8D77\u559D\u4E9B\u9152\u61C9\u8A72\u6C92\u4EC0\u9EBC\u5927\u554F\u984C\u5427\uFF1F"
+    00000031:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u5927\u53D4\\n\u4F60\u2026\u2026\u9019\u5C31\u662F\u4F60\u7684\u7B54\u6848\u55CE\uFF1F"
+    00000032:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u5B50\u5F48\u6216\u662F\u9152\uFF1F\u6B7B\u65BC\u975E\u547D\u9084\u662F\u58EF\u70C8\u6210\u4EC1\uFF1F"
+    00000033:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u5927\u53D4\\n\u4F60\u662F\u61F7\u7591\u6211\uFF1F"
+    00000034:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u4EC0\u9EBC\u610F\u601D\uFF1F"
+    00000035:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u5927\u53D4\\n\u4F60\u61F7\u7591\u6211\u662F Boss\uFF0C\u4E0D\u662F\u55CE\uFF1F\u6240\u4EE5\u624D\u60F3\u6BBA\u6211\u3002"
+    00000036:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u6211\u4E0D\u9019\u9EBC\u8A8D\u70BA\uFF0C\u4F60\u9AD8\u4F30\u4F60\u81EA\u5DF1\u4E86"
+    00000037:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u5927\u53D4\\n\u4F60\u4E0D\u9019\u9EBC\u8A8D\u70BA\uFF1F\u4F60\u4E0D\u77E5\u9053\u5E79\u90E8\u4E4B\u9593\u56B4\u7981\u5167\u9B25\u55CE\uFF1F"
+    00000038:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u5927\u53D4\\n\u4F60\u4E0D\u77E5\u9053\u88AB\u6293\u5230\u5F8C\u7684\u4E0B\u5834\u662F\u600E\u6A23\u55CE\uFF1F"
+    00000039:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u6211\u7684\u76EE\u6A19\u662F\u6574\u500B\u7D44\u7E54\uFF0C\u53C8\u600E\u9EBC\u6703\u6015\u5462\uFF1F"
+    0000003A:
+      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
+      data:
+        animator: {fileID: 2057274161}
+        triggers:
+        - Drink
+        ints:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        bools:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        floats:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: []
+    0000003B:
+      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
+      data:
+        animator: {fileID: 1362508596}
+        triggers:
+        - Idle
+        ints:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        bools:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        floats:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: []
+    0000003C:
+      type: {class: EventWait, ns: , asm: Assembly-CSharp}
+      data:
+        frame: 10
+    0000003D:
+      type: {class: EventTransition, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
+        destination: {x: -36.29, y: -2.22}
+        speed: 0
+        cameraPosition: {x: -30, y: 0}
+    0000003E:
+      type: {class: EventSetDirection, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
+        direction: 0
+    0000003F:
+      type: {class: EventWait, ns: , asm: Assembly-CSharp}
+      data:
+        frame: 60
+    00000040:
+      type: {class: EventTransition, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: 
+        destination: {x: 0, y: 0}
+        speed: 0
+        cameraPosition: {x: 0, y: 0}
+    00000041:
+      type: {class: EventSetDirection, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
+        direction: 1
+    00000042:
+      type: {class: EventTransition, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: ee6ffc6c-c558-43d8-8727-6dba844bf3b4
+        destination: {x: 999, y: 999}
+        speed: 0
+        cameraPosition: {x: 0, y: 0}
+    00000043:
+      type: {class: EventWait, ns: , asm: Assembly-CSharp}
+      data:
+        frame: 60
+    00000044:
+      type: {class: EventTransition, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
+        destination: {x: -23.03, y: 17.75}
+        speed: 0
+        cameraPosition: {x: -30, y: 20}
+    00000045:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u5947\u602A\uFF0C\u600E\u9EBC\u6703\u6C92\u4EBA\uFF1F"
+    00000046:
+      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
+      data:
+        animator: {fileID: 1362508596}
+        triggers:
+        - Die
+        ints:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        bools:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 1
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 1
+          _keyValues:
+          - Dead
+          _keys:
+          - Dead
+          _values: 01
+        floats:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: []
+    00000047:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\uFF08\u7A81\u7136\u5F8C\u8166\u4E00\u75DB\uFF0C\u773C\u524D\u4E00\u9ED1\uFF09\uFF0C\u9019\u662F\u2026\u2026\u8840\u55CE\uFF1F"
+    00000048:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\uFF08\u53EF\u2026\u53EF\u60E1\uFF0C\u6211\u5927\u610F\u4E86\u554A\uFF01\uFF09"
+    00000049:
       type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
 --- !u!1 &1163242976
 GameObject:
@@ -46143,7 +47033,7 @@ Transform:
   m_LocalScale: {x: 100, y: 100, z: 100.00002}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!108 &1261743927
 Light:
@@ -46351,12 +47241,11 @@ Transform:
   - {fileID: 2019807634}
   - {fileID: 515067400}
   - {fileID: 958005955}
-  - {fileID: 2057274157}
   - {fileID: 208289376}
   - {fileID: 1493806730}
   - {fileID: 1590335951}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1301530240
 GameObject:
@@ -47251,7 +48140,7 @@ Transform:
   - {fileID: 1285267943}
   - {fileID: 1035204224}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1409692501
 GameObject:
@@ -47420,6 +48309,7 @@ MonoBehaviour:
       - id: 3
       - id: 4
       - id: 5
+      - id: 6
   - triggerType: 2
     condition:
       switchConditions:
@@ -47476,7 +48366,6 @@ MonoBehaviour:
         _values: 01000000
     commands:
       commands:
-      - id: 6
       - id: 7
       - id: 8
       - id: 9
@@ -47496,6 +48385,7 @@ MonoBehaviour:
       - id: 23
       - id: 24
       - id: 25
+      - id: 26
   - triggerType: 2
     condition:
       switchConditions:
@@ -47552,7 +48442,6 @@ MonoBehaviour:
         _values: 
     commands:
       commands:
-      - id: 26
       - id: 27
       - id: 28
       - id: 29
@@ -47591,6 +48480,7 @@ MonoBehaviour:
       - id: 62
       - id: 63
       - id: 64
+      - id: 65
   xDistance: 0
   whichIsPositive: 0
   references:
@@ -47611,44 +48501,126 @@ MonoBehaviour:
       data:
         content: "\u5947\u602A\uFF0C\u600E\u9EBC\u6703\u6C92\u4EBA\uFF1F"
     00000003:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
-        content: "\uFF08\u7A81\u7136\u5F8C\u8166\u4E00\u75DB\uFF0C\u773C\u524D\u4E00\u9ED1\uFF09\uFF0C\u9019\u662F\u2026\u2026\u8840\u55CE\uFF1F"
+        animator: {fileID: 1362508596}
+        triggers:
+        - Die
+        ints:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        bools:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues:
+          - Dead
+          _keys:
+          - Dead
+          _values: 01
+        floats:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: []
     00000004:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\uFF08\u53EF\u2026\u53EF\u60E1\uFF0C\u6211\u5927\u610F\u4E86\u554A\uFF01\u5982\u679C\uFF0C\u6211\u518D\u591A\u60F3\u8D77\u4E00\u4E9B\u4E8B\u60C5\u2026\u2026\uFF09"
+        content: "\uFF08\u7A81\u7136\u5F8C\u8166\u4E00\u75DB\uFF0C\u773C\u524D\u4E00\u9ED1\uFF09\uFF0C\u9019\u662F\u2026\u2026\u8840\u55CE\uFF1F"
     00000005:
-      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\uFF08\u53EF\u2026\u53EF\u60E1\uFF0C\u6211\u5927\u610F\u4E86\u554A\uFF01\u5982\u679C\uFF0C\u6211\u518D\u591A\u60F3\u8D77\u4E00\u4E9B\u4E8B\u60C5\u2026\u2026\uFF09"
     00000006:
+      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
+    00000007:
       type: {class: EventSetDirection, ns: , asm: Assembly-CSharp}
       data:
         targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
         direction: 1
-    00000007:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u65C1\u767D\\n\u4E3B\u89D2\u638F\u51FA\u624B\u69CD\uFF0C\u5C07\u9580\u63A8\u958B\uFF0C\u78BA\u8A8D\u80D6\u5B50\u9084\u5728\u5E8A\u4E0A\uFF0C\u624D\u8D70\u9032\u623F\u9593\u3002"
     00000008:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u53C8\u662F\u4E00\u9663\u982D\u75DB\uFF0C\u6211\u53C8\u60F3\u8D77\u4EC0\u9EBC\u4E86\u3002\uFF09"
+        content: "\u65C1\u767D\\n\u4E3B\u89D2\u638F\u51FA\u624B\u69CD\uFF0C\u5C07\u9580\u63A8\u958B\uFF0C\u78BA\u8A8D\u80D6\u5B50\u9084\u5728\u5E8A\u4E0A\uFF0C\u624D\u8D70\u9032\u623F\u9593\u3002"
     00000009:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: " \u4E3B\u89D2\\n\u5982\u4F55\uFF1F\u9762\u5C0D\u9762\uFF0C\u4F60\u60F3\u8AAA\u4EC0\u9EBC\uFF1F "
+        content: "\u4E3B\u89D2\\n\uFF08\u53C8\u662F\u4E00\u9663\u982D\u75DB\uFF0C\u6211\u53C8\u60F3\u8D77\u4EC0\u9EBC\u4E86\u3002\uFF09"
     0000000A:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u8981\u7684\u7B54\u6848\uFF0C\u4F60\u662F\u795E\u83EF\uFF0C\u9019\u88E1\u662F\u4F60\u7684\u623F\u5B50\u3002"
+        content: " \u4E3B\u89D2\\n\u5982\u4F55\uFF1F\u9762\u5C0D\u9762\uFF0C\u4F60\u60F3\u8AAA\u4EC0\u9EBC\uFF1F "
     0000000B:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u81F3\u65BC\u6211\u70BA\u4EC0\u9EBC\u8981\u6293\u4F60\u6211\u4E0D\u80FD\u8AAA\u3002"
+        content: "\u5927\u53D4\\n\u4F60\u8981\u7684\u7B54\u6848\uFF0C\u4F60\u662F\u795E\u83EF\uFF0C\u9019\u88E1\u662F\u4F60\u7684\u623F\u5B50\u3002"
     0000000C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u6211\u77E5\u9053\uFF0C\u6211\u60F3\u8D77\u4F86\u4E86\u3002"
+        content: "\u5927\u53D4\\n\u81F3\u65BC\u6211\u70BA\u4EC0\u9EBC\u8981\u6293\u4F60\u6211\u4E0D\u80FD\u8AAA\u3002"
     0000000D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -47656,21 +48628,25 @@ MonoBehaviour:
     0000000E:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u600E\u9EBC\u2026\u4F60\u662F\u4EC0\u9EBC\u6642\u5019\u60F3\u8D77\u4F86\u7684\uFF1F"
+        content: "\u4E3B\u89D2\\n\u6211\u77E5\u9053\uFF0C\u6211\u60F3\u8D77\u4F86\u4E86\u3002"
     0000000F:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u4E5F\u5C31 20 \u79D2\u524D\uFF0C\u6211\u8D70\u9032\u623F\u9593\u6642\uFF0C\u525B\u597D\u60F3\u8D77\u4F86\u3002"
+        content: "\u5927\u53D4\\n\u4F60\u600E\u9EBC\u2026\u4F60\u662F\u4EC0\u9EBC\u6642\u5019\u60F3\u8D77\u4F86\u7684\uFF1F"
     00000010:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u544A\u8A34\u6211\uFF0C\u4F60\u6C92\u5B50\u5F48\u5C0D\u4E0D\u5C0D\uFF1F"
+        content: "\u4E3B\u89D2\\n\u4E5F\u5C31 20 \u79D2\u524D\uFF0C\u6211\u8D70\u9032\u623F\u9593\u6642\uFF0C\u525B\u597D\u60F3\u8D77\u4F86\u3002"
     00000011:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u5927\u53D4\\n\u544A\u8A34\u6211\uFF0C\u4F60\u6C92\u5B50\u5F48\u5C0D\u4E0D\u5C0D\uFF1F"
+    00000012:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u5927\u53D4\\n\u6211\u5728\u623F\u9593\u88E1\u6108\u60F3\u6108\u4E0D\u5C0D\uFF0C\u6309\u7167\u4F60\u7684\u500B\u6027\uFF0C\u4F60\u61C9\u8A72\u65E9\u5C31\u6BBA\u4E86\u6211\uFF0C\u600E\u9EBC\u53EF
           \u80FD\u53EA\u662F\u6050\u5687\u800C\u5DF2\uFF1F"
-    00000012:
+    00000013:
       type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
         animator: {fileID: 1362508596}
@@ -47754,11 +48730,11 @@ MonoBehaviour:
           _keyValues: []
           _keys: []
           _values: []
-    00000013:
+    00000014:
       type: {class: EventWait, ns: , asm: Assembly-CSharp}
       data:
         frame: 100
-    00000014:
+    00000015:
       type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
         animator: {fileID: 2057274161}
@@ -47842,7 +48818,7 @@ MonoBehaviour:
           _keyValues: []
           _keys: []
           _values: []
-    00000015:
+    00000016:
       type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
         animator: {fileID: 1362508596}
@@ -47926,14 +48902,14 @@ MonoBehaviour:
           _keyValues: []
           _keys: []
           _values: []
-    00000016:
+    00000017:
       type: {class: EventTransition, ns: , asm: Assembly-CSharp}
       data:
         targetId: ee6ffc6c-c558-43d8-8727-6dba844bf3b4
         destination: {x: -26, y: 18.38}
         speed: 20
         cameraPosition: {x: 0, y: 0}
-    00000017:
+    00000018:
       type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
         animator: {fileID: 2057274161}
@@ -48017,7 +48993,7 @@ MonoBehaviour:
           _keyValues: []
           _keys: []
           _values: []
-    00000018:
+    00000019:
       type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
         animator: {fileID: 1362508596}
@@ -48101,185 +49077,185 @@ MonoBehaviour:
           _keyValues: []
           _keys: []
           _values: []
-    00000019:
+    0000001A:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 20
         open: 1
-    0000001A:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\uFF08\u5B8C\u7F8E\uFF01\uFF09"
     0000001B:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u4E00\u9762\u6C89\u9189\u5728\u81EA\u5DF1\u6C92\u6709\u534A\u9EDE\u751F\u758F\u7684\u52D5\u4F5C\u4E2D\uFF0C\u4E00\u9762\u5C07\u69CD\u91CD\u65B0\u6307\u5411\u80D6\u5B50\u3002\uFF09"
+        content: "\u4E3B\u89D2\\n\uFF08\u5B8C\u7F8E\uFF01\uFF09"
     0000001C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u73FE\u5728\u6709\u4E86\u3002\u4F60\u9084\u6709\u4EC0\u9EBC\u8A71\u60F3\u8AAA\u55CE\uFF1F"
+        content: "\u4E3B\u89D2\\n\uFF08\u4E00\u9762\u6C89\u9189\u5728\u81EA\u5DF1\u6C92\u6709\u534A\u9EDE\u751F\u758F\u7684\u52D5\u4F5C\u4E2D\uFF0C\u4E00\u9762\u5C07\u69CD\u91CD\u65B0\u6307\u5411\u80D6\u5B50\u3002\uFF09"
     0000001D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u6C92\u2026\u2026\u6C92\u4E86\u2026\u2026"
+        content: "\u4E3B\u89D2\\n\u73FE\u5728\u6709\u4E86\u3002\u4F60\u9084\u6709\u4EC0\u9EBC\u8A71\u60F3\u8AAA\u55CE\uFF1F"
     0000001E:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u90A3\u63A5\u4E0B\u4F86\u63DB\u6211\u554F\u4E86\u3002"
+        content: "\u5927\u53D4\\n\u6C92\u2026\u2026\u6C92\u4E86\u2026\u2026"
     0000001F:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u7B2C\u4E00\uFF0C\u4F60\u600E\u9EBC\u77E5\u9053\u6211\u662F\u795E\u83EF\uFF1F"
+        content: "\u4E3B\u89D2\\n\u90A3\u63A5\u4E0B\u4F86\u63DB\u6211\u554F\u4E86\u3002"
     00000020:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u7B2C\u4E8C\uFF0C\u4F60\u662F\u54EA\u500B\u5E79\u90E8\uFF1F"
+        content: "\u4E3B\u89D2\\n\u7B2C\u4E00\uFF0C\u4F60\u600E\u9EBC\u77E5\u9053\u6211\u662F\u795E\u83EF\uFF1F"
     00000021:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u4ED6\u5ABD\u7684\u6211\u5011\u6BCF\u500B\u4EBA\u90FD\u6234\u8457\u9762\u5177\uFF0C\u4F60\u662F\u600E\u9EBC\u77E5\u9053\u6211\u662F\u8AB0\uFF1F"
+        content: "\u4E3B\u89D2\\n\u7B2C\u4E8C\uFF0C\u4F60\u662F\u54EA\u500B\u5E79\u90E8\uFF1F"
     00000022:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u54C8\u54C8\u54C8\uFF01\u9996\u5148\uFF0C\u6211\u662F\u78A7\u771F\uFF0C\u78A7\u771F\u5C31\u662F\u6211\u3002"
+        content: "\u4E3B\u89D2\\n\u4ED6\u5ABD\u7684\u6211\u5011\u6BCF\u500B\u4EBA\u90FD\u6234\u8457\u9762\u5177\uFF0C\u4F60\u662F\u600E\u9EBC\u77E5\u9053\u6211\u662F\u8AB0\uFF1F"
     00000023:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u63A5\u4E0B\u4F86\uFF0C\u4E0D\u8981\u8AAA\u6211\uFF0C\u73FE\u5728\u6BCF\u500B\u5E79\u90E8\u90FD\u77E5\u9053\u4F60\u662F\u8AB0"
+        content: "\u5927\u53D4\\n\u54C8\u54C8\u54C8\uFF01\u9996\u5148\uFF0C\u6211\u662F\u78A7\u771F\uFF0C\u78A7\u771F\u5C31\u662F\u6211\u3002"
     00000024:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u8981\u554F\u70BA\u4EC0\u9EBC\uFF0C\u6211\u600E\u9EBC\u6703\u77E5\u9053\uFF1F"
+        content: "\u5927\u53D4\\n\u63A5\u4E0B\u4F86\uFF0C\u4E0D\u8981\u8AAA\u6211\uFF0C\u73FE\u5728\u6BCF\u500B\u5E79\u90E8\u90FD\u77E5\u9053\u4F60\u662F\u8AB0"
     00000025:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u4F60\u7684\u4E0B\u4E00\u53E5\u8A71\u6700\u597D\u8981\u975E\u5E38\u5C0F\u5FC3\u3002"
+        content: "\u5927\u53D4\\n\u4F60\u8981\u554F\u70BA\u4EC0\u9EBC\uFF0C\u6211\u600E\u9EBC\u6703\u77E5\u9053\uFF1F"
     00000026:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u4F60\u7684\u4E0B\u4E00\u53E5\u8A71\u6700\u597D\u8981\u975E\u5E38\u5C0F\u5FC3\u3002"
+    00000027:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u5927\u53D4\\n\u8AAA\u4E0D\u5B9A\u5C31\u662F\u56E0\u70BA\u4F60\u7684\u59BB\u5B50\u6B7B\u5728\u90A3\u500B\u5C40\u9577\u7684\u624B\u4E0A\uFF0C\u90A3\u500B\u5C40\u9577\u624D\u9806\u85E4\u6478\u74DC
           \u627E\u5230\u4F60\u662F\u8AB0\uFF0C\u63A5\u4E0B\u4F86\u624D\u6703\u653E\u6D88\u606F\u7D66\u7D44\u7E54\u8B93\u6211\u5011\u9ED1\u5403\u9ED1\uFF0C\u5C0D\u5427\uFF1F"
-    00000027:
+    00000028:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u4E3B\u89D2\\n\u4F60\u89BA\u5F97\u4F60\u7684\u56DE\u7B54\u5920\u5C0F\u5FC3\u4E86\u55CE\uFF1F"
-    00000028:
+    00000029:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u4E3B\u89D2\\n\uFF08\u4ED6\u8AAA\u7684\u5C0D\uFF0C\u6839\u64DA\u6211\u525B\u6062\u5FA9\u4E0D\u5230
           5 \u5206\u9418\u7684\u8A18\u61B6\u4F86\u770B\uFF09"
-    00000029:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\uFF08\u9019\u9593\u623F\u5B50\u662F\u6211\u7684\uFF0C\u90A3\u672C\u65E5\u8A18\u662F\u6211\u59BB\u5B50\u7684\uFF0C\u90A3\u672C\u7B46\u8A18\u4E5F\u662F\u6211\u7684\u3002"
     0000002A:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u4E0D\u904E\u90A3\u500B\u5C40\u9577\u662F\u600E\u9EBC\u77E5\u9053\u6211\u8981\u6BBA\u4ED6\u7684\uFF1F\u4ED6\u53C8\u662F\u600E\u9EBC\u627E\u5230\u6211\u7684\uFF1F\uFF09"
+        content: "\u4E3B\u89D2\\n\uFF08\u9019\u9593\u623F\u5B50\u662F\u6211\u7684\uFF0C\u90A3\u672C\u65E5\u8A18\u662F\u6211\u59BB\u5B50\u7684\uFF0C\u90A3\u672C\u7B46\u8A18\u4E5F\u662F\u6211\u7684\u3002"
     0000002B:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\uFF08\u4E0D\u904E\u90A3\u500B\u5C40\u9577\u662F\u600E\u9EBC\u77E5\u9053\u6211\u8981\u6BBA\u4ED6\u7684\uFF1F\u4ED6\u53C8\u662F\u600E\u9EBC\u627E\u5230\u6211\u7684\uFF1F\uFF09"
+    0000002C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u4E3B\u89D2\\n\uFF08\u9996\u5148\uFF0C\u6709\u4EBA\u901A\u5831\u4ED6\u6D88\u606F\uFF0C\u901A\u5831\u4ED6\u6211\u8981\u53BB\u6BBA\u4ED6\uFF0C\u6240\u4EE5\u4ED6\u5148\u505A\u4E86\u6E96\u5099\uFF0C
           \u56E0\u800C\u4ED6\u624D\u9003\u904E\u4E00\u52AB\u3002\uFF09"
-    0000002C:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\uFF08\u63A5\u4E0B\u4F86\uFF0C\u90A3\u500B\u5C40\u9577\u627E\u5230\u4E86\u6211\u7684\u8EAB\u5206\u3001\u6211\u7684\u8CC7\u6599\u3002\uFF09"
     0000002D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u6700\u5F8C\uFF0C\u4ED6\u507D\u88DD\u6210\u5FEB\u905E\u6BBA\u4E86\u6211\u7684\u59BB\u5B50\uFF0C\u4EE5\u6B64\u4F86\u8B66\u544A\u6211\u2026\u2026\uFF09"
+        content: "\u4E3B\u89D2\\n\uFF08\u63A5\u4E0B\u4F86\uFF0C\u90A3\u500B\u5C40\u9577\u627E\u5230\u4E86\u6211\u7684\u8EAB\u5206\u3001\u6211\u7684\u8CC7\u6599\u3002\uFF09"
     0000002E:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\uFF08\u6700\u5F8C\uFF0C\u4ED6\u507D\u88DD\u6210\u5FEB\u905E\u6BBA\u4E86\u6211\u7684\u59BB\u5B50\uFF0C\u4EE5\u6B64\u4F86\u8B66\u544A\u6211\u2026\u2026\uFF09"
+    0000002F:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u4E3B\u89D2\\n\uFF08\u662F\u4E86\uFF0C\u9019\u7A2E\u624B\u6CD5\uFF0C\u8207\u5176\u8AAA\u662F\u8B66\u5BDF\u9019\u7A2E\u7A7F\u767D\u8863\u7684\uFF0C\u9084\u66F4\u50CF\u662F\u6211\u5011\u9019\u7A2E
           \u6234\u9ED1\u5E3D\u7684\uFF09"
-    0000002F:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\uFF08\u5982\u679C\u5C40\u9577\u662F\u9019\u7A2E\u7E31\u6A6B\u9ED1\u767D\u5169\u9053\u7684\u5927\u4EBA\u7269\uFF0C\u4F3C\u4E4E\u4E5F\u4E0D\u90A3\u9EBC\u610F\u5916\u4E86\u3002\uFF09"
     00000030:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u90A3\u53C8\u662F\u4EC0\u9EBC\u539F\u56E0\u8B93\u4ED6\u80FD\u63D0\u65E9\u77E5\u9053\u6211\u7684\u884C\u52D5\u5462\uFF1F\uFF09"
+        content: "\u4E3B\u89D2\\n\uFF08\u5982\u679C\u5C40\u9577\u662F\u9019\u7A2E\u7E31\u6A6B\u9ED1\u767D\u5169\u9053\u7684\u5927\u4EBA\u7269\uFF0C\u4F3C\u4E4E\u4E5F\u4E0D\u90A3\u9EBC\u610F\u5916\u4E86\u3002\uFF09"
     00000031:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\uFF08\u90A3\u53C8\u662F\u4EC0\u9EBC\u539F\u56E0\u8B93\u4ED6\u80FD\u63D0\u65E9\u77E5\u9053\u6211\u7684\u884C\u52D5\u5462\uFF1F\uFF09"
+    00000032:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u4E3B\u89D2\\n\uFF08\u6211\u7684\u6697\u6BBA\u76EE\u6A19\u4E00\u5411\u90FD\u662FBoss\u76F4\u63A5\u6307\u6D3E\u7684\uFF0C\u6211\u4E5F\u5F9E\u4F86\u4E0D\u6703\u544A\u8A34\u5176\u4ED6\u4EBA\uFF0C
           \u90A3\u6D88\u606F\u662F\u5F9E Boss \u90A3\u88E1\u6D41\u51FA\u7684\u55CE\uFF1F\uFF09"
-    00000032:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u5927\u53D4\\n\u6B38\u6B38\u6B38\uFF01\u6211\u5011\u6253\u500B\u5546\u91CF\u5427\uFF01\u4F60\u5225\u6BBA\u6211\uFF0C\u6211\u5E6B\u4F60\u505A\u4E8B\u600E\u9EBC\u6A23\uFF1F"
     00000033:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u64C5\u9577\u523A\u6BBA\uFF0C\u6211\u64C5\u9577\u7D93\u5546\uFF0C\u4F60\u6709\u5BE6\u529B\uFF0C\u6211\u6709\u4EBA\u8108"
+        content: "\u5927\u53D4\\n\u6B38\u6B38\u6B38\uFF01\u6211\u5011\u6253\u500B\u5546\u91CF\u5427\uFF01\u4F60\u5225\u6BBA\u6211\uFF0C\u6211\u5E6B\u4F60\u505A\u4E8B\u600E\u9EBC\u6A23\uFF1F"
     00000034:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u6211\u5011\u5408\u4F5C\uFF0C\u63A8\u7FFB Boss\uFF0C\u5C07\u4ED6\u7684\u5229\u76CA\u5403\u4E0B\u4F86\u4E5F\u4E0D\u662F\u4E0D\u53EF\u80FD\u5427\uFF1F"
+        content: "\u5927\u53D4\\n\u4F60\u64C5\u9577\u523A\u6BBA\uFF0C\u6211\u64C5\u9577\u7D93\u5546\uFF0C\u4F60\u6709\u5BE6\u529B\uFF0C\u6211\u6709\u4EBA\u8108"
     00000035:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u6211\u8981\u7684\u662F\u5229\u76CA\uFF0C\u4F60\u8981\u7684\u662F\u5FA9\u4EC7\uFF0C\u5404\u53D6\u6240\u9700\uFF0C\u600E\u9EBC\u6A23\uFF1F"
+        content: "\u5927\u53D4\\n\u6211\u5011\u5408\u4F5C\uFF0C\u63A8\u7FFB Boss\uFF0C\u5C07\u4ED6\u7684\u5229\u76CA\u5403\u4E0B\u4F86\u4E5F\u4E0D\u662F\u4E0D\u53EF\u80FD\u5427\uFF1F"
     00000036:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u518D\u8AAA\u4E86\uFF0C\u70BA\u8868\u793A\u6211\u7684\u8AA0\u610F\uFF0C\u6211\u4E5F\u53EF\u4EE5\u7D66\u4F60\u4E00\u500B\u60C5\u5831"
+        content: "\u5927\u53D4\\n\u6211\u8981\u7684\u662F\u5229\u76CA\uFF0C\u4F60\u8981\u7684\u662F\u5FA9\u4EC7\uFF0C\u5404\u53D6\u6240\u9700\uFF0C\u600E\u9EBC\u6A23\uFF1F"
     00000037:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u5927\u53D4\\n\u518D\u8AAA\u4E86\uFF0C\u70BA\u8868\u793A\u6211\u7684\u8AA0\u610F\uFF0C\u6211\u4E5F\u53EF\u4EE5\u7D66\u4F60\u4E00\u500B\u60C5\u5831"
+    00000038:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u5927\u53D4\\n\u4F60\u662F\u795E\u83EF\u9019\u4EF6\u4E8B\uFF0C\u662F
           Boss \u544A\u8A34\u6211\u5011\u7684\u3002"
-    00000038:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u5927\u53D4\\n\u4E5F\u5C31\u662F\u8AAA\uFF0CBoss \u4E00\u958B\u59CB\u5C31\u4E0D\u6253\u7B97\u7559\u4F60\u4E86\u3002"
     00000039:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u5C40\u9577\u9019\u500B\u4EFB\u52D9\uFF0C\u4E5F\u5F88\u6709\u53EF\u80FD\u662F\u4ED6\u8981\u4F60\u6B7B\u624D\u6703\u6D29\u5BC6\u7D66\u5C40\u9577\u77E5\u9053\u3002"
+        content: "\u5927\u53D4\\n\u4E5F\u5C31\u662F\u8AAA\uFF0CBoss \u4E00\u958B\u59CB\u5C31\u4E0D\u6253\u7B97\u7559\u4F60\u4E86\u3002"
     0000003A:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u5927\u53D4\\n\u5C40\u9577\u9019\u500B\u4EFB\u52D9\uFF0C\u4E5F\u5F88\u6709\u53EF\u80FD\u662F\u4ED6\u8981\u4F60\u6B7B\u624D\u6703\u6D29\u5BC6\u7D66\u5C40\u9577\u77E5\u9053\u3002"
+    0000003B:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u5927\u53D4\\n\u6211\u751A\u81F3\u5728\u61F7\u7591\u554A\uFF01Boss
           \u548C\u5C40\u9577\u6703\u4E0D\u6703\u6839\u672C\u5C31\u662F\u540C\u4E00\u500B\u4EBA"
-    0000003B:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u5927\u53D4\\n\u597D\u5427\uFF0C\u5C31\u7B97\u4E0D\u662F\u540C\u4E00\u500B\u4EBA\uFF0C\u4E5F\u81F3\u5C11\u6709\u5408\u4F5C\u95DC\u4FC2"
     0000003C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u6BD4\u8D77\u6211\uFF0C\u4F60\u66F4\u61C9\u8A72\u5C07\u9AD4\u529B\u7559\u4E0B\u4F86\u6BBA\u4ED6\u5427\uFF1F"
+        content: "\u5927\u53D4\\n\u597D\u5427\uFF0C\u5C31\u7B97\u4E0D\u662F\u540C\u4E00\u500B\u4EBA\uFF0C\u4E5F\u81F3\u5C11\u6709\u5408\u4F5C\u95DC\u4FC2"
     0000003D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u591A\u4E00\u500B\u6575\u4EBA\u4E0D\u5982\u591A\u4E00\u500B\u670B\u53CB\uFF0C\u4F60\u8AAA\u662F\u5427\uFF1F"
+        content: "\u5927\u53D4\\n\u6BD4\u8D77\u6211\uFF0C\u4F60\u66F4\u61C9\u8A72\u5C07\u9AD4\u529B\u7559\u4E0B\u4F86\u6BBA\u4ED6\u5427\uFF1F"
     0000003E:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\uFF1A\uFF08\u4ED6\u8AAA\u7684\u6C92\u932F\uFF0C\u6211\u771F\u7684\u8981\u6BBA\u4ED6\u55CE\uFF1F\uFF09\uFF08\uFF39\uFF0F\uFF2E\uFF09"
+        content: "\u5927\u53D4\\n\u591A\u4E00\u500B\u6575\u4EBA\u4E0D\u5982\u591A\u4E00\u500B\u670B\u53CB\uFF0C\u4F60\u8AAA\u662F\u5427\uFF1F"
     0000003F:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\uFF1A\uFF08\u4ED6\u8AAA\u7684\u6C92\u932F\uFF0C\u6211\u771F\u7684\u8981\u6BBA\u4ED6\u55CE\uFF1F\uFF09\uFF08\uFF39\uFF0F\uFF2E\uFF09"
+    00000040:
       type: {class: EventSelection, ns: , asm: Assembly-CSharp}
       data:
         selection1: "\uFF39\uFF25\uFF33"
         selection1Commands:
           commands:
-          - id: 65
+          - id: 66
         selection2: "\uFF2E\uFF2F"
         selection2Commands:
           commands:
-          - id: 66
-    00000040:
-      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
+          - id: 67
     00000041:
+      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
+    00000042:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 26
         open: 1
-    00000042:
+    00000043:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 27
@@ -48455,7 +49431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.0003125308, y: 60}
+  m_AnchoredPosition: {x: 0.000014611941, y: 60}
   m_SizeDelta: {x: 0, y: 120}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1455435751
@@ -48762,7 +49738,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1297172044}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1493806731
 MonoBehaviour:
@@ -49901,7 +50877,7 @@ Transform:
   - {fileID: 1019204787}
   - {fileID: 498895094}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1569164006
 GameObject:
@@ -50151,7 +51127,7 @@ Transform:
   - {fileID: 135281426}
   - {fileID: 988343799}
   m_Father: {fileID: 1297172044}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1596883341
 PrefabInstance:
@@ -56440,7 +57416,7 @@ MonoBehaviour:
     00000000:
       type: {class: EventTransition, ns: , asm: Assembly-CSharp}
       data:
-        targetId: 9a8cc5a6-de31-45f5-a630-f24efa2f8d93
+        targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
         destination: {x: -23.2, y: -2.25}
         speed: 0
         cameraPosition: {x: -30, y: 0}
@@ -56542,7 +57518,7 @@ Transform:
   - {fileID: 1697789924}
   - {fileID: 470003135}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1792645073
 PrefabInstance:
@@ -56766,7 +57742,7 @@ Transform:
   - {fileID: 1200960082}
   - {fileID: 159161091}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1819188764
 GameObject:
@@ -58242,6 +59218,8 @@ MonoBehaviour:
       - id: 8
       - id: 9
       - id: 10
+      - id: 11
+      - id: 12
   - triggerType: 2
     condition:
       switchConditions:
@@ -58298,8 +59276,6 @@ MonoBehaviour:
         _values: 01000000
     commands:
       commands:
-      - id: 11
-      - id: 12
       - id: 13
       - id: 14
       - id: 15
@@ -58334,6 +59310,8 @@ MonoBehaviour:
       - id: 44
       - id: 45
       - id: 46
+      - id: 47
+      - id: 48
   xDistance: 0
   whichIsPositive: 0
   references:
@@ -58359,43 +59337,131 @@ MonoBehaviour:
       data:
         content: "\u4E3B\u89D2\\n\u4E0D\u8981\u554A\uFF01"
     00000005:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u6211\u9084\u6C92\u6709\u2026\u2026\u6211\u9084\u2026\u2026\uFF09"
+        animator: {fileID: 1362508596}
+        triggers:
+        - Die
+        ints:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        bools:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues:
+          - Dead
+          _keys:
+          - Dead
+          _values: 01
+        floats:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: []
     00000006:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u660E\u660E\u2026\u2026\uFF09"
+        content: "\u4E3B\u89D2\\n\uFF08\u6211\u9084\u6C92\u6709\u2026\u2026\u6211\u9084\u2026\u2026\uFF09"
     00000007:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u6211\u9023\u81EA\u5DF1\u662F\u8AB0\u90FD\u9084\u4E0D\u77E5\u9053\u2026\u2026\uFF09"
+        content: "\u4E3B\u89D2\\n\uFF08\u660E\u660E\u2026\u2026\uFF09"
     00000008:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u4E0D\u8981\u2026\u2026\uFF09"
+        content: "\u4E3B\u89D2\\n\uFF08\u6211\u9023\u81EA\u5DF1\u662F\u8AB0\u90FD\u9084\u4E0D\u77E5\u9053\u2026\u2026\uFF09"
     00000009:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u4E0D\u8981\u554A\uFF01\uFF09"
+        content: "\u4E3B\u89D2\\n\uFF08\u4E0D\u8981\u2026\u2026\uFF09"
     0000000A:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u597D\u2026\u597D\u60F3\u7761\u2026\u6211\u9084\u2026\uFF09"
+        content: "\u4E3B\u89D2\\n\uFF08\u4E0D\u8981\u554A\uFF01\uFF09"
     0000000B:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\uFF08\u597D\u2026\u597D\u60F3\u7761\u2026\u6211\u9084\u2026\uFF09"
+    0000000C:
+      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
+    0000000D:
       type: {class: EventSetScreenColor, ns: , asm: Assembly-CSharp}
       data:
         color: {r: 0, g: 0, b: 0, a: 0.78431374}
-    0000000C:
+    0000000E:
       type: {class: EventSetDirection, ns: , asm: Assembly-CSharp}
       data:
         targetId: 25fd933d-1e87-4bfa-9852-0ad266a9726b
         direction: 0
-    0000000D:
+    0000000F:
       type: {class: EventWait, ns: , asm: Assembly-CSharp}
       data:
         frame: 1
-    0000000E:
+    00000010:
       type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
         animator: {fileID: 2057274161}
@@ -58479,107 +59545,16 @@ MonoBehaviour:
           _keyValues: []
           _keys: []
           _values: []
-    0000000F:
+    00000011:
       type: {class: EventWait, ns: , asm: Assembly-CSharp}
       data:
         frame: 30
-    00000010:
-      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
-      data:
-        animator: {fileID: 2057274161}
-        triggers:
-        - Walk
-        ints:
-          reorderableList:
-            canAdd: 1
-            canRemove: 1
-            draggable: 1
-            expandable: 1
-            multipleSelection: 1
-            isExpanded: 0
-            label:
-              m_Text: Keys
-              m_Image: {fileID: 0}
-              m_Tooltip: 
-            headerHeight: 18
-            footerHeight: 13
-            slideEasing: 0.15
-            verticalSpacing: 2
-            showDefaultBackground: 1
-            elementDisplayType: 0
-            elementNameProperty: 
-            elementNameOverride: 
-            elementIcon: {fileID: 0}
-          reqReferences: {fileID: 0}
-          isExpanded: 0
-          _keyValues: []
-          _keys: []
-          _values: 
-        bools:
-          reorderableList:
-            canAdd: 1
-            canRemove: 1
-            draggable: 1
-            expandable: 1
-            multipleSelection: 1
-            isExpanded: 0
-            label:
-              m_Text: Keys
-              m_Image: {fileID: 0}
-              m_Tooltip: 
-            headerHeight: 18
-            footerHeight: 13
-            slideEasing: 0.15
-            verticalSpacing: 2
-            showDefaultBackground: 1
-            elementDisplayType: 0
-            elementNameProperty: 
-            elementNameOverride: 
-            elementIcon: {fileID: 0}
-          reqReferences: {fileID: 0}
-          isExpanded: 0
-          _keyValues: []
-          _keys: []
-          _values: 
-        floats:
-          reorderableList:
-            canAdd: 1
-            canRemove: 1
-            draggable: 1
-            expandable: 1
-            multipleSelection: 1
-            isExpanded: 0
-            label:
-              m_Text: Keys
-              m_Image: {fileID: 0}
-              m_Tooltip: 
-            headerHeight: 18
-            footerHeight: 13
-            slideEasing: 0.15
-            verticalSpacing: 2
-            showDefaultBackground: 1
-            elementDisplayType: 0
-            elementNameProperty: 
-            elementNameOverride: 
-            elementIcon: {fileID: 0}
-          reqReferences: {fileID: 0}
-          isExpanded: 0
-          _keyValues: []
-          _keys: []
-          _values: []
-    00000011:
-      type: {class: EventTransition, ns: , asm: Assembly-CSharp}
-      data:
-        targetId: ee6ffc6c-c558-43d8-8727-6dba844bf3b4
-        destination: {x: -30, y: -1.35}
-        speed: 5
-        cameraPosition: {x: 0, y: 0}
     00000012:
       type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
         animator: {fileID: 2057274161}
         triggers:
-        - Idle
+        - Walk
         ints:
           reorderableList:
             canAdd: 1
@@ -58659,136 +59634,13 @@ MonoBehaviour:
           _keys: []
           _values: []
     00000013:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\uFF08\u9084\u4F86\u4E0D\u53CA\u601D\u8003\uFF0C\u624B\u4E0A\u7684\u69CD\u76F4\u76F4\u6307\u5411\u5927\u53D4\u7684\u54BD\u5589\u3002\uFF09"
-    00000014:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\u4F60\uFF01\u4E0D\u60F3\u6B7B\u5C31\u5F8C\u9000\uFF01"
-    00000015:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\u4E0D\u5C0D\uFF01\u4F60\u628A\u624B\u80CC\u5728\u5F8C\u982D\uFF0C\u8D70\u9032\u623F\u88E1\uFF0C\u8EBA\u5728\u5E8A\u4E0A\u3002"
-    00000016:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u5927\u53D4\\n\u4F60\u662F\u600E\u9EBC\u51FA\u4F86\u7684\uFF1F\u7B49\u7B49\uFF01\u4F60\u5728\u7DCA\u5F35\u4EC0\u9EBC\uFF1F"
-    00000017:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\u7DCA\u5F35\uFF1F"
-    00000018:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\u6211\u7DCA\u5F35\uFF1F"
-    00000019:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\u5C0D\u554A\uFF01\u6211\u5F88\u7DCA\u5F35\uFF0C\u7DCA\u5F35\u5230\u6211\u53EF\u80FD\u4E00\u4E0D\u5C0F\u5FC3\u5C31\u5728\u4F60\u7684\u982D\u4E0A\u958B\u4E86\u500B\u6D1E\u4E86\u3002"
-    0000001A:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\u73FE\u5728\uFF01\u99AC\u4E0A\uFF01\u9589\u5634\uFF01\u7136\u5F8C\u8EBA\u5728\u5E8A\u4E0A\u3002"
-    0000001B:
-      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
-      data:
-        animator: {fileID: 2057274161}
-        triggers:
-        - Walk
-        ints:
-          reorderableList:
-            canAdd: 1
-            canRemove: 1
-            draggable: 1
-            expandable: 1
-            multipleSelection: 1
-            isExpanded: 0
-            label:
-              m_Text: Keys
-              m_Image: {fileID: 0}
-              m_Tooltip: 
-            headerHeight: 18
-            footerHeight: 13
-            slideEasing: 0.15
-            verticalSpacing: 2
-            showDefaultBackground: 1
-            elementDisplayType: 0
-            elementNameProperty: 
-            elementNameOverride: 
-            elementIcon: {fileID: 0}
-          reqReferences: {fileID: 0}
-          isExpanded: 0
-          _keyValues: []
-          _keys: []
-          _values: 
-        bools:
-          reorderableList:
-            canAdd: 1
-            canRemove: 1
-            draggable: 1
-            expandable: 1
-            multipleSelection: 1
-            isExpanded: 0
-            label:
-              m_Text: Keys
-              m_Image: {fileID: 0}
-              m_Tooltip: 
-            headerHeight: 18
-            footerHeight: 13
-            slideEasing: 0.15
-            verticalSpacing: 2
-            showDefaultBackground: 1
-            elementDisplayType: 0
-            elementNameProperty: 
-            elementNameOverride: 
-            elementIcon: {fileID: 0}
-          reqReferences: {fileID: 0}
-          isExpanded: 0
-          _keyValues: []
-          _keys: []
-          _values: 
-        floats:
-          reorderableList:
-            canAdd: 1
-            canRemove: 1
-            draggable: 1
-            expandable: 1
-            multipleSelection: 1
-            isExpanded: 0
-            label:
-              m_Text: Keys
-              m_Image: {fileID: 0}
-              m_Tooltip: 
-            headerHeight: 18
-            footerHeight: 13
-            slideEasing: 0.15
-            verticalSpacing: 2
-            showDefaultBackground: 1
-            elementDisplayType: 0
-            elementNameProperty: 
-            elementNameOverride: 
-            elementIcon: {fileID: 0}
-          reqReferences: {fileID: 0}
-          isExpanded: 0
-          _keyValues: []
-          _keys: []
-          _values: []
-    0000001C:
       type: {class: EventTransition, ns: , asm: Assembly-CSharp}
       data:
         targetId: ee6ffc6c-c558-43d8-8727-6dba844bf3b4
-        destination: {x: -36.44, y: -1.35}
+        destination: {x: -30, y: -1.35}
         speed: 5
         cameraPosition: {x: 0, y: 0}
-    0000001D:
-      type: {class: EventTransition, ns: , asm: Assembly-CSharp}
-      data:
-        targetId: ee6ffc6c-c558-43d8-8727-6dba844bf3b4
-        destination: {x: -35.66, y: 18.38}
-        speed: 0
-        cameraPosition: {x: 0, y: 0}
-    0000001E:
+    00000014:
       type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
         animator: {fileID: 2057274161}
@@ -58872,51 +59724,257 @@ MonoBehaviour:
           _keyValues: []
           _keys: []
           _values: []
+    00000015:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\uFF08\u9084\u4F86\u4E0D\u53CA\u601D\u8003\uFF0C\u624B\u4E0A\u7684\u69CD\u76F4\u76F4\u6307\u5411\u5927\u53D4\u7684\u54BD\u5589\u3002\uFF09"
+    00000016:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u4F60\uFF01\u4E0D\u60F3\u6B7B\u5C31\u5F8C\u9000\uFF01"
+    00000017:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u4E0D\u5C0D\uFF01\u4F60\u628A\u624B\u80CC\u5728\u5F8C\u982D\uFF0C\u8D70\u9032\u623F\u88E1\uFF0C\u8EBA\u5728\u5E8A\u4E0A\u3002"
+    00000018:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u5927\u53D4\\n\u4F60\u662F\u600E\u9EBC\u51FA\u4F86\u7684\uFF1F\u7B49\u7B49\uFF01\u4F60\u5728\u7DCA\u5F35\u4EC0\u9EBC\uFF1F"
+    00000019:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u7DCA\u5F35\uFF1F"
+    0000001A:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u6211\u7DCA\u5F35\uFF1F"
+    0000001B:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u5C0D\u554A\uFF01\u6211\u5F88\u7DCA\u5F35\uFF0C\u7DCA\u5F35\u5230\u6211\u53EF\u80FD\u4E00\u4E0D\u5C0F\u5FC3\u5C31\u5728\u4F60\u7684\u982D\u4E0A\u958B\u4E86\u500B\u6D1E\u4E86\u3002"
+    0000001C:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\u73FE\u5728\uFF01\u99AC\u4E0A\uFF01\u9589\u5634\uFF01\u7136\u5F8C\u8EBA\u5728\u5E8A\u4E0A\u3002"
+    0000001D:
+      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
+      data:
+        animator: {fileID: 2057274161}
+        triggers:
+        - Walk
+        ints:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        bools:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        floats:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: []
+    0000001E:
+      type: {class: EventTransition, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: ee6ffc6c-c558-43d8-8727-6dba844bf3b4
+        destination: {x: -36.44, y: -1.35}
+        speed: 5
+        cameraPosition: {x: 0, y: 0}
     0000001F:
+      type: {class: EventTransition, ns: , asm: Assembly-CSharp}
+      data:
+        targetId: ee6ffc6c-c558-43d8-8727-6dba844bf3b4
+        destination: {x: -35.66, y: 18.38}
+        speed: 0
+        cameraPosition: {x: 0, y: 0}
+    00000020:
+      type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
+      data:
+        animator: {fileID: 2057274161}
+        triggers:
+        - Idle
+        ints:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        bools:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: 
+        floats:
+          reorderableList:
+            canAdd: 1
+            canRemove: 1
+            draggable: 1
+            expandable: 1
+            multipleSelection: 1
+            isExpanded: 0
+            label:
+              m_Text: Keys
+              m_Image: {fileID: 0}
+              m_Tooltip: 
+            headerHeight: 18
+            footerHeight: 13
+            slideEasing: 0.15
+            verticalSpacing: 2
+            showDefaultBackground: 1
+            elementDisplayType: 0
+            elementNameProperty: 
+            elementNameOverride: 
+            elementIcon: {fileID: 0}
+          reqReferences: {fileID: 0}
+          isExpanded: 0
+          _keyValues: []
+          _keys: []
+          _values: []
+    00000021:
       type: {class: EventSetDirection, ns: , asm: Assembly-CSharp}
       data:
         targetId: ee6ffc6c-c558-43d8-8727-6dba844bf3b4
         direction: 0
-    00000020:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\uFF08\u6211\u7E3D\u89BA\u5F97\u54EA\u88E1\u602A\u602A\u7684\uFF0C\u6211\u8A8D\u8B58\u9019\u500B\u80D6\u5B50\u55CE\uFF1F\uFF09"
-    00000021:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u4E3B\u89D2\\n\uFF08\u70BA\u4EC0\u9EBC\u6211\u5C0D\u4ED6\u6709\u7A2E\u719F\u6089\u611F\uFF1F\uFF09"
     00000022:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u4ED6\u662F\u9019\u500B\u623F\u5B50\u7684\u4E3B\u4EBA\u55CE\uFF1F\u4ED6\u662F\u6211\u7684\u670B\u53CB\u3001\u9084\u662F\u6211\u7684\u4EC7\u4EBA\uFF1F\uFF09"
+        content: "\u4E3B\u89D2\\n\uFF08\u6211\u7E3D\u89BA\u5F97\u54EA\u88E1\u602A\u602A\u7684\uFF0C\u6211\u8A8D\u8B58\u9019\u500B\u80D6\u5B50\u55CE\uFF1F\uFF09"
     00000023:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u65C1\u767D\\n\u5927\u53D4\u8D70\u9032\u623F\u88E1\u5F8C\uFF0C\u4E3B\u89D2\u53CD\u624B\u9396\u4E0A\u9580\uFF0C\u63A5\u8457\u5411\u5927\u53D4\u554F\u8A71\u3002"
+        content: "\u4E3B\u89D2\\n\uFF08\u70BA\u4EC0\u9EBC\u6211\u5C0D\u4ED6\u6709\u7A2E\u719F\u6089\u611F\uFF1F\uFF09"
     00000024:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u4F60\u8AAA\u8AAA\uFF0C\u4F60\u662F\u8AB0\uFF1F\u9019\u88E1\u662F\u8AB0\u7684\u623F\u5B50\uFF1F\u4F60\u53C8\u70BA\u4EC0\u9EBC\u8981\u6293\u6211\uFF1F"
+        content: "\u4E3B\u89D2\\n\uFF08\u4ED6\u662F\u9019\u500B\u623F\u5B50\u7684\u4E3B\u4EBA\u55CE\uFF1F\u4ED6\u662F\u6211\u7684\u670B\u53CB\u3001\u9084\u662F\u6211\u7684\u4EC7\u4EBA\uFF1F\uFF09"
     00000025:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u5148\u544A\u8A34\u6211\uFF0C\u4ECA\u5E74\u662F\u5E7E\u5E74\uFF1F"
+        content: "\u65C1\u767D\\n\u5927\u53D4\u8D70\u9032\u623F\u88E1\u5F8C\uFF0C\u4E3B\u89D2\u53CD\u624B\u9396\u4E0A\u9580\uFF0C\u63A5\u8457\u5411\u5927\u53D4\u554F\u8A71\u3002"
     00000026:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u662F\u6211\u5728\u554F\u4F60\u554F\u984C\uFF01\u4E0D\u8981\u7528\u554F\u984C\u56DE\u7B54\u554F\u984C\uFF01"
+        content: "\u4E3B\u89D2\\n\u4F60\u8AAA\u8AAA\uFF0C\u4F60\u662F\u8AB0\uFF1F\u9019\u88E1\u662F\u8AB0\u7684\u623F\u5B50\uFF1F\u4F60\u53C8\u70BA\u4EC0\u9EBC\u8981\u6293\u6211\uFF1F"
     00000027:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u4F60\u4FE1\u4E0D\u4FE1\u6211\u80FD\u5728\u4F60\u7684\u8166\u6BBC\u4E0A\u958B\u5169\u500B\u6D1E\uFF1F\u56DE\u7B54\u6211\u7684\u554F\u984C\uFF01"
+        content: "\u5927\u53D4\\n\u4F60\u5148\u544A\u8A34\u6211\uFF0C\u4ECA\u5E74\u662F\u5E7E\u5E74\uFF1F"
     00000028:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u9664\u975E\u4F60\u9032\u4F86\u548C\u6211\u9762\u5C0D\u9762\uFF0C\u4E0D\u7136\u6211\u4E0D\u6703\u56DE\u7B54\u4F60\u7684\u554F\u984C\u3002"
+        content: "\u4E3B\u89D2\\n\u662F\u6211\u5728\u554F\u4F60\u554F\u984C\uFF01\u4E0D\u8981\u7528\u554F\u984C\u56DE\u7B54\u554F\u984C\uFF01"
     00000029:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\u4F60\u662F\u771F\u7684\u4E0D\u6015\u6B7B\uFF0C\u5C0D\u5427\uFF1F"
+        content: "\u4E3B\u89D2\\n\u4F60\u4FE1\u4E0D\u4FE1\u6211\u80FD\u5728\u4F60\u7684\u8166\u6BBC\u4E0A\u958B\u5169\u500B\u6D1E\uFF1F\u56DE\u7B54\u6211\u7684\u554F\u984C\uFF01"
     0000002A:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -58924,17 +59982,25 @@ MonoBehaviour:
     0000002B:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u518D\u9019\u6A23\u4E0B\u53BB\u4E0D\u6703\u6709\u4EFB\u4F55\u7D50\u679C\uFF09"
+        content: "\u4E3B\u89D2\\n\u4F60\u662F\u771F\u7684\u4E0D\u6015\u6B7B\uFF0C\u5C0D\u5427\uFF1F"
     0000002C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\\n\uFF08\u5728\u5F97\u5230\u66F4\u591A\u60C5\u5831\u524D\u6211\u4E0D\u80FD\u96E2\u958B\u9019\u88E1\uFF0C\u5148\u4ED4\u7D30\u89C0\u5BDF\u4E00\u4E0B\u9019\u500B\u623F\u5B50\u5427\u3002\uFF09"
+        content: "\u5927\u53D4\\n\u9664\u975E\u4F60\u9032\u4F86\u548C\u6211\u9762\u5C0D\u9762\uFF0C\u4E0D\u7136\u6211\u4E0D\u6703\u56DE\u7B54\u4F60\u7684\u554F\u984C\u3002"
     0000002D:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\uFF08\u518D\u9019\u6A23\u4E0B\u53BB\u4E0D\u6703\u6709\u4EFB\u4F55\u7D50\u679C\uFF09"
+    0000002E:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u4E3B\u89D2\\n\uFF08\u5728\u5F97\u5230\u66F4\u591A\u60C5\u5831\u524D\u6211\u4E0D\u80FD\u96E2\u958B\u9019\u88E1\uFF0C\u5148\u4ED4\u7D30\u89C0\u5BDF\u4E00\u4E0B\u9019\u500B\u623F\u5B50\u5427\u3002\uFF09"
+    0000002F:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 9
         open: 1
-    0000002E:
+    00000030:
       type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
 --- !u!1 &2044835421
 GameObject:
@@ -63840,12 +64906,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057274156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.44, y: -1.35, z: 2}
+  m_LocalPosition: {x: -25.56, y: -1.35, z: 2}
   m_LocalScale: {x: -1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 1368289312}
-  m_Father: {fileID: 1297172044}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2057274158
 SpriteRenderer:
@@ -63939,7 +65005,7 @@ MonoBehaviour:
   - {fileID: 2016815505}
   - {fileID: 1095993766}
   m_Bounds:
-    m_Center: {x: 0.43502307, y: 0.038177013, z: 0}
+    m_Center: {x: 0.43502498, y: 0.038177013, z: 0}
     m_Extent: {x: 0.7726749, y: 2.3963127, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1

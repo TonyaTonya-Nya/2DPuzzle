@@ -15,8 +15,7 @@ public class PlayerController : MonoBehaviour
 
     public Rigidbody2D Rb { get; set; }
 
-    bool dead = false;
-    bool attack = false;
+    private bool dead = false;
 
     void Start()
     {
@@ -40,7 +39,7 @@ public class PlayerController : MonoBehaviour
         }
 
         float horizontal = Input.GetAxis("Horizontal");
-        if (!dead && !attack)
+        if (!dead)
         {
             animator.SetFloat("Speed", Mathf.Abs(horizontal));
             Rb.velocity = new Vector2(horizontal * speed, Rb.velocity.y);
@@ -48,9 +47,9 @@ public class PlayerController : MonoBehaviour
 
         facingRight = transform.localScale.x > 0 ? true : false;
 
-        if (horizontal > 0 && !facingRight && !dead && !attack)
+        if (horizontal > 0 && !facingRight && !dead)
             Flip(horizontal);
-        else if (horizontal < 0 && facingRight && !dead && !attack)
+        else if (horizontal < 0 && facingRight && !dead)
             Flip(horizontal);
     }
 
