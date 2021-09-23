@@ -27,11 +27,6 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         parent = transform.parent.GetComponent<GridLayoutGroup>();
     }
 
-    private void Update()
-    {
-        
-    }
-
     /// <summary>
     /// 初始化，並從資料庫中取得道具資料
     /// </summary>
@@ -49,7 +44,7 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
     {
         oringinIndex = transform.GetSiblingIndex();
-        // 拖曳中的物件設為最後一個子物件，才能顯示在所有人上方
+        // 設定父物件為最上層，這樣才不會受到 mask 影響
         transform.SetParent(transform.parent.parent.parent);
         startPosition = rectTransform.position;
         isDraging = true;
@@ -91,17 +86,10 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                 }
             }
         }
-        if (mix)
-        {
-            transform.SetParent(parent.transform);
-            transform.SetAsLastSibling();
-        }
         if (!mix)
-        {
             rectTransform.position = startPosition;
-            transform.SetParent(parent.transform);
-            transform.SetSiblingIndex(oringinIndex);
-        }
+        transform.SetParent(parent.transform);
+        transform.SetSiblingIndex(oringinIndex);
         image.raycastTarget = true;
     }
 

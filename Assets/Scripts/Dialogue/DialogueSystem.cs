@@ -20,6 +20,7 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
+    public GameObject dialogueBackground;
     public Text dialogueText;
     public bool finish;
 
@@ -35,7 +36,7 @@ public class DialogueSystem : MonoBehaviour
 
     private void Start()
     {
-        dialogueText.gameObject.SetActive(false);
+        dialogueBackground.gameObject.SetActive(false);
     }
 
     public void ShowDialouge(string content)
@@ -43,7 +44,7 @@ public class DialogueSystem : MonoBehaviour
         finish = false;
         if (coroutine != null && coroutine.Current != null)
             StopCoroutine(coroutine);
-        dialogueText.gameObject.SetActive(true);
+        dialogueBackground.gameObject.SetActive(true);
         coroutine = ShowDialougeCoroutine(content);
         StartCoroutine(coroutine);
     }
@@ -59,12 +60,12 @@ public class DialogueSystem : MonoBehaviour
 
     public bool IsShowingDialogue()
     {
-        return dialogueText.gameObject.activeSelf;
+        return dialogueBackground.gameObject.activeSelf;
     }
 
     public void CloseDialouge()
     {
-        dialogueText.gameObject.SetActive(false);
+        dialogueBackground.gameObject.SetActive(false);
         if (coroutine != null && coroutine.Current != null)
             StopCoroutine(coroutine);
         finish = true;

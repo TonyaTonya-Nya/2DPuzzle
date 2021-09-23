@@ -70,6 +70,12 @@ public class ItemList : MonoBehaviour
         itemListCanvas.alpha = 0;
         itemListCanvas.interactable = false;
         itemListCanvas.blocksRaycasts = false;
+        for (int i = 0;i < transform.childCount;i++)
+        {
+            GameObject gameObject = transform.GetChild(i).gameObject;
+            if (gameObject.GetComponent<ItemButton>() != null)
+                Destroy(gameObject);
+        }
     }
 
     public void Scroll(bool left)

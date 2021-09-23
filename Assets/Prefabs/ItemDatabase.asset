@@ -1184,59 +1184,59 @@ MonoBehaviour:
     00000014:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "2 \u6708 26 \u65E5\uFF0C\u516C\u53F8\u5BA3\u5E03\u5012\u9589\uFF0C\u8EAB\u70BA\u5DE5\u7A0B\u5E2B\u7684\u4E08\u592B\u5931\u696D\u3002"
+        content: "2 \u6708 26 \u65E5\\n\u516C\u53F8\u5BA3\u5E03\u5012\u9589\uFF0C\u8EAB\u70BA\u5DE5\u7A0B\u5E2B\u7684\u4E08\u592B\u5931\u696D\u3002"
     00000015:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "3 \u6708 4 \u65E5\uFF0C\u5169\u4EBA\u7D50\u5A5A\u6EFF\u767E\u65E5\uFF0C\u5169\u4EBA\u5C11\u898B\u7684\u6176\u795D\u3002"
+        content: "3 \u6708 4 \u65E5\\n\u5169\u4EBA\u7D50\u5A5A\u6EFF\u767E\u65E5\uFF0C\u5169\u4EBA\u5C11\u898B\u7684\u6176\u795D\u3002"
     00000016:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "4 \u6708 2 \u65E5\uFF0C\u56E0\u7121\u6CD5\u539F\u8AD2\u5C07\u516C\u53F8\u7D93\u71DF\u81F3\u5012\u9589\u7684\u81EA\u5DF1\uFF0C\u4E08\u592B\u88AB\u6AA2\u67E5\u5F97\u51FA\u8E81\u9B31\u75C7\u3002 "
+        content: "4 \u6708 2 \u65E5\\n\u56E0\u7121\u6CD5\u539F\u8AD2\u5C07\u516C\u53F8\u7D93\u71DF\u81F3\u5012\u9589\u7684\u81EA\u5DF1\uFF0C\u4E08\u592B\u88AB\u6AA2\u67E5\u5F97\u51FA\u8E81\u9B31\u75C7\u3002 "
     00000017:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "4 \u6708 11 \u65E5\uFF0C\u5169\u4EBA\u51FA\u9060\u9580\u9032\u884C\u65C5\u904A\uFF0C\u8A66\u5716\u8F49\u63DB\u5FC3\u60C5\u3002"
+        content: "4 \u6708 11 \u65E5\\n\u5169\u4EBA\u51FA\u9060\u9580\u9032\u884C\u65C5\u904A\uFF0C\u8A66\u5716\u8F49\u63DB\u5FC3\u60C5\u3002"
     00000018:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "4 \u6708 29 \u65E5\uFF0C\u5728\u5BB6\u4E2D\u767C\u73FE FM2\uFF0C\u5F97\u77E5\u4E08\u592B\u670D\u85E5\u5DF2\u4E45\u3002"
+        content: "4 \u6708 29 \u65E5\\n\u5728\u5BB6\u4E2D\u767C\u73FE FM2\uFF0C\u5F97\u77E5\u4E08\u592B\u670D\u85E5\u5DF2\u4E45\u3002"
     00000019:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "5 \u6708 3 \u65E5\uFF0C\u4E08\u592B\u4F4F\u9662\u89C0\u5BDF\u3002"
+        content: "5 \u6708 3 \u65E5\\n\u4E08\u592B\u4F4F\u9662\u89C0\u5BDF\u3002"
     0000001A:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "5 \u6708 14 \u65E5\uFF0C\u75C5\u60C5\u60E1\u5316\uFF0C\u51FA\u73FE\u81EA\u6BBA\u50BE\u5411\u3002"
+        content: "5 \u6708 14 \u65E5\\n\u75C5\u60C5\u60E1\u5316\uFF0C\u51FA\u73FE\u81EA\u6BBA\u50BE\u5411\u3002"
     0000001B:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "6 \u6708 1 \u65E5\uFF0C\u4E08\u592B\u56E0\u591A\u6B21\u653B\u64CA\u91AB\u8B77\u4EBA\u54E1\u800C\u906D\u91AB\u9662\u8D95\u51FA\uFF0C\u56DE\u5230\u5BB6\u88E1\u6CBB\u7642\u3002"
+        content: "6 \u6708 1 \u65E5\\n\u4E08\u592B\u56E0\u591A\u6B21\u653B\u64CA\u91AB\u8B77\u4EBA\u54E1\u800C\u906D\u91AB\u9662\u8D95\u51FA\uFF0C\u56DE\u5230\u5BB6\u88E1\u6CBB\u7642\u3002"
     0000001C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "6 \u6708 4 \u65E5\uFF0C\u59BB\u5B50\u8FAD\u53BB\u8B77\u7406\u5E2B\u7684\u5DE5\u4F5C\uFF0C\u5C08\u5FC3\u7167\u9867\u4E08\u592B\u3002"
+        content: "6 \u6708 4 \u65E5\\n\u59BB\u5B50\u8FAD\u53BB\u8B77\u7406\u5E2B\u7684\u5DE5\u4F5C\uFF0C\u5C08\u5FC3\u7167\u9867\u4E08\u592B\u3002"
     0000001D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "6 \u6708 30 \u65E5\uFF0C\u4E08\u592B\u7684\u75C5\u60C5\u597D\u8F49\u3002"
+        content: "6 \u6708 30 \u65E5\\n\u4E08\u592B\u7684\u75C5\u60C5\u597D\u8F49\u3002"
     0000001E:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "7 \u6708 13 \u65E5\uFF0C\u4E08\u592B\u7D93\u8A3A\u65B7\u5F8C\u78BA\u5B9A\u53EF\u56DE\u6B78\u6B63\u5E38\u751F\u6D3B\u3002"
+        content: "7 \u6708 13 \u65E5\\n\u4E08\u592B\u7D93\u8A3A\u65B7\u5F8C\u78BA\u5B9A\u53EF\u56DE\u6B78\u6B63\u5E38\u751F\u6D3B\u3002"
     0000001F:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "7 \u6708 25 \u65E5\uFF0C\u4FE1\u7BB1\u51FA\u73FE\u5947\u602A\u7684\u6050\u5687\u4FE1\u3002"
+        content: "7 \u6708 25 \u65E5\\n\u4FE1\u7BB1\u51FA\u73FE\u5947\u602A\u7684\u6050\u5687\u4FE1\u3002"
     00000020:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "7 \u6708 27 \u65E5\uFF0C\u534A\u591C\u9644\u8FD1\u8857\u9053\u51FA\u73FE\u6578\u8072\u69CD\u8072\u3002"
+        content: "7 \u6708 27 \u65E5\\n\u534A\u591C\u9644\u8FD1\u8857\u9053\u51FA\u73FE\u6578\u8072\u69CD\u8072\u3002"
     00000021:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "7 \u6708 30 \u65E5\uFF0C\u65E9\u4E0A\u6536\u5230\u5947\u602A\u7684\u5305\u88F9\u3002 "
+        content: "7 \u6708 30 \u65E5\\n\u65E9\u4E0A\u6536\u5230\u5947\u602A\u7684\u5305\u88F9\u3002 "
     00000022:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
