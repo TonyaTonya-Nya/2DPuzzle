@@ -52,8 +52,8 @@ public class DialogueSystem : MonoBehaviour
     {
         dialogueText.text = content;
         yield return null;
-        //while (!Input.GetMouseButtonUp(0))
-        //    yield return null;
+        while (!Input.GetMouseButtonUp(0))
+            yield return null;
         finish = true;
     }
 
