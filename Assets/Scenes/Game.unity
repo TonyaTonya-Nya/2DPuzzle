@@ -59965,7 +59965,7 @@ MonoBehaviour:
     0000001E:
       type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
       data:
-        itemId: 7
+        itemId: 6
         number: -1
     0000001F:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
