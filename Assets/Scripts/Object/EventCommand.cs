@@ -128,6 +128,7 @@ public abstract class EventCommand
     public virtual IEnumerator Run() { yield return null; }
 }
 
+[System.Serializable]
 public class EventDialogue : EventCommand
 {
     public string content;

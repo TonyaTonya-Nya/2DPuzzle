@@ -149,7 +149,6 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                 {
                     nowSelectIndex = i;
                     menu.ShowAsContext();
-                    return;
                 }
             }
             position.y += lastUsedHeight;

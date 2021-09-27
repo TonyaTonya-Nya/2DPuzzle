@@ -47292,7 +47292,7 @@ MonoBehaviour:
       data:
         content: "\u4E3B\u89D2\\n\uFF08\u5982\u679C\u2026\u6211\u6C92\u7D66\u4ED6\u9019\u7A2E\u676F\u5B50\u2026\u2026\uFF09"
     00000026:
-      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
+      type: {class: EventGameOver, ns: , asm: Assembly-CSharp}
     00000027:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -47406,7 +47406,7 @@ MonoBehaviour:
       data:
         content: "\u4E3B\u89D2\\n\uFF08\u5982\u679C\u2026\u6211\u6C92\u7D66\u4ED6\u9019\u7A2E\u676F\u5B50\u2026\u2026\uFF09"
     0000002F:
-      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
+      type: {class: EventGameOver, ns: , asm: Assembly-CSharp}
     00000030:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -47764,7 +47764,7 @@ MonoBehaviour:
       data:
         content: "\u4E3B\u89D2\\n\uFF08\u53EF\u2026\u53EF\u60E1\uFF0C\u6211\u5927\u610F\u4E86\u554A\uFF01\uFF09"
     00000049:
-      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
+      type: {class: EventGameOver, ns: , asm: Assembly-CSharp}
 --- !u!1 &1163242976
 GameObject:
   m_ObjectHideFlags: 0
@@ -50308,6 +50308,7 @@ MonoBehaviour:
       - id: 2
       - id: 3
       - id: 4
+      - id: 5
   xDistance: 1.5
   whichIsPositive: 0
   references:
@@ -50332,9 +50333,9 @@ MonoBehaviour:
         audio: {fileID: 8300000, guid: 50e5b7bebc2324448b7e1a4c70f3d804, type: 3}
         volume: 1
     00000004:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u904A\u6232\u6210\u529F"
+      type: {class: EventGameOver, ns: , asm: Assembly-CSharp}
+    00000005:
+      type: {class: EventGameOver, ns: , asm: Assembly-CSharp}
 --- !u!61 &1435740306
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60922,7 +60923,7 @@ MonoBehaviour:
       data:
         content: "\u4E3B\u89D2\\n\uFF08\u597D\u2026\u597D\u60F3\u7761\u2026\u6211\u9084\u2026\uFF09"
     0000000C:
-      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
+      type: {class: EventGameOver, ns: , asm: Assembly-CSharp}
     0000000D:
       type: {class: EventSetScreenColor, ns: , asm: Assembly-CSharp}
       data:
