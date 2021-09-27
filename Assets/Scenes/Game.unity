@@ -48451,7 +48451,7 @@ MonoBehaviour:
     0000000B:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u300C\u795E\u83EF\u300D\uFF1F"
+        content: "\u300C\\h\u300D\uFF1F"
     0000000C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -48471,7 +48471,7 @@ MonoBehaviour:
     00000010:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u9019\u662F\u6211\u7684\u8ECD\u724C\uFF0C\u4E0A\u9762\u7684\u795E\u83EF\u662F\u6211\u7684\u4EE3\u865F"
+        content: "\u9019\u662F\u6211\u7684\u8ECD\u724C\uFF0C\u4E0A\u9762\u7684\\h\u662F\u6211\u7684\u4EE3\u865F"
     00000011:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
