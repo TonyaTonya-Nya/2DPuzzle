@@ -49475,7 +49475,7 @@ MonoBehaviour:
       data:
         content: "\uFF08\u53EF\u2026\u53EF\u60E1\uFF0C\u6211\u5927\u610F\u4E86\u554A\uFF01\u5982\u679C\uFF0C\u6211\u518D\u591A\u60F3\u8D77\u4E00\u4E9B\u4E8B\u60C5\u2026\u2026\uFF09"
     00000006:
-      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
+      type: {class: EventGameOver, ns: , asm: Assembly-CSharp}
     00000007:
       type: {class: EventSetDirection, ns: , asm: Assembly-CSharp}
       data:
