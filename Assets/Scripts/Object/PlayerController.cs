@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // 事件執行中，不可移動
-        if (EventExcutor.Instance.IsRunning)
+        if (EventExecutor.Instance.IsRunning)
         {
             animator.SetFloat("Speed", 0);
             return;

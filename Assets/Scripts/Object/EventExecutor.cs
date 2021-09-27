@@ -5,10 +5,10 @@ using UnityEngine;
 /// <summary>
 /// 負責執行事件的指令
 /// </summary>
-public class EventExcutor : MonoBehaviour
+public class EventExecutor : MonoBehaviour
 {
-    private static EventExcutor instance;
-    public static EventExcutor Instance
+    private static EventExecutor instance;
+    public static EventExecutor Instance
     {
         get
         {
@@ -16,10 +16,11 @@ public class EventExcutor : MonoBehaviour
             {
                 GameObject gameObject = new GameObject();
                 gameObject.name = "Event Excutor";
-                gameObject.AddComponent<EventExcutor>();
+                gameObject.AddComponent<EventExecutor>();
                 gameObject.AddComponent<AudioSource>();
-                instance = gameObject.GetComponent<EventExcutor>();
+                instance = gameObject.GetComponent<EventExecutor>();
                 instance.audioSource = gameObject.GetComponent<AudioSource>();
+                instance.audioSource.loop = true;
             }
             return instance;
         }
@@ -52,6 +53,8 @@ public class EventExcutor : MonoBehaviour
         commands = null;
         eventRunningIndex = 0;
         audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+        audioSource.loop = true;
     }
 
     // Start is called before the first frame update

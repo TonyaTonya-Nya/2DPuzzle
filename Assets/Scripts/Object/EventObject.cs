@@ -82,11 +82,11 @@ public class EventObject : MonoBehaviour
                     // 碰觸執行
                     run = run || (eventPoint[i].triggerType == EventTriggerType.Touch && Triggered);
                     // 已經有其他事件在執行，不可執行
-                    run = run && !EventExcutor.Instance.IsRunning;
+                    run = run && !EventExecutor.Instance.IsRunning;
 
                     // 啟動檢查
                     if (run)
-                        EventExcutor.Instance.Register(this, eventPoint[i].commands);
+                        EventExecutor.Instance.Register(this, eventPoint[i].commands);
                     // 事件頁條件被滿足時，不會再往下看
                     break;
                 }

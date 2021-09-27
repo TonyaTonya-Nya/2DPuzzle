@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class EventCommandList : IList<EventCommand>
@@ -133,17 +134,32 @@ public class EventDialogue : EventCommand
 
     public override IEnumerator Run()
     {
-        int index = content.IndexOf(@"\n");
-        if (index > 0)
-            content = content.Substring(0, index) + "\n" + content.Substring(index + 2);
+        // 轉譯換行符號
+        //Regex regex = new Regex(@"[^\]([\][\n]*");
+        //MatchCollection matches = regex.Matches(content);
+        //foreach (Match match in matches)
+        //    Debug.Log(match);
+        //content = regex.Replace(content, "\n");
+
+        content = content.Replace("\\n", "\n");
+
+        content = content.Replace("\\h", PlayerData.Instance.playerName);
+
+        // 11 號是 看過軍牌，所以盡量不要改動
+        if (GameDatabase.Instance.GetSwitchState(11))
+        {
+            content = content.Replace("主角", PlayerData.Instance.playerName);
+            content = content.Replace("神華", PlayerData.Instance.playerName);
+        }
+
         DialogueSystem.Instance.ShowDialouge(content);
         // 下一句如果是選項或輸入，直接離開，並執行選項
-        if (EventExcutor.Instance.NextCommand is EventSelection ||
-            EventExcutor.Instance.NextCommand is EventInput ||
-            EventExcutor.Instance.NextCommand is EventSetPlayerName)
+        if (EventExecutor.Instance.NextCommand is EventSelection ||
+            EventExecutor.Instance.NextCommand is EventInput ||
+            EventExecutor.Instance.NextCommand is EventSetPlayerName)
             yield break;
         // 下一句如果是對話，完成後不關閉對話窗，並繼續對話
-        else if (EventExcutor.Instance.NextCommand is EventDialogue)
+        else if (EventExecutor.Instance.NextCommand is EventDialogue)
         {
             yield return new WaitUntil(() => DialogueSystem.Instance.finish);
             yield break;
@@ -233,11 +249,11 @@ public class EventSelection : EventCommand
         int index = SelectionBox.main.GetResult();
         if (index == 0)
         {
-            EventExcutor.Instance.Insert(selection1Commands);
+            EventExecutor.Instance.Insert(selection1Commands);
         }
         else if (index == 1)
         {
-            EventExcutor.Instance.Insert(selection2Commands);
+            EventExecutor.Instance.Insert(selection2Commands);
         }
         yield return null;
     }
@@ -255,11 +271,11 @@ public class EventInput : EventCommand
         yield return new WaitUntil(() => !InputBox.main.IsWaiting());
         string result = InputBox.main.GetResult();
         if (result == answer)
-            EventExcutor.Instance.Insert(correctCommands);
+            EventExecutor.Instance.Insert(correctCommands);
         else
-            EventExcutor.Instance.Insert(wrongCommands);
+            EventExecutor.Instance.Insert(wrongCommands);
         // 下一句如果是對話，完成後不關閉對話窗，並繼續對話
-        if (EventExcutor.Instance.NextCommand is EventDialogue)
+        if (EventExecutor.Instance.NextCommand is EventDialogue)
             yield break;
         // 否則關閉對話窗
         else
@@ -342,9 +358,9 @@ public class EventConditionBranch : EventCommand
     public override IEnumerator Run()
     {
         if (GameDatabase.Instance.GetSwitchState(switchId) == needOn)
-            EventExcutor.Instance.Insert(conditionOkCommands);
+            EventExecutor.Instance.Insert(conditionOkCommands);
         else
-            EventExcutor.Instance.Insert(conditionNotOkCommands);
+            EventExecutor.Instance.Insert(conditionNotOkCommands);
         yield return null;
     }
 }
@@ -406,7 +422,7 @@ public class EventSetPlayerName : EventCommand
         string result = InputBox.main.GetResult();
         PlayerData.Instance.playerName = result;
         // 下一句如果是對話，完成後不關閉對話窗，並繼續對話
-        if (EventExcutor.Instance.NextCommand is EventDialogue)
+        if (EventExecutor.Instance.NextCommand is EventDialogue)
             yield break;
         // 否則關閉對話窗
         else
@@ -422,7 +438,16 @@ public class EventPlayBGM : EventCommand
 
     public override IEnumerator Run()
     {
-        EventExcutor.Instance.SetBGM(audioClip, volumn);
+        EventExecutor.Instance.SetBGM(audioClip, volumn);
         return base.Run();
+    }
+}
+
+public class EventGameOver : EventCommand
+{
+    public override IEnumerator Run()
+    {
+        SceneManager.LoadScene(2);
+        yield return null;
     }
 }

@@ -85,7 +85,7 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                             PlayerData.Instance.LoseItem(itemMixSet.item1Id);
                             PlayerData.Instance.LoseItem(itemMixSet.item2Id);
                             PlayerData.Instance.GainItem(itemMixSet.resultId);
-                            EventExcutor.Instance.Register(eventObject, itemMixSet.commands);
+                            EventExecutor.Instance.Register(eventObject, itemMixSet.commands);
                         }
                     }
                 }
