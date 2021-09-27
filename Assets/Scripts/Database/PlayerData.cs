@@ -15,6 +15,7 @@ public class PlayerData
         }
     }
 
+    public string playerName = "神華";
 
     /// <summary>
     /// 持有物品編號

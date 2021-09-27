@@ -127,7 +127,6 @@ public abstract class EventCommand
     public virtual IEnumerator Run() { yield return null; }
 }
 
-[System.Serializable]
 public class EventDialogue : EventCommand
 {
     public string content;
@@ -140,7 +139,8 @@ public class EventDialogue : EventCommand
         DialogueSystem.Instance.ShowDialouge(content);
         // 下一句如果是選項或輸入，直接離開，並執行選項
         if (EventExcutor.Instance.NextCommand is EventSelection ||
-            EventExcutor.Instance.NextCommand is EventInput)
+            EventExcutor.Instance.NextCommand is EventInput ||
+            EventExcutor.Instance.NextCommand is EventSetPlayerName)
             yield break;
         // 下一句如果是對話，完成後不關閉對話窗，並繼續對話
         else if (EventExcutor.Instance.NextCommand is EventDialogue)
@@ -255,13 +255,15 @@ public class EventInput : EventCommand
         yield return new WaitUntil(() => !InputBox.main.IsWaiting());
         string result = InputBox.main.GetResult();
         if (result == answer)
-        {
             EventExcutor.Instance.Insert(correctCommands);
-        }
         else
-        {
             EventExcutor.Instance.Insert(wrongCommands);
-        }
+        // 下一句如果是對話，完成後不關閉對話窗，並繼續對話
+        if (EventExcutor.Instance.NextCommand is EventDialogue)
+            yield break;
+        // 否則關閉對話窗
+        else
+            DialogueSystem.Instance.CloseDialouge();
         yield return null;
     }
 }
@@ -380,5 +382,47 @@ public class EventSetDirection : EventCommand
             target.transform.localScale = scale;
         }
         yield return null;
+    }
+}
+
+public class EventPlaySE : EventCommand
+{
+    public AudioClip audio;
+    public float volume = 1;
+
+    public override IEnumerator Run()
+    {
+        AudioSource.PlayClipAtPoint(audio, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0), volume);
+        yield return null;
+    }
+}
+
+public class EventSetPlayerName : EventCommand
+{
+    public override IEnumerator Run()
+    {
+        InputBox.main.ShowInputBox();
+        yield return new WaitUntil(() => !InputBox.main.IsWaiting());
+        string result = InputBox.main.GetResult();
+        PlayerData.Instance.playerName = result;
+        // 下一句如果是對話，完成後不關閉對話窗，並繼續對話
+        if (EventExcutor.Instance.NextCommand is EventDialogue)
+            yield break;
+        // 否則關閉對話窗
+        else
+            DialogueSystem.Instance.CloseDialouge();
+        yield return null;
+    }
+}
+
+public class EventPlayBGM : EventCommand
+{
+    public AudioClip audioClip;
+    public float volumn = 1;
+
+    public override IEnumerator Run()
+    {
+        EventExcutor.Instance.SetBGM(audioClip, volumn);
+        return base.Run();
     }
 }

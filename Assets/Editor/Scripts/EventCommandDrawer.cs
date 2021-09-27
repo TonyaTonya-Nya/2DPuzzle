@@ -149,6 +149,7 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                 {
                     nowSelectIndex = i;
                     menu.ShowAsContext();
+                    return;
                 }
             }
             position.y += lastUsedHeight;
@@ -284,27 +285,28 @@ public class EventDialougePropertyDrawer : EventCommandPropertyDrawerBase
 
 public class EventGainItemPropertyDrawer : EventCommandPropertyDrawerBase
 {
+    private List<string> itemNames;
+
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        EventGainItem target = EditorHelper.GetObj(property) as EventGainItem;
-        SerializedObject serializedObject = property.serializedObject;
-        Type type = target.GetType();
-
         position.height = EditorGUIUtility.singleLineHeight;
         // Foldout的矩形寬度縮小
         Rect rect = position;
-        rect.width = GUI.skin.label.fontSize * EventCommand.GetName(type.Name).Length;
-        property.isExpanded = EditorGUI.Foldout(rect, property.isExpanded, EventCommand.GetName(type.Name), true);
+        rect.width = GUI.skin.label.fontSize * "Gain Item".Length;
+        property.isExpanded = EditorGUI.Foldout(rect, property.isExpanded, "Gain Item", true);
         if (property.isExpanded)
         {
             EditorGUI.indentLevel += 1;
-            List<string> itemNames = new List<string>();
-            foreach (KeyValuePair<int, Item> pair in GameDatabase.Instance.ItemDB)
-                itemNames.Add(pair.Key + ".  " + pair.Value.itemName);
-            FieldInfo field = type.GetField("itemId");
+            if (itemNames == null)
+            {
+                itemNames = new List<string>();
+                foreach (KeyValuePair<int, Item> pair in GameDatabase.Instance.ItemDB)
+                    itemNames.Add(pair.Key + ".  " + pair.Value.itemName);
+            }
+            SerializedProperty itemId = property.FindPropertyRelative("itemId");
             position.y += EditorHelper.NextLine;
-            int selection = EditorGUI.Popup(position, "Item", (int)field.GetValue(target) - 1, itemNames.ToArray());
-            field.SetValue(target, selection + 1);
+            int selection = EditorGUI.Popup(position, "Item", itemId.intValue - 1, itemNames.ToArray());
+            itemId.intValue = selection + 1;
             position.y += EditorHelper.NextLine;
             EditorGUI.PropertyField(position, property.FindPropertyRelative("number"));
             EditorGUI.indentLevel -= 1;

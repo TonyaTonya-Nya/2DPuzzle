@@ -17,7 +17,9 @@ public class EventExcutor : MonoBehaviour
                 GameObject gameObject = new GameObject();
                 gameObject.name = "Event Excutor";
                 gameObject.AddComponent<EventExcutor>();
+                gameObject.AddComponent<AudioSource>();
                 instance = gameObject.GetComponent<EventExcutor>();
+                instance.audioSource = gameObject.GetComponent<AudioSource>();
             }
             return instance;
         }
@@ -30,6 +32,8 @@ public class EventExcutor : MonoBehaviour
     public bool IsRunning { get; private set; }
 
     private int eventRunningIndex;
+
+    private AudioSource audioSource;
 
     public EventCommand NextCommand
     {
@@ -45,10 +49,9 @@ public class EventExcutor : MonoBehaviour
     {
         if (instance == null)
             instance = this;
-        else if (instance != this)
-            Destroy(gameObject);
         commands = null;
         eventRunningIndex = 0;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -112,5 +115,17 @@ public class EventExcutor : MonoBehaviour
         eventRunningIndex = 0;
         commands = null;
         target = null;
+    }
+
+    public void SetBGM(AudioClip clip, float volume)
+    {
+        if (clip == null)
+            audioSource.Stop();
+        else
+        {
+            audioSource.clip = clip;
+            audioSource.volume = volume;
+            audioSource.Play();
+        }
     }
 }
