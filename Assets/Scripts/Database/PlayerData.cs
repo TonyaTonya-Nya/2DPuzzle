@@ -22,6 +22,12 @@ public class PlayerData
     /// </summary>
     public List<int> items { get; private set; } = new List<int>();
 
+    public void Clear()
+    {
+        items = null;
+        instance = null;
+    }
+
     public bool HasItem(int id)
     {
         return items.Contains(id);

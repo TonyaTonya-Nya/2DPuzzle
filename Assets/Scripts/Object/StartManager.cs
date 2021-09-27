@@ -7,6 +7,10 @@ public class StartManager : MonoBehaviour
 {
     public void StartGame()
     {
+        if (PlayerData.Instance != null)
+        {
+            PlayerData.Instance.Clear();
+        }
         SceneManager.LoadScene(1);
     }
 
