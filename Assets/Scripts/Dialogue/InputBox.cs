@@ -24,6 +24,8 @@ public class InputBox : MonoBehaviour
     public void ShowInputBox()
     {
         waiting = true;
+        // 開啟時清除上一次的輸入
+        inputField.text = "";
         inputBox.SetActive(true);
     }
 
