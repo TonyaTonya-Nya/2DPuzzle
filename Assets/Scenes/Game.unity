@@ -21684,6 +21684,9 @@ MonoBehaviour:
       - id: 5
       - id: 6
       - id: 7
+      - id: 8
+      - id: 9
+      - id: 10
   xDistance: 99
   whichIsPositive: 0
   references:
@@ -21714,16 +21717,31 @@ MonoBehaviour:
         itemId: 9
         number: 1
     00000005:
+      type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
+      data:
+        itemId: 18
+        number: 1
+    00000006:
+      type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
+      data:
+        switchId: 23
+        open: 0
+    00000007:
+      type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
+      data:
+        switchId: 22
+        open: 0
+    00000008:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 24
         open: 1
-    00000006:
+    00000009:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 25
         open: 1
-    00000007:
+    0000000A:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 23
@@ -50152,7 +50170,7 @@ MonoBehaviour:
     0000000B:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u8981\u7684\u7B54\u6848\uFF0C\u4F60\u662F\u795E\u83EF\uFF0C\u9019\u88E1\u662F\u4F60\u7684\u623F\u5B50\u3002"
+        content: "\u5927\u53D4\\n\u4F60\u8981\u7684\u7B54\u6848\uFF0C\u4F60\u662F\\n\uFF0C\u9019\u88E1\u662F\u4F60\u7684\u623F\u5B50\u3002"
     0000000C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:

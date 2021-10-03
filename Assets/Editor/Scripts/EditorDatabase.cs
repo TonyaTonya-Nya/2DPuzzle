@@ -134,8 +134,8 @@ public class EditorDatabase
                     {
                         if (eventCommand is EventDialogue eventDialogue)
                         {
-                            if (eventDialogue.content.StartsWith("\\h\\n神華\n"))
-                                eventDialogue.content = eventDialogue.content.Replace("\\h\\n神華\n", "\\h\\n");
+                            if (eventDialogue.content.Contains("\n"))
+                                eventDialogue.content = eventDialogue.content.Replace("\n", "\\n");
                         }
                     }
                 }
@@ -163,6 +163,8 @@ public class EditorDatabase
                                 eventDialogue.content = eventDialogue.content.Replace("\\h\\n\\h", "\\h\\n");
                             if (eventDialogue.content.StartsWith("\\h\\n大叔\\n"))
                                 eventDialogue.content = eventDialogue.content.Replace("\\h\\n大叔\\n", "大叔\\n");
+                            if (eventDialogue.content.StartsWith("\\h\\n神華\\n"))
+                                eventDialogue.content = eventDialogue.content.Replace("\\h\\n神華\\n", "\\h\\n");
                         }
                     }
                 }

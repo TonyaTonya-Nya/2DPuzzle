@@ -135,7 +135,7 @@ public class EventDialogue : EventCommand
 
     public override IEnumerator Run()
     {
-        string c = content = content.Replace("\\n", "\n");
+        string c  = content.Replace("\\n", "\n");
 
         c = c.Replace("\\h", PlayerData.Instance.playerName);
 
