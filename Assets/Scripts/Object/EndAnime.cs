@@ -19,14 +19,14 @@ public class EndAnime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        title.color = new Color(title.color.r, title.color.g, title.color.b, title.color.a - 0.1f/60f);
+        title.color = new Color(title.color.r, title.color.g, title.color.b, title.color.a - 0.2f/60f);
 
         if (title.color.a <= 0.05f)
         {
             gameList.SetActive(true);
         }
 
-        if (gameList.transform.position.y > 650)
+        if (gameList.transform.position.y > 2150)
         {
             bg.SetActive(true);
             againBtn.SetActive(true);
