@@ -4920,9 +4920,9 @@ RectTransform:
   m_Father: {fileID: 995552331}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 32}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175.37552, y: -36.85357}
   m_SizeDelta: {x: 280, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &57348584
@@ -21591,7 +21591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &323187686
 Transform:
   m_ObjectHideFlags: 0
@@ -23596,9 +23596,9 @@ RectTransform:
   m_Father: {fileID: 995552331}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -32}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175.37552, y: -110.56071}
   m_SizeDelta: {x: 280, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &552023543
@@ -35718,6 +35718,7 @@ GameObject:
   - component: {fileID: 995552331}
   - component: {fileID: 995552333}
   - component: {fileID: 995552332}
+  - component: {fileID: 995552334}
   m_Layer: 5
   m_Name: Selection Box
   m_TagString: Untagged
@@ -35783,6 +35784,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995552330}
   m_CullTransparentMesh: 0
+--- !u!114 &995552334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995552330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
 --- !u!1 &1019204786
 GameObject:
   m_ObjectHideFlags: 0
@@ -41031,6 +41057,64 @@ MonoBehaviour:
           draggable: 1
           expandable: 1
           multipleSelection: 1
+          isExpanded: 0
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    commands:
+      commands:
+      - id: 0
+      - id: 1
+  - triggerType: 2
+    condition:
+      switchConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
+          isExpanded: 1
+          label:
+            m_Text: Keys
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 18
+          footerHeight: 13
+          slideEasing: 0.15
+          verticalSpacing: 2
+          showDefaultBackground: 1
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 1
+        _keyValues: 1d000000
+        _keys: 1d000000
+        _values: 01
+      itemConditions:
+        reorderableList:
+          canAdd: 1
+          canRemove: 1
+          draggable: 1
+          expandable: 1
+          multipleSelection: 1
           isExpanded: 1
           label:
             m_Text: Keys
@@ -41052,9 +41136,9 @@ MonoBehaviour:
         _values: 01000000
     commands:
       commands:
-      - id: 0
-      - id: 1
       - id: 2
+      - id: 3
+      - id: 4
   - triggerType: 2
     condition:
       switchConditions:
@@ -41111,9 +41195,9 @@ MonoBehaviour:
         _values: 01000000
     commands:
       commands:
-      - id: 3
-      - id: 4
       - id: 5
+      - id: 6
+      - id: 7
   - triggerType: 2
     condition:
       switchConditions:
@@ -41170,9 +41254,9 @@ MonoBehaviour:
         _values: 01000000
     commands:
       commands:
-      - id: 6
-      - id: 7
       - id: 8
+      - id: 9
+      - id: 10
   - triggerType: 2
     condition:
       switchConditions:
@@ -41229,9 +41313,9 @@ MonoBehaviour:
         _values: 01000000
     commands:
       commands:
-      - id: 9
-      - id: 10
       - id: 11
+      - id: 12
+      - id: 13
   - triggerType: 2
     condition:
       switchConditions:
@@ -41288,9 +41372,9 @@ MonoBehaviour:
         _values: 01000000
     commands:
       commands:
-      - id: 12
-      - id: 13
       - id: 14
+      - id: 15
+      - id: 16
   - triggerType: 2
     condition:
       switchConditions:
@@ -41347,9 +41431,9 @@ MonoBehaviour:
         _values: 01000000
     commands:
       commands:
-      - id: 15
-      - id: 16
       - id: 17
+      - id: 18
+      - id: 19
   xDistance: 0
   whichIsPositive: 0
   references:
@@ -41357,144 +41441,148 @@ MonoBehaviour:
     00000000:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u8981\u7D66\u4ED6\u4EC0\u9EBC\uFF1F\uFF09 "
+        content: "\\h\\n(\u8981\u7D66\u4ED6\u4EC0\u9EBC\uFF1F\uFF09 "
     00000001:
+      type: {class: EventSelection, ns: , asm: Assembly-CSharp}
+      data:
+        selection1: "\u9152\u548C\u9152\u676F"
+        selection1Commands:
+          commands:
+          - id: 20
+        selection2: 
+        selection2Commands:
+          commands: []
+    00000002:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n(\u8981\u7D66\u4ED6\u4EC0\u9EBC\uFF1F\uFF09 "
+    00000003:
       type: {class: EventSelection, ns: , asm: Assembly-CSharp}
       data:
         selection1: "\u7D19\u676F\u8207\u6BD2\u9152"
         selection1Commands:
           commands:
-          - id: 18
+          - id: 21
         selection2: "\u9152\u548C\u9152\u676F"
         selection2Commands:
           commands:
-          - id: 19
-    00000002:
+          - id: 22
+    00000004:
       type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
-    00000003:
+    00000005:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\uFF08\u8981\u7D66\u4ED6\u4EC0\u9EBC\uFF1F\uFF09 "
-    00000004:
+    00000006:
       type: {class: EventSelection, ns: , asm: Assembly-CSharp}
       data:
         selection1: "\u6F31\u53E3\u676F\u8207\u6BD2\u9152"
         selection1Commands:
           commands:
-          - id: 20
+          - id: 23
         selection2: "\u9152\u548C\u9152\u676F"
         selection2Commands:
           commands:
-          - id: 21
-    00000005:
+          - id: 24
+    00000007:
       type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
-    00000006:
+    00000008:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\uFF08\u8981\u7D66\u4ED6\u4EC0\u9EBC\uFF1F\uFF09 "
-    00000007:
+    00000009:
       type: {class: EventSelection, ns: , asm: Assembly-CSharp}
       data:
         selection1: "\u99AC\u514B\u676F\u8207\u6BD2\u9152"
         selection1Commands:
           commands:
-          - id: 22
+          - id: 25
         selection2: "\u9152\u548C\u9152\u676F"
         selection2Commands:
           commands:
-          - id: 23
-    00000008:
+          - id: 26
+    0000000A:
       type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
-    00000009:
+    0000000B:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\uFF08\u8981\u7D66\u4ED6\u4EC0\u9EBC\uFF1F\uFF09 "
-    0000000A:
+    0000000C:
       type: {class: EventSelection, ns: , asm: Assembly-CSharp}
       data:
         selection1: "\u7D19\u676F\u8207\u9152"
         selection1Commands:
           commands:
-          - id: 24
+          - id: 27
         selection2: "\u9152\u548C\u9152\u676F"
         selection2Commands:
           commands:
-          - id: 25
-    0000000B:
+          - id: 28
+    0000000D:
       type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
-    0000000C:
+    0000000E:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\uFF08\u8981\u7D66\u4ED6\u4EC0\u9EBC\uFF1F\uFF09 "
-    0000000D:
+    0000000F:
       type: {class: EventSelection, ns: , asm: Assembly-CSharp}
       data:
         selection1: "\u6F31\u53E3\u676F\u8207\u9152"
         selection1Commands:
           commands:
-          - id: 26
+          - id: 29
         selection2: "\u9152\u548C\u9152\u676F"
         selection2Commands:
           commands:
-          - id: 27
-    0000000E:
+          - id: 30
+    00000010:
       type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
-    0000000F:
+    00000011:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\uFF08\u8981\u7D66\u4ED6\u4EC0\u9EBC\uFF1F\uFF09 "
-    00000010:
+    00000012:
       type: {class: EventSelection, ns: , asm: Assembly-CSharp}
       data:
         selection1: "\u99AC\u514B\u676F\u8207\u9152"
         selection1Commands:
           commands:
-          - id: 28
+          - id: 31
         selection2: "\u9152\u548C\u9152\u676F"
         selection2Commands:
           commands:
-          - id: 29
-    00000011:
-      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
-    00000012:
-      type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
-      data:
-        switchId: 30
-        open: 1
+          - id: 32
     00000013:
-      type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
-      data:
-        switchId: 32
-        open: 1
+      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
     00000014:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
-        switchId: 31
+        switchId: 32
         open: 1
     00000015:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
-        switchId: 32
+        switchId: 30
         open: 1
     00000016:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
-        switchId: 31
+        switchId: 32
         open: 1
     00000017:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
-        switchId: 32
+        switchId: 31
         open: 1
     00000018:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
-        switchId: 33
+        switchId: 32
         open: 1
     00000019:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
-        switchId: 32
+        switchId: 31
         open: 1
     0000001A:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
@@ -41504,7 +41592,7 @@ MonoBehaviour:
     0000001B:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
-        switchId: 32
+        switchId: 33
         open: 1
     0000001C:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
@@ -41512,6 +41600,21 @@ MonoBehaviour:
         switchId: 32
         open: 1
     0000001D:
+      type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
+      data:
+        switchId: 32
+        open: 1
+    0000001E:
+      type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
+      data:
+        switchId: 32
+        open: 1
+    0000001F:
+      type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
+      data:
+        switchId: 32
+        open: 1
+    00000020:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 32
@@ -50791,7 +50894,7 @@ MonoBehaviour:
     0000003F:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\uFF1A\uFF08\u4ED6\u8AAA\u7684\u6C92\u932F\uFF0C\u6211\u771F\u7684\u8981\u6BBA\u4ED6\u55CE\uFF1F\uFF09\uFF08\uFF39\uFF0F\uFF2E\uFF09"
+        content: "\\h\\n\uFF08\u4ED6\u8AAA\u7684\u6C92\u932F\uFF0C\u6211\u771F\u7684\u8981\u6BBA\u4ED6\u55CE\uFF1F\uFF09\uFF08\uFF39\uFF0F\uFF2E\uFF09"
     00000040:
       type: {class: EventSelection, ns: , asm: Assembly-CSharp}
       data:
@@ -52336,11 +52439,11 @@ MonoBehaviour:
     00000000:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\uFF1A\uFF08\u9019\u4EBA\u4EBA\u54C1\u4F4E\u52A3\uFF0C\u7559\u8457\u4ED6\u4E0D\u66C9\u5F97\u54EA\u5929\u6703\u80CC\u523A\u6211\uFF09"
+        content: "\\h\\n\uFF08\u9019\u4EBA\u4EBA\u54C1\u4F4E\u52A3\uFF0C\u7559\u8457\u4ED6\u4E0D\u66C9\u5F97\u54EA\u5929\u6703\u80CC\u523A\u6211\uFF09"
     00000001:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\uFF1A\uFF08\u6211\u63A5\u4E0B\u4F86\u8981\u5C0D\u6297\u7684\u662F\u6574\u500B\u7D44\u7E54\uFF0C\u5BB9\u4E0D\u5F97\u4E00\u9EDE\u5931\u8AA4\uFF0C\u9084\u662F\u6BBA\u4E86\u8F03\u5B89\u5168\u3002\uFF09"
+        content: "\\h\\n\uFF08\u6211\u63A5\u4E0B\u4F86\u8981\u5C0D\u6297\u7684\u662F\u6574\u500B\u7D44\u7E54\uFF0C\u5BB9\u4E0D\u5F97\u4E00\u9EDE\u5931\u8AA4\uFF0C\u9084\u662F\u6BBA\u4E86\u8F03\u5B89\u5168\u3002\uFF09"
     00000002:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
@@ -52351,16 +52454,16 @@ MonoBehaviour:
     00000004:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\uFF1A\uFF08\u9019\u4EBA\u5229\u76CA\u81F3\u4E0A\uFF0C\u53EA\u8981\u7D66\u4ED6\u8DB3\u5920\u5229\u76CA\uFF0C\u904B\u7528\u597D\u4ED6\u7684\u8CAA\u5A6A\uFF0C\u4E5F\u8A31\u53EF\u4EE5\u5F9E
+        content: "\\h\\n\u9019\u4EBA\u5229\u76CA\u81F3\u4E0A\uFF0C\u53EA\u8981\u7D66\u4ED6\u8DB3\u5920\u5229\u76CA\uFF0C\u904B\u7528\u597D\u4ED6\u7684\u8CAA\u5A6A\uFF0C\u4E5F\u8A31\u53EF\u4EE5\u5F9E
           \u5167\u90E8\u74E6\u89E3\u6574\u500B\u7D44\u7E54\u3002\uFF09"
     00000005:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\uFF1A\u597D\uFF0C\u6211\u53EF\u4EE5\u4E0D\u6BBA\u4F60\uFF0C\u4F46\u4F60\u5FC5\u9808\u5C07\u4F60\u7684\u8ECD\u724C\u7D66\u6211\u3002"
+        content: "\\h\\n\u597D\uFF0C\u6211\u53EF\u4EE5\u4E0D\u6BBA\u4F60\uFF0C\u4F46\u4F60\u5FC5\u9808\u5C07\u4F60\u7684\u8ECD\u724C\u7D66\u6211\u3002"
     00000006:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\uFF1A\u5230\u6642\u6211\u82E5\u51FA\u4E8B\uFF0C\u4E5F\u53EF\u8B49\u660E\u6211\u5011\u662F\u4E00\u6D3E\u7684\uFF0C\u6211\u4E5F\u4E0D\u592A\u9700\u8981\u64D4\u5FC3\u4F60\u6703\u80CC\u523A
+        content: "\\h\\n\u5230\u6642\u6211\u82E5\u51FA\u4E8B\uFF0C\u4E5F\u53EF\u8B49\u660E\u6211\u5011\u662F\u4E00\u6D3E\u7684\uFF0C\u6211\u4E5F\u4E0D\u592A\u9700\u8981\u64D4\u5FC3\u4F60\u6703\u80CC\u523A
           \u6211\u3002"
     00000007:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
@@ -52379,7 +52482,7 @@ MonoBehaviour:
     0000000A:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\uFF1A\uFF08\u62D9\u52A3\u7684\u63A9\u8B77\u2026\u2026\uFF09"
+        content: "\\h\\n\uFF08\u62D9\u52A3\u7684\u63A9\u8B77\u2026\u2026\uFF09"
     0000000B:
       type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:

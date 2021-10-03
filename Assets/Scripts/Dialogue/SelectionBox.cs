@@ -25,7 +25,13 @@ public class SelectionBox : MonoBehaviour
     {
         waiting = true;
         buttons[0].GetComponentInChildren<Text>().text = text1;
-        buttons[1].GetComponentInChildren<Text>().text = text2;
+        if (text2 != "")
+        {
+            buttons[1].GetComponentInChildren<Text>().text = text2;
+            buttons[1].gameObject.SetActive(true);
+        }
+        else
+            buttons[1].gameObject.SetActive(false);
         selectionBox.SetActive(true);
     }
 
