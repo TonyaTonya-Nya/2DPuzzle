@@ -114,8 +114,6 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
         {
             EditorGUI.indentLevel += 1;
             float lastUsedHeight = EditorHelper.NextLine;
-            if (nowDrawer == null)
-                nowDrawer = new EventCommandPropertyDrawer();
 
             GenericMenu menu = CreateMenu(property, false);
 
@@ -123,7 +121,9 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
             {
                 SerializedProperty singleCommand = commands.GetArrayElementAtIndex(i);
                 position.y += lastUsedHeight;
-                nowDrawer.OnGUI(position, singleCommand, null);
+
+                EditorGUI.PropertyField(position, singleCommand, true);
+
                 lastUsedHeight = EditorGUI.GetPropertyHeight(singleCommand, true);
                 position.y += EditorGUIUtility.standardVerticalSpacing;
 
@@ -154,6 +154,7 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
             position.y += lastUsedHeight;
             DrawEditMenu(property, position);
             EditorGUI.indentLevel -= 1;
+            property.serializedObject.ApplyModifiedProperties();
         }
     }
 
@@ -164,9 +165,11 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
         EventCommandList target = EditorHelper.GetObj(property) as EventCommandList;
 
         foreach (KeyValuePair<string, Type> pair in EventCommand.types)
-        {
-            menu.AddItem(new GUIContent("Add/" + EventCommand.GetName(pair.Key)), false, () => target.Insert(nowSelectIndex, pair.Value));
-        }
+            menu.AddItem(new GUIContent("Add/" + EventCommand.GetName(pair.Key)), false, () => {
+                target.Insert(nowSelectIndex, pair.Value);
+                EditorUtility.SetDirty(property.serializedObject.targetObject);
+                property.serializedObject.ApplyModifiedProperties();
+            });
         if (hasRemoveButton)
             menu.AddItem(new GUIContent("Remove"), false, () => target.RemoveAt(nowSelectIndex - 1));
         return menu;
@@ -225,6 +228,7 @@ public class EventCommandPropertyDrawer : PropertyDrawer
             drawers[property] = GetDrawer(property);
 
         drawers[property].OnGUI(position, property, label);
+        property.serializedObject.ApplyModifiedProperties();
     }
 }
 

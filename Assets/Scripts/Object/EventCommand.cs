@@ -135,25 +135,11 @@ public class EventDialogue : EventCommand
 
     public override IEnumerator Run()
     {
-        // 轉譯換行符號
-        //Regex regex = new Regex(@"[^\]([\][\n]*");
-        //MatchCollection matches = regex.Matches(content);
-        //foreach (Match match in matches)
-        //    Debug.Log(match);
-        //content = regex.Replace(content, "\n");
+        string c = content = content.Replace("\\n", "\n");
 
-        content = content.Replace("\\n", "\n");
+        c = c.Replace("\\h", PlayerData.Instance.playerName);
 
-        content = content.Replace("\\h", PlayerData.Instance.playerName);
-
-        // 11 號是 看過軍牌，所以盡量不要改動
-        if (GameDatabase.Instance.GetSwitchState(11))
-        {
-            content = content.Replace("主角", PlayerData.Instance.playerName);
-            content = content.Replace("神華", PlayerData.Instance.playerName);
-        }
-
-        DialogueSystem.Instance.ShowDialouge(content);
+        DialogueSystem.Instance.ShowDialouge(c);
         // 下一句如果是選項或輸入，直接離開，並執行選項
         if (EventExecutor.Instance.NextCommand is EventSelection ||
             EventExecutor.Instance.NextCommand is EventInput ||

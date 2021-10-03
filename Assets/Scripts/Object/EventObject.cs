@@ -83,7 +83,8 @@ public class EventObject : MonoBehaviour
                     run = run || (eventPoint[i].triggerType == EventTriggerType.Touch && Triggered);
                     // 已經有其他事件在執行，不可執行
                     run = run && !EventExecutor.Instance.IsRunning;
-
+                    // 如果事件頁沒有事件，就不用執行
+                    run = run && eventPoint[i].commands.Count > 0;
                     // 啟動檢查
                     if (run)
                         EventExecutor.Instance.Register(this, eventPoint[i].commands);
@@ -104,7 +105,7 @@ public class EventObject : MonoBehaviour
         // 開關檢查
         foreach (int id in condition.switchConditions.Keys)
         {
-            if (!GameDatabase.Instance.GetSwitchState(id))
+            if (GameDatabase.Instance.GetSwitchState(id) != condition.switchConditions[id])
                 return false;
         }
         // 物品檢查

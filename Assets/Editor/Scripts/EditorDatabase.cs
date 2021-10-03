@@ -77,4 +77,97 @@ public class EditorDatabase
             file.WriteLine(s);
         }
     }
+
+    [MenuItem("Tools/Changer/AddPlayerNameCodeToAllDialogue")]
+    public static void AddPlayerNameCodeToAllDialogue()
+    {
+        EventObject[] eventObjects = GameObject.FindObjectsOfType<EventObject>();
+        foreach (EventObject eventObject in eventObjects)
+        {
+            if (eventObject.eventPoint != null)
+            {
+                foreach (EventPoint eventPoint in eventObject.eventPoint)
+                {
+                    foreach (EventCommand eventCommand in eventPoint.commands)
+                    {
+                        if (eventCommand is EventDialogue eventDialogue)
+                        {
+                            if (!eventDialogue.content.StartsWith("\\h\\n"))
+                                eventDialogue.content = "\\h\\n" + eventDialogue.content;
+                        }
+                    }
+                }
+            }
+        }
+        if (GameDatabase.Instance.ItemDB != null)
+        {
+            foreach (KeyValuePair<int, Item> pair in GameDatabase.Instance.ItemDB)
+            {
+                if (pair.Value.clickEvent != null)
+                {
+                    foreach (EventPoint eventPoint in pair.Value.clickEvent)
+                    {
+                        foreach (EventCommand eventCommand in eventPoint.commands)
+                        {
+                            if (eventCommand is EventDialogue eventDialogue)
+                            {
+                                if (!eventDialogue.content.StartsWith("\\h\\n"))
+                                    eventDialogue.content = "\\h\\n" + eventDialogue.content;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    [MenuItem("Tools/Changer/TEmp")]
+    public static void TEmp()
+    {
+        foreach (KeyValuePair<int, Item> pair in GameDatabase.Instance.ItemDB)
+        {
+            if (pair.Value.clickEvent != null)
+            {
+                foreach (EventPoint eventPoint in pair.Value.clickEvent)
+                {
+                    foreach (EventCommand eventCommand in eventPoint.commands)
+                    {
+                        if (eventCommand is EventDialogue eventDialogue)
+                        {
+                            if (eventDialogue.content.StartsWith("\\h\\n神華\n"))
+                                eventDialogue.content = eventDialogue.content.Replace("\\h\\n神華\n", "\\h\\n");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    [MenuItem("Tools/Changer/DeleteExtraPlayerNameStringOfAllDialogue")]
+    public static void DeleteExtraPlayerNameStringOfAllDialogue()
+    {
+        EventObject[] eventObjects = GameObject.FindObjectsOfType<EventObject>();
+        foreach (EventObject eventObject in eventObjects)
+        {
+            if (eventObject.eventPoint != null)
+            {
+                foreach (EventPoint eventPoint in eventObject.eventPoint)
+                {
+                    foreach (EventCommand eventCommand in eventPoint.commands)
+                    {
+                        if (eventCommand is EventDialogue eventDialogue)
+                        {
+                            if (eventDialogue.content.StartsWith("\\h\\n主角\\n"))
+                                eventDialogue.content = eventDialogue.content.Replace("\\h\\n主角\\n", "\\h\\n");
+                            if (eventDialogue.content.StartsWith("\\h\\n\\h"))
+                                eventDialogue.content = eventDialogue.content.Replace("\\h\\n\\h", "\\h\\n");
+                            if (eventDialogue.content.StartsWith("\\h\\n大叔\\n"))
+                                eventDialogue.content = eventDialogue.content.Replace("\\h\\n大叔\\n", "大叔\\n");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }

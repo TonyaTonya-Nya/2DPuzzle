@@ -59,7 +59,9 @@ public class EventPoint
 public class ItemMixSet
 {
     public int item1Id;
+    public bool loseItem1 = true;
     public int item2Id;
+    public bool loseItem2 = true;
     public int resultId;
     // 合成後要有的事件
     public EventCommandList commands;

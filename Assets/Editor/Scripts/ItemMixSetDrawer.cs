@@ -36,11 +36,15 @@ public class ItemMixSetDrawer : PropertyDrawer
 
             EditorGUI.indentLevel += 1;
             position.y += EditorHelper.NextLine;
-            DrawPopUp(position, property.FindPropertyRelative("item1Id"), "item1Id");
+            DrawPopup(position, property.FindPropertyRelative("item1Id"), "item1Id");
             position.y += EditorHelper.NextLine;
-            DrawPopUp(position, property.FindPropertyRelative("item2Id"), "item2Id");
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("loseItem1"));
             position.y += EditorHelper.NextLine;
-            DrawPopUp(position, property.FindPropertyRelative("resultId"), "resultId");
+            DrawPopup(position, property.FindPropertyRelative("item2Id"), "item2Id");
+            position.y += EditorHelper.NextLine;
+            EditorGUI.PropertyField(position, property.FindPropertyRelative("loseItem2"));
+            position.y += EditorHelper.NextLine;
+            DrawPopup(position, property.FindPropertyRelative("resultId"), "resultId");
             position.y += EditorHelper.NextLine;
             SerializedProperty commands = property.FindPropertyRelative("commands");
             position.height = EditorGUI.GetPropertyHeight(commands, true);
@@ -51,7 +55,7 @@ public class ItemMixSetDrawer : PropertyDrawer
         EditorGUI.EndProperty();
     }
 
-    private void DrawPopUp(Rect position, SerializedProperty property, string fieldName)
+    private void DrawPopup(Rect position, SerializedProperty property, string fieldName)
     {
         int nowItemId = property.intValue;
         int selectItemId = EditorGUI.Popup(position, fieldName, nowItemId - 1, itemNames.ToArray());

@@ -19,6 +19,7 @@ public class EventObjectCreator
         if (Selection.activeGameObject != null)
             go.transform.parent = Selection.activeGameObject.transform;
         Selection.activeObject = go;
+        EditorUtility.SetDirty(go);
     }
 
     [MenuItem("GameObject/Event Object/Box Collider", false, 10)]
@@ -100,11 +101,15 @@ public class EventObjectEditor : Editor
         EditorGUI.indentLevel += 1;
         if (propertyEventPoint.isExpanded)
         {
-            serializedObject.Update();
+            EditorGUI.BeginChangeCheck();
             DrawEventPoint();
-            serializedObject.ApplyModifiedProperties();
+            if (EditorGUI.EndChangeCheck())
+            {
+                EditorUtility.SetDirty(serializedObject.targetObject);
+                serializedObject.ApplyModifiedProperties();
+            }
 
-            serializedObject.Update();
+            EditorGUI.BeginChangeCheck();
             EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("Add New Event Point"))
             {
@@ -116,7 +121,12 @@ public class EventObjectEditor : Editor
                     propertyEventPoint.DeleteArrayElementAtIndex(propertyEventPoint.arraySize - 1);
             }
             EditorGUILayout.EndHorizontal();
-            serializedObject.ApplyModifiedProperties();
+            if (EditorGUI.EndChangeCheck())
+            {
+                EditorUtility.SetDirty(serializedObject.targetObject);
+                serializedObject.ApplyModifiedProperties();
+            }
+
         }
         EditorGUI.indentLevel -= 1;
     }

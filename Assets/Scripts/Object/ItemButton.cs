@@ -69,23 +69,29 @@ public class ItemButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         bool mix = false;
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            ItemButton itemButton = eventData.pointerCurrentRaycast.gameObject.GetComponent<ItemButton>();
-            if (itemButton != null)
+            // 保險
+            if (eventData.pointerCurrentRaycast.gameObject != null)
             {
-                Item targetItem = itemButton.Item;
-                if (targetItem != null)
+                ItemButton itemButton = eventData.pointerCurrentRaycast.gameObject.GetComponent<ItemButton>();
+                if (itemButton != null)
                 {
-                    foreach (ItemMixSet itemMixSet in GameDatabase.Instance.ItemMixDatabase)
+                    Item targetItem = itemButton.Item;
+                    if (targetItem != null)
                     {
-                        if (itemMixSet.item1Id == Item.id && itemMixSet.item2Id == targetItem.id ||
-                            itemMixSet.item2Id == Item.id && itemMixSet.item1Id == targetItem.id)
+                        foreach (ItemMixSet itemMixSet in GameDatabase.Instance.ItemMixDatabase)
                         {
-                            // 合成資料庫中找到可合成組合，合成後觸發事件
-                            mix = true;
-                            PlayerData.Instance.LoseItem(itemMixSet.item1Id);
-                            PlayerData.Instance.LoseItem(itemMixSet.item2Id);
-                            PlayerData.Instance.GainItem(itemMixSet.resultId);
-                            EventExecutor.Instance.Register(eventObject, itemMixSet.commands);
+                            if (itemMixSet.item1Id == Item.id && itemMixSet.item2Id == targetItem.id ||
+                                itemMixSet.item2Id == Item.id && itemMixSet.item1Id == targetItem.id)
+                            {
+                                // 合成資料庫中找到可合成組合，合成後觸發事件
+                                mix = true;
+                                if (itemMixSet.loseItem1)
+                                    PlayerData.Instance.LoseItem(itemMixSet.item1Id);
+                                if (itemMixSet.loseItem2)
+                                    PlayerData.Instance.LoseItem(itemMixSet.item2Id);
+                                PlayerData.Instance.GainItem(itemMixSet.resultId);
+                                EventExecutor.Instance.Register(eventObject, itemMixSet.commands);
+                            }
                         }
                     }
                 }
