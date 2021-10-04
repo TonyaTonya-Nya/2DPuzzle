@@ -134,7 +134,7 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                 {
                     EventCommandList eventCommandList = EditorHelper.GetObj(property) as EventCommandList;
                     eventCommandList.RemoveAt(i);
-                    return;
+                    break;
                 }
                 buttonRect.x = buttonRect.x - buttonRect.width - EditorGUIUtility.standardVerticalSpacing;
                 if (GUI.Button(buttonRect, "Duplicate"))
@@ -142,7 +142,7 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
                     nowSelectIndex = i;
                     EventCommandList eventCommandList = EditorHelper.GetObj(property) as EventCommandList;
                     eventCommandList.Insert(nowSelectIndex + 1, eventCommandList[nowSelectIndex].GetType());
-                    return;
+                    break;
                 }
                 buttonRect.x = buttonRect.x - buttonRect.width - EditorGUIUtility.standardVerticalSpacing;
                 if (GUI.Button(buttonRect, "Insert"))
@@ -165,13 +165,17 @@ public class EventCommandListPropertyDrawer : PropertyDrawer
         EventCommandList target = EditorHelper.GetObj(property) as EventCommandList;
 
         foreach (KeyValuePair<string, Type> pair in EventCommand.types)
-            menu.AddItem(new GUIContent("Add/" + EventCommand.GetName(pair.Key)), false, () => {
+            menu.AddItem(new GUIContent("Add/" + EventCommand.GetName(pair.Key)), false, () =>
+            {
                 target.Insert(nowSelectIndex, pair.Value);
                 EditorUtility.SetDirty(property.serializedObject.targetObject);
                 property.serializedObject.ApplyModifiedProperties();
             });
         if (hasRemoveButton)
-            menu.AddItem(new GUIContent("Remove"), false, () => target.RemoveAt(nowSelectIndex - 1));
+            menu.AddItem(new GUIContent("Remove"), false, () =>
+            {
+                target.RemoveAt(nowSelectIndex - 1); property.serializedObject.ApplyModifiedProperties();
+            });
         return menu;
     }
 
