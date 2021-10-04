@@ -1430,10 +1430,11 @@ MonoBehaviour:
           - id: 110
           - id: 111
           - id: 112
+          - id: 113
         selection2: "\uFF2E\uFF2F"
         selection2Commands:
           commands:
-          - id: 113
+          - id: 114
     00000031:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -1550,14 +1551,14 @@ MonoBehaviour:
         selection1: "\uFF39\uFF25\uFF33"
         selection1Commands:
           commands:
-          - id: 114
           - id: 115
           - id: 116
           - id: 117
+          - id: 118
         selection2: "\uFF2E\uFF2F"
         selection2Commands:
           commands:
-          - id: 118
+          - id: 119
     0000004D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -1714,27 +1715,31 @@ MonoBehaviour:
     00000071:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5148\u7B49\u7B49\u5427\uFF0C\u8AAA\u4E0D\u5B9A\u6709\u5176\u4ED6\u65B9\u6CD5"
+        content: "\\h\\n\u76F4\u63A5\u62C9\u53EF\u80FD\u6703\u62C9\u6B6A\uFF0C\u5982\u679C\u6709\u706B\u5C31\u66F4\u597D\u4E86...."
     00000072:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\uFF08\u5F97\u5230\u539A\u7D19\u677F\u548C\u7D19\u5F35\uFF09"
+        content: "\u5148\u7B49\u7B49\u5427\uFF0C\u8AAA\u4E0D\u5B9A\u6709\u5176\u4ED6\u65B9\u6CD5"
     00000073:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\uFF08\u5F97\u5230\u539A\u7D19\u677F\u548C\u7D19\u5F35\uFF09"
+    00000074:
       type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
       data:
         itemId: 16
         number: -1
-    00000074:
+    00000075:
       type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
       data:
         itemId: 24
         number: 1
-    00000075:
+    00000076:
       type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
       data:
         itemId: 25
         number: 1
-    00000076:
+    00000077:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u5148\u7B49\u7B49\u5427\uFF0C\u8AAA\u4E0D\u5B9A\u6709\u5176\u4ED6\u65B9\u6CD5"

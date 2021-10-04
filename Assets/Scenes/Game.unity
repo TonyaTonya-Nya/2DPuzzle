@@ -48797,6 +48797,8 @@ MonoBehaviour:
       - id: 5
       - id: 6
       - id: 7
+      - id: 8
+      - id: 9
   - triggerType: 0
     condition:
       switchConditions:
@@ -48853,8 +48855,6 @@ MonoBehaviour:
         _values: 
     commands:
       commands:
-      - id: 8
-      - id: 9
       - id: 10
       - id: 11
       - id: 12
@@ -48866,6 +48866,8 @@ MonoBehaviour:
       - id: 18
       - id: 19
       - id: 20
+      - id: 21
+      - id: 22
   - triggerType: 0
     condition:
       switchConditions:
@@ -48947,72 +48949,80 @@ MonoBehaviour:
       data:
         content: "\\h\\n\u5148\u6536\u8D77\u4F86\u5427\uFF01\uFF08\u5F97\u5230\u9152\u548C\u9152\u676F\uFF09"
     00000005:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\u54A6\uFF1F\u9019\u662F\u4EC0\u9EBC\uFF1F"
+    00000006:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\uFF08\u684C\u4E0A\u9019\u662F\u9805\u934A\u9084\u662F\u4EC0\u9EBC\u55CE\uFF1F\uFF09"
+    00000007:
       type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
       data:
         itemId: 9
         number: 1
-    00000006:
+    00000008:
       type: {class: EventTransition, ns: , asm: Assembly-CSharp}
       data:
         targetId: 3d579ca6-19c7-4955-b906-4f9225ff3d23
         destination: {x: 999, y: 999}
         speed: 0
         cameraPosition: {x: 0, y: 0}
-    00000007:
+    00000009:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 10
         open: 1
-    00000008:
+    0000000A:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\u9019\u662F\u8ECD\u724C\u55CE\uFF1F\uFF08\u5F97\u5230\u8ECD\u724C\uFF09"
-    00000009:
+    0000000B:
       type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
       data:
         itemId: 10
         number: 1
-    0000000A:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\\h\\n\u4E0A\u9762\u523B\u8457\u4EC0\u9EBC\uFF1F"
-    0000000B:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\\h\\n\u300C\\h\u300D\uFF1F"
     0000000C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u9019\u662F\u4EC0\u9EBC\u610F\u601D\uFF1F"
+        content: "\\h\\n\u4E0A\u9762\u523B\u8457\u4EC0\u9EBC\uFF1F"
     0000000D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u7B49\u7B49\uFF01"
+        content: "\\h\\n\u300C\\h\u300D\uFF1F"
     0000000E:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u6211\u7684\u982D\u597D\u75DB\uFF0C\u90A3\u662F\u2026\u90A3\u662F\u4EC0\u9EBC\uFF1F"
+        content: "\\h\\n\u9019\u662F\u4EC0\u9EBC\u610F\u601D\uFF1F"
     0000000F:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u6211\u60F3\u8D77\u4F86\u4E86\uFF01 "
+        content: "\\h\\n\u7B49\u7B49\uFF01"
     00000010:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u9019\u662F\u6211\u7684\u8ECD\u724C\uFF0C\u4E0A\u9762\u7684\\h\u662F\u6211\u7684\u4EE3\u865F"
+        content: "\\h\\n\u6211\u7684\u982D\u597D\u75DB\uFF0C\u90A3\u662F\u2026\u90A3\u662F\u4EC0\u9EBC\uFF1F"
     00000011:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u4F46\u662F\uFF0C\u70BA\u4EC0\u9EBC\u53EA\u6709\u9019\u6A23\uFF1F"
+        content: "\\h\\n\u6211\u60F3\u8D77\u4F86\u4E86\uFF01 "
     00000012:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u70BA\u4EC0\u9EBC\u53EA\u60F3\u5F97\u8D77\u9019\u6A23\uFF1F"
+        content: "\\h\\n\u9019\u662F\u6211\u7684\u8ECD\u724C\uFF0C\u4E0A\u9762\u7684\\h\u662F\u6211\u7684\u4EE3\u865F"
     00000013:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u6211\u9084\u5F97\u518D\u7E7C\u7E8C\u627E\u5230\u5176\u4ED6\u548C\u6211\u7684\u8A18\u61B6\u6709\u95DC\u7684\u6771\u897F\u55CE\uFF1F"
+        content: "\\h\\n\u4F46\u662F\uFF0C\u70BA\u4EC0\u9EBC\u53EA\u6709\u9019\u6A23\uFF1F"
     00000014:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\u70BA\u4EC0\u9EBC\u53EA\u60F3\u5F97\u8D77\u9019\u6A23\uFF1F"
+    00000015:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\u6211\u9084\u5F97\u518D\u7E7C\u7E8C\u627E\u5230\u5176\u4ED6\u548C\u6211\u7684\u8A18\u61B6\u6709\u95DC\u7684\u6771\u897F\u55CE\uFF1F"
+    00000016:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 11
@@ -49891,6 +49901,7 @@ MonoBehaviour:
       - id: 66
       - id: 67
       - id: 68
+      - id: 69
   xDistance: 0
   whichIsPositive: 0
   references:
@@ -50512,173 +50523,177 @@ MonoBehaviour:
     0000001F:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\uFF08\u4E00\u9762\u6C89\u9189\u5728\u81EA\u5DF1\u6C92\u6709\u534A\u9EDE\u751F\u758F\u7684\u52D5\u4F5C\u4E2D\uFF0C\u4E00\u9762\u5C07\u69CD\u91CD\u65B0\u6307\u5411\u80D6\u5B50\u3002\uFF09"
+        content: "\\h\\n\uFF08\u4E00\u9762\u6C89\u9189\u5728\u81EA\u5DF1\u6C92\u6709\u534A\u9EDE\u751F\u758F\u7684\u52D5\u4F5C\u4E2D\uFF0C\u4E00\u9762\u5C07\u69CD\u91CD\u65B0\u6307\u5411\u80D6\u5B50\u3002\uFF09"
     00000020:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u73FE\u5728\u6709\u4E86\u3002\u4F60\u9084\u6709\u4EC0\u9EBC\u8A71\u60F3\u8AAA\u55CE\uFF1F"
+        content: "\\h\\n\u73FE\u5728\u6709\u4E86\uFF01"
     00000021:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u6C92\u2026\u2026\u6C92\u4E86\u2026\u2026"
+        content: "\\h\\n\u4F60\u9084\u6709\u4EC0\u9EBC\u8A71\u60F3\u8AAA\u55CE\uFF1F"
     00000022:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u90A3\u63A5\u4E0B\u4F86\u63DB\u6211\u554F\u4E86\u3002"
+        content: "\u5927\u53D4\\n\u6C92\u2026\u2026\u6C92\u4E86\u2026\u2026"
     00000023:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u7B2C\u4E00\uFF0C\u4F60\u600E\u9EBC\u77E5\u9053\u6211\u662F\u795E\u83EF\uFF1F"
+        content: "\\h\\n\u90A3\u63A5\u4E0B\u4F86\u63DB\u6211\u554F\u4E86\u3002"
     00000024:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u7B2C\u4E8C\uFF0C\u4F60\u662F\u54EA\u500B\u5E79\u90E8\uFF1F"
+        content: "\\h\\n\u7B2C\u4E00\uFF0C\u4F60\u600E\u9EBC\u77E5\u9053\u6211\u662F\u795E\u83EF\uFF1F"
     00000025:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u4ED6\u5ABD\u7684\u6211\u5011\u6BCF\u500B\u4EBA\u90FD\u6234\u8457\u9762\u5177\uFF0C\u4F60\u662F\u600E\u9EBC\u77E5\u9053\u6211\u662F\u8AB0\uFF1F"
+        content: "\\h\\n\u7B2C\u4E8C\uFF0C\u4F60\u662F\u54EA\u500B\u5E79\u90E8\uFF1F"
     00000026:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u54C8\u54C8\u54C8\uFF01\u9996\u5148\uFF0C\u6211\u662F\u78A7\u771F\uFF0C\u78A7\u771F\u5C31\u662F\u6211\u3002"
+        content: "\\h\\n\u4ED6\u5ABD\u7684\u6211\u5011\u6BCF\u500B\u4EBA\u90FD\u6234\u8457\u9762\u5177\uFF0C\u4F60\u662F\u600E\u9EBC\u77E5\u9053\u6211\u662F\u8AB0\uFF1F"
     00000027:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u63A5\u4E0B\u4F86\uFF0C\u4E0D\u8981\u8AAA\u6211\uFF0C\u73FE\u5728\u6BCF\u500B\u5E79\u90E8\u90FD\u77E5\u9053\u4F60\u662F\u8AB0"
+        content: "\u5927\u53D4\\n\u54C8\u54C8\u54C8\uFF01\u9996\u5148\uFF0C\u6211\u662F\u78A7\u771F\uFF0C\u78A7\u771F\u5C31\u662F\u6211\u3002"
     00000028:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u8981\u554F\u70BA\u4EC0\u9EBC\uFF0C\u6211\u600E\u9EBC\u6703\u77E5\u9053\uFF1F"
+        content: "\u5927\u53D4\\n\u63A5\u4E0B\u4F86\uFF0C\u4E0D\u8981\u8AAA\u6211\uFF0C\u73FE\u5728\u6BCF\u500B\u5E79\u90E8\u90FD\u77E5\u9053\u4F60\u662F\u8AB0"
     00000029:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u4F60\u7684\u4E0B\u4E00\u53E5\u8A71\u6700\u597D\u8981\u975E\u5E38\u5C0F\u5FC3\u3002"
+        content: "\u5927\u53D4\\n\u4F60\u8981\u554F\u70BA\u4EC0\u9EBC\uFF0C\u6211\u600E\u9EBC\u6703\u77E5\u9053\uFF1F"
     0000002A:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\u4F60\u7684\u4E0B\u4E00\u53E5\u8A71\u6700\u597D\u8981\u975E\u5E38\u5C0F\u5FC3\u3002"
+    0000002B:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u5927\u53D4\\n\u8AAA\u4E0D\u5B9A\u5C31\u662F\u56E0\u70BA\u4F60\u7684\u59BB\u5B50\u6B7B\u5728\u90A3\u500B\u5C40\u9577\u7684\u624B\u4E0A\uFF0C\u90A3\u500B\u5C40\u9577\u624D\u9806\u85E4\u6478\u74DC
           \u627E\u5230\u4F60\u662F\u8AB0\uFF0C\u63A5\u4E0B\u4F86\u624D\u6703\u653E\u6D88\u606F\u7D66\u7D44\u7E54\u8B93\u6211\u5011\u9ED1\u5403\u9ED1\uFF0C\u5C0D\u5427\uFF1F"
-    0000002B:
+    0000002C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\u4F60\u89BA\u5F97\u4F60\u7684\u56DE\u7B54\u5920\u5C0F\u5FC3\u4E86\u55CE\uFF1F"
-    0000002C:
+    0000002D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\uFF08\u4ED6\u8AAA\u7684\u5C0D\uFF0C\u6839\u64DA\u6211\u525B\u6062\u5FA9\u4E0D\u5230
           5 \u5206\u9418\u7684\u8A18\u61B6\u4F86\u770B\uFF09"
-    0000002D:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\\h\\n\uFF08\u9019\u9593\u623F\u5B50\u662F\u6211\u7684\uFF0C\u90A3\u672C\u65E5\u8A18\u662F\u6211\u59BB\u5B50\u7684\uFF0C\u90A3\u672C\u7B46\u8A18\u4E5F\u662F\u6211\u7684\u3002"
     0000002E:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\uFF08\u4E0D\u904E\u90A3\u500B\u5C40\u9577\u662F\u600E\u9EBC\u77E5\u9053\u6211\u8981\u6BBA\u4ED6\u7684\uFF1F\u4ED6\u53C8\u662F\u600E\u9EBC\u627E\u5230\u6211\u7684\uFF1F\uFF09"
+        content: "\\h\\n\uFF08\u9019\u9593\u623F\u5B50\u662F\u6211\u7684\uFF0C\u90A3\u672C\u65E5\u8A18\u662F\u6211\u59BB\u5B50\u7684\uFF0C\u90A3\u672C\u7B46\u8A18\u4E5F\u662F\u6211\u7684\u3002"
     0000002F:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\uFF08\u4E0D\u904E\u90A3\u500B\u5C40\u9577\u662F\u600E\u9EBC\u77E5\u9053\u6211\u8981\u6BBA\u4ED6\u7684\uFF1F\u4ED6\u53C8\u662F\u600E\u9EBC\u627E\u5230\u6211\u7684\uFF1F\uFF09"
+    00000030:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\uFF08\u9996\u5148\uFF0C\u6709\u4EBA\u901A\u5831\u4ED6\u6D88\u606F\uFF0C\u901A\u5831\u4ED6\u6211\u8981\u53BB\u6BBA\u4ED6\uFF0C\u6240\u4EE5\u4ED6\u5148\u505A\u4E86\u6E96\u5099\uFF0C
           \u56E0\u800C\u4ED6\u624D\u9003\u904E\u4E00\u52AB\u3002\uFF09"
-    00000030:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\\h\\n\uFF08\u63A5\u4E0B\u4F86\uFF0C\u90A3\u500B\u5C40\u9577\u627E\u5230\u4E86\u6211\u7684\u8EAB\u5206\u3001\u6211\u7684\u8CC7\u6599\u3002\uFF09"
     00000031:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\uFF08\u6700\u5F8C\uFF0C\u4ED6\u507D\u88DD\u6210\u5FEB\u905E\u6BBA\u4E86\u6211\u7684\u59BB\u5B50\uFF0C\u4EE5\u6B64\u4F86\u8B66\u544A\u6211\u2026\u2026\uFF09"
+        content: "\\h\\n\uFF08\u63A5\u4E0B\u4F86\uFF0C\u90A3\u500B\u5C40\u9577\u627E\u5230\u4E86\u6211\u7684\u8EAB\u5206\u3001\u6211\u7684\u8CC7\u6599\u3002\uFF09"
     00000032:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\uFF08\u6700\u5F8C\uFF0C\u4ED6\u507D\u88DD\u6210\u5FEB\u905E\u6BBA\u4E86\u6211\u7684\u59BB\u5B50\uFF0C\u4EE5\u6B64\u4F86\u8B66\u544A\u6211\u2026\u2026\uFF09"
+    00000033:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\uFF08\u662F\u4E86\uFF0C\u9019\u7A2E\u624B\u6CD5\uFF0C\u8207\u5176\u8AAA\u662F\u8B66\u5BDF\u9019\u7A2E\u7A7F\u767D\u8863\u7684\uFF0C\u9084\u66F4\u50CF\u662F\u6211\u5011\u9019\u7A2E
           \u6234\u9ED1\u5E3D\u7684\uFF09"
-    00000033:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\\h\\n\uFF08\u5982\u679C\u5C40\u9577\u662F\u9019\u7A2E\u7E31\u6A6B\u9ED1\u767D\u5169\u9053\u7684\u5927\u4EBA\u7269\uFF0C\u4F3C\u4E4E\u4E5F\u4E0D\u90A3\u9EBC\u610F\u5916\u4E86\u3002\uFF09"
     00000034:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\uFF08\u90A3\u53C8\u662F\u4EC0\u9EBC\u539F\u56E0\u8B93\u4ED6\u80FD\u63D0\u65E9\u77E5\u9053\u6211\u7684\u884C\u52D5\u5462\uFF1F\uFF09"
+        content: "\\h\\n\uFF08\u5982\u679C\u5C40\u9577\u662F\u9019\u7A2E\u7E31\u6A6B\u9ED1\u767D\u5169\u9053\u7684\u5927\u4EBA\u7269\uFF0C\u4F3C\u4E4E\u4E5F\u4E0D\u90A3\u9EBC\u610F\u5916\u4E86\u3002\uFF09"
     00000035:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\uFF08\u90A3\u53C8\u662F\u4EC0\u9EBC\u539F\u56E0\u8B93\u4ED6\u80FD\u63D0\u65E9\u77E5\u9053\u6211\u7684\u884C\u52D5\u5462\uFF1F\uFF09"
+    00000036:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\uFF08\u6211\u7684\u6697\u6BBA\u76EE\u6A19\u4E00\u5411\u90FD\u662FBoss\u76F4\u63A5\u6307\u6D3E\u7684\uFF0C\u6211\u4E5F\u5F9E\u4F86\u4E0D\u6703\u544A\u8A34\u5176\u4ED6\u4EBA\uFF0C
           \u90A3\u6D88\u606F\u662F\u5F9E Boss \u90A3\u88E1\u6D41\u51FA\u7684\u55CE\uFF1F\uFF09"
-    00000036:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u5927\u53D4\\n\u6B38\u6B38\u6B38\uFF01\u6211\u5011\u6253\u500B\u5546\u91CF\u5427\uFF01\u4F60\u5225\u6BBA\u6211\uFF0C\u6211\u5E6B\u4F60\u505A\u4E8B\u600E\u9EBC\u6A23\uFF1F"
     00000037:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u64C5\u9577\u523A\u6BBA\uFF0C\u6211\u64C5\u9577\u7D93\u5546\uFF0C\u4F60\u6709\u5BE6\u529B\uFF0C\u6211\u6709\u4EBA\u8108"
+        content: "\u5927\u53D4\\n\u6B38\u6B38\u6B38\uFF01\u6211\u5011\u6253\u500B\u5546\u91CF\u5427\uFF01\u4F60\u5225\u6BBA\u6211\uFF0C\u6211\u5E6B\u4F60\u505A\u4E8B\u600E\u9EBC\u6A23\uFF1F"
     00000038:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u6211\u5011\u5408\u4F5C\uFF0C\u63A8\u7FFB Boss\uFF0C\u5C07\u4ED6\u7684\u5229\u76CA\u5403\u4E0B\u4F86\u4E5F\u4E0D\u662F\u4E0D\u53EF\u80FD\u5427\uFF1F"
+        content: "\u5927\u53D4\\n\u4F60\u64C5\u9577\u523A\u6BBA\uFF0C\u6211\u64C5\u9577\u7D93\u5546\uFF0C\u4F60\u6709\u5BE6\u529B\uFF0C\u6211\u6709\u4EBA\u8108"
     00000039:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u6211\u8981\u7684\u662F\u5229\u76CA\uFF0C\u4F60\u8981\u7684\u662F\u5FA9\u4EC7\uFF0C\u5404\u53D6\u6240\u9700\uFF0C\u600E\u9EBC\u6A23\uFF1F"
+        content: "\u5927\u53D4\\n\u6211\u5011\u5408\u4F5C\uFF0C\u63A8\u7FFB Boss\uFF0C\u5C07\u4ED6\u7684\u5229\u76CA\u5403\u4E0B\u4F86\u4E5F\u4E0D\u662F\u4E0D\u53EF\u80FD\u5427\uFF1F"
     0000003A:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u518D\u8AAA\u4E86\uFF0C\u70BA\u8868\u793A\u6211\u7684\u8AA0\u610F\uFF0C\u6211\u4E5F\u53EF\u4EE5\u7D66\u4F60\u4E00\u500B\u60C5\u5831"
+        content: "\u5927\u53D4\\n\u6211\u8981\u7684\u662F\u5229\u76CA\uFF0C\u4F60\u8981\u7684\u662F\u5FA9\u4EC7\uFF0C\u5404\u53D6\u6240\u9700\uFF0C\u600E\u9EBC\u6A23\uFF1F"
     0000003B:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u5927\u53D4\\n\u518D\u8AAA\u4E86\uFF0C\u70BA\u8868\u793A\u6211\u7684\u8AA0\u610F\uFF0C\u6211\u4E5F\u53EF\u4EE5\u7D66\u4F60\u4E00\u500B\u60C5\u5831"
+    0000003C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u5927\u53D4\\n\u4F60\u662F\u795E\u83EF\u9019\u4EF6\u4E8B\uFF0C\u662F
           Boss \u544A\u8A34\u6211\u5011\u7684\u3002"
-    0000003C:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u5927\u53D4\\n\u4E5F\u5C31\u662F\u8AAA\uFF0CBoss \u4E00\u958B\u59CB\u5C31\u4E0D\u6253\u7B97\u7559\u4F60\u4E86\u3002"
     0000003D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u5C40\u9577\u9019\u500B\u4EFB\u52D9\uFF0C\u4E5F\u5F88\u6709\u53EF\u80FD\u662F\u4ED6\u8981\u4F60\u6B7B\u624D\u6703\u6D29\u5BC6\u7D66\u5C40\u9577\u77E5\u9053\u3002"
+        content: "\u5927\u53D4\\n\u4E5F\u5C31\u662F\u8AAA\uFF0CBoss \u4E00\u958B\u59CB\u5C31\u4E0D\u6253\u7B97\u7559\u4F60\u4E86\u3002"
     0000003E:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\u5927\u53D4\\n\u5C40\u9577\u9019\u500B\u4EFB\u52D9\uFF0C\u4E5F\u5F88\u6709\u53EF\u80FD\u662F\u4ED6\u8981\u4F60\u6B7B\u624D\u6703\u6D29\u5BC6\u7D66\u5C40\u9577\u77E5\u9053\u3002"
+    0000003F:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\u5927\u53D4\\n\u6211\u751A\u81F3\u5728\u61F7\u7591\u554A\uFF01Boss
           \u548C\u5C40\u9577\u6703\u4E0D\u6703\u6839\u672C\u5C31\u662F\u540C\u4E00\u500B\u4EBA"
-    0000003F:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\u5927\u53D4\\n\u597D\u5427\uFF0C\u5C31\u7B97\u4E0D\u662F\u540C\u4E00\u500B\u4EBA\uFF0C\u4E5F\u81F3\u5C11\u6709\u5408\u4F5C\u95DC\u4FC2"
     00000040:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u6BD4\u8D77\u6211\uFF0C\u4F60\u66F4\u61C9\u8A72\u5C07\u9AD4\u529B\u7559\u4E0B\u4F86\u6BBA\u4ED6\u5427\uFF1F"
+        content: "\u5927\u53D4\\n\u597D\u5427\uFF0C\u5C31\u7B97\u4E0D\u662F\u540C\u4E00\u500B\u4EBA\uFF0C\u4E5F\u81F3\u5C11\u6709\u5408\u4F5C\u95DC\u4FC2"
     00000041:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u591A\u4E00\u500B\u6575\u4EBA\u4E0D\u5982\u591A\u4E00\u500B\u670B\u53CB\uFF0C\u4F60\u8AAA\u662F\u5427\uFF1F"
+        content: "\u5927\u53D4\\n\u6BD4\u8D77\u6211\uFF0C\u4F60\u66F4\u61C9\u8A72\u5C07\u9AD4\u529B\u7559\u4E0B\u4F86\u6BBA\u4ED6\u5427\uFF1F"
     00000042:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\uFF08\u4ED6\u8AAA\u7684\u6C92\u932F\uFF0C\u6211\u771F\u7684\u8981\u6BBA\u4ED6\u55CE\uFF1F\uFF09\uFF08\uFF39\uFF0F\uFF2E\uFF09"
+        content: "\u5927\u53D4\\n\u591A\u4E00\u500B\u6575\u4EBA\u4E0D\u5982\u591A\u4E00\u500B\u670B\u53CB\uFF0C\u4F60\u8AAA\u662F\u5427\uFF1F"
     00000043:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\uFF08\u4ED6\u8AAA\u7684\u6C92\u932F\uFF0C\u6211\u771F\u7684\u8981\u6BBA\u4ED6\u55CE\uFF1F\uFF09\uFF08\uFF39\uFF0F\uFF2E\uFF09"
+    00000044:
       type: {class: EventSelection, ns: , asm: Assembly-CSharp}
       data:
         selection1: "\uFF39\uFF25\uFF33"
         selection1Commands:
           commands:
-          - id: 69
+          - id: 70
         selection2: "\uFF2E\uFF2F"
         selection2Commands:
           commands:
-          - id: 70
-    00000044:
-      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
+          - id: 71
     00000045:
+      type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
+    00000046:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 26
         open: 1
-    00000046:
+    00000047:
       type: {class: EventSetSwitch, ns: , asm: Assembly-CSharp}
       data:
         switchId: 27
