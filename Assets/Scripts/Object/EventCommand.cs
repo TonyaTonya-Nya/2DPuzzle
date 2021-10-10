@@ -135,9 +135,13 @@ public class EventDialogue : EventCommand
 
     public override IEnumerator Run()
     {
-        string c  = content.Replace("\\n", "\n");
+        string c = content.Replace("\\n", "\n");
 
-        c = c.Replace("\\h", PlayerData.Instance.playerName);
+        // 軍牌
+        if (GameDatabase.Instance.GetSwitchState(11) == false)
+            c = c.Replace("\\h", PlayerData.Instance.playerName);
+        else
+            c = c.Replace("\\h", "神華");
 
         DialogueSystem.Instance.ShowDialouge(c);
         // 下一句如果是選項或輸入，直接離開，並執行選項
@@ -432,9 +436,13 @@ public class EventPlayBGM : EventCommand
 
 public class EventGameOver : EventCommand
 {
+    public bool isWin;
     public override IEnumerator Run()
     {
-        SceneManager.LoadScene(2);
+        if (isWin)
+            SceneManager.LoadScene(2);
+        else
+            SceneManager.LoadScene(3);
         yield return null;
     }
 }

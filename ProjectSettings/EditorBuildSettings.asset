@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: 5a87eaf0a5154ed49b02b840e08f1d10
+  - enabled: 1
+    path: Assets/Scenes/Fail.unity
+    guid: 5b849b891b9caee42937afddecd15a9d
   m_configObjects: {}

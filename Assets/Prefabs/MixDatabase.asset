@@ -112,7 +112,7 @@ MonoBehaviour:
     00000001:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u795E\u83EF\u5C07\u9435\u7D72\u70E4\u8EDF\u91CD\u65B0\u62C9\u6210\u4ED6\u8981\u7684\u5F62\u72C0\u3002\uFF08\u5931\u53BB\u5F48\u7C27\uFF0C\u5F97\u5230\u9435\u7D72\uFF09"
+        content: "\\h\u5C07\u9435\u7D72\u70E4\u8EDF\u91CD\u65B0\u62C9\u6210\u4ED6\u8981\u7684\u5F62\u72C0\u3002\uFF08\u5931\u53BB\u5F48\u7C27\uFF0C\u5F97\u5230\u9435\u7D72\uFF09"
     00000002:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -136,7 +136,7 @@ MonoBehaviour:
     00000007:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u795E\u83EF\n\u9019\u6A23\u61C9\u8A72\u5C31\u884C\u4E86\u5427\uFF01\uFF08\u5931\u53BB\u7D19\u676F\u548C\u6BD2\u9152\uFF0C\u5F97\u5230\u7D19\u676F\u8207\u6BD2\u9152\uFF09"
+        content: "\\h\\n\u9019\u6A23\u61C9\u8A72\u5C31\u884C\u4E86\u5427\uFF01\uFF08\u5931\u53BB\u7D19\u676F\u548C\u6BD2\u9152\uFF0C\u5F97\u5230\u7D19\u676F\u8207\u6BD2\u9152\uFF09"
     00000008:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:

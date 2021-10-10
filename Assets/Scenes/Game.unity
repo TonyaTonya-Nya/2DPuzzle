@@ -16579,6 +16579,64 @@ MonoBehaviour:
     condition:
       switchConditions:
         reorderableList:
+          canAdd: 0
+          canRemove: 0
+          draggable: 0
+          expandable: 0
+          multipleSelection: 0
+          isExpanded: 0
+          label:
+            m_Text: 
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 0
+          footerHeight: 0
+          slideEasing: 0
+          verticalSpacing: 0
+          showDefaultBackground: 0
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+      itemConditions:
+        reorderableList:
+          canAdd: 0
+          canRemove: 0
+          draggable: 0
+          expandable: 0
+          multipleSelection: 0
+          isExpanded: 0
+          label:
+            m_Text: 
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 0
+          footerHeight: 0
+          slideEasing: 0
+          verticalSpacing: 0
+          showDefaultBackground: 0
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    commands:
+      commands:
+      - id: 0
+      - id: 1
+  - triggerType: 0
+    condition:
+      switchConditions:
+        reorderableList:
           canAdd: 1
           canRemove: 1
           draggable: 1
@@ -16631,8 +16689,6 @@ MonoBehaviour:
         _values: 
     commands:
       commands:
-      - id: 0
-      - id: 1
       - id: 2
       - id: 3
       - id: 4
@@ -16645,6 +16701,8 @@ MonoBehaviour:
       - id: 11
       - id: 12
       - id: 13
+      - id: 14
+      - id: 15
   xDistance: 1.96
   whichIsPositive: 0
   references:
@@ -16656,56 +16714,64 @@ MonoBehaviour:
     00000001:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u9019\u672C\u8056\u7D93\u662F\u600E\u9EBC\u56DE\u4E8B\uFF0C\u90A3\u500B\u6DF7\u5E33\u662F\u500B\u57FA\u7763\u5F92\u55CE\uFF1F"
+        content: "\\h\\n\u8056\u7D93\uFF1F\u90A3\u500B\u4E3B\u4EBA\u662F\u57FA\u7763\u5F92\u55CE\uFF1F"
     00000002:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u662F\u4ED6\u7684\u795E\u6559\u4ED6\u6BBA\u4EBA\u7684\u55CE\uFF1F"
+        content: "\\h\\n\u66F8\u67B6\u4E0A\u6C92\u5E7E\u672C\u66F8\uFF0C\u4E5F\u5C31\u4E09\u3001\u56DB\u672C\u5427\uFF01"
     00000003:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u4E5F\u5C0D\uFF0C\u5982\u679C\u4ED6\u7684\u795E\u662F\u5584\u7684\uFF0C\u5C31\u4E0D\u6703\u4EE5\u5927\u6D2A\u6C34\u5C60\u76E1\u4EBA\u985E\u4E86"
+        content: "\\h\\n\u9019\u672C\u8056\u7D93\u662F\u600E\u9EBC\u56DE\u4E8B\uFF0C\u90A3\u500B\u6DF7\u5E33\u662F\u500B\u57FA\u7763\u5F92\u55CE\uFF1F"
     00000004:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u5982\u679C\u4ED6\u7684\u795E\u662F\u5168\u80FD\u7684\uFF0C\u90A3\u4ED6\u5C31\u4E0D\u6703\u8B93\u4E16\u754C\u5145\u65A5\u8457\u7F6A\u60E1\u4E86"
+        content: "\\h\\n\u662F\u4ED6\u7684\u795E\u6559\u4ED6\u6BBA\u4EBA\u7684\u55CE\uFF1F"
     00000005:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u4ED6\u7684\u66F8\u7C64\u6307\u5411\u54EA\u88E1\uFF1F"
+        content: "\\h\\n\u4E5F\u5C0D\uFF0C\u5982\u679C\u4ED6\u7684\u795E\u662F\u5584\u7684\uFF0C\u5C31\u4E0D\u6703\u4EE5\u5927\u6D2A\u6C34\u5C60\u76E1\u4EBA\u985E\u4E86"
     00000006:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\u5982\u679C\u4ED6\u7684\u795E\u662F\u5168\u80FD\u7684\uFF0C\u90A3\u4ED6\u5C31\u4E0D\u6703\u8B93\u4E16\u754C\u5145\u65A5\u8457\u7F6A\u60E1\u4E86"
+    00000007:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\u4ED6\u7684\u66F8\u7C64\u6307\u5411\u54EA\u88E1\uFF1F"
+    00000008:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\u7D04\u7FF0\u798F\u97F3 3 \u7AE0 16 \u7BC0\uFF0C\u9019\u662F\u99AC\u514B\u676F
           3\uFF1A16 \u7684\u610F\u601D\u55CE\uFF1F"
-    00000007:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\\h\\n\u300C\u795E\u611B\u4E16\u4EBA\uFF0C\u751A\u81F3\u5C07\u4ED6\u7684\u7368\u751F\u5B50\u8CDC\u7D66\u4ED6\u5011\u300D"
-    00000008:
-      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
-      data:
-        content: "\\h\\n\u300C\u53EB\u4E00\u5207\u4FE1\u4ED6\u7684\uFF0C\u4E0D\u81F4\u6EC5\u4EA1\uFF0C\u53CD\u5F97\u6C38\u751F\u3002\u300D"
     00000009:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u597D\u719F\u6089\uFF0C\u6211\u4EE5\u524D\u807D\u904E\u55CE\uFF1F"
+        content: "\\h\\n\u300C\u795E\u611B\u4E16\u4EBA\uFF0C\u751A\u81F3\u5C07\u4ED6\u7684\u7368\u751F\u5B50\u8CDC\u7D66\u4ED6\u5011\u300D"
     0000000A:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\u300C\u53EB\u4E00\u5207\u4FE1\u4ED6\u7684\uFF0C\u4E0D\u81F4\u6EC5\u4EA1\uFF0C\u53CD\u5F97\u6C38\u751F\u3002\u300D"
+    0000000B:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\u597D\u719F\u6089\uFF0C\u6211\u4EE5\u524D\u807D\u904E\u55CE\uFF1F"
+    0000000C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\u4E0D\u904E\uFF0C\u65E2\u7136\u795E\u90A3\u9EBC\u611B\u4E16\u4EBA\uFF0C\u611B\u5230\u53EF\u4EE5\u72A7\u7272\u81EA\u5DF1\u7684\u5152\u5B50\uFF0C\u70BA\u4F55\u4E0D\u89AA\u81EA\u964D
           \u4E16\u4EE5\u81EA\u5DF1\u4F86\u627F\u53D7\u4E16\u4EBA\u7684\u7F6A\u60E1\u5462\uFF1F"
-    0000000B:
+    0000000D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\u5148\u4E0D\u63D0\u5167\u5BB9\uFF0C\u9019\u8056\u7D93\u7D19\u8CEA\u4E0D\u932F\uFF0C\u91CD\u91CF\u4E5F\u5920\uFF0C\u7576\u4F5C\u6B66\u5668\u4E5F\u8A31\u4E0D\u932F\uFF08\u5F97\u5230
           \u8056\u7D93\uFF09 "
-    0000000C:
+    0000000E:
       type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
       data:
         itemId: 16
         number: 1
-    0000000D:
+    0000000F:
       type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
 --- !u!61 &296921738
 BoxCollider2D:
@@ -25385,7 +25451,7 @@ MonoBehaviour:
     00000007:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u5982\u679C\u4E0D\u77E5\u9053\u5BC6\u78BC\u7684\u8A71\u770B\u4F86\u662F\u6253\u4E0D\u958B\u7684\u2026\u2026\uFF08\u5F97\u5230\u65E5\u8A18"
+        content: "\\h\\n\u5982\u679C\u4E0D\u77E5\u9053\u5BC6\u78BC\u7684\u8A71\u770B\u4F86\u662F\u6253\u4E0D\u958B\u7684\u2026\u2026\uFF08\u5F97\u5230\u65E5\u8A18\uFF09"
     00000008:
       type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
       data:
@@ -25411,7 +25477,7 @@ MonoBehaviour:
     0000000D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u4E3B\u89D2\u5C07\u5E8A\u7FFB\u904E\u4F86\uFF0C\u767C\u73FE\u5E95\u4E0B\u7528\u81A0\u5E03\u85CF\u8457\u4E00\u628A\u69CD\u3002"
+        content: "\\h\u5C07\u5E8A\u7FFB\u904E\u4F86\uFF0C\u767C\u73FE\u5E95\u4E0B\u7528\u81A0\u5E03\u85CF\u8457\u4E00\u628A\u69CD\u3002"
     0000000E:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -47565,6 +47631,8 @@ MonoBehaviour:
         content: "\\h\\n\uFF08\u5982\u679C\u2026\u6211\u6C92\u7D66\u4ED6\u9019\u7A2E\u676F\u5B50\u2026\u2026\uFF09"
     0000002A:
       type: {class: EventGameOver, ns: , asm: Assembly-CSharp}
+      data:
+        isWin: 0
     0000002B:
       type: {class: EventSetAnimationParameter, ns: , asm: Assembly-CSharp}
       data:
@@ -47935,6 +48003,8 @@ MonoBehaviour:
         content: "\\h\\n\uFF08\u5982\u679C\u2026\u6211\u6C92\u7D66\u4ED6\u9019\u7A2E\u676F\u5B50\u2026\u2026\uFF09"
     00000037:
       type: {class: EventGameOver, ns: , asm: Assembly-CSharp}
+      data:
+        isWin: 0
     00000038:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -48293,6 +48363,8 @@ MonoBehaviour:
         content: "\\h\\n\uFF08\u53EF\u2026\u53EF\u60E1\uFF0C\u6211\u5927\u610F\u4E86\u554A\uFF01\uFF09"
     00000051:
       type: {class: EventGameOver, ns: , asm: Assembly-CSharp}
+      data:
+        isWin: 0
 --- !u!1 &1163242976
 GameObject:
   m_ObjectHideFlags: 0
@@ -48989,7 +49061,7 @@ MonoBehaviour:
     0000000D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u300C\\h\u300D\uFF1F"
+        content: "\\h\\n\u300C\u795E\u83EF\u300D\uFF1F"
     0000000E:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -49009,7 +49081,7 @@ MonoBehaviour:
     00000012:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u9019\u662F\u6211\u7684\u8ECD\u724C\uFF0C\u4E0A\u9762\u7684\\h\u662F\u6211\u7684\u4EE3\u865F"
+        content: "\\h\\n\u9019\u662F\u6211\u7684\u8ECD\u724C\uFF0C\u4E0A\u9762\u7684\u795E\u83EF\u662F\u6211\u7684\u4EE3\u865F"
     00000013:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -50017,6 +50089,8 @@ MonoBehaviour:
         content: "\\h\\n\uFF08\u53EF\u2026\u53EF\u60E1\uFF0C\u6211\u5927\u610F\u4E86\u554A\uFF01\u5982\u679C\uFF0C\u6211\u518D\u591A\u60F3\u8D77\u4E00\u4E9B\u4E8B\u60C5\u2026\u2026\uFF09"
     00000006:
       type: {class: EventGameOver, ns: , asm: Assembly-CSharp}
+      data:
+        isWin: 0
     00000007:
       type: {class: EventSetDirection, ns: , asm: Assembly-CSharp}
       data:
@@ -50037,7 +50111,7 @@ MonoBehaviour:
     0000000B:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u5927\u53D4\\n\u4F60\u8981\u7684\u7B54\u6848\uFF0C\u4F60\u662F\\n\uFF0C\u9019\u88E1\u662F\u4F60\u7684\u623F\u5B50\u3002"
+        content: "\u5927\u53D4\\n\u4F60\u8981\u7684\u7B54\u6848\uFF0C\u4F60\u662F\\h\uFF0C\u9019\u88E1\u662F\u4F60\u7684\u623F\u5B50\u3002"
     0000000C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -50507,11 +50581,11 @@ MonoBehaviour:
     0000001B:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u4E3B\u89D2\u8209\u8D77\u624B\u69CD\uFF0C\u5F48\u51FA\u5F48\u819B\uFF0C\u5411\u4E0B\u6416\u4E86\u6416\uFF0C\u8868\u793A\u88E1\u9762\u6C92\u6709\u5B50\u5F48"
+        content: "\\h\u8209\u8D77\u624B\u69CD\uFF0C\u5F48\u51FA\u5F48\u819B\uFF0C\u5411\u4E0B\u6416\u4E86\u6416\uFF0C\u8868\u793A\u88E1\u9762\u6C92\u6709\u5B50\u5F48"
     0000001C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u8E22\u5012\u80D6\u5B50\u5F8C\uFF0C\u4E3B\u89D2\u5C07\u85CF\u5728\u5DE6\u624B\u7684\u90A3\u679A\u5B50\u5F48\u7528\u529B\u58D3\u9032\u5F48\u819B"
+        content: "\u8E22\u5012\u80D6\u5B50\u5F8C\uFF0C\\h\u5C07\u85CF\u5728\u5DE6\u624B\u7684\u90A3\u679A\u5B50\u5F48\u7528\u529B\u58D3\u9032\u5F48\u819B"
     0000001D:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
@@ -50886,6 +50960,8 @@ MonoBehaviour:
         volume: 1
     00000004:
       type: {class: EventGameOver, ns: , asm: Assembly-CSharp}
+      data:
+        isWin: 1
 --- !u!61 &1435740306
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -59859,6 +59935,65 @@ MonoBehaviour:
     condition:
       switchConditions:
         reorderableList:
+          canAdd: 0
+          canRemove: 0
+          draggable: 0
+          expandable: 0
+          multipleSelection: 0
+          isExpanded: 0
+          label:
+            m_Text: 
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 0
+          footerHeight: 0
+          slideEasing: 0
+          verticalSpacing: 0
+          showDefaultBackground: 0
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+      itemConditions:
+        reorderableList:
+          canAdd: 0
+          canRemove: 0
+          draggable: 0
+          expandable: 0
+          multipleSelection: 0
+          isExpanded: 0
+          label:
+            m_Text: 
+            m_Image: {fileID: 0}
+            m_Tooltip: 
+          headerHeight: 0
+          footerHeight: 0
+          slideEasing: 0
+          verticalSpacing: 0
+          showDefaultBackground: 0
+          elementDisplayType: 0
+          elementNameProperty: 
+          elementNameOverride: 
+          elementIcon: {fileID: 0}
+        reqReferences: {fileID: 0}
+        isExpanded: 0
+        _keyValues: 
+        _keys: 
+        _values: 
+    commands:
+      commands:
+      - id: 0
+      - id: 1
+      - id: 2
+  - triggerType: 0
+    condition:
+      switchConditions:
+        reorderableList:
           canAdd: 1
           canRemove: 1
           draggable: 1
@@ -59911,9 +60046,6 @@ MonoBehaviour:
         _values: 
     commands:
       commands:
-      - id: 0
-      - id: 1
-      - id: 2
       - id: 3
       - id: 4
       - id: 5
@@ -59922,6 +60054,9 @@ MonoBehaviour:
       - id: 8
       - id: 9
       - id: 10
+      - id: 11
+      - id: 12
+      - id: 13
   xDistance: 2.5
   whichIsPositive: 0
   references:
@@ -59933,42 +60068,54 @@ MonoBehaviour:
     00000001:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u6478\u8D77\u4F86\u6709\u7A2E\u9846\u7C92\u611F\uFF0C\u96D6\u7136\u662F\u8907\u88FD\u54C1\uFF0C\u4F46\u770B\u4F86\u61C9\u8A72\u662F\u771F\u7684\u6CB9\u756B\uFF0C\u4E0D\u662F\u5370
-          \u5237\u7684\u90A3\u7A2E"
+        content: "\\h\\n\u6478\u8D77\u4F86\u6709\u7A2E\u9846\u7C92\u611F\uFF0C\u96D6\u7136\u662F\u8907\u88FD\u54C1\uFF0C\u4F46\u770B\u4F86\u61C9\u8A72\u662F\u771F\u7684\u6CB9\u756B\uFF0C\u4E0D\u662F\u5370\u5237\u7684\u90A3\u7A2E"
     00000002:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u9019\u597D\u50CF\u662F\u76E7\u68AD\u7684\u756B\uFF0C\u756B\u7684\u5167\u5BB9\u662F\u4EC0\u9EBC\uFF1F"
+        content: "\\h\\n\u9019\u662F\u76E7\u68AD\u7684\u756B\u55CE\uFF1F"
     00000003:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u96EA\u8304\u3001\u7F8E\u9152\u3001\u526A\u88C1\u9069\u5B9C\u7684\u5916\u8863\u3001\u518D\u52A0\u4E0A\u9019\u88E1\u7684\u6CB9\u756B"
+        content: "\\h\\n\u90A3\u662F\u6CB9\u756B\u55CE\uFF1F"
     00000004:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u4E0D\u8AAA\u4EBA\u54C1\uFF0C\u9019\u50A2\u4F19\u5012\u662F\u883B\u6709\u54C1\u5473\u7684"
+        content: "\\h\\n\u6478\u8D77\u4F86\u6709\u7A2E\u9846\u7C92\u611F\uFF0C\u96D6\u7136\u662F\u8907\u88FD\u54C1\uFF0C\u4F46\u770B\u4F86\u61C9\u8A72\u662F\u771F\u7684\u6CB9\u756B\uFF0C\u4E0D\u662F\u5370
+          \u5237\u7684\u90A3\u7A2E"
     00000005:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u4E0D\u904E\u9019\u756B\u7ADF\u7136\u662F\u5012\u639B\u8457\u7684\uFF0C\u4E00\u770B\u5C31\u89BA\u5F97\u6709\u554F\u984C"
+        content: "\\h\\n\u9019\u597D\u50CF\u662F\u76E7\u68AD\u7684\u756B\uFF0C\u756B\u7684\u5167\u5BB9\u662F\u4EC0\u9EBC\uFF1F"
     00000006:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\uFF08\u5C07\u756B\u53D6\u4E0B\uFF09\u679C\u7136\u6709\u9B3C\uFF01 "
+        content: "\\h\\n\u96EA\u8304\u3001\u7F8E\u9152\u3001\u526A\u88C1\u9069\u5B9C\u7684\u5916\u8863\u3001\u518D\u52A0\u4E0A\u9019\u88E1\u7684\u6CB9\u756B"
     00000007:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u9019\u88E1\u6709\u672C\u7B46\u8A18\u672C\uFF08\u5F97\u5230\u85CF\u65BC\u756B\u5F8C\u7684\u7B46\u8A18\uFF09"
+        content: "\\h\\n\u4E0D\u8AAA\u4EBA\u54C1\uFF0C\u9019\u50A2\u4F19\u5012\u662F\u883B\u6709\u54C1\u5473\u7684"
     00000008:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\u4E0D\u904E\u9019\u756B\u7ADF\u7136\u662F\u5012\u639B\u8457\u7684\uFF0C\u4E00\u770B\u5C31\u89BA\u5F97\u6709\u554F\u984C"
+    00000009:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\uFF08\u5C07\u756B\u53D6\u4E0B\uFF09\u679C\u7136\u6709\u9B3C\uFF01 "
+    0000000A:
+      type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
+      data:
+        content: "\\h\\n\u9019\u88E1\u6709\u672C\u7B46\u8A18\u672C\uFF08\u5F97\u5230\u85CF\u65BC\u756B\u5F8C\u7684\u7B46\u8A18\uFF09"
+    0000000B:
       type: {class: EventGainItem, ns: , asm: Assembly-CSharp}
       data:
         itemId: 18
         number: 1
-    00000009:
+    0000000C:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
         content: "\\h\\n\u7B46\u8A18\u672C\u88E1\u7D00\u9304\u4E86\u4EC0\u9EBC\uFF1F\uFF08\u5C07\u756B\u639B\u56DE\u53BB\uFF09"
-    0000000A:
+    0000000D:
       type: {class: EventDestroyEvent, ns: , asm: Assembly-CSharp}
 --- !u!61 &1879891353
 BoxCollider2D:
@@ -60582,7 +60729,7 @@ MonoBehaviour:
     0000000F:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\u300C\u5494\u300D\u7684\u4E00\u8072\uFF0C\u6210\u529F\u958B\u9580\u3002\u4E3B\u89D2\u4E00\u624B\u6301\u69CD\u3001\u4E00\u624B\u63A8\u9580\uFF0C\u8D70\u51FA\u623F\u9593\u3002"
+        content: "\u300C\u5494\u300D\u7684\u4E00\u8072\uFF0C\u6210\u529F\u958B\u9580\u3002\\h\u4E00\u624B\u6301\u69CD\u3001\u4E00\u624B\u63A8\u9580\uFF0C\u8D70\u51FA\u623F\u9593\u3002"
     00000010:
       type: {class: EventPlaySE, ns: , asm: Assembly-CSharp}
       data:
@@ -61631,6 +61778,8 @@ MonoBehaviour:
         content: "\\h\\n\uFF08\u597D\u2026\u597D\u60F3\u7761\u2026\u6211\u9084\u2026\uFF09"
     0000000C:
       type: {class: EventGameOver, ns: , asm: Assembly-CSharp}
+      data:
+        isWin: 0
     0000000D:
       type: {class: EventSetScreenColor, ns: , asm: Assembly-CSharp}
       data:
@@ -62159,7 +62308,7 @@ MonoBehaviour:
     00000029:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:
-        content: "\\h\\n\u65C1\u767D\\n\u5927\u53D4\u8D70\u9032\u623F\u88E1\u5F8C\uFF0C\u4E3B\u89D2\u53CD\u624B\u9396\u4E0A\u9580\uFF0C\u63A5\u8457\u5411\u5927\u53D4\u554F\u8A71\u3002"
+        content: "\u5927\u53D4\u8D70\u9032\u623F\u88E1\u5F8C\uFF0C\\h\u53CD\u624B\u9396\u4E0A\u9580\uFF0C\u63A5\u8457\u5411\u5927\u53D4\u554F\u8A71\u3002"
     0000002A:
       type: {class: EventDialogue, ns: , asm: Assembly-CSharp}
       data:

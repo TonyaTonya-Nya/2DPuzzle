@@ -61,41 +61,19 @@ public class EditorDatabase
             LoadSwitchDatabase();
     }
 
-    /// <summary>
-    /// 備份用
-    /// </summary>
-    [MenuItem("Tools/Export/ItemDatabase")]
-    public static void ExportItemDataToJson()
-    {
-        GameDatabase gameDatabase = GameObject.FindObjectOfType<GameDatabase>();
-        string dataPath = "Assets/Prefabs/ItemDatabase.asset";
-        ItemDatabase itemDatabase = (ItemDatabase)AssetDatabase.LoadAssetAtPath(dataPath, typeof(ItemDatabase));
-        string jsonPath = Path.Combine(Application.dataPath, "Resources/Database/ItemDatabase.json");
-        string s = JsonConvert.SerializeObject(itemDatabase);
-        using (StreamWriter file = new StreamWriter(jsonPath))
-        {
-            file.WriteLine(s);
-        }
-    }
-
-    [MenuItem("Tools/Changer/AddPlayerNameCodeToAllDialogue")]
-    public static void AddPlayerNameCodeToAllDialogue()
+    [MenuItem("Tools/Checker/CheckWhereHasWrongName")]
+    public static void CheckWhereHasWrongName()
     {
         EventObject[] eventObjects = GameObject.FindObjectsOfType<EventObject>();
         foreach (EventObject eventObject in eventObjects)
         {
             if (eventObject.eventPoint != null)
             {
+                int index = 0;
                 foreach (EventPoint eventPoint in eventObject.eventPoint)
                 {
-                    foreach (EventCommand eventCommand in eventPoint.commands)
-                    {
-                        if (eventCommand is EventDialogue eventDialogue)
-                        {
-                            if (!eventDialogue.content.StartsWith("\\h\\n"))
-                                eventDialogue.content = "\\h\\n" + eventDialogue.content;
-                        }
-                    }
+                    Parse(eventObject.gameObject.name, eventPoint.commands, index + 1);
+                    index++;
                 }
             }
         }
@@ -105,71 +83,107 @@ public class EditorDatabase
             {
                 if (pair.Value.clickEvent != null)
                 {
+                    int index = 0;
                     foreach (EventPoint eventPoint in pair.Value.clickEvent)
                     {
-                        foreach (EventCommand eventCommand in eventPoint.commands)
-                        {
-                            if (eventCommand is EventDialogue eventDialogue)
-                            {
-                                if (!eventDialogue.content.StartsWith("\\h\\n"))
-                                    eventDialogue.content = "\\h\\n" + eventDialogue.content;
-                            }
-                        }
+                        Parse(pair.Value.itemName, eventPoint.commands, index++);
                     }
                 }
             }
         }
-    }
-
-    [MenuItem("Tools/Changer/TEmp")]
-    public static void TEmp()
-    {
-        foreach (KeyValuePair<int, Item> pair in GameDatabase.Instance.ItemDB)
+        if (GameDatabase.Instance.ItemMixDatabase != null)
         {
-            if (pair.Value.clickEvent != null)
+            foreach (ItemMixSet s in GameDatabase.Instance.ItemMixDatabase.itemMixSets)
             {
-                foreach (EventPoint eventPoint in pair.Value.clickEvent)
-                {
-                    foreach (EventCommand eventCommand in eventPoint.commands)
-                    {
-                        if (eventCommand is EventDialogue eventDialogue)
-                        {
-                            if (eventDialogue.content.Contains("\n"))
-                                eventDialogue.content = eventDialogue.content.Replace("\n", "\\n");
-                        }
-                    }
-                }
+                Parse("", s.commands, 0);
             }
         }
     }
 
-    [MenuItem("Tools/Changer/DeleteExtraPlayerNameStringOfAllDialogue")]
-    public static void DeleteExtraPlayerNameStringOfAllDialogue()
+    public static void Parse(string name, EventCommandList commands, int index = 0)
+    {
+        foreach (EventCommand command in commands)
+        {
+            if  (command is EventDialogue dialogue)
+            {
+                if (dialogue.content.Contains("主角") || dialogue.content.Contains("神華"))
+                    Debug.Log(name + ": 第 " + index + " 頁: " + dialogue.content);
+            }
+            else if (command is EventConditionBranch condition)
+            {
+                Parse(name, condition.conditionOkCommands, index);
+                Parse(name, condition.conditionNotOkCommands, index);
+            }
+            else if (command is EventInput input)
+            {
+                Parse(name, input.correctCommands, index);
+                Parse(name, input.wrongCommands, index);
+            }
+            else if (command is EventSelection selection)
+            {
+                Parse(name, selection.selection1Commands, index);
+                Parse(name, selection.selection2Commands, index);
+            }
+        }
+    }
+
+
+
+    [MenuItem("Tools/Checker/CheckWhereHasGameOver")]
+    public static void CheckWhereHasGameOver()
     {
         EventObject[] eventObjects = GameObject.FindObjectsOfType<EventObject>();
         foreach (EventObject eventObject in eventObjects)
         {
             if (eventObject.eventPoint != null)
             {
+                int pindex = 0;
                 foreach (EventPoint eventPoint in eventObject.eventPoint)
                 {
-                    foreach (EventCommand eventCommand in eventPoint.commands)
+                    int index = 0;
+                    foreach (EventCommand command in eventPoint.commands)
                     {
-                        if (eventCommand is EventDialogue eventDialogue)
+                        if (command is EventGameOver)
+                            Debug.Log("第 " + (pindex + 1) + " 頁" + "Gameover: " + eventObject.name);
+                        index++;
+                    }
+                    pindex++;
+                }
+            }
+        }
+        if (GameDatabase.Instance.ItemDB != null)
+        {
+            foreach (KeyValuePair<int, Item> pair in GameDatabase.Instance.ItemDB)
+            {
+                if (pair.Value.clickEvent != null)
+                {
+                    int pindex = 0;
+                    foreach (EventPoint eventPoint in pair.Value.clickEvent)
+                    {
+                        int index = 0;
+                        foreach (EventCommand command in eventPoint.commands)
                         {
-                            if (eventDialogue.content.StartsWith("\\h\\n主角\\n"))
-                                eventDialogue.content = eventDialogue.content.Replace("\\h\\n主角\\n", "\\h\\n");
-                            if (eventDialogue.content.StartsWith("\\h\\n\\h"))
-                                eventDialogue.content = eventDialogue.content.Replace("\\h\\n\\h", "\\h\\n");
-                            if (eventDialogue.content.StartsWith("\\h\\n大叔\\n"))
-                                eventDialogue.content = eventDialogue.content.Replace("\\h\\n大叔\\n", "大叔\\n");
-                            if (eventDialogue.content.StartsWith("\\h\\n神華\\n"))
-                                eventDialogue.content = eventDialogue.content.Replace("\\h\\n神華\\n", "\\h\\n");
+                            if (command is EventGameOver)
+                                Debug.Log("第 " + (pindex+1) + " 頁" + "]Gameover: " + pair.Value.itemName);
+                            index++;
                         }
+                        pindex++;
                     }
                 }
             }
         }
+        if (GameDatabase.Instance.ItemMixDatabase != null)
+        {
+            foreach (ItemMixSet s in GameDatabase.Instance.ItemMixDatabase.itemMixSets)
+            {
+                int index = 0;
+                foreach (EventCommand command in s.commands)
+                {
+                    if (command is EventGameOver)
+                        Debug.Log("找到 [ " + index.ToString() + "]Gameover: ");
+                    index++;
+                }
+            }
+        }
     }
-
 }
