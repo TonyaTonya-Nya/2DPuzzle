@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
@@ -17,8 +17,13 @@ public class PlayerController : MonoBehaviour
 
     private bool dead = false;
 
+    private float timer=0f;
+
+    public Text T_t;
+
     void Start()
     {
+        timer = 0f;
         Rb = GetComponent<Rigidbody2D>();
         Rb.freezeRotation = true;
         animator = GetComponentInChildren<Animator>();
@@ -26,6 +31,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        timer += Time.deltaTime;
+   
+       
+        float minutes = Mathf.Floor(timer / 60);
+        float seconds = timer % 60;
+
+        string time_str = minutes + ":" + Mathf.RoundToInt(seconds);
+        PlayerData.Instance.clearTime = time_str;
+        T_t.text = time_str;
+
         HandleInput();
     }
 
@@ -65,4 +80,7 @@ public class PlayerController : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
+
+   
 }

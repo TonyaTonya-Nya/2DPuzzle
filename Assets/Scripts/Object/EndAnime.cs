@@ -13,7 +13,7 @@ public class EndAnime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(PlayerData.Instance.Post_Http());
     }
 
     // Update is called once per frame
